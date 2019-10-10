@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Set up as a user</h1>
+    <p class="govuk-body">If you already have an account <a class="govuk-link--no-visited-state" href="sign-in">sign in</a></p>
+
+    <form action="confirm-identity" method="post" novalidate>
+      {{ govukInput({
+        label: {
+          text: "First name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "last-name",
+        name: "last-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email",
+          classes: "govuk-label--s"
+        },
+        hint: {
+                text: "We'll send you an email to confirm your identity."
+              },
+        classes: "govuk-input--width-20",
+        id: "email-address",
+        name: "email-address"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Create new password",
+          classes: "govuk-label--s"
+        },
+        hint: {
+                text: "Password requires upper and lowercase letters, a number and at least 8 characters."
+              },
+        classes: "govuk-input--width-20",
+        id: "password",
+        type: "password",
+        name: "password"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Confirm password",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "confirm-password",
+        type: "password",
+        name: "confirm-password"
+      }) }}
+
+      {{ govukInsetText({
+          html: "By continuing you accept the <a href='#'>terms and conditions</a>"
+       }) }}
+
+      {{ govukButton({
+        text: "Set me up"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

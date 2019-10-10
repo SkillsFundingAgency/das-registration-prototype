@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="success-summary govuk-!-margin-bottom-9">
+      <h1 class="govuk-heading-l">We've sent you an email</h1>
+      <p class="govuk-body">To confirm your identity, we've sent a code to {{data['email-address']}}</p>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Confirm your identity</h1>
+
+    <form action="sign-in" method="post" novalidate>
+      {{ govukInput({
+        label: {
+          text: "Enter code",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "enter-code",
+        name: "enter-code"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Not received an email?</h2>
+    <p class="govuk-body"><a href="#">You can request another email</a></p>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
