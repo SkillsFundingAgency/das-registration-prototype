@@ -16,3 +16,16 @@ router.post('/way-to-add-paye', function (req, res) {
     res.redirect('/gov-gateway-intro')
   }
 })
+
+
+// Get funding branching
+router.post('/get-paye-funding', function (req, res) {
+
+  let getPayeFunding = req.session.data['get-paye-funding']
+
+  if (getPayeFunding === 'yes') {
+    res.redirect('/ways-to-add-paye-scheme')
+  } else {
+    res.redirect('https://ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=yes&employer-type=non-levy')
+  }
+})
