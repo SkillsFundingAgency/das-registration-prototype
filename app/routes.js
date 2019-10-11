@@ -37,6 +37,6 @@ router.post('/accept-agreement', function (req, res) {
   if (acceptAgreement === 'yes') {
     res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   } else {
-    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=no&employer-type=non-levy')
+    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=yes&employer-type=non-levy')
   }
 })
