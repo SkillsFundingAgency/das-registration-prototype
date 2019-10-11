@@ -5,12 +5,8 @@ const router = express.Router()
 
 module.exports = router
 
-
-// Branching
+// Add a PAYE account branching
 router.post('/way-to-add-paye', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   let wayToAddPaye = req.session.data['way-to-add-paye']
 
