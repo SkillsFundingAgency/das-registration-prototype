@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Blank page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "gov-gateway-sign-in"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Check your details</h1>
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+    {{ govukTable({
+      firstCellIsHeader: true,
+      rows: [
+        [
+          {
+            text: "Organisation"
+          },
+          {
+            text: "Assurance Aerospace Ltd"
+          },
+          {
+            html: "<a class='govuk-link--no-visited-state' href='#'>Change</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Address"
+          },
+          {
+            html: "<p class='govuk-body'>No 2 Lochrin Square<br>96 Fountainbridge<br>Edinburgh<br>EH3 9QA</p>"
+          },
+          {
+            html: "<a class='govuk-link--no-visited-state' href='#'>Change</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "PAYE scheme"
+          },
+          {
+            text: "07700900457"
+          },
+          {
+            html: "<a class='govuk-link--no-visited-state' href='#'>Change</a>",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+      {{ govukButton({
+        text: "These details are correct",
+        href: "about-agreement"
+      }) }}
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -4,24 +4,31 @@
   Blank page
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "gov-gateway-intro"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Sign in</h1>
-      <p class="govuk-body">Sign in or <a class="govuk-link govuk-link--no-visited-state" href="create-account">create an account</a> to manage your apprenticeship funds.</p>
+    <h1 class="govuk-heading-xl">Sign in using Government Gateway </h1>
 
-
-
-    <form action="https://employer:account@ma-employer-account.herokuapp.com/stable" method="post" novalidate>
+    <form action="check-your-details" method="post" novalidate>
       {{ govukInput({
         label: {
-          text: "Email address",
+          text: "Government Gateway user ID ",
           classes: "govuk-label--s"
         },
+        hint: {
+            text: "This could be up to 12 characters."
+          },
         classes: "govuk-input--width-20",
-        id: "email-address",
-        name: "email-address"
+        id: "gov-gateway-id",
+        name: "gov-gateway-id"
       }) }}
 
       {{ govukInput({
@@ -39,8 +46,6 @@
         text: "Sign in"
       }) }}
     </form>
-
-<p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Forgotten your password?</a></p>
 
   </div>
 </div>

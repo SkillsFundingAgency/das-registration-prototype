@@ -4,60 +4,57 @@
   Blank page
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "get-funding"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Get apprenticeship funding </h1>
-    <p class="govuk-body">If you're ready to pay for your apprenticeship training, you can do this now by adding the PAYE scheme for your organisation.</p>
+    <h1 class="govuk-heading-xl">Ways to add your PAYE scheme</h1>
+    <p class="govuk-body govuk-!-font-weight-bold">If you know the annual payroll for your organisation is under £3 million, you can use either:</p>
 
-    <p class="govuk-body">If you do not need to get apprenticeship funding yet, you can still register an account to:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>search and save apprenticeships</li>
-      <li>save your chosen training providers</li>
+      <li>Government Gateway login for your PAYE scheme</li>
+      <li>accounts office reference number and employer PAYE scheme reference</li>
     </ul>
 
-    <p class="govuk-body">To get apprenticeship funding now, you can use either of the following:</p>
+    <p class="govuk-body govuk-!-font-weight-bold">If you know the annual payroll for your organisation is over £3 million, you can use:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>the Government Gateway login for your PAYE scheme</li>
-      <li>your accounts office reference number and employer PAYE scheme reference</li>
+      <li>Government Gateway login for your PAYE scheme</li>
     </ul>
 
-      {{ govukDetails({
-        summaryText: "Find your Government Gateway details",
-        html: "If you have lost your Government Gateway log in details you can <a href='#'>get help signing in</a>"
-      }) }}
+    {{ govukInsetText({
+      text: "If you’re not sure how much your annual payroll is, choose Government Gateway."
+    }) }}
 
-      {{ govukDetails({
-        summaryText: "Find your accounts office and PAYE scheme reference numbers",
-        text: "You can find your 13-character accounts office reference number on the letter HMRC sent you when you first registered as an employer. You will find your employer PAYE scheme reference in the payslip booklet HMRC provided. Contact HMRC or your accountant if you do not have access to the booklet."
-      }) }}
-
-
-    <form action="ways-to-add-PAYE-scheme" method="post" novalidate>
+    <form action="gov-gateway-intro" method="post" novalidate>
       {{ govukRadios({
         idPrefix: "add-PAYE-scheme",
         name: "add-PAYE-scheme",
-        fieldset: {
-          legend: {
-            text: "Do you want to add a PAYE scheme to get apprenticeship funding?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
         items: [
           {
-            value: "yes",
-            text: "Yes, add my PAYE scheme details now"
+            value: "government gateway",
+            text: "I want to use Government Gateway "
           },
           {
-            value: "no",
-            text: "No, I'll do this later"
+            value: "paye",
+            text: "I want to use my accounts office reference number and employer PAYE scheme reference"
           }
         ]
       }) }}
+
+      {{ govukWarningText({
+        text: "Before you continue, you must make sure you have authority to add PAYE schemes to the account for this organisation.",
+        iconFallbackText: "Warning"
+      }) }}
+
       {{ govukButton({
           text: "Continue"
         }) }}
