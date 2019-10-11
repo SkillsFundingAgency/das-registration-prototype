@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Blank page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "providers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Change what Cyberdyne Training Ltd can do</h1>
+    <p class="govuk-body-l">Cyberdyne Training Ltd can do the following on behalf of Assurance Aerospace Ltd.</p>
+
+    <h2 class="govuk-heading-m">What they can do</h2>
+
+<form action="/form-handler" method="post" novalidate>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <fieldset class="govuk-fieldset" aria-describedby="create-cohort-hint">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <legend class="govuk-fieldset__legend">
+              Create cohort
+            <legend>
+          </th>
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="create-cohort">
+                Yes
+              </label>
+              <input class="govuk-radios__input" id="create-cohort" name="create-cohort" type="radio" value="yes">
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="create-cohort-2">
+                No
+              </label>
+              <input class="govuk-radios__input" id="create-cohort-2" name="create-cohort" type="radio" value="no">
+            </div>
+          </td>
+          </tr>
+        </fieldset>
+
+        <fieldset class="govuk-fieldset" aria-describedby="reserve-funding-hint">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <legend class="govuk-fieldset__legend">
+                Reserve funding
+              <legend>
+            </th>
+          <td class="govuk-table__cell">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <label class="govuk-label govuk-radios__label" for="reserve-funding">
+                  Yes
+                </label>
+                <input class="govuk-radios__input" id="reserve-funding" name="reserve-funding" type="radio" value="yes">
+              </div>
+            </td>
+            <td class="govuk-table__cell">
+              <div class="govuk-radios__item">
+                <label class="govuk-label govuk-radios__label" for="reserve-funding-2">
+                  No
+                </label>
+                <input class="govuk-radios__input" id="reserve-funding-2" name="reserve-funding" type="radio" value="no">
+              </div>
+            </td>
+          </tr>
+        </fieldset>
+
+        <fieldset class="govuk-fieldset" aria-describedby="vacancy-adds-hint">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <legend class="govuk-fieldset__legend">
+              Add and edit apprentice vacancy ads
+            <legend>
+          </th>
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="vacancy-adds">
+                Yes
+              </label>
+              <input class="govuk-radios__input" id="vacancy-adds" name="vacancy-adds" type="radio" value="yes">
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="vacancy-adds-2">
+                No
+              </label>
+              <input class="govuk-radios__input" id="vacancy-adds-2" name="vacancy-adds" type="radio" value="no">
+            </div>
+          </td>
+          </tr>
+        </fieldset>
+
+        <fieldset class="govuk-fieldset" aria-describedby="notify-candidates-hint">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <legend class="govuk-fieldset__legend">
+              Notify successful and unsuccessful candidates
+            <legend>
+          </th>
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="notify-candidates">
+                Yes
+              </label>
+              <input class="govuk-radios__input" id="notify-candidates" name="notify-candidates" type="radio" value="yes">
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="notify-candidates-2">
+                No
+              </label>
+              <input class="govuk-radios__input" id="notify-candidates-2" name="notify-candidates" type="radio" value="no">
+            </div>
+          </td>
+          </tr>
+        </fieldset>
+
+        <fieldset class="govuk-fieldset" aria-describedby="create-shortlists-hint">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <legend class="govuk-fieldset__legend">
+              Create candidate shortlists
+            <legend>
+          </th>
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="create-shortlists">
+                Yes
+              </label>
+              <input class="govuk-radios__input" id="create-shortlists" name="create-shortlists" type="radio" value="yes">
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-radios__item">
+              <label class="govuk-label govuk-radios__label" for="create-shortlists-2">
+                No
+              </label>
+              <input class="govuk-radios__input" id="create-shortlists-2" name="create-shortlists" type="radio" value="no">
+            </div>
+          </td>
+          </tr>
+        </fieldset>
+
+      </tbody>
+    </table>
+
+    {{ govukButton({
+      text: "Update permissions"
+    }) }}
+
+</form
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

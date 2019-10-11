@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "https://employer:account@ma-employer-account.herokuapp.com/stable"
+    href: "providers"
   }) }}
 {% endblock %}
 
@@ -17,24 +17,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Your providers</h1>
-    <p class="govuk-body-l">Find providers and what they can do.</p>
-
-    {{ govukButton({
-      text: "Add a new provider"
-    }) }}
+    <h1 class="govuk-heading-xl">Cyberdyne Training Ltd</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     {{ govukTable({
+
   head: [
     {
-      text: "Provider"
+      text: "Organisation"
     },
     {
-      text: "Overview of what they can do"
+      text: "What Cyberdyne Training Ltd can do on your behalf"
     },
     {
       text: "",
@@ -44,25 +40,25 @@
   rows: [
     [
       {
-        text: "Cyberdyne Training Ltd"
+        text: "Assurance Aerospace Ltd"
       },
       {
-        text: "Permissions on 1 organisation"
+        html: "<p class='govuk-body'>Create cohorts<br>Reserve funding<br>Add and edit apprentice vacancy ads<br>Notify successful and unsuccessful candidates</p>"
       },
       {
-        html: "<a class='govuk-link govuk-link--no-visited-state' href='provider-overview'>View</a>",
+        html: "<a class='govuk-link govuk-link--no-visited-state' href='change-provider-permissions'>Change</a>",
         format: "numeric"
       }
     ],
     [
       {
-        text: "Tyrell Corp Training"
+        text: "Assurance Aerospace Engineering"
       },
       {
-        text: "No permissions"
+        text: "Nothing"
       },
       {
-        html: "<a class='govuk-link govuk-link--no-visited-state' href='#'>View</a>",
+        html: "<a class='govuk-link govuk-link--no-visited-state' href='#'>Change</a>",
         format: "numeric"
       }
     ]
