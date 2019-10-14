@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirm your identity
+  Blank page
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
     </div>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Confirm your identity</h1>
 
-    <form action="get-funding" method="post" novalidate>
+    <form  method="post" novalidate>
       {{ govukInput({
         label: {
           text: "Enter code",
@@ -26,7 +26,8 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "get-funding"
       }) }}
     </form>
 

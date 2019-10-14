@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Get apprenticeship funding
+  Blank page
 {% endblock %}
 
 {% block content %}
@@ -36,7 +36,7 @@
       }) }}
 
 
-    <form method="get" novalidate>
+    <form action="get-paye-funding" method="post" novalidate>
       {{ govukRadios({
         idPrefix: "get-paye-funding",
         name: "get-paye-funding",
