@@ -18,7 +18,7 @@ router.post('/way-to-add-paye', function (req, res) {
 })
 
 // Get PAYE funding branching
-router.post('/get-paye-funding', function (req, res) {
+router.post('/get-funding', function (req, res) {
 
   let getPayeFunding = req.session.data['get-paye-funding']
 
