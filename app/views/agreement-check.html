@@ -21,7 +21,7 @@
     <p class="govuk-body">The employer agreement is between ASSURANCE AEROSPACE LTD and the Education and Skills Funding Agency (ESFA).</p>
 
 
-    <form method="post" class="form">
+    <form method="post">
 
          <!-- RADIOS -->
          <div class="govuk-form-group {% if validationErrors.agreementCheck %}govuk-form-group--error{% endif %}">
@@ -33,13 +33,13 @@
                 {% endif %}
                 <div class="govuk-radios" id="agreementCheck">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="agreementCheck-1" name="agreementCheck" type="radio" value="yes" >
+                        <input class="govuk-radios__input" id="agreementCheck-1" name="agreement-check" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="agreementCheck-1">
                             I’ll view it now
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="agreementCheck-2" name="agreementCheck" type="radio" value="no" >
+                        <input class="govuk-radios__input" id="agreementCheck-2" name="agreement-check" type="radio" value="no" >
                         <label class="govuk-label govuk-radios__label" for="agreementCheck-2">
                             I’ll view it later, after I’ve created an account
                         </label>
@@ -52,8 +52,7 @@
         </div>
 
         {{ govukButton({
-            text: "Continue",
-            href: "agreement"
+            text: "Continue"
           }) }}
 
     </form>

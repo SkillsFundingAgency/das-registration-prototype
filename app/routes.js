@@ -39,5 +39,16 @@ router.post('/agreementSign', function (req, res) {
   }
 })
 
+// Agreement check branching
+router.post('/agreement-check', function (req, res) {
+
+  let agreementCheck = req.session.data['agreement-check']
+
+  if (agreementCheck === 'yes') {
+    res.redirect('agreement')
+  } else {
+    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+  }
+})
 
 module.exports = router
