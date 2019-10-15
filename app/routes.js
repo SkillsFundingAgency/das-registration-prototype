@@ -28,11 +28,11 @@ router.post('/get-paye-funding', function (req, res) {
 })
 
 // Agreement branching
-router.post('/accept-agreement', function (req, res) {
+router.post('/agreementSign', function (req, res) {
 
-  let acceptAgreement = req.session.data['accept-agreement']
+  let agreementSign = req.session.data['agreementSign']
 
-  if (acceptAgreement === 'yes') {
+  if (agreementSign === 'yesSign') {
     res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   } else {
     res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
