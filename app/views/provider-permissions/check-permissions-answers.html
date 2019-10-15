@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-provider-permissions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Confirm permission settings for Coventry College</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Training provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Coventry College
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          On behalf of
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Musecraft Ltd
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Create cohort
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> licence period</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reserve funding
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> licence period</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Add and edit apprentice vacancy ads
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> licence period</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notify successful and unsuccessful candidates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> licence period</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Create candidate shortlists
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> licence period</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <form action="permissions-changed-confirmation" method="post" novalidate>
+
+      <input type="hidden" name="permissions-answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Confirm and save permissions
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

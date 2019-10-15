@@ -1,38 +1,37 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your providers
+  Permissions changed
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "https://employer:account@ma-employer-account.herokuapp.com/stable"
-  }) }}
-{% endblock %}
 
 {% block content %}
-
-
-
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-two-thirds">
-    {{ govukPanel({
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
         titleText: "Permissions updated",
-        html: "For Coventry College"
+        html: "You've successfully saved permissions for <strong>Coventry College</strong>"
       }) }}
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">What do you want to do next?</h2>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link govuk-link--no-visited-state" href="providers">go to providers</a></li>
-      <li><a class="govuk-link govuk-link--no-visited-state" href="https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy">go to your homepage</a></li>
-    </ul>
-  </div>
-</div>
 
+      <p class="govuk-body">Coventry College will be notified of the changes.</p>
 
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Once your provider has submitted a vacancy for approval, it will show on your recruitment dashboard. <a class="govuk-link govuk-link--no-visited-state" href="#">Manage your recruitment emails</a> if you'd like to get an email.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">What do you want to do next?</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="providers">return to permissions homepage</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy">go to your account homepage</a></li>
+      </ul>
+    </div>
+  </div>
 
 {% endblock %}
