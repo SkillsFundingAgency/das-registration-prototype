@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  About your agreement
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "check-your-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">When do you want to view the employer agreement?</h1>
+    <p class="govuk-body">The employer agreement is between ASSURANCE AEROSPACE LTD and the Education and Skills Funding Agency (ESFA).</p>
+
+
+    <form action="agreement" method="post" class="form">
+
+         <!-- RADIOS -->
+         <div class="govuk-form-group {% if validationErrors.agreementCheck %}govuk-form-group--error{% endif %}">
+            <fieldset class="govuk-fieldset" >
+                {% if validationErrors.agreementCheck %}
+                <span id="agreementCheck-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> {{validationErrors.agreementCheck.message}}
+                </span>
+                {% endif %}
+                <div class="govuk-radios" id="agreementCheck">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="agreementCheck-1" name="agreementCheck" type="radio" value="yes" >
+                        <label class="govuk-label govuk-radios__label" for="agreementCheck-1">
+                            I’ll view it now
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="agreementCheck-2" name="agreementCheck" type="radio" value="no" >
+                        <label class="govuk-label govuk-radios__label" for="agreementCheck-2">
+                            I’ll view it later, after I’ve created an account
+                        </label>
+                        <span class="govuk-hint govuk-radios__hint">
+                            You can skip the agreement and view it when ASSURANCE AEROSPACE LTD is ready to get or reserve apprenticeship funding.
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        {{ govukButton({
+            text: "Continue",
+            href: "agreement"
+          }) }}
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

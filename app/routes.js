@@ -3,8 +3,6 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-module.exports = router
-
 // Add a PAYE account branching
 router.post('/way-to-add-paye', function (req, res) {
 
@@ -40,3 +38,6 @@ router.post('/accept-agreement', function (req, res) {
     res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
   }
 })
+
+
+module.exports = router
