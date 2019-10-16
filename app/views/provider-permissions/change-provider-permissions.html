@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "providers"
+    href: "provider-overview"
   }) }}
 {% endblock %}
 
@@ -17,8 +17,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Change what Cyberdyne Training Ltd can do</h1>
-    <p class="govuk-body-l">Cyberdyne Training Ltd can do the following on behalf of Assurance Aerospace Ltd.</p>
+    <h1 class="govuk-heading-xl">Change what {{data['providerName']}} can do</h1>
+    <p class="govuk-body-l">{{data['providerName']}} can do the following on behalf of {{data['orgName']}}.</p>
 
     <h2 class="govuk-heading-m">What they can do</h2>
 

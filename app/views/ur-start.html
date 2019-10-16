@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      	Registrations and recruitment research
+      </h1>
+
+    </div>
+  </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="border:5px solid SteelBlue; background: GhostWhite" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    	<h2 class="govuk-heading-l">
+    		Scenarios
+    	</h2>
+
+    	<div class="govuk-grid-row">
+    		<div class="govuk-grid-column-one-half">
+    			<h3 class="govuk-heading-s">
+    				Employer-led
+    			</h3>
+    			<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+    				<li>
+    					<a class="govuk-link govuk-link--no-visited-state" href="#">recruitment permission but with approval</a>
+    				</li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">comment and reject vacancy</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="#">approve vacancy</a>
+            </li>
+    			</ul>
+    		</div>
+
+    		<div class="govuk-grid-column-one-half">
+    			<h3 class="govuk-heading-s">
+    				Provider-led
+    			</h3>
+    			<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+    				<li>
+    					<a class="govuk-link govuk-link--no-visited-state" href="#">send vacancy to be approved</a>
+    				</li>
+            <li>
+    					<a class="govuk-link govuk-link--no-visited-state" href="#">edit, respond to comment and re-submit</a>
+    				</li>
+
+
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

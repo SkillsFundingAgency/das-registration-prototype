@@ -19,6 +19,6 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  "employerName": "Plumb Perfect Ltd"
 
 }
