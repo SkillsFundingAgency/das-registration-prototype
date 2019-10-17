@@ -26,11 +26,39 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">What do you want to do next?</h2>
+      <!-- <h2 class="govuk-heading-m">What do you want to do next?</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a class="govuk-link govuk-link--no-visited-state" href="providers">return to permissions homepage</a></li>
         <li><a class="govuk-link govuk-link--no-visited-state" href="https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy">go to your account homepage</a></li>
-      </ul>
+      </ul> -->
+
+
+      {{ govukRadios({
+  idPrefix: "where-go-next",
+  name: "where-go-next",
+  fieldset: {
+    legend: {
+      text: "What do you want to do next?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "provider-homepage",
+      text: "return to permissions homepage"
+    },
+    {
+      value: "account-homepage",
+      text: "go to your account homepage"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
     </div>
   </div>
 

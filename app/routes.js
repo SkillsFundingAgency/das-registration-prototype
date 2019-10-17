@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+
 // Add your routes here - above the module.exports line
 
 // Add a PAYE account branching
@@ -27,7 +28,7 @@ router.post('/add-paye-scheme', function (req, res) {
     res.redirect('/enter-paye-details')
   }
   else {
-    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=no&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=no&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
   }
 })
 
@@ -37,9 +38,9 @@ router.post('/agreementSign', function (req, res) {
   let agreementSign = req.session.data['agreementSign']
 
   if (agreementSign === 'yesSign') {
-    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   } else {
-    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
   }
 })
 
@@ -51,7 +52,7 @@ router.post('/agreement-check', function (req, res) {
   if (agreementCheck === 'yes') {
     res.redirect('agreement')
   } else {
-    res.redirect('https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
   }
 })
 
