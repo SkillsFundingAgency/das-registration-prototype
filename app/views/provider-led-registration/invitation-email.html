@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-email.html" %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -11,8 +11,12 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<main id="content" role="main">
+  <a href="https://www.gov.uk/government/organisations/education-and-skills-funding-agency" target="_blank">
+    <img src="/public/images/esfa-logo.png" width="180px" id="logo">
+  </a>
+  <br><br><br>
+
     <p class="govuk-body">Dear John Smith,</p>
 
     <p class="govuk-body">Mary Jones at ABC Training has invited you to register for an Apprenticeship Service account for Assurance Aerospace.</p>
@@ -29,10 +33,9 @@
       <li>authority to sign the employer agreement for this organisation</li>
     </ul>
 
-    {{ govukButton({
-      text: "Set up your account",
-      href: "/create-account?cameFromEmail=yes"
-    }) }}
+    <button class="govuk-button" data-module="govuk-button">
+      Set up your account
+    </button>
 
     <h2 class="govuk-heading-s">Government Gateway details</h2>
 
@@ -50,7 +53,7 @@
 
     <p class="govuk-body">The accounts office reference number is 13 characters. The employer PAYE reference number is 11 characters.</p>
     <br><br>
-    <p class="govuk-body-s">If you'd prefer to no longer get these emails from your training provider, you can unsubscribe.</p>
+    <p class="govuk-body-s">If you'd prefer to no longer get these emails from your training provider, you can <a href="#" class="govuk-link">unsubscribe</a>.</p>
 
     <p class="govuk-body-s">If you didn't agree with your training provider to receive this invitation, you can let us know.</p>
 
@@ -58,10 +61,7 @@
 
     <p class="govuk-body">Thanks,</p>
     <p class="govuk-body">Apprenticeship Service Team</p>
-
-
-  </div>
-</div>
+</main>
 
 
 
