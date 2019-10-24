@@ -57,7 +57,7 @@ router.post('/registration/agreement-check', function (req, res) {
 })
 
 router.get('agreement', function (req, res) {
-  res.render('/registration/agreement', {
+  res.render('/agreement', {
           _referrer: req.query.referrer
         });
 })
