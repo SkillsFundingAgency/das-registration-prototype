@@ -10,22 +10,22 @@ router.post('/way-to-add-paye', function (req, res) {
   let wayToAddPaye = req.session.data['way-to-add-paye']
 
   if (wayToAddPaye === 'paye') {
-    res.redirect('/enter-paye-details')
+    res.redirect('/registration/enter-paye-details')
   } else {
-    res.redirect('/gov-gateway-intro')
+    res.redirect('/registration/gov-gateway-intro')
   }
 })
 
 // Add paye funding scheme branching
-router.post('/add-paye-scheme', function (req, res) {
+router.post('/registration/add-paye-scheme', function (req, res) {
 
   let addPayeScheme = req.session.data['add-paye-scheme']
 
   if (addPayeScheme === 'yes-gov-gateway') {
-    res.redirect('/gov-gateway-intro')
+    res.redirect('/registration/gov-gateway-intro')
   }
   else if (addPayeScheme === 'yes-paye') {
-    res.redirect('/enter-paye-details')
+    res.redirect('/registration/enter-paye-details')
   }
   else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=no&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
@@ -33,7 +33,7 @@ router.post('/add-paye-scheme', function (req, res) {
 })
 
 // Agreement branching
-router.post('/agreementSign', function (req, res) {
+router.post('/registration/agreementSign', function (req, res) {
 
   let agreementSign = req.session.data['agreementSign']
 
@@ -45,19 +45,19 @@ router.post('/agreementSign', function (req, res) {
 })
 
 // Agreement check branching
-router.post('/agreement-check', function (req, res) {
+router.post('/registration/agreement-check', function (req, res) {
 
   let agreementCheck = req.session.data['agreement-check']
 
   if (agreementCheck === 'yes') {
-    res.redirect('agreement')
+    res.redirect('/registration/agreement')
   } else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
   }
 })
 
 router.get('agreement', function (req, res) {
-  res.render('agreement', {
+  res.render('/registration/agreement', {
           _referrer: req.query.referrer
         });
 })
