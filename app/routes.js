@@ -32,18 +32,6 @@ router.post('/registration/add-paye-scheme', function (req, res) {
   }
 })
 
-// Agreement branching
-router.post('/registration/agreementSign', function (req, res) {
-
-  let agreementSign = req.session.data['agreementSign']
-
-  if (agreementSign === 'yesSign') {
-    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
-  } else {
-    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
-  }
-})
-
 // Agreement check branching
 router.post('/registration/agreement-check', function (req, res) {
 
@@ -56,8 +44,19 @@ router.post('/registration/agreement-check', function (req, res) {
   }
 })
 
-// Review vacancy branching
+// Agreement branching
+router.post('/registration/agreementSign', function (req, res) {
 
+  let agreementSign = req.session.data['agreementSign']
+
+  if (agreementSign === 'yesSign') {
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+  } else {
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+  }
+})
+
+// Review vacancy branching
 router.post('/recruitment/vacancy-review', function (req, res) {
 
   let variableName = req.session.data['approve-reject-vacancy']
@@ -69,9 +68,33 @@ router.post('/recruitment/vacancy-review', function (req, res) {
   }
 })
 
+// Vacancy approved branching
+router.post('/recruitment/vacancy-approved', function (req, res) {
+
+  let variableName = req.session.data['what-do-next']
+
+  if (variableName === 'review-more-vacancies') {
+    res.redirect('/recruitment/vacancies-for-approval')
+  } else {
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+  }
+})
+
+// Vacancy rejected branching
+router.post('/recruitment/vacancy-rejected', function (req, res) {
+
+  let variableName = req.session.data['what-do-next']
+
+  if (variableName === 'review-more-vacancies') {
+    res.redirect('/recruitment/vacancies-for-approval')
+  } else {
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+  }
+})
+
 // router.post('/page-name', function (req, res) {
 //
-//   let variableName = req.session.data['name-on-input']
+//   let variableName = req.session.data['name-of-input']
 //
 //   if (variableName === 'yes') {
 //     res.redirect('page-to-go-to')
