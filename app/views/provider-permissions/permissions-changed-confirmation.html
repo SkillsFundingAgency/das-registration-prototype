@@ -31,31 +31,33 @@
       </ul> -->
 
 
-      {{ govukRadios({
-  idPrefix: "where-go-next",
-  name: "where-go-next",
-  fieldset: {
-    legend: {
-      text: "What do you want to do next?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "provider-homepage",
-      text: "return to permissions homepage"
-    },
-    {
-      value: "account-homepage",
-      text: "go to your account homepage"
-    }
-  ]
-}) }}
+      <form method="post">
+        {{ govukRadios({
+          idPrefix: "where-go-next",
+          name: "where-go-next",
+          fieldset: {
+            legend: {
+              text: "What do you want to do next?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "provider-homepage",
+              text: "Return to permissions homepage"
+            },
+            {
+              value: "account-homepage",
+              text: "Go to your account homepage"
+            }
+          ]
+        }) }}
 
-{{ govukButton({
-  text: "Continue"
-}) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
 
     </div>
   </div>

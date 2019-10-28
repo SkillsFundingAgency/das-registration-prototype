@@ -92,6 +92,18 @@ router.post('/recruitment/vacancy-rejected', function (req, res) {
   }
 })
 
+//Permissions changed branching
+router.post('/provider-permissions/permissions-changed-confirmation', function (req, res) {
+
+  let variableName = req.session.data['where-go-next']
+
+  if (variableName === 'provider-homepage') {
+    res.redirect('/provider-permissions/providers')
+  } else {
+    res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+  }
+})
+
 // router.post('/page-name', function (req, res) {
 //
 //   let variableName = req.session.data['name-of-input']
