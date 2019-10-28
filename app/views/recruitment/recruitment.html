@@ -16,65 +16,57 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Your providers</h1>
-    <p class="govuk-body-l">Find providers and what they can do.</p>
-
-    {{ govukButton({
-      text: "Add a new provider",
-      href: "search-provider"
-    }) }}
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Recruitment</h1>
   </div>
-</div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Vacancies for approval</h2>
+  </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <div class="das-card" style="height: 180px;">
+      <div class="das-card--content">
+        <p class="govuk-body govuk-!-font-weight-bold">
+          <span class="das-card--stat">4</span>
+          <a class="govuk-link" href="#">
+            Provider vacancies for approval
+          </a>
+        </p>
+        <p class="govuk-body das-card--description">Review the vacancies that providers have created.</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
 
-    {{ govukTable({
-  head: [
-    {
-      text: "Provider"
-    },
-    {
-      text: "Overview of what they can do"
-    },
-    {
-      text: "",
-      format: "numeric"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Cyberdyne Training Ltd"
-      },
-      {
-        text: "Permissions on 1 organisation"
-      },
-      {
-        html: "<a class='govuk-link govuk-link--no-visited-state' href='provider-overview?providerName=Cyberdyne Training Ltd'>View</a>",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "Tyrell Corp Training"
-      },
-      {
-        text: "No permissions"
-      },
-      {
-        html: "<a class='govuk-link govuk-link--no-visited-state' href='provider-overview?providerName=Tyrell Corp Training'>View</a>",
-        format: "numeric"
-      }
-    ]
-  ]
-}) }}
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Your vacancies</h2>
+    <p class="govuk-body">Recruit an apprentice by creating your own vacancy. Vacancies will be advertised on <a href="#" class="govuk-link govuk-link--no-visited-state">Find an apprenticeship</a>.</p>
+    {{ govukButton({
+      text: "Create vacancy"
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
 
 
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-
+  <div class="govuk-grid-column-one-third govuk-!-margin-top-3">
+  <p class="gov-uk govuk-!-font-weight-bold"><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your recruitment emails</a></p>
+  <p class="gov-uk-body">Set up and manage the emails you’re sent about your vacancies and applications</p>
   </div>
 </div>
+
 
 
 
