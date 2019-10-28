@@ -25,16 +25,20 @@
     <h2 class="govuk-heading-m">Reserve funding and add apprentice records</h2>
     <p class="govuk-body">With your permission, training providers can reserve funding and add apprentice records on your behalf.</p>
 
+
+
+      <form action="check-permissions-answers" method="post" novalidate>
+
     {{ govukRadios({
       idPrefix: "reserve-funding",
       name: "reserve-funding",
       items: [
         {
-          value: "allow-funding",
+          value: "Allow",
           text: "Allow"
         },
         {
-          value: "do-not-allow-funding",
+          value: "Do not allow",
           text: "Do not allow"
         }
       ]
@@ -50,15 +54,15 @@
       name: "recruit-apprentices",
       items: [
         {
-          value: "allow-recruit",
+          value: "Allow",
           text: "Allow"
         },
         {
-          value: "allow-review-recruit",
+          value: "Allow, but review vacancies before they go live",
           text: "Allow, but review vacancies before they go live"
         },
         {
-          value: "do-not-allow-recruit",
+          value: "Do not allow",
           text: "Do not allow"
         }
       ]
@@ -67,9 +71,10 @@
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
     {{ govukButton({
-      text: "Continue",
-      href: "check-permissions-answers"
+      text: "Continue"
     }) }}
+
+    </form>
 
 
 
