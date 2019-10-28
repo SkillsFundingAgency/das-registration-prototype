@@ -56,10 +56,17 @@ router.post('/registration/agreement-check', function (req, res) {
   }
 })
 
-router.get('agreement', function (req, res) {
-  res.render('/registration/agreement', {
-          _referrer: req.query.referrer
-        });
+// Review vacancy branching
+
+router.post('/recruitment/vacancy-review', function (req, res) {
+
+  let variableName = req.session.data['approve-reject-vacancy']
+
+  if (variableName === 'approve-vacancy') {
+    res.redirect('/recruitment/vacancy-approved')
+  } else {
+    res.redirect('/recruitment/vacancy-rejected')
+  }
 })
 
 // router.post('/page-name', function (req, res) {
@@ -72,5 +79,12 @@ router.get('agreement', function (req, res) {
 //     res.redirect('other-page-to-go-to')
 //   }
 // })
+
+
+router.get('agreement', function (req, res) {
+  res.render('/registration/agreement', {
+          _referrer: req.query.referrer
+        });
+})
 
 module.exports = router

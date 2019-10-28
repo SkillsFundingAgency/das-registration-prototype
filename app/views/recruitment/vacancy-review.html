@@ -257,22 +257,25 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+
         <form method="post">
       		<div class="govuk-form-group">
-      			<fieldset aria-describedby="how-contacted-conditional-hint" class="govuk-fieldset">
+      			<fieldset aria-describedby="approve-reject-vacancy-conditional-hint" class="govuk-fieldset">
       				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l"></legend>
       				<h2 class="govuk-fieldset__heading"><legend class="govuk-fieldset__legend govuk-fieldset__legend--l">Do you want to approve the vacancy?</legend></h2>
               <p class="govuk-body">If you reject the vacancy, it will be sent back to {{data['vacancy-provider']}} (training provider) to make amends.</p>
 
               <p class="govuk-body">If you approve the vacancy, we'll do a final check within 24 hours. If the vacancy is not approved by us, we’ll send it back to {{data['vacancy-provider']}} to make amends.</p>
+
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       					<div class="govuk-radios__item">
-      						<input class="govuk-radios__input" data-aria-controls="conditional-how-contacted-conditional" id="how-contacted-conditional" name="how-contacted" type="radio" value="email"> <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">Approve, submit for final review</label>
+      						<input class="govuk-radios__input" data-aria-controls="conditional-approve-reject-vacancy-conditional" id="approve-reject-vacancy-conditional" name="approve-reject-vacancy" type="radio" value="approve-vacancy"> <label class="govuk-label govuk-radios__label" for="approve-reject-vacancy-conditional">Approve, submit for final review</label>
       					</div>
       					<div class="govuk-radios__item">
-      						<input class="govuk-radios__input" data-aria-controls="conditional-how-contacted-conditional-2" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone"> <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">Reject, send back to {{data['vacancy-provider']}}</label>
+      						<input class="govuk-radios__input" data-aria-controls="conditional-approve-reject-vacancy-conditional-2" id="approve-reject-vacancy-conditional-2" name="approve-reject-vacancy" type="radio" value="reject-vacancy"> <label class="govuk-label govuk-radios__label" for="approve-reject-vacancy-conditional-2">Reject, send back to {{data['vacancy-provider']}}</label>
       					</div>
-      					<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+      					<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve-reject-vacancy-conditional-2">
       						<div class="govuk-form-group">
       							<label class="govuk-label" for="contact-by-phone">Reason for rejecting the vacancy</label>
                     <span class="govuk-hint">Add a comment for the training provider explaining what you need them to amend</span>
@@ -287,6 +290,8 @@
           }) }}
           <p class="govuk-body"><a href="vacancies-for-approval" class="govuk-link govuk-link--no-visited-state">Return to vacancies for approval</a></p>
       	</form>
+
+
       </div>
     </div>
 

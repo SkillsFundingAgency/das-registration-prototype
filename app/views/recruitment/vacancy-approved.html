@@ -12,7 +12,7 @@
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">Vacancy approved</h1>
         <div class="govuk-panel__body">
-          Your reference number<br><strong>{{data['vacancy-id']}}</strong>
+          {{data['vacancy-id']}}
         </div>
       </div>
 
@@ -22,7 +22,7 @@
 
       <h2 class="govuk-heading-m"></h2>
 
-      <form action="/form-handler" method="post" novalidate>
+      <form method="post" novalidate>
 
               {{ govukRadios({
                 idPrefix: "what-do-next",
