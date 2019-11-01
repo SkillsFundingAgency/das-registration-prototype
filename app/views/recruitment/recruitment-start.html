@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "https://employer:account@ma-employer-account.herokuapp.com/stable"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukButton({
+      text: "Scenario 1",
+      href: "recruitment?recruitment-scenario=recruitment-s1.html"
+    }) }}
+<br>
+    {{ govukButton({
+      text: "Scenario 2",
+      href: "recruitment?recruitment-scenario=recruitment-s2.html"
+    }) }}
+<br>
+    {{ govukButton({
+      text: "Scenario 3",
+      href: "recruitment?recruitment-scenario=recruitment-s3.html",
+      classes: "govuk-button--secondary"
+    }) }}
+<br>
+    {{ govukButton({
+      text: "Scenario 4",
+      href: "recruitment?recruitment-scenario=recruitment-s4.html",
+      classes: "govuk-button--secondary"
+    }) }}
+<br>
+    {{ govukButton({
+      text: "Scenario 5",
+      href: "recruitment?recruitment-scenario=recruitment-s5.html",
+      classes: "govuk-button--secondary"
+    }) }}
+<br>
+    {{ govukButton({
+      text: "Scenario 6",
+      href: "recruitment?recruitment-scenario=recruitment-s6.html"
+    }) }}
+
+
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}

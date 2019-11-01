@@ -115,9 +115,16 @@ router.post('/provider-permissions/permissions-changed-confirmation', function (
 //   }
 // })
 
-
+//set referrer for returning from homepage
 router.get('agreement', function (req, res) {
   res.render('/registration/agreement', {
+          _referrer: req.query.referrer
+        });
+})
+
+//set referrer for linking from homepage
+router.get('recruitment', function (req, res) {
+  res.render('/recruitment/recruitment', {
           _referrer: req.query.referrer
         });
 })
