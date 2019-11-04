@@ -14,44 +14,119 @@
 {% block content %}
 
 
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukTable({
+      caption: "Scenarios",
+      head: [
+        {
+          text: "Provider"
+        },
+        {
+          text: "Employer vacancies"
+        },
+        {
+          text: "Provider vacancies"
+        },
+        {
+          text: "Link",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 1</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 2</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_yes-provider-no-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 3</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 4</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_yes-provider-no-vacancy.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 5</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            text: "No"
+          },
+          {
+            html: "<a href='recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html' class='govuk-link govuk-link--no-visited-state'>Scenario 6</a>",
+            format: "numeric"
+          }
+        ]
 
-    {{ govukButton({
-      text: "Scenario 1",
-      href: "recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
+      ]
     }) }}
-<br>
-    {{ govukButton({
-      text: "Scenario 2",
-      href: "recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html"
-    }) }}
-<br>
-    {{ govukButton({
-      text: "Scenario 3",
-      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-no-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html"
-    }) }}
-<br>
-    {{ govukButton({
-      text: "Scenario 4",
-      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html"
-    }) }}
-<br>
-    {{ govukButton({
-      text: "Scenario 5",
-      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-no-vacancy.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
-    }) }}
-<br>
-    {{ govukButton({
-      text: "Scenario 6",
-      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
-    }) }}
-
-
-
-
-
   </div>
 </div>
 
