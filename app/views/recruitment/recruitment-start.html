@@ -4,6 +4,13 @@
   Your providers
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../index"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 
@@ -13,35 +20,35 @@
 
     {{ govukButton({
       text: "Scenario 1",
-      href: "recruitment?recruitment-scenario=recruitment-s1.html"
+      href: "recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
     }) }}
 <br>
     {{ govukButton({
       text: "Scenario 2",
-      href: "recruitment?recruitment-scenario=recruitment-s2.html"
+      href: "recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html"
     }) }}
 <br>
     {{ govukButton({
       text: "Scenario 3",
-      href: "recruitment?recruitment-scenario=recruitment-s3.html",
+      href: "#",
       classes: "govuk-button--secondary"
     }) }}
 <br>
     {{ govukButton({
       text: "Scenario 4",
-      href: "recruitment?recruitment-scenario=recruitment-s4.html",
+      href: "#",
       classes: "govuk-button--secondary"
     }) }}
 <br>
     {{ govukButton({
       text: "Scenario 5",
-      href: "recruitment?recruitment-scenario=recruitment-s5.html",
+      href: "#",
       classes: "govuk-button--secondary"
     }) }}
 <br>
     {{ govukButton({
       text: "Scenario 6",
-      href: "recruitment?recruitment-scenario=recruitment-s6.html"
+      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
     }) }}
 
 
