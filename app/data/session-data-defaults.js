@@ -19,8 +19,8 @@ Example usage:
 
 module.exports = {
 
-  "employerName": "Plumb Perfect Ltd"
-  "recruitment-provider-scenario": "recruitment_no-provider.html"
+  "employerName": "Plumb Perfect Ltd",
+  "recruitment-provider-scenario": "recruitment_no-provider.html",
   "recruitment-employer-scenario": "recruitment_employer-no-vacancy.html"
 
 }
