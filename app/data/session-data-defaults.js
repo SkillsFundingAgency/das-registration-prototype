@@ -21,6 +21,7 @@ module.exports = {
 
   "employer-name": "Plumb Perfect Ltd",
   "recruitment-provider-scenario": "recruitment_no-provider.html",
-  "recruitment-employer-scenario": "recruitment_employer-no-vacancy.html"
+  "recruitment-employer-scenario": "recruitment_employer-no-vacancy.html",
+  "provider-name": "Coventry College"
 
 }
