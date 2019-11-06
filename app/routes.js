@@ -1,6 +1,34 @@
 const express = require('express')
 const router = express.Router()
 
+// Redirect old prototype
+let urls = [
+"/service*",
+"/settings*",
+"/accounts*",
+"/1-0*",
+"/1-2*",
+"/2-0*",
+"/3-0*",
+"/4-0*",
+"/4.1*",
+"/4-2*",
+"/4-3*",
+"/4-4*",
+"/4-5*"
+]
+
+let oldUrl = 'https://das-registration-prototype-old.herokuapp.com'
+
+router.get(urls, (req, res, next) => {
+    let urlString = req.originalUrl
+    res.redirect(oldUrl + urlString)(req, res, next);
+})
+
+router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
+    let urlString = req.originalUrl
+    res.redirect(oldUrl + urlString)(req, res, next);
+})
 
 // Add your routes here - above the module.exports line
 
