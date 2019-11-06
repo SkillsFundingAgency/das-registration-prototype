@@ -5,17 +5,7 @@ const router = express.Router()
 let urls = [
 "/service*",
 "/settings*",
-"/accounts*",
-"/1-0*",
-"/1-2*",
-"/2-0*",
-"/3-0*",
-"/4-0*",
-"/4.1*",
-"/4-2*",
-"/4-3*",
-"/4-4*",
-"/4-5*"
+"/accounts*"
 ]
 
 let oldUrl = 'https://das-registration-prototype-old.herokuapp.com'
