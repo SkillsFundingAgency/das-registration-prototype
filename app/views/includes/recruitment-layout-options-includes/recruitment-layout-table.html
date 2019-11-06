@@ -1,22 +1,1696 @@
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Vacancies</h1>
+    <!--
+    <a href="create/title?returnDashaboard=multiple&user=employer" class="govuk-button ">Create vacancy</a>
+     -->
+    <!--
+    <a href="create/title?returnDashaboard=multiple&user=employer" class="govuk-heading-m ">Create vacancy</a>
+     -->
+  </div>
+  <div class="govuk-grid-column-one-third" style="text-align:right;">
+
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="create/title?returnDashaboard=multiple&amp;user=employer" class="govuk-button govuk-!-margin-bottom-2">Create vacancy</a></p>
+
+
+  </div>
 </div>
-</div>
+<!-- Set the pagination variables -->
+
+
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <div class="das-card" style="height: 180px;">
-      <div class="das-card--content">
-        <p class="govuk-body govuk-!-font-weight-bold">
-          <span class="das-card--stat">4</span>
-          <a class="govuk-link govuk-link--no-visited-state" href="vacancies-for-approval">
-            Provider vacancies for approval
-          </a>
-        </p>
-        <p class="govuk-body das-card--description">Review the vacancies that providers have created.</p>
+    <form method="post" action="vacancies">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Filter vacancies
+        </label>
+        <select class="govuk-select" id="filter" name="filter" aria-haspopup="listbox" aria-labelledby="exp_elem exp_button">
+          <optgroup label="Status">
+            <option value="any" selected="selected">all vacancies</option>
+            <option value="live">live vacancies</option>
+            <option value="rejected">rejected vacancies</option>
+            <option value="pending">vacancies pending review</option>
+            <option value="draft">draft vacancies</option>
+            <option value="closed">closed vacancies</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="new">with new applications</option>
+            <option value="withApplication">with applications</option>
+            <option value="closing-no-applications">closing soon with no applications</option>
+            <option value="closing">closing soon</option>
+
+            <option value="transferred">transferred from provider</option>
+
+          </optgroup>
+        </select>
+        <button type="submit" id="filter-submit" class="das-button-filter das-button-secondary govuk-button" style="display: none;">Filter</button>
       </div>
-    </div>
+    </form>
   </div>
-  </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <p class="govuk-body"><a href="provider-view/provider-vacancies" class="govuk-link govuk-link--no-visited-state">See all provider vacancies</a></p>
+
+  <div class="govuk-grid-column-two-thirds">
+    <form action="vacancies" method="get">
+      <div class="row-group">
+        <div class="search-table column-two-thirds govuk-!-margin-bottom-4">
+          <fieldset class="govuk-fieldset">
+            <div class="form-group search-field search-field-darker">
+              <input type="hidden" name="clientsFilter" value="new">
+              <div class="search-input search-input-with-button">
+                <label class="govuk-label" for="search">
+                  <!-- Client reference -->
+                  Search vacancies by title or reference number
+                  <!-- <span class="govuk-hint">Search for a team member by name, role or2 email</span> -->
+                </label>
+                <div class="autocomplete__parent_wrapper">
+                  <div class="autocomplete__wrapper">
+                    <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                      <span>No search results.</span>
+                      <span>,,</span>
+                    </div>
+                    <p id="search-default-value" class="hidden"></p>
+                    <div class="autocomplete__parent_wrapper"><div class="autocomplete__wrapper"><div aria-atomic="true" aria-live="polite" role="status" style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"><span>Type in 3 or more characters for results.</span><span>,,</span></div><input aria-owns="search__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="" role="combobox" type="text"><ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="search__listbox" role="listbox"></ul></div></div><input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search-old" name="" placeholder="Search for vacancy by title or vacancy ID" role="combobox" type="text" value="" style="display: none;">
+                    <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="searchClients__listbox" role="listbox"></ul>
+                  </div>
+                </div>
+                <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="" style="display: none;">
+              </div>
+              <div class="search-submit">
+                <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search clients</button>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p id="table-header" class="govuk-body">
+      All <span class="displayTotal">38</span> vacancies
+
+    </p>
+    <!-- DATA -->
+
+    <div class="govuk-visually-hidden">
+
+    </div>
+
+
+    <!--  -->
+    <div style="display:none;">
+          <span class="data-id">VAC1000000591</span>
+
+          <span class="data-name">Business/Data Administration Apprentice</span>
+          <!-- <span class="data-orgs">Evolve Sales &amp; Marketing Limited</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000293</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Chesterfield College</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000953</span>
+
+          <span class="data-name">IT service desk Apprentice</span>
+          <!-- <span class="data-orgs">Applewood Support Ltd </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000323</span>
+
+          <span class="data-name">Engineering Technician Apprentice</span>
+          <!-- <span class="data-orgs">EEF - The Manufacturers&#39; Organisation</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000597</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Nova Training</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000594</span>
+
+          <span class="data-name">Web Development Apprentice</span>
+          <!-- <span class="data-orgs">Cream</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000259</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Positive East</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000516</span>
+
+          <span class="data-name">Entry Level Development Engineer Apprentice</span>
+          <!-- <span class="data-orgs">A J Building Services </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000484</span>
+
+          <span class="data-name">Business/Data Administration Apprentice</span>
+          <!-- <span class="data-orgs">First Choice Homes Oldham</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000453</span>
+
+          <span class="data-name">Web Development Apprentice</span>
+          <!-- <span class="data-orgs">Conisbrough Community Allotment </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000667</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Cavern</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000321</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">Euro Contracts London Limited</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000433</span>
+
+          <span class="data-name">Business Admin Apprentice</span>
+          <!-- <span class="data-orgs">The Change Foundation</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000469</span>
+
+          <span class="data-name">Business Administrator Apprentice</span>
+          <!-- <span class="data-orgs">Social Inclusion for Dyslexia </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000528</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">Grange Welfare Association </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000855</span>
+
+          <span class="data-name">Business/Data Administration Apprentice</span>
+          <!-- <span class="data-orgs">Training &amp; Apprenticeships in Construction Limited </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000619</span>
+
+          <span class="data-name">Business Admin Apprentice</span>
+          <!-- <span class="data-orgs">Grampian Credit Union Limited </span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000285</span>
+
+          <span class="data-name">Service Engineering Apprentice</span>
+          <!-- <span class="data-orgs">Morgan Sindall Construction &amp; Infrastructure</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000279</span>
+
+          <span class="data-name">Service Engineering Apprentice</span>
+          <!-- <span class="data-orgs">Local Access Centre</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000156</span>
+
+          <span class="data-name">Service Engineering Apprentice</span>
+          <!-- <span class="data-orgs">The Maine Group</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000835</span>
+
+          <span class="data-name">Entry Level Development Engineer Apprentice</span>
+          <!-- <span class="data-orgs">Opera North</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000363</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Mind (Rossendale)</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000656</span>
+
+          <span class="data-name">Business Admin Apprentice</span>
+          <!-- <span class="data-orgs">Registers of Scotland</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000289</span>
+
+          <span class="data-name">Business/Data Administration Apprentice</span>
+          <!-- <span class="data-orgs">North West Leicestershire District Council</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000552</span>
+
+          <span class="data-name">Web Development Apprentice</span>
+          <!-- <span class="data-orgs">Services for Independent Living</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000973</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">BILD</span> -->
+          <div>
+
+
+
+
+
+
+
+ </div></div><div style="display:none;">
+          <span class="data-id">VAC1000000318</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">East Riding of Yorkshire Clinical Commissioning Group</span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000874</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">Sense (Nuneaton)</span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000846</span>
+
+          <span class="data-name">Business Administrator Apprentice</span>
+          <!-- <span class="data-orgs">Heeley Bank Care Home </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000532</span>
+
+          <span class="data-name">Business Administrator Apprentice</span>
+          <!-- <span class="data-orgs">Glamorgan Brewery Company Ltd </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000137</span>
+
+          <span class="data-name">Business Admin Apprentice</span>
+          <!-- <span class="data-orgs">Youth Sport Trust</span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000468</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Liquid Personnel Limited</span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000773</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">The Creative &amp; Cultural Company </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000457</span>
+
+          <span class="data-name">Business Administration Apprentice</span>
+          <!-- <span class="data-orgs">KDH Insurance Brokers Limited </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000671</span>
+
+          <span class="data-name">Business Administrator Apprentice</span>
+          <!-- <span class="data-orgs">Shelter </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000477</span>
+
+          <span class="data-name">Engineering Technician Level 3 Product Design and Development Apprentice</span>
+          <!-- <span class="data-orgs">Start Scotland </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000262</span>
+
+          <span class="data-name">Web Development Apprentice</span>
+          <!-- <span class="data-orgs">ABP UK Doncaster</span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+
+        <div style="display:none;">
+          <span class="data-id">VAC1000000262</span>
+
+          <span class="data-name">Web Development in stoke Apprentice</span>
+          <!-- <span class="data-orgs">The Big Life Group </span> -->
+          <div>
+
+
+
+
+
+
+
+
+  Nope
+
+
+
+
+
+
+
+      </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><table class="govuk-table responsive-table das-table--small">
+
+      <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th class="govuk-table__header" scope="col">Vacancy title</th>
+    <th class="govuk-table__header" scope="col">Vacancy ref</th>
+    <th class="govuk-table__header" scope="col">Applications</th>
+    <th class="govuk-table__header" scope="col">Closing date</th>
+    <th class="govuk-table__header" scope="col">Status</th>
+    <th class="govuk-table__header" scope="col"></th>
+  </tr>
+</thead>
+
+
+      <tbody class="govuk-table__body">
+        <!-- set count to capture other vacancies under the search -->
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business/Data Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000591</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>9 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--rejected">Rejected</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview-referred" class="govuk-link">Edit and resubmit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Level 3 Product Design and Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000293</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>23 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--rejected">Rejected</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview-referred" class="govuk-link">Edit and resubmit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>IT service desk Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000953</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>13 Nov 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--draft">Draft</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview?WageType=fixed&amp;duration=24&amp;start_day=4&amp;closing_day=3&amp;shortDescription=&amp;TrainingDescription=&amp;Skills=&amp;qualifications=&amp;ApplicationMethod=&amp;VacancyDescription=&amp;OutcomeDescription=&amp;ThingsToConsider=&amp;EmployerWebsiteUrl=&amp;EmployerContactName=&amp;disability_confident_level=&amp;disability_confident_signed=&amp;questions=" class="govuk-link">Edit and submit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000323</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    4 <span class="govuk-!-font-weight-bold">(2 new )</span>
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>23 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Level 3 Product Design and Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000597</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    5 <span class="govuk-!-font-weight-bold">(1 new )</span>
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>12 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Web Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000594</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    1
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>16 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Level 3 Product Design and Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000259</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    2
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>13 Nov 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Entry Level Development Engineer Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000516</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>11 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--pending review">Pending review</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-no-apprentice" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business/Data Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000484</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>12 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--draft">Draft</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview?WageType=fixed&amp;duration=24&amp;start_day=4&amp;closing_day=3&amp;shortDescription=&amp;TrainingDescription=&amp;Skills=&amp;qualifications=&amp;ApplicationMethod=&amp;VacancyDescription=&amp;OutcomeDescription=&amp;ThingsToConsider=&amp;EmployerWebsiteUrl=&amp;EmployerContactName=&amp;disability_confident_level=&amp;disability_confident_signed=&amp;questions=" class="govuk-link">Edit and submit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Web Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000453</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    0
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>13 Nov 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Level 3 Product Design and Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000667</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    0
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>1 Mar 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000321</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    3
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>9 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Admin Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000433</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>12 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Administrator Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000469</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>16 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--draft">Draft</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview?WageType=fixed&amp;duration=24&amp;start_day=4&amp;closing_day=3&amp;shortDescription=&amp;TrainingDescription=&amp;Skills=&amp;qualifications=&amp;ApplicationMethod=&amp;VacancyDescription=&amp;OutcomeDescription=&amp;ThingsToConsider=&amp;EmployerWebsiteUrl=&amp;EmployerContactName=&amp;disability_confident_level=&amp;disability_confident_signed=&amp;questions=" class="govuk-link">Edit and submit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000528</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>30 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--pending review">Pending review</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-no-apprentice" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business/Data Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000855</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    1
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>30 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Admin Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000619</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>12 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--draft">Draft</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="create/vacancy-preview?WageType=fixed&amp;duration=24&amp;start_day=4&amp;closing_day=3&amp;shortDescription=&amp;TrainingDescription=&amp;Skills=&amp;qualifications=&amp;ApplicationMethod=&amp;VacancyDescription=&amp;OutcomeDescription=&amp;ThingsToConsider=&amp;EmployerWebsiteUrl=&amp;EmployerContactName=&amp;disability_confident_level=&amp;disability_confident_signed=&amp;questions=" class="govuk-link">Edit and submit</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Service Engineering Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000285</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>30 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Service Engineering Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000279</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>23 Apr 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Service Engineering Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000156</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    -
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>11 Jul 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Entry Level Development Engineer Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000835</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    2
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>1 Mar 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--closed">Closed</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy-closed?alert=no" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Engineering Technician Level 3 Product Design and Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000363</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    8 <span class="govuk-!-font-weight-bold">(3 new )</span>
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>16 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Admin Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000656</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    3 <span class="govuk-!-font-weight-bold">(1 new )</span>
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>1 Mar 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business/Data Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000289</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    3
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>16 May 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Web Development Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000552</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+
+    2
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>24 Jun 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        <tr class="govuk-table__row" role="row">
+  <td class="govuk-table__cell das-table-colomn-45" role="gridcell">
+    <span class="table-heading " aria-hidden="true">Vacancy title</span>
+    <span>Business Administration Apprentice</span>
+  </td>
+
+
+  <td class="govuk-table__cell das-table-colomn-25" role="gridcell"><span class="data-orgs">VAC1000000973</span></td>
+
+  <td class="govuk-table__cell govuk-table__cell--numeric" role="gridcell" style="width:10%">
+
+
+    0
+
+  </td><td class="govuk-table__cell das-table-colomn-15" role="gridcell"><span class="table-heading" aria-hidden="true">Closing date</span>13 Nov 2019</td>
+  <td class="govuk-table__cell das-table-colomn-10" role="gridcell"><span class="table-heading" aria-hidden="true">Status</span><span class="das-tag das-tag--live">Live</span></td>
+  <td class="govuk-table__cell das-table-colomn-5" role="gridcell" style="text-align:right">
+
+    <a href="account/manage-vacancy" class="govuk-link">Manage</a>
+
+  </td>
+  </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+
+
+
+    <div class="pager das-pager" aria-hidden="false" style="margin-top:0" data-paging="">
+
+
+      <div class="pager-controls das-pager-controls">
+
+        <ul class="pager-items das-pager-items">
+
+
+
+          <li data-page-number="count">1</li>
+
+
+
+
+          <li data-page-number="count"><a href="?page=2">2</a></li>
+
+
+
+        </ul>
+
+        <a class="pager-next das-pager-next" href="?page=2" aria-hidden="false">Next</a>
+
+      </div>
+
+
+      <div class="das-pager-summary">Showing 1 to 25 of <span id="totalVacancies">38</span> vacancies</div>
+
+
+    </div>
+    <!-- END table -->
+  </div>
+</div>
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    document.getElementById('filter-submit').style.display = "none";
+
+    function filter_list() {
+      var selector = document.getElementById('filter');
+      var value = selector[selector.selectedIndex].value;
+      var search
+      if (document.getElementById('search').value != "") {
+        search = document.getElementById("search").value;
+      }
+      console.log("Sesarch = " + document.getElementById('search').value)
+      if (search) {
+        document.location.href = "vacancies?filter=" + value + "&page=1&search=" + search
+      } else {
+        document.location.href = "vacancies?filter=" + value + "&page=1&search= "
+      }
+
+
+    }
+
+    document.getElementById('filter').onchange = function() {
+      filter_list()
+    };
+    var total = $('#totalVacancies').text()
+
+    $('.displayTotal').text(total)
+    console.log('total = ' + total)
+    if (total == 0) {
+      $('.govuk-table__head').hide();
+    }
+  })
+
+
+  function getUsers() {
+
+    var titles = document.getElementsByClassName("data-name");
+    var ids = document.getElementsByClassName("data-id");
+    var orgs = document.getElementsByClassName("data-orgs");
+    var providers = document.getElementsByClassName("data-providers");
+    var data = [];
+    for (var i = 0; i < titles.length; i++) {
+      // var user=names[i].textContent+" - "+email[i].textContent;
+      var name = titles[i].textContent
+      if (!data.includes(name)) {
+        data.push(name);
+      }
+
+    }
+    for (var i = 0; i < ids.length; i++) {
+      // var user=names[i].textContent+" - "+email[i].textContent;
+      var name = ids[i].textContent
+      data.push(name);
+    }
+    for (var i = 0; i < orgs.length; i++) {
+      // var user=names[i].textContent+" - "+email[i].textContent;
+      var org = orgs[i].textContent;
+      if (data.indexOf(org) == -1) {
+        // no duplicate
+        data.push(org);
+      }
+
+    }
+    // for (var i=0; i<providers.length; i++) {
+    //   // var user=names[i].textContent+" - "+email[i].textContent;
+    //   var provider="<span class='govuk-hint autocomplete__option--hint' style='display:inline'>Provider: </span>" + providers[i].textContent;
+    //   data.push(provider);
+    // }
+    return data;
+  }
+
+  function suggest(data, populateResults) {
+    console.log("suggest is triggered")
+    // const results = "Company Tax Reference: 0029886907,Company Tax Reference: 0066105197,Company Tax Reference: 1468186760,Company Tax Reference: 3606121235,Company Tax Reference: 6704030677".split(",");
+    // const results = Company Tax Reference: 0029886907,Company Tax Reference: 0066105197,Company Tax Reference: 1468186760,Company Tax Reference: 3606121235,Company Tax Reference: 6704030677
+    // const results = JSON.stringify(Company Tax Reference: 0029886907,Company Tax Reference: 0066105197,Company Tax Reference: 1468186760,Company Tax Reference: 3606121235,Company Tax Reference: 6704030677)
+    const results = getUsers();
+    const filteredResults = results.filter(
+      result => result.toUpperCase().indexOf(data.trim().toUpperCase()) !== -1
+    )
+    // console.log(filteredResults)
+    populateResults(filteredResults);
+  }
+
+  // Trigger search click.  Taken out the clich for the prototype.
+  function fireSearch() {
+    setTimeout(function() {
+      $("#searchSubmit").trigger("click")
+    }, 200);
+    // console.log($('.autocomplete__option--focused').html ())
+  }
+  // function fireSearch(){
+  // 	// $("#searchClientsSubmit").trigger("click")
+  //   console.log("pressed")
+  // }
+  var myInput = document.querySelector('#search');
+  var myInputID = myInput.id;
+  var element = document.createElement('div');
+  var value = ""
+
+  if (document.getElementById('search-default-value').innerHTML != "") {
+    value = document.getElementById("search-default-value").innerHTML;
+  }
+
+  element.className = "autocomplete__parent_wrapper";
+  myInput.parentNode.insertBefore(element, myInput)
+  // console.log("value"+document.getElementById("search-default-value").innerHTML)
+  accessibleAutocomplete({
+    // other options
+    element: element,
+    id: myInputID,
+    name: myInput.name,
+    source: suggest,
+    defaultValue: value,
+    confirmOnBlur: false,
+    autoselect: true,
+    minLength: 3,
+    onConfirm: fireSearch,
+    displayMenu: 'overlay'
+  });
+  myInput.style.display = 'none';
+  myInput.id = myInputID + '-old';
+  myInput.name = '';
+</script>
+
+        </main>
