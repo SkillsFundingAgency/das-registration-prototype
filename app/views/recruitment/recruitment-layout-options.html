@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "https://employer:account@ma-employer-account.herokuapp.com/stable"
+    href: "recruitment-layout-options-start"
   }) }}
 {% endblock %}
 
@@ -19,7 +19,7 @@
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">Recruitment</h1>
+        <h1 class="govuk-heading-xl">{{data['recruitment-heading']}}</h1>
       </div>
     </div>
   </div>
@@ -47,5 +47,12 @@
   </div>
 </div>
 
+{% endblock %}
 
+{% block pageScripts %}
+  <script>
+    new MOJFrontend.SortableTable({
+    table: $('table')[0]
+    });
+  </script>
 {% endblock %}

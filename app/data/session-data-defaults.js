@@ -23,6 +23,7 @@ module.exports = {
   "recruitment-provider-scenario": "recruitment_no-provider.html",
   "recruitment-employer-scenario": "recruitment_employer-no-vacancy.html",
   "recruitment-option": "split",
+  "recruitment-heading": "Recruitment",
   "provider-name": "Coventry College"
 
 }
