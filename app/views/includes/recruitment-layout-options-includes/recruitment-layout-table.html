@@ -43,9 +43,10 @@
               </label>
               <select class="govuk-select" id="course-filter" name="course-filter" style="min-width: 100%">
                 <option value="all">All</option>
-                <option value="accountancy-level7">Business: Level 2 (Standard)</option>
-                <option value="accountancy-level3">Software developer: Level 3 (Standard)</option>
-                <option value="saddler">Product Design and Development: Level 3 (Standard)</option>
+                <option value="business-level2">Business: Level 2 (Standard)</option>
+                <option value="software-developer-level3">Software developer: Level 3 (Standard)</option>
+                <option value="product-design-level3">Product Design and Development: Level 3 (Standard)</option>
+                <option value="web-development-level2">Web Development: Level 2 (Standard)</option>
               </select>
             </div>
         </div>
@@ -57,9 +58,12 @@
             </label>
             <select class="govuk-select" id="end-date-filter" name="end-date-filter" style="min-width: 100%">
               <option value="all">All</option>
-              <option value="apr2019">Apr 2019</option>
-              <option value="apr2020">Apr 2020</option>
-              <option value="apr2021">Apr 2021</option>
+              <option value="sep2019">Sep 2019</option>
+              <option value="oct2019">Oct 2019</option>
+              <option value="nov2019">Nov 2019</option>
+              <option value="dec2019">Dec 2019</option>
+              <option value="jan2020">Jan 2020</option>
+              <option value="feb2020">Feb 2020</option>
             </select>
           </div>
       </div>
@@ -72,11 +76,11 @@
             </label>
             <select class="govuk-select" id="status-filter" name="status-filter" style="min-width:100%;">
               <option value="All">All</option>
-              <option value="Completed">Completed</option>
               <option value="Live">Live</option>
-              <option value="Paused">Paused</option>
-              <option value="Stopped">Stopped</option>
-              <option value="Waiting to start">Waiting to start</option>
+              <option value="Draft">Draft</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Pending-review"> Pending review</option>
+              <option value="Closed">Closed</option>
             </select>
           </div>
       </div>
@@ -445,7 +449,7 @@ rows: [
     }
   },
   {
-    text: "14 September 2019",
+    text: "14 Sep 2019",
     attributes: {
       "data-sort-value": "14092019"
     }
