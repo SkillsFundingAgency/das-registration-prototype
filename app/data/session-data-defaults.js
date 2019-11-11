@@ -17,6 +17,8 @@ Example usage:
 
 */
 
+const vacancies = require('./vacancies.json')
+
 module.exports = {
 
   "employer-name": "Plumb Perfect Ltd",
@@ -24,6 +26,6 @@ module.exports = {
   "recruitment-employer-scenario": "recruitment_employer-no-vacancy.html",
   "recruitment-option": "split",
   "recruitment-heading": "Recruitment",
-  "provider-name": "Coventry College"
-
+  "provider-name": "Coventry College",
+  "vacancies": vacancies
 }

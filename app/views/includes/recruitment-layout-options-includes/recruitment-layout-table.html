@@ -1,90 +1,59 @@
-<!-- <div class="govuk-grid-column-two-thirds govuk-grid-row">
-  <form action="manage-your-apprentices-filters-100" method="get">
-    <div class="row-group">
-      <div class="search-table column-two-thirds govuk-!-margin-bottom-4">
-        <fieldset class="govuk-fieldset">
-          <div class="form-group search-field search-field-darker">
-            <input type="hidden" name="clientsFilter" value="new">
-            <div class="search-input search-input-with-button">
-                <label class="govuk-label" for="search">
-                  Search vacancy title or reference number
-                </label>
-              <div class="autocomplete__parent_wrapper">
-                <div class="autocomplete__wrapper">
-                  <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
-                    <span>No search results.</span>
-                    <span>,,</span>
-                  </div>
-                  <p id="search-default-value" class="hidden"></p>
-                  <div class="autocomplete__parent_wrapper"><div class="autocomplete__wrapper" role="combobox" aria-expanded="false"><div aria-atomic="true" aria-live="polite" role="status" style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">Type in 1 or more characters for results.<span>,,</span></div><input aria-owns="search__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="search" name="search" placeholder="" type="text" role="textbox"><ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="search__listbox" role="listbox"></ul></div></div><input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search-old" name="" placeholder="Search by apprentice name or training provider" role="combobox" type="text" value="" style="display: none;">
-                  <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="searchClients__listbox" role="listbox"></ul>
-                </div>
-              </div>
-              <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="" style="display: none;">
-            </div>
-            <div class="search-submit">
-              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search</button>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-  </form>
-</div> -->
-
-
+<!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% Start filter box %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% -->
 <div class="govuk-grid-column-full" style="background-color:#DEE0E2; margin-bottom: 20px; padding-top: 15px">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-            <!-- Course filter -->
-            <div class="govuk-form-group" style="margin-bottom: 20px">
-              <label class="govuk-label" for="course-filter">
-                  Vacancy title
-              </label>
-              <select class="govuk-select" id="course-filter" name="course-filter" style="min-width: 100%">
-                <option value="all">All</option>
-                <option value="business-level2">Business: Level 2 (Standard)</option>
-                <option value="software-developer-level3">Software developer: Level 3 (Standard)</option>
-                <option value="product-design-level3">Product Design and Development: Level 3 (Standard)</option>
-                <option value="web-development-level2">Web Development: Level 2 (Standard)</option>
-              </select>
-            </div>
-        </div>
-      <div class="govuk-grid-column-one-third">
-          <!-- Closing date filter -->
+  <div class="govuk-grid-row">
+
+      <!-- Course filter -->
+      <!-- <div class="govuk-grid-column-one-third">
           <div class="govuk-form-group" style="margin-bottom: 20px">
-            <label class="govuk-label" for="end-date-filter">
-              Closing date
+            <label class="govuk-label" for="course-filter">
+                Vacancy title
             </label>
-            <select class="govuk-select" id="end-date-filter" name="end-date-filter" style="min-width: 100%">
+            <select class="govuk-select" id="course-filter" name="course-filter" style="min-width: 100%">
               <option value="all">All</option>
-              <option value="sep2019">Sep 2019</option>
-              <option value="oct2019">Oct 2019</option>
-              <option value="nov2019">Nov 2019</option>
-              <option value="dec2019">Dec 2019</option>
-              <option value="jan2020">Jan 2020</option>
-              <option value="feb2020">Feb 2020</option>
+              <option value="business-level2">Business: Level 2 (Standard)</option>
+              <option value="software-developer-level3">Software developer: Level 3 (Standard)</option>
+              <option value="product-design-level3">Product Design and Development: Level 3 (Standard)</option>
+              <option value="web-development-level2">Web Development: Level 2 (Standard)</option>
             </select>
           </div>
+      </div> -->
+
+      <!-- Closing date filter -->
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group" style="margin-bottom: 20px">
+          <label class="govuk-label" for="end-date-filter">
+            Closing date
+          </label>
+          <select class="govuk-select" id="end-date-filter" name="end-date-filter" style="min-width: 100%">
+            <option value="all">All</option>
+            <option value="sep2019">Sep 2019</option>
+            <option value="oct2019">Oct 2019</option>
+            <option value="nov2019">Nov 2019</option>
+            <option value="dec2019">Dec 2019</option>
+            <option value="jan2020">Jan 2020</option>
+            <option value="feb2020">Feb 2020</option>
+          </select>
+        </div>
       </div>
 
+      <!-- Status filter -->
       <div class="govuk-grid-column-one-third">
-          <!-- Start dates filter -->
-          <div class="govuk-form-group" style="margin-bottom: 20px">
-            <label class="govuk-label" for="status-filter">
-              Status
-            </label>
-            <select class="govuk-select" id="status-filter" name="status-filter" style="min-width:100%;">
-              <option value="All">All</option>
-              <option value="Live">Live</option>
-              <option value="Draft">Draft</option>
-              <option value="Rejected">Rejected</option>
-              <option value="Pending-review"> Pending review</option>
-              <option value="Closed">Closed</option>
-            </select>
-          </div>
+        <div class="govuk-form-group" style="margin-bottom: 20px">
+          <label class="govuk-label" for="status-filter">
+            Status
+          </label>
+          <select class="govuk-select" id="status-filter" name="status-filter" style="min-width:100%;">
+            <option value="All">All</option>
+            <option value="Live">Live</option>
+            <option value="Draft">Draft</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Pending-review"> Pending review</option>
+            <option value="Closed">Closed</option>
+          </select>
+        </div>
       </div>
     </div>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <a class="govuk-button" href="manage-your-apprentices-filtered-view" style="margin-bottom: 20px">Apply filters</a>
@@ -92,9 +61,37 @@
     </div>
   </div>
 
+  <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% End filter box %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% -->
+
   <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Create a new vacancy</a></p>
 
-{{ govukTable({
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Vacancy title</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Applications</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Closing date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% for vacancy in data['vacancies'] %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+        <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+        <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+        <td class="govuk-table__cell">{{vacancy['status']}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">{{vacancy['actionLink']}}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+<!-- {{ govukTable({
 head: [
 {
   text: "Vacancy title",
@@ -463,4 +460,4 @@ rows: [
   }
 ]
 ]
-}) }}
+}) }} -->
