@@ -128,7 +128,7 @@
     "newApplications": 0,
     "closingDate": "2 Feb 2020",
     "status": "Pending review",
-    "actionLink": "Edit and resubmit",
+    "actionLink": "Review",
     "owner": "Provider",
     "dataSortValue": "20200202"
   },
@@ -139,7 +139,7 @@
     "newApplications": 0,
     "closingDate": "2 Feb 2020",
     "status": "Pending review",
-    "actionLink": "Edit and resubmit",
+    "actionLink": "Review",
     "owner": "Provider",
     "dataSortValue": "20200202"
   },
