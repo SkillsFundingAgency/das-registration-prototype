@@ -33,6 +33,7 @@
     "dataSortValue": "20200123"
   },
   {
+
     "vacancyTitle": "Web Development: Level 2 (Standard)",
     "vacancyReference": "VAC1000000134",
     "applications": 0,
@@ -128,7 +129,7 @@
     "closingDate": "2 Feb 2020",
     "status": "Pending review",
     "actionLink": "Edit and resubmit",
-    "owner": "Employer",
+    "owner": "Provider",
     "dataSortValue": "20200202"
   },
   {
@@ -139,7 +140,7 @@
     "closingDate": "2 Feb 2020",
     "status": "Pending review",
     "actionLink": "Edit and resubmit",
-    "owner": "Employer",
+    "owner": "Provider",
     "dataSortValue": "20200202"
   },
   {

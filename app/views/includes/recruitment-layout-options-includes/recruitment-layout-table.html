@@ -1,3 +1,39 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <form action="#" method="get">
+    <div class="row-group">
+      <div class="search-table column-two-thirds govuk-!-margin-bottom-4">
+        <fieldset class="govuk-fieldset">
+          <div class="form-group search-field search-field-darker">
+            <input type="hidden" name="clientsFilter" value="new">
+            <div class="search-input search-input-with-button">
+                <label class="govuk-label" for="search">
+                  Search vacancy title or reference
+                </label>
+              <div class="autocomplete__parent_wrapper">
+                <div class="autocomplete__wrapper">
+                  <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                    <span>No search results.</span>
+                    <span>,,</span>
+                  </div>
+                  <p id="search-default-value" class="hidden"></p>
+                  <div class="autocomplete__parent_wrapper"><div class="autocomplete__wrapper" role="combobox" aria-expanded="false"><div aria-atomic="true" aria-live="polite" role="status" style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">Type in 1 or more characters for results.<span>,,</span></div><input aria-owns="search__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="search" name="search" placeholder="" type="text" role="textbox"></div></div><input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search-old" name="" placeholder="Search by apprentice name or training provider" role="combobox" type="text" value="" style="display: none;">
+
+                </div>
+              </div>
+              <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="" style="display: none;">
+            </div>
+            <div class="search-submit">
+              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search</button>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
 <!-- %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% Start filter box %&%&%&%&%&%&%&%&%&%&%&%&%&%&%&%&% -->
 <div class="govuk-grid-column-full" style="background-color:#DEE0E2; margin-bottom: 20px; padding-top: 15px">
   <div class="govuk-grid-row">
@@ -69,6 +105,7 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header" aria-sort="ascending">Vacancy title</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Created by</th>
         <th scope="col" class="govuk-table__header" aria-sort="none">Applications</th>
         <th scope="col" class="govuk-table__header" aria-sort="none">Closing date</th>
         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
@@ -79,10 +116,11 @@
       {% for vacancy in data['vacancies'] %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+        <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
         <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
         <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
         <td class="govuk-table__cell">{{vacancy['status']}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">{{vacancy['actionLink']}}</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">{{vacancy['actionLink']}}</a></td>
       </tr>
       {% endfor %}
     </tbody>

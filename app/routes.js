@@ -1,7 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-// Redirect old prototype
+/*
+============================================================================
+Redirect to old prototype
+============================================================================
+*/
 let urls = [
 "/service*",
 "/settings*",
@@ -22,7 +26,11 @@ router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
 
 // Add your routes here - above the module.exports line
 
-// Add a PAYE account branching
+/*
+============================================================================
+Add a PAYE account branching
+============================================================================
+*/
 router.post('/way-to-add-paye', function (req, res) {
 
   let wayToAddPaye = req.session.data['way-to-add-paye']
@@ -34,7 +42,11 @@ router.post('/way-to-add-paye', function (req, res) {
   }
 })
 
-// Add paye funding scheme branching
+/*
+============================================================================
+Add paye funding scheme branching
+============================================================================
+*/
 router.post('/registration/add-paye-scheme', function (req, res) {
 
   let addPayeScheme = req.session.data['add-paye-scheme']
@@ -50,7 +62,11 @@ router.post('/registration/add-paye-scheme', function (req, res) {
   }
 })
 
-// Agreement check branching
+/*
+============================================================================
+Agreement check branching
+============================================================================
+*/
 router.post('/registration/agreement-check', function (req, res) {
 
   let agreementCheck = req.session.data['agreement-check']
@@ -62,7 +78,11 @@ router.post('/registration/agreement-check', function (req, res) {
   }
 })
 
-// Agreement branching
+/*
+============================================================================
+Agreement branching
+============================================================================
+*/
 router.post('/registration/agreementSign', function (req, res) {
 
   let agreementSign = req.session.data['agreementSign']
@@ -74,7 +94,11 @@ router.post('/registration/agreementSign', function (req, res) {
   }
 })
 
-// Review vacancy branching
+/*
+============================================================================
+Review vacancy branching
+============================================================================
+*/
 router.post('/recruitment/vacancy-review', function (req, res) {
 
   let variableName = req.session.data['approve-reject-vacancy']
@@ -86,7 +110,11 @@ router.post('/recruitment/vacancy-review', function (req, res) {
   }
 })
 
-// Vacancy approved branching
+/*
+============================================================================
+Vacancy approved branching
+============================================================================
+*/
 router.post('/recruitment/vacancy-approved', function (req, res) {
 
   let variableName = req.session.data['what-do-next']
@@ -98,7 +126,11 @@ router.post('/recruitment/vacancy-approved', function (req, res) {
   }
 })
 
-// Vacancy rejected branching
+/*
+============================================================================
+Vacancy rejected branching
+============================================================================
+*/
 router.post('/recruitment/vacancy-rejected', function (req, res) {
 
   let variableName = req.session.data['what-do-next']
@@ -110,7 +142,11 @@ router.post('/recruitment/vacancy-rejected', function (req, res) {
   }
 })
 
-//Permissions changed branching
+/*
+============================================================================
+Permissions changed branching
+============================================================================
+*/
 router.post('/provider-permissions/permissions-changed-confirmation', function (req, res) {
 
   let variableName = req.session.data['where-go-next']
@@ -133,14 +169,22 @@ router.post('/provider-permissions/permissions-changed-confirmation', function (
 //   }
 // })
 
-//set referrer for returning from homepage
+/*
+============================================================================
+Set referrer for returning from homepage
+============================================================================
+*/
 router.get('agreement', function (req, res) {
   res.render('/registration/agreement', {
           _referrer: req.query.referrer
         });
 })
 
-//set referrer for linking from homepage
+/*
+============================================================================
+Set referrer for linking from homepage
+============================================================================
+*/
 router.get('recruitment', function (req, res) {
   res.render('/recruitment/recruitment', {
           _referrer: req.query.referrer
