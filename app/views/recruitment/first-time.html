@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage apprenticeships
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Recruitment
+      </h1>
+
+      <p class="govuk-body">Recruit an apprentie by creating a vacancy. vacancies will be advertised on <a href="#" class="govuk-link govuk-link--no-visited-state">Find an apprenticeship</a>.</p>
+
+      <h2 class="govuk-heading-m">
+        What you will need
+      </h2>
+
+      <p class="govuk-body">Before you create your vacancy, you'll need to choose appropriate <a href="#" class="govuk-link govuk-link--no-visited-state">apprenticeship training</a> and get some information from your training provider. If you don't have a trainind provider yet, you can find one on the next page.</p>
+
+      <p>You’ll need the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the name of the apprenticeship training</li>
+        <li>the training provider ID (UKPRN)</li>
+        <li>the duration of the apprenticeship</li>
+        <li>the amount of hours spent working and training</li>
+        <li>the amount you'd like to pay your apprentice</li>
+      </ul>
+
+      {{ govukInsetText({
+        text: "It should take no longer than 30 minutes to create your first vacancy."
+      }) }}
+
+      {{ govukButton({
+        text: "Go to recruitment",
+        href: "/recruitment/recruitment?recruitment-provider-scenario=recruitment_no-provider.html&recruitment-employer-scenario=recruitment_employer-no-vacancy.html"
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Get help",
+        text: "Get help here."
+      }) }}
+
+
+    </div>
+
+  </div>
+{% endblock %}

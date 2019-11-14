@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const _ = require('underscore')
 /*
 ============================================================================
 Redirect to old prototype
@@ -189,6 +189,20 @@ router.get('recruitment', function (req, res) {
   res.render('/recruitment/recruitment', {
           _referrer: req.query.referrer
         });
+})
+
+/*
+============================================================================
+Filter vacancies
+============================================================================
+*/
+
+router.get('/recruitment/recruitment-layout-options', function (req, res) {
+  let s = req.session.data['status-filter']
+  let v = req.session.data['vacancies']
+  let filteredVacancies = (s == 'All') ? v : _.filter(v, function(i) {return i.status === s});
+
+  res.render('recruitment/recruitment-layout-options', {filteredVacancies})
 })
 
 module.exports = router
