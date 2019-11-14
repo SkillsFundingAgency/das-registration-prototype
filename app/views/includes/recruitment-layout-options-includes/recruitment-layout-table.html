@@ -21,17 +21,85 @@
     </thead>
     <tbody class="govuk-table__body">
 
-    {% for vacancy in data['vacancies'] %}
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
-        <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
-        <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
-        <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
-        <td class="govuk-table__cell">{{vacancy['status']}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">{{vacancy['actionLink']}}</a></td>
-      </tr>
-    {% endfor %}
 
+      {% for vacancy in data['vacancies'] %}
+      {% if data['vacancy-filter'] == 'all' %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{vacancy['status']}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">{{vacancy['actionLink']}}</a></td>
+        </tr>
+        {% endif %}
+
+      {% if data['vacancy-filter'] == 'draft' %}
+      {% if loop.index0 <= 7 %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{data ['vacancy-filter'] | capitalize}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">Edit and resubmit</a></td>
+        </tr>
+        {% endif %}
+        {% endif %}
+
+        {% if data['vacancy-filter'] == 'rejected' %}
+        {% if loop.index0 <= 1 %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{data ['vacancy-filter'] | capitalize}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">Edit and resubmit</a></td>
+        </tr>
+        {% endif %}
+        {% endif %}
+
+        {% if data['vacancy-filter'] == 'live' %}
+        {% if loop.index0 <= 10 %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{data ['vacancy-filter'] | capitalize}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">Manage</a></td>
+        </tr>
+        {% endif %}
+        {% endif %}
+
+        {% if data['vacancy-filter'] == 'pending review' %}
+        {% if loop.index0 <= 1 %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{{data ['provider-name']}}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{data ['vacancy-filter'] | capitalize}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">Review</a></td>
+        </tr>
+        {% endif %}
+        {% endif %}
+
+        {% if data['vacancy-filter'] == 'closed' %}
+        {% if loop.index0 <= 10 %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{vacancy['vacancyTitle']}}<br>{{vacancy['vacancyReference']}}</td>
+          <td class="govuk-table__cell">{% if vacancy['owner'] == "Employer" %}{{data ['employer-name']}}{% else %}{{data ['provider-name']}}{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
+          <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
+          <td class="govuk-table__cell">{{data ['vacancy-filter'] | capitalize}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">Manage</a></td>
+        </tr>
+        {% endif %}
+        {% endif %}
+
+      {% endfor %}
 
     </tbody>
   </table>
