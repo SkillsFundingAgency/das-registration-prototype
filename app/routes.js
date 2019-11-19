@@ -86,11 +86,33 @@ Agreement branching
 router.post('/registration/agreementSign', function (req, res) {
 
   let agreementSign = req.session.data['agreementSign']
+  let providerLed = req.session.data['provider-led']
 
-  if (agreementSign === 'yesSign') {
+  if (agreementSign === 'yesSign' && providerLed === 'yes') {
+    res.redirect('/provider-permissions/change-provider-permissions?createCohort=yes&reserveFunding=yes&addVacancy=yes&notifyCandidates=yes&createShortlist=no&orgName=Coventry College')
+  }
+  else if (agreementSign === 'yesSign') {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
-  } else {
+  }
+  else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=no&reserved-funding=no&employer-type=non-levy')
+  }
+})
+
+/*
+============================================================================
+Check permissions answers branching
+============================================================================
+*/
+router.post('/provider-permissions/check-permissions-answers', function (req, res) {
+
+  let providerLed = req.session.data['provider-led']
+
+  if (providerLed === 'yes') {
+    res.redirect('https://ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
+  }
+  else {
+    res.redirect('permissions-changed-confirmation')
   }
 })
 
@@ -105,7 +127,8 @@ router.post('/recruitment/vacancy-review', function (req, res) {
 
   if (variableName === 'approve-vacancy') {
     res.redirect('/recruitment/vacancy-approved')
-  } else {
+  }
+  else {
     res.redirect('/recruitment/vacancy-rejected')
   }
 })
@@ -121,7 +144,8 @@ router.post('/recruitment/vacancy-approved', function (req, res) {
 
   if (variableName === 'review-more-vacancies') {
     res.redirect('/recruitment/vacancies-for-approval')
-  } else {
+  }
+  else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   }
 })
@@ -137,7 +161,8 @@ router.post('/recruitment/vacancy-rejected', function (req, res) {
 
   if (variableName === 'review-more-vacancies') {
     res.redirect('/recruitment/vacancies-for-approval')
-  } else {
+  }
+  else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   }
 })
@@ -153,7 +178,8 @@ router.post('/provider-permissions/permissions-changed-confirmation', function (
 
   if (variableName === 'provider-homepage') {
     res.redirect('/provider-permissions/providers')
-  } else {
+  }
+  else {
     res.redirect((req.session.data['referrer'] || 'https://ma-employer-account.herokuapp.com/stable')+'?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy')
   }
 })
