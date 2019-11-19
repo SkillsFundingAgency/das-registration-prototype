@@ -1,0 +1,65 @@
+<form>
+<div class="govuk-grid-column-full" style="background-color:#DEE0E2; margin-bottom: 20px; padding-top: 15px">
+  <div class="govuk-grid-row">
+
+      <!-- Course filter -->
+      <!-- <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group" style="margin-bottom: 20px">
+            <label class="govuk-label" for="course-filter">
+                Vacancy title
+            </label>
+            <select class="govuk-select" id="course-filter" name="course-filter" style="min-width: 100%">
+              <option value="all">All</option>
+              <option value="business-level2">Business: Level 2 (Standard)</option>
+              <option value="software-developer-level3">Software developer: Level 3 (Standard)</option>
+              <option value="product-design-level3">Product Design and Development: Level 3 (Standard)</option>
+              <option value="web-development-level2">Web Development: Level 2 (Standard)</option>
+            </select>
+          </div>
+      </div> -->
+
+      <!-- Closing date filter -->
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group" style="margin-bottom: 20px">
+          <label class="govuk-label" for="end-date-filter">
+            Closing date
+          </label>
+          <select class="govuk-select" id="end-date-filter" name="end-date-filter" style="min-width: 100%">
+            <option value="all">All</option>
+            <option value="sep2019">Sep 2019</option>
+            <option value="oct2019">Oct 2019</option>
+            <option value="nov2019">Nov 2019</option>
+            <option value="dec2019">Dec 2019</option>
+            <option value="jan2020">Jan 2020</option>
+            <option value="feb2020">Feb 2020</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Status filter -->
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group" style="margin-bottom: 20px">
+          <label class="govuk-label" for="status-filter">
+            Status
+          </label>
+          <select class="govuk-select" id="status-filter" name="status-filter" style="min-width:100%;">
+            <option value="All">All</option>
+            <option value="Live">Live</option>
+            <option value="Draft">Draft</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Pending-review"> Pending review</option>
+            <option value="Closed">Closed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        {{ govukButton({
+          text: "Apply filter"
+        }) }}
+      </div>
+    </div>
+  </div>
+</form>

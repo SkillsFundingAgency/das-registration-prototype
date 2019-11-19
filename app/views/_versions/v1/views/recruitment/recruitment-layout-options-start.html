@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Recruitment homepage versions</h1>
+
+    {{ govukButton({
+      text: "Split",
+      href: "recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html&recruitment-heading=Recruitment"
+    }) }}
+    <br>
+    {{ govukButton({
+      text: "Merged",
+      href: "recruitment-layout-options?recruitment-layout-option=recruitment-layout-merged.html&recruitment-heading=Recruitment"
+    }) }}
+    <br>
+    {{ govukButton({
+      text: "Table",
+      href: "recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=All"
+    }) }}
+
+  </div>
+</div>
+
+
+{% endblock %}

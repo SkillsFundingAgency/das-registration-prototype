@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Permissions changed
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Permissions updated",
+        html: "You've successfully saved permissions for <strong>Coventry College</strong>"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Once your provider has submitted a vacancy for approval, it will show on your recruitment dashboard. <a class="govuk-link govuk-link--no-visited-state" href="#">Manage your recruitment emails</a> if you'd like to get an email.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- <h2 class="govuk-heading-m">What do you want to do next?</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="providers">return to permissions homepage</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="https://employer:account@ma-employer-account.herokuapp.com/stable?add-paye-now=yes&sign-agreement-now=yes&reserved-funding=yes&employer-type=non-levy">go to your account homepage</a></li>
+      </ul> -->
+
+
+      <form method="post">
+        {{ govukRadios({
+          idPrefix: "where-go-next",
+          name: "where-go-next",
+          fieldset: {
+            legend: {
+              text: "What do you want to do next?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "provider-homepage",
+              text: "Return to permissions homepage"
+            },
+            {
+              value: "account-homepage",
+              text: "Go to your account homepage"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

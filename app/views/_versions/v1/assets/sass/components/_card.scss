@@ -1,0 +1,31 @@
+.das-card {
+  background-color: #ffffff;
+  border: 1px solid #bfc1c3;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.das-card__heading {
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+.das-card--content  {
+  padding: 20px;
+}
+
+.das-card--description  {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.das-card--stat {
+  display: block;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.das-card--links  {
+  font-size:  16px;
+}

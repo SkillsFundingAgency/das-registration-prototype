@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      	Registrations and recruitment research
+      </h1>
+
+    </div>
+  </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="border:5px solid SteelBlue; background: GhostWhite" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    	<h2 class="govuk-heading-l">
+    		Scenarios
+    	</h2>
+
+    	<div class="govuk-grid-row">
+    		<div class="govuk-grid-column-one-half">
+    			<h3 class="govuk-heading-s">
+    				Employer-led
+    			</h3>
+    			<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+    				<li>
+    					<a class="govuk-link govuk-link--no-visited-state" href="https://esfa:educ4tion@das-recruit-prototype.herokuapp.com/permissions/0-1-13/home?start=none">recruitment permission but with approval</a>
+    				</li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="https://esfa:educ4tion@das-recruit-prototype.herokuapp.com/raa-v2/0-1-13/collaboration/review-vacancies?return_dashboard=dashboard3-review-only&review_complete=">comment and reject vacancy</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-link--no-visited-state" href="https://esfa:educ4tion@das-recruit-prototype.herokuapp.com/permissions/0-1-13/home">approve vacancy</a>
+            </li>
+    			</ul>
+    		</div>
+
+    		<div class="govuk-grid-column-one-half">
+    			<h3 class="govuk-heading-s">
+    				Provider-led
+    			</h3>
+    			<ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+    				<li>
+    					<a class="govuk-link govuk-link--no-visited-state" href="https://esfa:educ4tion@das-recruit-prototype.herokuapp.com/raa-v2/0-2-1/recruitment/vacancies?filter=draft">send vacancy to be approved</a>
+    				</li>
+            <li>
+    						<a class="govuk-link govuk-link--no-visited-state" href="https://esfa:educ4tion@das-recruit-prototype.herokuapp.com/raa-v2/0-2-1/recruitment/vacancies?filter=rejected">edit, respond to comment and re-submit</a>
+    				</li>
+
+
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

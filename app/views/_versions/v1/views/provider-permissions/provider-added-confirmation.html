@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provider overview
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "providers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        {{data['provider-name']}} added to your account
+      </h1>
+    </div>
+
+    <p class="govuk-body">{{data['provider-name']}} currently has no permissions to manage your apprenticeships.</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      {{ govukRadios({
+        idPrefix: "where-go-next",
+        name: "where-go-next",
+        fieldset: {
+          legend: {
+            text: "What do you want to do next?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "set-permissions",
+            html: "Set permissions for "+data['provider-name']+""
+          },
+          {
+            value: "account-homepage",
+            text: "Go to your account homepage"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

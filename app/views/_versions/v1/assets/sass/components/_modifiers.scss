@@ -1,0 +1,111 @@
+.success-summary  {
+  border: solid 5px #28a197;
+  padding: 20px 15px 15px;
+  margin: 0;
+}
+
+.accordion-modified {
+  margin-bottom: 0;
+}
+
+//&%&%&%&%&%&%&%&%&%&%&%&%&%&% Search form &%&%&%&%&%&%&%&%&%&%&%&%&%&%//
+
+.search-field {
+  position: relative;
+}
+
+.search-input-with-button {
+  padding-right: 50px;
+}
+
+.search-input {
+  position: static;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete__wrapper  {
+  position: relative;
+}
+
+.autocomplete__input  {
+  background-color: transparent;
+  position: relative;
+}
+
+.search-field-darker .search-input input  {
+  border-color: #6f777b;
+}
+
+.search-input input {
+  font-size: 19px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 10px;
+  display: block;
+  height: 50px;
+  border-color: #bfc1c3;
+  line-height: 48px !important;
+}
+
+.autocomplete__menu {
+  background-color: #fff;
+  border: 2px solid #0b0c0c;
+      border-top-color: rgb(11, 12, 12);
+      border-top-style: solid;
+      border-top-width: 2px;
+  border-top: 0;
+  color: #34384b;
+  margin: 0;
+  max-height: 342px;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  width: calc(100% - 4px);
+}
+
+.search-submit  {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  overflow: visible;
+}
+
+.search-submit button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border: none;
+  overflow: hidden;
+  text-indent: -5000px;
+  color: #fff;
+  background-color: #2b8cc4;
+  background-image: url("/public/images/search-button.png");
+  background-repeat: no-repeat;
+  background-position: -12.5% 50%;
+}
+
+.das-table--small{
+  font-size:  1em;
+}
