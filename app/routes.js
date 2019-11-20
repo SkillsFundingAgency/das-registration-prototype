@@ -24,7 +24,17 @@ router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
     res.redirect(oldUrl + urlString)(req, res, next);
 })
 
-// Add your routes here - above the module.exports line
+
+/*
+============================================================================
+Versions
+============================================================================
+*/
+router.use(/\/versions\/version-([0-99]+)/, (req, res, next) => {
+    require(`./views/versions/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Branching starts here
 
 /*
 ============================================================================
