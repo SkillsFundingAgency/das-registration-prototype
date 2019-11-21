@@ -29,7 +29,7 @@
           <td class="govuk-table__cell" data-sort-value="{{vacancy['applications']}}">{% if vacancy['applications'] > 0 %}{{vacancy['applications']}}{% else %}-{% endif %}{% if vacancy['newApplications'] > 0 %} <b>({{vacancy['newApplications']}} new)</b>{% endif %}</td>
           <td class="govuk-table__cell" data-sort-value="{{vacancy['dataSortValue']}}">{{vacancy['closingDate']}}</td>
           <td class="govuk-table__cell">{{vacancy['status']}}</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link govuk-link--no-visited-state">{{vacancy['actionLink']}}</a></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="{{vacancy['link']}}" class="govuk-link govuk-link--no-visited-state">{{vacancy['actionLink']}}</a></td>
         </tr>
       {% endfor %}
 
