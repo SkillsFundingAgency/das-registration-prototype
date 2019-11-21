@@ -30,8 +30,8 @@ router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
 Versions
 ============================================================================
 */
-router.use(/\/versions\/version-([0-99]+)/, (req, res, next) => {
-    require(`./views/versions/version-${req.params[0]}/routes`)(req, res, next);
+router.use(/\/_versions\/version-([0-99]+)/, (req, res, next) => {
+    require(`./views/_versions/version-${req.params[0]}/routes`)(req, res, next);
 })
 
 // Branching starts here
