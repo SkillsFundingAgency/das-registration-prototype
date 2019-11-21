@@ -126,7 +126,8 @@
     "applications": 0,
     "newApplications": 0,
     "closingDate": "2 Feb 2020",
-    "status": "Pending review",
+    "status": "Pending-review",
+    "link": "vacancies-for-approval",
     "actionLink": "Review",
     "owner": "Provider",
     "dataSortValue": "20200202"
@@ -137,7 +138,8 @@
     "applications": 0,
     "newApplications": 0,
     "closingDate": "2 Feb 2020",
-    "status": "Pending review",
+    "status": "Pending-review",
+    "link": "vacancies-for-approval",
     "actionLink": "Review",
     "owner": "Provider",
     "dataSortValue": "20200202"
