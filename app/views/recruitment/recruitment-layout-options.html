@@ -5,11 +5,9 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "recruitment-layout-options-start"
-  }) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
+
 
 {% block content %}
 
