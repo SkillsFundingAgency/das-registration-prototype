@@ -20,5 +20,6 @@ module.exports = {
   "recruitment-heading": "Recruitment",
   "provider-name": "Coventry College",
   "vacancies": vacancies,
-  "vacancy-filter": "all"
+  "vacancy-filter": "all",
+  "employer-comments": "Try again..."
 }
