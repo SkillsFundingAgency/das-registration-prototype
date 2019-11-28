@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Recruitment homepage versions</h1>
+
+
+    {{ govukTable({
+      head: [
+        {
+          text: "Scenario"
+        },
+        {
+          text: "Description"
+        },
+        {
+          text: "Link",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "1"
+          },
+          {
+            text: "Confirmation message for provider with “Allow but review“ permission"
+          },
+          {
+            html: "<a href='vacancy-check?permission-scenario=1'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "2"
+          },
+          {
+            text: "Confirmation message for provider with “Allow“ permission"
+          },
+          {
+            html: "<a href='vacancy-check?permission-scenario=2'>Open</a>",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+
+
+
+  </div>
+</div>
+{% endblock %}
