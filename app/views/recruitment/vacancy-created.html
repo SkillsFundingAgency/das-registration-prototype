@@ -21,12 +21,27 @@
 
       <h2 class="govuk-heading-m">Next steps</h2>
 
+
+      {% if data['permission-scenario'] == 1 %}
+      <p class="govuk-body">
+        {{data ['employer-name']}} will check the vacancy, you’ll be able to see on the dashboard if you need to make any edits.
+      </p>
+      <p class="govuk-body">
+        Once the employer has approved the vacancy it will be sent for review before appears on the Find an apprenticeship service.
+      </p>
+      {% endif %}
+      {% if data['permission-scenario'] == 2 %}
       <p class="govuk-body">
         We’ll check the vacancy and tell you within one working day on the dashboard if you need to make any edits. Visit Manage your recruitment emails if you’d also like to get an email.
       </p>
       <p class="govuk-body">
         Once the vacancy is reviewed, it will appear on the Find an apprenticeship service.
       </p>
+      {% endif %}
+
+
+
+
 
       <form method="post">
         {{ govukRadios({
