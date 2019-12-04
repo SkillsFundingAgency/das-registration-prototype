@@ -1,0 +1,334 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<style media="screen">
+  .govuk-heading-s{
+    margin-bottom: .3125em;
+  }
+  .das-edit-link{margin-top:-10px}
+</style>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="govuk-body">This is how the vacancy will appear to candidates on <a href="https://www.gov.uk/apply-apprenticeship" rel="noopener" target="_blank">Find an apprenticeship</a></p>
+
+    <div class="govuk-info-summary das-referred-summary" aria-labelledby="info-summary-title" role="alert" tabindex="-1" data-module="info-summary">
+      <div class="govuk-info-summary__body">
+          <h2 class="heading-medium error-summary-heading">
+            <span class="das-icon-cross das-icon-error" aria-label="Changes are needed to this section">×</span> Changes needed
+          </h2>
+
+          <p>This vacancy has been reviewed by {{data ['employer-name']}} and they have the following comments:</p>
+          <p>{{data ['employer-comments']}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="das-referred--section">
+    <h2 id="Title" class="govuk-heading-xl govuk-!-margin-bottom-6">
+      <span class="das-icon-cross das-icon-error" aria-label="Edits are needed to this section">×</span> Software Support and Development Apprentice
+      <span class="govuk-caption-l">ABC opticians</span>
+    </h2>
+    <a href="#" class="govuk-link das-edit-link">Change</a>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-s">Brief overview</h3>
+    <p class="govuk-body">Ever wondered how a computer program works? Our client has an exciting new opportunity for an aspiring Software Developer who will help the company develop and grow their team further into the future.</p>
+    <a href="#" class="govuk-link das-edit-link">Change</a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-s">Closing date</h3>
+    <p class="govuk-body">01 Jan 2019</p>
+    <a href="#" class="govuk-link das-edit-link">Change</a>
+  </div>
+</div>
+
+<div class="govuk-grid-row" id="apprenticeshipSummary">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Apprenticeship summary</h2>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <ul class="govuk-list">
+      <li>
+        <h3 class="govuk-heading-s">Working week</h3>
+        <p class="govuk-body">Monday to Friday 9am to 5pm</p>
+        <p class="govuk-body">Total hours per week: 40</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Yearly wage</h3>
+        <p class="govuk-body">£3,494.40 - £6,514.56</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Expected duration</h3>
+        <p class="govuk-body">1 Year</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Possible start date</h3>
+        <p class="govuk-body">24 Dec 2018</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Apprenticeship level</h3>
+        <p class="govuk-body">Advanced <br>Level 3 (equivalent to A Level)</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Positions</h3>
+        <p class="govuk-body">2 positions available</p>
+        <p><a href="#" class="govuk-link das-edit-link">Change</a></p>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-half" id="vacancyDescription">
+    <ul class="govuk-list">
+      <li>
+        <h3 class="govuk-heading-s">What you will do in your working day</h3>
+        <p class="govuk-body">As a Level 3 Software Developer Apprentice, you will be undertaking a recognised apprenticeship qualification, including Microsoft certifications, at the same time as working as part of the company’s Software Development team.</p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">The training you will be getting</h3>
+        <p class="govuk-body">You’ll work as part of the team to learn about the latest technologies used to deliver what is needed, including C# within the MVC framework, supported by the use of test driven development (TDD), continuous integration using Team City and continuous deployment using Octopus Deploy.</p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">What to expect at the end of your apprenticeship</h3>
+        <p class="govuk-body">As a Microsoft Software Developer Apprentice your main role and responsibilities will include:
+          </p><ul class="govuk-list govuk-list--bullet">
+            <li>Learning how to collate feature requests</li>
+            <li>Providing frontline helpdesk support</li>
+            <li>Growing into projects</li>
+            <li>Basic Programming</li>
+            <li>Becoming a valued part of the Software Development team</li>
+            <li>Helping existing staff with front-end development using Octopus Deploy Technology</li>
+            <li>Being responsible for extracting data and processing the extracted data</li>
+          </ul>
+        <p></p>
+      </li>
+    </ul>
+    <p><a href="vacancy-description" class="govuk-link das-edit-link">Change</a></p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Requirements and prospects</h2>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+      <h3 class="govuk-heading-s">Desired skills and personal qualities</h3>
+      <ul class="govuk-list govuk-list--bullet">
+      	<li>Excellent communication skills</li>
+      	<li>Fantastic customer service skills</li>
+      	<li>Keen interest in IT</li>
+      	<li>Use of own initiative</li>
+      </ul>
+
+      <!-- <a href="#" class="govuk-link">Edit</a> -->
+      <a class="govuk-link" data-automation="link-things-to-consider" href="qualifications">Edit</a>
+
+    <br>
+      <h3 class="govuk-heading-s govuk-!-margin-top-4">Qualifications</h3>
+      <ul class="govuk-list govuk-list--bullet">
+      	<li>You must have at least a C/4 grade and above for maths &amp; English at GCSE or equivalent</li>
+      	<li>A*/9 GCSE, BTEC or A/S Level in Business Admin or Business Studies would be beneficial</li>
+      	<li>Experience within a customer service, administration or sales role is preferred but not essential</li>
+      </ul>
+      <!-- <a href="#" class="govuk-link">Edit</a> -->
+      <a class="govuk-link" data-automation="link-things-to-consider" href="qualifications">Edit</a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+
+      <h3 class="govuk-heading-s">Things to consider (optional)</h3>
+      <p class="govuk-body">The company require a bright, enthusiastic and hard-working individual with a genuine desire to learn and build a career in the IT sector. You will have a friendly personality, be able to work as part of a team and provide excellent customer service.</p>
+      <!-- <a href="#" class="govuk-link">Edit</a> -->
+      <a class="govuk-link" data-automation="link-things-to-consider" href="considerations">Edit</a>
+
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">About the employer</h2>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>
+        <h3 class="govuk-heading-s">Description</h3>
+        <p class="govuk-body">Founded in 2005, we have a long history of helping businesses become more efficient, saving time and money, and ultimately opening the door to greater productivity. Our process and products have evolved over our 13-year journey, but our mission has remained the same.</p>
+        <p><a href="about-employer" class="govuk-link">Edit</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Employer</h3>
+        <p class="govuk-body">Organisation 1</p>
+        <p><a href="#" class="govuk-link">Edit</a></p>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Disability Confident (optional)</h3>
+        <img src="https://recruit.test-eas.apprenticeships.sfa.bis.gov.uk/img/disability-confident_545x172.png" class="das-disability-confident-logo" alt="A logo confirming that the employer is registered as disability confident">
+        <details class="govuk-details" role="group">
+          <summary class="govuk-details__summary" role="button" aria-controls="details-content-877069f7-3792-467b-86b7-39298845b0c8" aria-expanded="false">
+            <span class="govuk-details__summary-text">
+              About disability confident
+            </span>
+          </summary>
+          <div class="govuk-details__text" id="details-content-877069f7-3792-467b-86b7-39298845b0c8" aria-hidden="true">
+            <p>Disabled candidates are generally guaranteed an interview if you meet the minimum requirements for this vacancy. Contact the employer for full details.</p>
+
+            <p>Employers may need to limit the number of interviews offered to both disabled and non-disabled people if they receive high numbers of applications.</p>
+
+            <p>The disability confident scheme supports employers to make the most of the talents disabled people can bring to your workplace.provide your nationality, you’ll have to send copies of identity documents through the post.</p>
+          </div>
+        </details>
+        <p><a href="#" class="govuk-link">Edit</a></p>
+      </li>
+      <li>
+
+        <div class="das-preview-empty">
+
+          <h3 class="govuk-heading-s">Website (optional)</h3>
+          <p class="govuk-body"></p>
+          <!-- <a href="#" class="govuk-link">Edit</a> -->
+          <a class="das-button-secondary" data-automation="link-things-to-consider" href="about-employer">Add</a>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-s">Location</h3>
+    <ul class="govuk-list">
+      <li>Cheylsmore House</li>
+      <li>5 Quinton Road</li>
+      <li>Coventry</li>
+      <li>West Midlands</li>
+      <li>CV1 2WT</li>
+    </ul>
+    <p><a href="#" class="govuk-link">Edit</a></p>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <img id="static-map" src="https://maps.googleapis.com/maps/api/staticmap?markers=52.400997,-1.508122&amp;size=465x256&amp;zoom=12&amp;client=gme-skillsfundingagency&amp;signature=lCuCTEI-K25bn1YgDLOSpzopvFk=" alt="Location map">
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Training</h2>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div>
+      <h3 class="govuk-heading-s">Training provider</h3>
+      <p class="govuk-body">Lifetime Training</p>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half">
+  <ul class="govuk-list">
+    <li>
+      <h3 class="govuk-heading-s">Apprenticeship Framework</h3>
+      <p class="govuk-body">Business and Administration, Level: 3<br>Advanced (equivalent to A level)
+        </p>
+      <p><a href="#" class="govuk-link">Edit</a></p>
+    </li>
+  </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+
+      <h3 class="govuk-heading-s">Contact details (optional)</h3>
+      <p class="govuk-body">
+        Faizal Dawood<br>
+        fdawood@company.com<br>
+        07853923923<br>
+
+      </p>
+      <!-- <a href="#" class="govuk-link">Edit</a> -->
+      <a class="govuk-link" data-automation="link-things-to-consider" href="employer-contact-details">Edit</a>
+
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">
+      Employer's Application Instructions
+    </h2>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">This apprenticeship requires you to apply through the employer's website.</p>
+    <div class="das-referred--section">
+    <h3 id="ApplicationUrl" class="govuk-heading-s"> <span class="das-icon-cross das-icon-error" aria-label="Edits are needed to this section">×</span> Apply now web address</h3>
+    <p class="govuk-body">
+
+      https://recruit.test-eas.apprenticeships.sfa.bis.gov.uk
+
+    </p>
+    <p><a href="application-process" class="govuk-link">Edit</a></p>
+    </div>
+
+    <h3 class="govuk-heading-s">Explain the application process (optional)</h3>
+    <p class="govuk-body">
+
+      Apply online at https://superdrug.sunesis.uk.net Click 'Apply' and follow the application instructions providing as much information as possible.
+
+      </p><p><a href="application-process" class="govuk-link">Edit</a></p>
+
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form method="post">
+      <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit vacancy">
+      <br>
+      <a href="../dashboard" class="govuk-body das-button--link">Return to dashboard</a>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
