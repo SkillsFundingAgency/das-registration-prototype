@@ -22,27 +22,32 @@
   <div class="govuk-grid-column-full">
     <p class="govuk-body">This is how the vacancy will appear to candidates on <a href="https://www.gov.uk/apply-apprenticeship" rel="noopener" target="_blank">Find an apprenticeship</a></p>
 
-    <div class="govuk-info-summary das-referred-summary" aria-labelledby="info-summary-title" role="alert" tabindex="-1" data-module="info-summary">
-      <div class="govuk-info-summary__body">
-          <h2 class="heading-medium error-summary-heading">
-            <span class="das-icon-cross das-icon-error" aria-label="Changes are needed to this section">×</span> Changes needed
-          </h2>
+    {{ govukErrorSummary({
+      titleText: "Changes needed",
+      errorList: [
+        {
+          html: "<p>
+                  This vacancy has been reviewed by "+data ['employer-name']+" and they have the following comments:
+                </p>
+                <p>
+                  "+data ['employer-comments']+"
+                </p>"
+        }
+      ]
+    }) }}
 
-          <p>This vacancy has been reviewed by {{data ['employer-name']}} and they have the following comments:</p>
-          <p>{{data ['employer-comments']}}</p>
-      </div>
-    </div>
   </div>
 </div>
+
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-two-thirds">
-    <div class="das-referred--section">
+
     <h2 id="Title" class="govuk-heading-xl govuk-!-margin-bottom-6">
-      <span class="das-icon-cross das-icon-error" aria-label="Edits are needed to this section">×</span> Software Support and Development Apprentice
+      Software Support and Development Apprentice
       <span class="govuk-caption-l">ABC opticians</span>
     </h2>
     <a href="#" class="govuk-link das-edit-link">Change</a>
-    </div>
+
   </div>
 </div>
 
@@ -288,15 +293,15 @@
   <div class="govuk-grid-column-two-thirds">
 
     <p class="govuk-body">This apprenticeship requires you to apply through the employer's website.</p>
-    <div class="das-referred--section">
-    <h3 id="ApplicationUrl" class="govuk-heading-s"> <span class="das-icon-cross das-icon-error" aria-label="Edits are needed to this section">×</span> Apply now web address</h3>
+
+    <h3>Apply now web address</h3>
     <p class="govuk-body">
 
       https://recruit.test-eas.apprenticeships.sfa.bis.gov.uk
 
     </p>
     <p><a href="application-process" class="govuk-link">Edit</a></p>
-    </div>
+
 
     <h3 class="govuk-heading-s">Explain the application process (optional)</h3>
     <p class="govuk-body">
