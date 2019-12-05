@@ -4,11 +4,6 @@
   Your providers
 {% endblock %}
 
-{% block beforeContent %}
-<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
-{% endblock %}
-
-
 {% block content %}
 
 
@@ -48,12 +43,4 @@
   </div>
 </div>
 
-{% endblock %}
-
-{% block pageScripts %}
-  <script>
-    new MOJFrontend.SortableTable({
-    table: $('table')[0]
-    });
-  </script>
 {% endblock %}

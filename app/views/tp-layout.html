@@ -1,3 +1,6 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
 {% extends "govuk/template.njk" %}
 
 {% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
@@ -31,16 +34,15 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Apprenticeships
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: maServiceName,
+    serviceName: serviceName,
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
@@ -76,12 +78,14 @@
 {% endblock %}
 
 {% block beforeContent %}
-    <div class="govuk-phase-banner">
-        <p class="govuk-phase-banner__content">
-            <strong class="govuk-tag govuk-phase-banner__content__tag ">Prototype</strong>
-            <span class="govuk-phase-banner__text">This is not a real service.</span>
-        </p>
-    </div>
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% if useAutoStoreData %}
@@ -304,6 +308,7 @@
           $('ul#global-nav-links').collapsableNav();
       });
       </script>
+
     {% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

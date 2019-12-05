@@ -1,28 +1,33 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
 {% extends "govuk/template.njk" %}
 
-{% from "govuk/components/back-link/macro.njk"     import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk"        import govukButton %}
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
 {% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk"    import govukCheckboxes %}
-{% from "govuk/components/date-input/macro.njk"    import govukDateInput %}
-{% from "govuk/components/details/macro.njk"       import govukDetails %}
-{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
-{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk"      import govukFieldset %}
-{% from "govuk/components/file-upload/macro.njk"   import govukFileUpload %}
-{% from "govuk/components/input/macro.njk"         import govukInput %}
-{% from "govuk/components/inset-text/macro.njk"    import govukInsetText %}
-{% from "govuk/components/panel/macro.njk"         import govukPanel %}
-{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk"        import govukRadios %}
-{% from "govuk/components/select/macro.njk"        import govukSelect %}
-{% from "govuk/components/skip-link/macro.njk"     import govukSkipLink %}
-{% from "govuk/components/table/macro.njk"         import govukTable %}
-{% from "govuk/components/tabs/macro.njk"          import govukTabs %}
-{% from "govuk/components/tag/macro.njk"           import govukTag %}
-{% from "govuk/components/textarea/macro.njk"      import govukTextarea %}
-{% from "govuk/components/warning-text/macro.njk"  import govukWarningText %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -76,7 +81,7 @@
                   <li><a href="#" role="menuitem">Apprentices</a></li>
                   <li><a href="#" role="menuitem">Your team</a></li>
                   <li><a href="#" role="menuitem">Your organisations and agreements</a></li>
-                  <!-- <li><a href="#" role="menuitem">PAYE schemes</a></li> -->
+                  <li><a href="#" role="menuitem">PAYE schemes</a></li>
               </ul>
           </nav>
       </div>
@@ -85,12 +90,14 @@
 {% endblock %}
 
 {% block beforeContent %}
-    <div class="govuk-phase-banner">
-        <p class="govuk-phase-banner__content">
-            <strong class="govuk-tag govuk-phase-banner__content__tag ">Prototype</strong>
-            <span class="govuk-phase-banner__text">This is not a real service.</span>
-        </p>
-    </div>
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% if useAutoStoreData %}
@@ -296,23 +303,29 @@
           }
       };
       //Legacy floating header script
-      // $(window).scroll(function () {
-      //     if ($(window).scrollTop() >= 110) {
-      //         $('.floating-menu').addClass('fixed-header');
-      //         $('.js-float').addClass('width-adjust');
-      //     }
-      //     else {
-      //         $('.floating-menu').removeClass('fixed-header');
-      //         $('.js-float').removeClass('width-adjust');
-      //     }
-      // });
+      $(window).scroll(function () {
+          if ($(window).scrollTop() >= 110) {
+              $('.floating-menu').addClass('fixed-header');
+              $('.js-float').addClass('width-adjust');
+          }
+          else {
+              $('.floating-menu').removeClass('fixed-header');
+              $('.js-float').removeClass('width-adjust');
+          }
+      });
       $(function () {
           //Legacy menu script
           sfa.navigation.init();
           //stacker
           $('ul#global-nav-links').collapsableNav();
       });
+      //Sortable tables - MOJ pattern
+      new MOJFrontend.SortableTable({
+      table: $('table')[0]
+      });
+
       </script>
+
     {% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
