@@ -21,5 +21,6 @@ module.exports = {
   "provider-name": "Coventry College",
   "vacancies": vacancies,
   "vacancy-filter": "all",
+  "submission-date": "2 December 2019",
   "employer-comments": "Try again..."
 }
