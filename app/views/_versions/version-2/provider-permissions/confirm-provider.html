@@ -1,0 +1,40 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Provider overview
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "providers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Confirm the training provider</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="das-confirm-card" style="background-color:#f4f4f4;padding:20px;margin-bottom:30px;">
+      <h2 class="govuk-heading-m">{{data['provider-name']}}<span class="govuk-caption-m">16 Dorrington Ave, Coventry, CV1 6HX<br>UKPRN: 10004319</span></h2>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="select-training-provider">Change provider</a><br></p>
+    </div>
+    {{ govukButton({
+      text: "Confirm and continue",
+      href: "provider-added-confirmation"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

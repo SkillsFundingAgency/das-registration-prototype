@@ -1,0 +1,150 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukButton({
+      text: "Create vacancy"
+    }) }}
+<form action="./vacancies" method="get">
+      <div class="row-group">
+        <div class="search-table column-two-thirds govuk-!-margin-bottom-4">
+          <fieldset class="govuk-fieldset">
+            <div class="form-group search-field search-field-darker">
+              <input type="hidden" name="clientsFilter" value="new">
+              <div class="search-input search-input-with-button">
+                <label class="govuk-label " for="search">
+                Search for vacancy by title or vacancy ID
+                </label>
+                <div class="autocomplete__parent_wrapper">
+                  <div class="autocomplete__wrapper">
+                    <!-- <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                      <span>No search results.</span>
+                      <span>,,</span>
+                    </div> -->
+                    <p id="search-default-value" class="hidden"></p>
+                    <div class="autocomplete__parent_wrapper">
+                      <div class="autocomplete__wrapper">
+                        <!-- <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                          <span>Type in 3 or more characters for results.</span>
+                          <span>,,</span>
+                        </div> -->
+                        <input aria-owns="search__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="" role="combobox" type="text">
+                          <!-- <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="search__listbox" role="listbox">
+                          </ul> -->
+                        </div>
+                      </div>
+                      <!-- <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search-old" name="" role="combobox" type="text" value="" style="display: none;"> -->
+                      <!-- <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="searchClients__listbox" role="listbox">
+                      </ul> -->
+                  </div>
+                </div>
+                <!-- <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="" style="display: none;">
+                <input class="form-control form-control-3-4" name="filter" id="filter" type="text" value="any" style="display: none;"> -->
+              </div>
+              <div class="search-submit">
+                <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search clients</button>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  <div class="das-card" style="height: 180px;">
+    <div class="das-card--content">
+      <p class="govuk-body govuk-!-font-weight-bold">
+        <span class="das-card--stat">8</span>
+        <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=draft">
+          Draft vacancies
+        </a>
+      </p>
+      <p class="govuk-body das-card--description">Vacancies that need completing and sending for review.</p>
+    </div>
+  </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+  <div class="das-card" style="height: 180px;">
+    <div class="das-card--content">
+      <p class="govuk-body govuk-!-font-weight-bold">
+        <span class="das-card--stat">2</span>
+        <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=For review">
+          For review
+        </a>
+      </p>
+      <p class="govuk-body das-card--description">Vacancies that have been sent for review.</p>
+    </div>
+  </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="das-card" style="height: 180px;">
+      <div class="das-card--content">
+        <p class="govuk-body govuk-!-font-weight-bold">
+          <span class="das-card--stat">2</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=rejected">
+            Rejected vacancies
+          </a>
+        </p>
+        <p class="govuk-body das-card--description">Rejected vacancies will need to be edited and resubmitted.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="das-card" style="height: 255px;">
+      <div class="das-card--content">
+        <p class="govuk-body govuk-!-font-weight-bold">
+          <span class="das-card--stat">11</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=live">
+            Live vacancies
+          </a>
+        </p>
+        <p class="govuk-body das-card--description">Vacancies on Find an apprenticeship service.</p>
+        <ul class="govuk-list das-card--links">
+          <li><a class="govuk-link" href="#">6 live vacancies closing soon</a></li>
+          <li><a class="govuk-link" href="#">3 live vacancies closing soon with no applications</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="das-card" style="height: 255px;">
+      <div class="das-card--content">
+        <p class="govuk-body govuk-!-font-weight-bold">
+          <span class="das-card--stat">20</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="https://das-recruit-prototype.herokuapp.com/raa-v2/0-2-1/ER-1540-employer-dashboard/vacancies?filter=pending%20review">
+            New applications
+          </a>
+        </p>
+        <p class="govuk-body das-card--description">Applications from Find an apprenticeship service.</p>
+        <ul class="govuk-list das-card--links">
+          <li><a class="govuk-link" href="#">View all applications</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="das-card" style="height: 255px;">
+      <div class="das-card--content">
+        <p class="govuk-body govuk-!-font-weight-bold">
+          <span class="das-card--stat">11</span>
+          <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=closed">
+            Closed vacancies
+          </a>
+        </p>
+        <p class="govuk-body das-card--description">Vacancies that have passed the closing date. You can clone these vacancies to republish them.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="govuk-row">
+  <div class="govuk-column-two-thirds">
+    <p class="govuk-body">
+      <a class="govuk-link govuk-link--no-visited-state" href="../../recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&vacancy-filter=all">
+        View all your vacancies (54)
+      </a>
+    </p>
+  </div>
+</div>

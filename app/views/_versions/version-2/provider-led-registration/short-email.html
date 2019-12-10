@@ -1,0 +1,46 @@
+{% extends "layout-email.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block pageTitle %}
+  Invitation email
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="https://www.gov.uk/government/organisations/education-and-skills-funding-agency" target="_blank">
+    <img src="/public/images/esfa-logo.png" width="180px" id="logo">
+  </a>
+  <br><br><br>
+
+    <p class="govuk-body">Dear John Smith,</p>
+
+    <p class="govuk-body">Mary Jones at ABC Training has invited you to register for an Apprenticeship Service account for Assurance Aerospace.</p>
+
+    <p class="govuk-body govuk-!-font-weight-bold"">Set up your account now at <a class="govuk-link" href="#">[url]</a>.</p>
+
+    <p class="govuk-body">Registering for an account gives you access to funding to pay for apprenticeship training.</p>
+
+    <p class="govuk-body">You'll also be able to post apprenticeship vacancies on Find an apprentice.</p>
+
+
+    <p class="govuk-body">This message is automated, please don't reply.</p>
+
+    <p class="govuk-body">Thanks,</p>
+    <p class="govuk-body">Apprenticeship Service Team</p>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <p class="govuk-body-s">If you'd prefer to no longer get these emails from your training provider, you can unsubscribe at <a href="#" class="govuk-link">[url]</a>.</p>
+
+    <p class="govuk-body-s">If you didn't agree with your training provider to receive this invitation, you can let us know at <a href="#" class="govuk-link">[url]</a>.</p>
+</main>
+
+
+
+
+{% endblock %}

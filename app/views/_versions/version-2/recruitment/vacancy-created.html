@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['permission-scenario'] == 1 %}
+        {{ govukPanel({
+          html: "<h1 class='govuk-panel__title'>Vacancy submitted for approval by "+data ['employer-name']+" </h1><br>The vacancy reference number is<br><strong>VAC100000005758</strong>"
+        }) }}
+      {% endif %}
+      {% if data['permission-scenario'] == 2 %}
+        {{ govukPanel({
+          html: "<h1 class='govuk-panel__title'>Vacancy submitted for review</h1><br>The vacancy reference number is<br><strong>VAC1099883764</strong>"
+        }) }}
+      {% endif %}
+
+      <h2 class="govuk-heading-m">Next steps</h2>
+
+
+      {% if data['permission-scenario'] == 1 %}
+      <p class="govuk-body">
+        {{data ['employer-name']}} will check the vacancy, you’ll be able to see on the dashboard if you need to make any edits.
+      </p>
+      <p class="govuk-body">
+        Once the employer has approved the vacancy it will be sent for review before it appears on the Find an apprenticeship service.
+      </p>
+      {% endif %}
+      {% if data['permission-scenario'] == 2 %}
+      <p class="govuk-body">
+        We’ll check the vacancy and tell you within one working day on the dashboard if you need to make any edits. Visit Manage your recruitment emails if you’d also like to get an email.
+      </p>
+      <p class="govuk-body">
+        Once the vacancy is reviewed, it will appear on the Find an apprenticeship service.
+      </p>
+      {% endif %}
+
+
+
+
+
+      <form method="post">
+        {{ govukRadios({
+          idPrefix: "where-go-next",
+          name: "where-go-next",
+          fieldset: {
+            legend: {
+              text: "What do you want to do next?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "return-dashboard",
+              text: "Return to dashboard"
+            },
+            {
+              value: "create-vacancy",
+              text: "Create another vacancy"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
