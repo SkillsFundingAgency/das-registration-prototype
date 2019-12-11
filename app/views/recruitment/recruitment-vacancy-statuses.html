@@ -27,14 +27,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Recruitment homepage versions</h1>
+    <h1 class="govuk-heading-l">Recruitment vacancies</h1>
 
-    <h2 class="govuk-heading-m">Current version</h2>
+    <h2 class="govuk-heading-m">Recruitment homepage</h2>
 
     {{ govukTable({
       head: [
         {
-          text: "Version name"
+          text: "Page name"
         },
         {
           text: "Link",
@@ -44,10 +44,10 @@
       rows: [
         [
           {
-            text: "Sections"
+            text: "Recruitment homepage"
           },
           {
-            html: "<a href='recruitment-layout-options?recruitment-layout-option=recruitment-layout-sections.html&recruitment-heading=Recruitment&status-filter=All'>Open</a>",
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-sections.html&recruitment-heading=Recruitment&status-filter=All'>Open</a>",
             format: "numeric"
           }
         ]
@@ -55,12 +55,12 @@
     }) }}
 
 
-    <h2 class="govuk-heading-m">Previous versions</h2>
+    <h2 class="govuk-heading-m">Statuses in table</h2>
 
     {{ govukTable({
       head: [
         {
-          text: "Version name"
+          text: "Status name"
         },
         {
           text: "Link",
@@ -70,33 +70,83 @@
       rows: [
       [
         {
-          text: "Split"
+          text: "Pending review"
         },
         {
-          html: "<a href='recruitment?recruitment-provider-scenario=recruitment_yes-provider-yes-vacancy.html&recruitment-employer-scenario=recruitment_employer-yes-vacancy.html&recruitment-heading=Recruitment'>Open</a>",
+          html: "<a href='#'>Open</a>",
           format: "numeric"
         }
       ],
       [
         {
-          text: "Merge"
+          text: "New applications"
         },
         {
-          html: "<a href='recruitment-layout-options?recruitment-layout-option=recruitment-layout-merged.html&recruitment-heading=Recruitment'>Open</a>",
+          html: "<a href='#'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "New applications"
+        },
+        {
+          html: "<a href='#'>Open</a>",
           format: "numeric"
         }
       ],
         [
           {
-            text: "Table"
+            text: "For approval"
           },
           {
-            html: "<a href='recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=All'>Open</a>",
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=For-review'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Rejected"
+          },
+          {
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=Rejected'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Live"
+          },
+          {
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=Live'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Closed"
+          },
+          {
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=Closed'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Draft"
+          },
+          {
+            html: "<a href='/recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-table.html&recruitment-heading=Vacancies&status-filter=Draft'>Open</a>",
             format: "numeric"
           }
         ]
       ]
     }) }}
+
+
+
+
+
 
 
 
