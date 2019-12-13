@@ -24,7 +24,17 @@ router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
     res.redirect(oldUrl + urlString)(req, res, next);
 })
 
-// Add your routes here - above the module.exports line
+
+/*
+============================================================================
+Versions
+============================================================================
+*/
+router.use(/\/_versions\/version-([0-99]+)/, (req, res, next) => {
+    require(`./views/_versions/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Branching starts here
 
 /*
 ============================================================================
@@ -223,12 +233,12 @@ Filter vacancies
 ============================================================================
 */
 
-router.get('/recruitment/recruitment-layout-options', function (req, res) {
+router.get('/recruitment/recruitment-layout-table', function (req, res) {
   let s = req.session.data['status-filter']
   let v = req.session.data['vacancies']
   let filteredVacancies = (s == 'All') ? v : _.filter(v, function(i) {return i.status === s});
 
-  res.render('recruitment/recruitment-layout-options', {filteredVacancies})
+  res.render('_versions/version-1/recruitment/recruitment-layout-table', {filteredVacancies})
 })
 
 module.exports = router

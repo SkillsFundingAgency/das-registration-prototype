@@ -1,14 +1,7 @@
-{% extends "layout.html" %}
+{% extends "ma-layout.html" %}
 
 {% block pageTitle %}
   Your providers
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "recruitment-layout-options-start"
-  }) }}
 {% endblock %}
 
 {% block content %}
@@ -20,6 +13,9 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-xl">{{data['recruitment-heading']}}</h1>
+        {{ govukButton({
+          text: "Create vacancy"
+        }) }}
       </div>
     </div>
   </div>
@@ -27,7 +23,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% include "includes/recruitment-layout-options-includes/" + data['recruitment-layout-option'] %}
+    {% include "../includes/recruitment-layout-options-includes/" + data['recruitment-layout-option'] %}
   </div>
 </div>
 
@@ -47,12 +43,4 @@
   </div>
 </div>
 
-{% endblock %}
-
-{% block pageScripts %}
-  <script>
-    new MOJFrontend.SortableTable({
-    table: $('table')[0]
-    });
-  </script>
 {% endblock %}

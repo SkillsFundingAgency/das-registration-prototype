@@ -1,14 +1,11 @@
-{% extends "layout.html" %}
+{% extends "ma-layout.html" %}
 
 {% block pageTitle %}
   Your providers
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "recruitment"
-  }) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
