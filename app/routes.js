@@ -233,12 +233,12 @@ Filter vacancies
 ============================================================================
 */
 
-router.get('/recruitment/recruitment-layout-options', function (req, res) {
+router.get('/recruitment/recruitment-layout-table', function (req, res) {
   let s = req.session.data['status-filter']
   let v = req.session.data['vacancies']
   let filteredVacancies = (s == 'All') ? v : _.filter(v, function(i) {return i.status === s});
 
-  res.render('recruitment/recruitment-layout-options', {filteredVacancies})
+  res.render('recruitment/recruitment-layout-table', {filteredVacancies})
 })
 
 module.exports = router
