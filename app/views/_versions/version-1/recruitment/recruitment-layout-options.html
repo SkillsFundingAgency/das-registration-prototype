@@ -12,6 +12,11 @@
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
+
+        {{ govukInsetText({
+          html: "This is an out-of-date version of this page. <a class='govuk-link govuk-link--no-visited-state' href='../../..//recruitment/recruitment-layout-options?recruitment-layout-option=recruitment-layout-sections.html&recruitment-heading=Recruitment&status-filter=All'>Go to the updated version</a>. "
+        }) }}
+
         <h1 class="govuk-heading-xl">{{data['recruitment-heading']}}</h1>
         {{ govukButton({
           text: "Create vacancy"
