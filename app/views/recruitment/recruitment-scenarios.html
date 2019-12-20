@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Recruitment scenarios</h1>
+
+
+    {{ govukTable({
+      head: [
+        {
+          text: "Scenario name"
+        },
+        {
+          text: "Link",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "With vacancies"
+          },
+          {
+            html: "<a href='/recruitment/recruitment?recruitment-scenario=with-vacancies.html&recruitment-heading=Recruitment'>Open</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Without vacancies"
+          },
+          {
+            html: "<a href='/recruitment/recruitment?recruitment-scenario=without-vacancies.html&recruitment-heading=Recruitment'>Open</a>",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+  </div>
+</div>
+
+
+{% endblock %}

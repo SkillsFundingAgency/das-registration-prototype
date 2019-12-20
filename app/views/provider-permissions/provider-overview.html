@@ -13,8 +13,6 @@
 
 {% block content %}
 
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{data['providerName']}}</h1>
@@ -44,7 +42,7 @@
         text: "Assurance Aerospace Ltd"
       },
       {
-        html: "<p class='govuk-body'>Create cohorts<br>Reserve funding<br>Add and edit apprentice vacancy ads<br>Notify successful and unsuccessful candidates</p>"
+        html: "<p class='govuk-body'>Create cohorts<br>Reserve funding<br>Add and edit apprentice vacancy ads<br>Notify successful and unsuccessful candidates<br>Allow but review</p>"
       },
       {
         html: "<a class='govuk-link govuk-link--no-visited-state' href='change-provider-permissions?createCohort=yes&reserveFunding=yes&addVacancy=yes&notifyCandidates=yes&createShortlist=no&orgName=Assurance Aerospace Ltd'>Change</a>",
@@ -65,13 +63,6 @@
     ]
   ]
 }) }}
-
-
-
-
   </div>
 </div>
-
-
-
 {% endblock %}

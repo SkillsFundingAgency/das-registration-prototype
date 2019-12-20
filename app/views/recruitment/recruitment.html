@@ -12,33 +12,20 @@
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">Recruitment</h1>
-      </div>
-    <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% Provider vacancies *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
-
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Provider vacancies</h2>
-        {% include "includes/recruitment-includes/" + data['recruitment-provider-scenario'] %}
+        <h1 class="govuk-heading-xl">{{data['recruitment-heading']}}</h1>
+        {{ govukButton({
+          text: "Create vacancy"
+        }) }}
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% End provider vacancies *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      </div>
-    </div>
-
-
-    <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% Employer vacancies *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">Your vacancies</h2>
-        {% include "includes/recruitment-includes/" + data['recruitment-employer-scenario'] %}
-      </div>
-    </div>
-    <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% End employer vacancies *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% include "../includes/recruitment-scenario-includes/" + data['recruitment-scenario'] %}
+  </div>
+</div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -55,6 +42,5 @@
 
   </div>
 </div>
-
 
 {% endblock %}
