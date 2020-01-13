@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your organisations and agreements
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript: window.history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Your organisations and agreements</h1>
+  </div>
+  <div class="column-one-third">
+    <form action="" method="">
+        <input class="govuk-button" value="Add new organisation">
+    </form>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">Add each organisation that will contract with your training providers.</p>
+
+    <p class="govuk-body">There is no restriction on the number of <a href="#">connected organisations</a> you can add.</p>
+
+    <p class="govuk-body">Transfer status: <b>Disabled</b></p>
+  </div>
+</div>
+
+<div class="govuk-grid-column-full-width">
+    
+    {{ govukTable({
+    firstCellIsHeader: false,
+    head: [
+        {
+        text: "Organisation",
+        classes: 'app-custom-class'
+        },
+        {
+        text: "Agreement status",
+        classes: 'app-custom-class'
+        },
+        {
+        text: "Action",
+        classes: 'app-custom-class'
+        },
+        {
+        text: "Date accepted",
+        classes: 'app-custom-class'
+        },
+        {
+        text: "Agreement ID",
+        classes: 'app-custom-class'
+        }
+    ],
+    rows: [
+        [
+        {
+            text: "TEST LIMITED"
+        },
+        {
+            text: "Agreement not accepted"
+        },
+        {
+            html: "<a href='agreement'>Accept agreement</a>"
+        },
+        {
+            text: "-"
+        },
+        {
+            text: "Accept agreement to receive an agreement ID"
+        }
+        ],
+        [
+        {
+            text: "TEST LIMITED"
+        },
+        {
+            text: "Accepted by Sarah Philips"
+        },
+        {
+            html: "<a href='agreement'>View</a>"
+        },
+        {
+            text: "7 August 2019"
+        },
+        {
+            html: "34TH8N<br><span class='govuk-tag'>LATEST VERSION</span>"
+        }
+        ],
+        [
+        {
+            text: "TEST LIMITED"
+        },
+        {
+            text: "Accepted by Hank Moody"
+        },
+        {
+            html: "<a href='agreement'>View</a>"
+        },
+        {
+            text: "16 May 2017"
+        },
+        {
+            html: "3JYP9N"
+        }
+        ],
+        [
+        {
+            text: "D AND M LIMITED"
+        },
+        {
+            text: "Accepted by Jimmy McNulty"
+        },
+        {
+            html: "<a href='agreement'>View</a>"
+        },
+        {
+            text: "16 May 2017"
+        },
+        {
+            html: "7ZWBNY<br><span class='govuk-tag'>LATEST VERSION</span>"
+        }
+        ]
+    ]
+    }) }}
+
+</div>
+
+{% endblock %}
