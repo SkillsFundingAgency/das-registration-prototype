@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Recruitment vacancies</h1>
+
+    <h2 class="govuk-heading-m">Recruitment homepage</h2>
+
+    {{ govukTable({
+      head: [
+        {
+          text: "Page name"
+        },
+        {
+          text: "Link",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Recruitment homepage"
+          },
+          {
+            html: "<a href='recruitment?recruitment-scenario=with-vacancies.html&recruitment-heading=Recruitment&status-filter=All'>Open</a>",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+
+    <h2 class="govuk-heading-m">Statuses in table</h2>
+
+    {{ govukTable({
+      head: [
+        {
+          text: "Status name"
+        },
+        {
+          text: "Link",
+          format: "numeric"
+        }
+      ],
+      rows: [
+      [
+        {
+          text: "Pending review"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=For review'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "New applications"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=Live'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "For approval"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=For review'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "Rejected"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=Rejected'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "Live"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=Live'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "Closed"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=Closed'>Open</a>",
+          format: "numeric"
+        }
+      ],
+      [
+        {
+          text: "Draft"
+        },
+        {
+          html: "<a href='recruitment-layout-table?recruitment-heading=Vacancies&status-filter=Draft'>Open</a>",
+          format: "numeric"
+        }
+      ]
+    ]
+  }) }}
+
+  </div>
+</div>
+
+
+{% endblock %}

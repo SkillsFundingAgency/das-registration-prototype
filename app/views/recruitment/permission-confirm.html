@@ -1,0 +1,81 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Permission are you sure
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="permission-success">
+
+        
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset">
+		  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		  
+		    <h1 class="govuk-heading-l">
+		      Confirm permissions for BARKING AND DAGENHAM COLLEGE
+		    </h1>
+		    
+		    <p>These permissions are on behalf of BENTLY & BENTLY ASSOCIATES</p>
+		    		    
+		  </legend>
+
+
+	  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+	      <div class="govuk-summary-list__row">
+	        <dt class="govuk-summary-list__key">
+	          Add apprentice records
+	        </dt>
+	        <dd class="govuk-summary-list__value">
+	          <!-- Allow<br> -->
+	          {{data['permission-to-add']}}
+	        </dd>
+	          <dd class="govuk-summary-list__actions">
+	              <a class="govuk-link" href="permission-to-add">
+	                Change<span class="govuk-visually-hidden"> permission to add apprentice records</span>
+	            </a>
+	          </dd>
+	      </div>
+	      <div class="govuk-summary-list__row">
+	        <dt class="govuk-summary-list__key">
+	          Recruit apprentices
+	        </dt>
+	        <dd class="govuk-summary-list__value">
+	          {{data['permission-to-recruit']}}
+	        </dd>
+	          <dd class="govuk-summary-list__actions">
+	              <a class="govuk-link" href="permission-to-recruit.html">
+	                Change<span class="govuk-visually-hidden"> permission to recruit apprentices</span>
+	            </a>
+	          </dd>
+	      </div>
+	      <div class="govuk-summary-list__row">
+	        <dt class="govuk-summary-list__key">
+	          Lorem ipsum
+	        </dt>
+	        <dd class="govuk-summary-list__value">
+	          Lorem ipsum
+	        </dd>
+	          <dd class="govuk-summary-list__actions">
+	              <a class="govuk-link" href="#">
+	                Change<span class="govuk-visually-hidden"> lorem ipsum</span>
+	            </a>
+	          </dd>
+	      </div>
+		</dl>
+
+		</fieldset>
+		</div>
+		
+		<button class="govuk-button" data-module="govuk-button">
+		  Confirm
+		</button>
+		
+      </form>
+    </div>
+  </div>    
+
+{% endblock %}

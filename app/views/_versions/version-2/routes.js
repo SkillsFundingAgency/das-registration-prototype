@@ -238,47 +238,7 @@ router.get('/recruitment/recruitment-layout-table', function (req, res) {
   let v = req.session.data['vacancies']
   let filteredVacancies = (s == 'All') ? v : _.filter(v, function(i) {return i.status === s});
 
-  res.render('recruitment/recruitment-layout-table', {filteredVacancies})
+  res.render('_versions/version-1/recruitment/recruitment-layout-table', {filteredVacancies})
 })
-
-
-
-/*
-============================================================================
-Permission to add apprentice records 
-============================================================================
-*/
-router.post('/recruitment/permission-to-add', function (req, res) {
-
-  let permissionToAdd = req.session.data['permission-to-add']
-
-  if (permissionToAdd === 'Allow') {
-    res.redirect('permission-to-recruit')
-  }
-  else {
-    res.redirect('permission-to-recruit')
-  }
-})
-
-
-/*
-============================================================================
-Permission to recruit apprentices
-============================================================================
-*/
-router.post('/recruitment/permission-to-recruit', function (req, res) {
-
-  let permissionToRecruit = req.session.data['permission-to-recruit']
-
-  if (permissionToRecruit === 'Allow') {
-    res.redirect('permission-new')
-  }
-  else {
-    res.redirect('permission-confirm')
-  }
-})
-
 
 module.exports = router
-
-

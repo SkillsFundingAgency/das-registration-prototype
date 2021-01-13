@@ -1,0 +1,50 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Set or Change permission
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post">
+
+        
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-heading-l">
+      Do you give BARKING AND DAGENHAM COLLEGE permission to add apprentice records?
+    </h1>
+    
+    <p>If your company does not pay the levy, this will allow your training provider to reserve apprenticeship funding on your behalf.</p>
+  </legend>
+  <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="do-you-give-permission" name="permission-to-add" type="radio" value="Allow" {{ checked("permission-to-add", "Allow") }}>
+          <label class="govuk-label govuk-radios__label" for="do-you-give-permission">
+        Yes
+      </label>
+      
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="where-do-you-live-2" name="permission-to-add" type="radio" value="Do not allow" {{ checked("permission-to-add", "Do not allow") }}>
+          <label class="govuk-label govuk-radios__label" for="do-you-give-permission-2">
+        No
+      </label>
+        </div>
+  </div>
+
+</fieldset>
+</div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+      </form>
+    </div>
+  </div>    
+
+{% endblock %}
