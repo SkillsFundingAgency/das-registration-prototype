@@ -1,0 +1,203 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+<style>
+	.govuk-back-link {display: none;}
+	
+	hr.dashboard-heading-separator {
+	    border-bottom: 5px solid #bfc1c3;
+	    margin: 10px 0 30px;
+	    color: #bfc1c3;
+	    background: #bfc1c3;
+	    border-top: none;
+   }
+	   
+   .das-panel--interruption {
+	    background: #005ea5;
+	    color: #fff;
+	    margin-top: 0;
+	    padding: 30px;
+	}
+	
+	.das-panel--interruption .govuk-heading-m,
+	.das-panel--interruption p,
+	.das-panel--interruption a,
+	.das-panel--interruption .govuk-link {
+		color: #fff !important;
+	}
+	
+	
+	.cards {
+	    display: flex;
+	    display: -ms-flex;
+	    background: #fff;
+	    margin: 0 -15px;
+	    flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	}
+
+	.card {
+	    width: 50%;
+	    padding: 0 15px;
+	    margin-bottom: 15px;
+	    box-sizing: border-box;
+	}
+</style>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+	      <span class="govuk-caption-xl">Account ID: GBBGXR</span>
+		  <h1 class="govuk-heading-xl">BENTLEY &amp; BENTLEY LTD</h1>		
+		<hr class="dashboard-heading-separator">
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="das-panel das-panel--interruption" data-gtm-vis-recent-on-screen-7510559_424="394" data-gtm-vis-first-on-screen-7510559_424="394" data-gtm-vis-total-visible-time-7510559_424="100" data-gtm-vis-has-fired-7510559_424="1">
+        <h3 class="govuk-heading-m">Add your PAYE scheme to access your account </h3>
+		<p>Add your organisation's PAYE scheme and accept your agreement with the Education and Skills Funding Agency to get funding for apprenticeship training.</p>
+		<p><a href="/accounts/JKKBY6/GetApprenticeshipFunding" class="das-panel__link  govuk-!-font-weight-bold">Add your PAYE scheme</a> </p>
+    </div>
+
+
+	<div class="govuk-grid-row govuk-body govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Apprenticeships</h2>
+            <span class="govuk-caption-m">Manage your apprentices, advertise apprenticeships and set training provider permissions</span>
+        </div>
+    </div>
+
+     
+     <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% CARDS *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
+    <div class="cards">
+        <div class="card">
+            <h3 class="govuk-heading-m"><a href="#">Apprentices</a></h3>
+            <p>Add apprentices, update details of existing apprentices, change training providers and authorise payments to training providers.</p>
+        </div>
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="apprentice-adverts.html">Your apprenticeship adverts</a></h3>
+                <p>Create adverts to post on Find an apprenticeship, view applications and view previous adverts.</p>
+            </div>
+                                <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Your training providers</a></h3>
+                <p>Add training providers and manage permissions to choose what they can do on your behalf.</p>
+            </div>
+        <div class="card">
+            <h3 class="govuk-heading-m"><a href="#" rel="external" target="_blank">Find apprenticeship training</a></h3>
+            <p>Search for apprenticeships and see details of approved providers who can deliver the training.</p>
+        </div>
+    </div>
+    
+    
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    
+    
+    
+    <div class="govuk-grid-row govuk-body govuk-!-margin-top-8 govuk-body govuk-!-margin-bottom-8">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Finances</h2>
+            <span class="govuk-caption-m">Manage your apprenticeship funds</span>
+        </div>
+    </div>
+    
+     <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% CARDS *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
+    <div class="cards">
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Your funding reservations</a></h3>
+                <p>Reserve and manage funding.</p>
+            </div>
+
+        <div class="card">
+            <h3 class="govuk-heading-m"><a href="#">Your finances</a></h3>
+            <p>View your financial transactions, connect with other employers and receive transfer funds.</p>
+        </div>
+
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Apply for the hire a new apprentice payment</a></h3>
+                <p>You can apply for the payment if you hire new apprentices from 1 August 2020 to 31 January 2021.</p>
+            </div>
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Your hire a new apprentice payment applications</a></h3>
+                <p>View your applications and estimated payments.</p>
+            </div>
+    </div>
+    
+    
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    
+    
+    
+    <div class="govuk-grid-row govuk-body govuk-!-margin-top-8 govuk-body govuk-!-margin-bottom-8">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Account</h2>
+            <span class="govuk-caption-m">Manage your account details and team</span>
+        </div>
+    </div>
+    
+     <!-- *%*%*%*%*%*%*%*%*%*%*%*%*%*% CARDS *%*%*%*%*%*%*%*%*%*%*%*%*%*%-->
+    <div class="cards">
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Your organisations and agreements</a></h3>
+                <p>Add your organisations that will make contracts with training providers.</p>
+            </div>
+
+        <div class="card">
+            <h3 class="govuk-heading-m"><a href="#">Your team</a></h3>
+            <p>Control what your team can do and invite new team members.</p>
+        </div>
+
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">Apply for the hire a new apprentice payment</a></h3>
+                <p>You can apply for the payment if you hire new apprentices from 1 August 2020 to 31 January 2021.</p>
+            </div>
+            <div class="card">
+                <h3 class="govuk-heading-m"><a href="#">PAYE schemes</a></h3>
+                <p>Add or remove PAYE schemes.</p>
+            </div>
+    </div>
+    
+    
+
+
+  </div>
+  <!-- END LEFT COL -->
+  
+  
+  <!-- START RIGHT COL -->
+  
+    <div class="govuk-grid-column-one-third">
+	    
+	    <div class="govuk-tabs" data-module="govuk-tabs">
+		  <h2 class="govuk-tabs__title">
+		    Contents
+		  </h2>
+		  <ul class="govuk-tabs__list">
+		    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+		      <a class="govuk-tabs__tab" href="#past-day">
+		        Tasks
+		      </a>
+		    </li>
+		  </ul>
+		  <div class="govuk-tabs__panel" id="past-day">
+		    <p>2 cohort requests ready for approval</p>
+			<p><a href="#">Add your PAYE scheme</a></p>
+		  </div>
+		</div>
+	    
+	    
+    </div>
+    
+</div>
+
+    
+</div>
+
+{% endblock %}

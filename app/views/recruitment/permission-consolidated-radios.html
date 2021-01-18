@@ -1,0 +1,122 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Permission new
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate="">
+
+        
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset">
+		  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		  
+		    <h1 class="govuk-heading-l">
+		      Select the permissions you give [training provider name] 
+		    </h1>
+		    		    		    
+		  </legend>
+		  
+		</fieldset>
+		</div>
+		
+		  
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset" aria-describedby="hint-2c46ccf7">
+		
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<h2 class="govuk-fieldset__heading">Add apprentice records </h2>
+			</legend>
+		
+			<div class="govuk-hint govuk-!-margin-bottom-3">
+			If your company does not pay the levy, this will also allow your training provider to reserve funding on your behalf.
+			</div>
+		
+		    <div class="govuk-radios">
+				<div class="govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-0" value="on" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">Allow</label>
+				</div>
+				<div class="gem-c-radio govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-1" value="off" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Do not allow</label>
+				</div>
+			</div>
+			
+		</fieldset>
+		</div>
+		
+		
+		
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset" aria-describedby="hint-2c46ccf7">
+		
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<h2 class="govuk-fieldset__heading">Recruit apprentices</h2>
+			</legend>
+		
+			<div class="govuk-hint govuk-!-margin-bottom-3">
+			This will allow your training provider to:<br> 
+			<ul>
+				<li>create and manage job adverts</li>
+				<li>receive and manage applications</li>
+			</ul>
+			</div>
+		
+		    <div class="govuk-radios">
+				<div class="govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-0" value="on" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">Allow</label>
+				</div>
+				<div class="gem-c-radio govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-1" value="off" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Do not allow</label>
+				</div>
+			</div>
+			
+		</fieldset>
+		</div>
+		
+		
+		
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset" aria-describedby="hint-2c46ccf7">
+		
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<h2 class="govuk-fieldset__heading">Create and submit job adverts </h2>
+			</legend>
+		
+			<div class="govuk-hint govuk-!-margin-bottom-3">
+			This will allow your training provider to create and submit job adverts. Any job advert they submit will go to ESFA for approval. You will not get to see it.
+			</div>
+		
+		    <div class="govuk-radios">
+				<div class="govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-0" value="on" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">Allow</label>
+				</div>
+				<div class="gem-c-radio govuk-radios__item">
+					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-1" value="off" class="govuk-radios__input">
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Do not allow</label>
+				</div>
+			</div>
+			
+		</fieldset>
+		</div>
+		  
+		  		      
+		    		      
+		
+		<button class="govuk-button" data-module="govuk-button">
+		  Save changes
+		</button>
+		
+      </form>
+    </div>
+  </div>    
+
+{% endblock %}

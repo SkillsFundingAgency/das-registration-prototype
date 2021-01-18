@@ -279,6 +279,18 @@ router.post('/recruitment/permission-to-recruit', function (req, res) {
 })
 
 
+/*
+============================================================================
+Permission new
+============================================================================
+*/
+router.post('/recruitment/permission-new', function (req, res) {
+
+  let permissionNew = req.session.data['permission-new']
+
+})
+
+
 module.exports = router
 
 
