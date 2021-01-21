@@ -16,7 +16,7 @@
 		  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 		  
 		    <h1 class="govuk-heading-l">
-		      What other permission do you give [training provider name]?
+		      Select the permissions you give [training provider name]
 		    </h1>
 		    		    		    
 		  </legend>
@@ -28,33 +28,63 @@
 		<div class="govuk-form-group">
 		<fieldset class="govuk-fieldset">
 		
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<h2 class="govuk-fieldset__heading">Add apprentice records</h2>
+			</legend>
+		
+			<div class="govuk-hint govuk-!-margin-bottom-3">
+			If your company does not pay the levy, this will also allow your training provider to reserve funding on your behalf.
+			</div>
+			
 		    <div class="govuk-radios">
 				<div class="govuk-radios__item">
-					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-0" value="on" class="govuk-radios__input">
-					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">No other permission</label>
-					<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-			          [training provider name] cannot create or manage job adverts on your behalf.
-			        </div>
+					<input type="radio" name="do-you-give-permission-to-add" id="radio-a7ce5af3-0" value="Add apprentice records" class="govuk-radios__input" {{ checked("do-you-give-permission-to-add", "Add apprentice records") }}>
+					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">Allow</label>
 				</div>
-				<div class="gem-c-radio govuk-radios__item">
-					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-1" value="off" class="govuk-radios__input">
-					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Permission to create job adverts</label>
-					<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-			          [training provider name] can create job adverts for you to review. They will also receive and manage applications.
-			        </div>
-				</div>
-				<div class="gem-c-radio govuk-radios__item">
-					<input type="radio" name="cookies-settings" id="radio-a7ce5af3-2" value="off" class="govuk-radios__input">
-					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Permission to create and submit job adverts</label>
-					<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-			          [training provider name] can create and submit job adverts to ESFA without your review. They will also receive and manage applications.
-			        </div>
+				<div class="govuk-radios__item">
+					<input type="radio" name="do-you-give-permission-to-add" id="radio-a7ce5af3-1" value="Cannot add apprentice records" class="govuk-radios__input" {{ checked("do-you-give-permission-to-add", "Cannot add apprentice records") }}>
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Do not allow</label>
 				</div>
 			</div>
 			
+			
+			
 		</fieldset>
 		</div>
+		
+		
+		<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset">
+		
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<h2 class="govuk-fieldset__heading">Recruit apprentices</h2>
+			</legend>
+					
+		    <div class="govuk-radios">
+				
+				<div class="govuk-radios__item">
+					<input type="radio" name="do-you-give-permission-to-recruit" id="radio-a7ce5af3-1" value="Create and submit job adverts" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Create and submit job adverts") }}>
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Allow [training provider name] to create and submit job adverts to ESFA </label>
+				</div>
+				
+				<div class="govuk-radios__item">
+					<input type="radio" name="do-you-give-permission-to-recruit" id="radio-a7ce5af3-1" value="Create job adverts" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Create job adverts") }} >
+					<label for="radio-a7ce5af3-1" class="govuk-label govuk-radios__label">Allow [training provider name] to create job adverts </label>
+				</div>
+				
+				<div class="govuk-radios__item">
+					<input type="radio" name="do-you-give-permission-to-recruit" id="radio-a7ce5af3-2" value="Cannot recruit apprentices" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Cannot recruit apprentices") }} >
+					<label for="radio-a7ce5af3-0" class="govuk-label govuk-radios__label">Do not allow</label>
+				</div>
+			</div>
+			
+			
+			
+		</fieldset>
+		</div>
+		
 				  		      
+		    		      
 		
 		<button class="govuk-button" data-module="govuk-button">
 		  Save changes

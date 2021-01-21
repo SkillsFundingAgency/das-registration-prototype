@@ -6,6 +6,12 @@
 
 {% block content %}
 
+<div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-8">
+  <h1 class="govuk-panel__title">
+    Your permissions have been saved
+  </h1>
+</div>
+ 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		  <h1 class="govuk-heading-xl">Your training providers</h1>		
@@ -50,12 +56,13 @@
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell das-table-cell-width-30">BENTLEY &amp; BENTLEY LIMITED</td>
-                    <td class="govuk-table__cell das-table-cell-width-50">
-                                <span>No permissions set</span><br>
-                                								                    </td>
+                    <td class="govuk-table__cell das-table-cell-width-50">                                								
+								<span>{{data['do-you-give-permission-to-add']}}</span><br>
+                                <span>{{data['do-you-give-permission-to-recruit']}}</span>
+                    </td>
                         <td class="govuk-table__cell govuk-table__cell--numeric das-table-cell-width-20">
                             <a class="govuk-link govuk-link--no-visited-state" href="permission-consolidated-radios.html">
-                                    Set permissions
+                                    Change permissions
                             </a>
                         </td>
                 </tr>

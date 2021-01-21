@@ -242,71 +242,18 @@ router.get('/recruitment/recruitment-layout-table', function (req, res) {
 })
 
 
-
 /*
 ============================================================================
-Permission to add apprentice records 
-============================================================================
-*/
-router.post('/recruitment/permission-to-add', function (req, res) {
-
-  let permissionToAdd = req.session.data['permission-to-add']
-
-  if (permissionToAdd === 'Allow') {
-    res.redirect('permission-consolidated-radios')
-  }
-  else {
-    res.redirect('permission-consolidated-radios')
-  }
-})
-
-
-
-/*
-============================================================================
-Permission consolidated - option to UR
+Permissions consolidated - option for UR
 ============================================================================
 */
 router.post('/recruitment/permission-consolidated-radios', function (req, res) {
 
   let permissionToRecruit = req.session.data['permission-to-recruit']
+  
+  let permissionToAdd = req.session.data['permission-to-add']
 
-  if (permissionToRecruit === 'Allow') {
-    res.redirect('permission-new')
-  }
-  else {
-    res.redirect('permission-confirm')
-  }
-})
-
-
-/*
-============================================================================
-Permission to recruit apprentices
-============================================================================
-*/
-router.post('/recruitment/permission-to-recruit', function (req, res) {
-
-  let permissionToRecruit = req.session.data['permission-to-recruit']
-
-  if (permissionToRecruit === 'Allow') {
-    res.redirect('permission-new')
-  }
-  else {
-    res.redirect('permission-confirm')
-  }
-})
-
-
-/*
-============================================================================
-Permission new - individula page option
-============================================================================
-*/
-router.post('/recruitment/permission-new', function (req, res) {
-
-  let permissionNew = req.session.data['permission-new']
-
+	res.redirect('providers-changed')
 })
 
 
