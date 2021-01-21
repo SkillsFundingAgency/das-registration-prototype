@@ -253,10 +253,29 @@ router.post('/recruitment/permission-to-add', function (req, res) {
   let permissionToAdd = req.session.data['permission-to-add']
 
   if (permissionToAdd === 'Allow') {
-    res.redirect('permission-to-recruit')
+    res.redirect('permission-consolidated-radios')
   }
   else {
-    res.redirect('permission-to-recruit')
+    res.redirect('permission-consolidated-radios')
+  }
+})
+
+
+
+/*
+============================================================================
+Permission consolidated - option to UR
+============================================================================
+*/
+router.post('/recruitment/permission-consolidated-radios', function (req, res) {
+
+  let permissionToRecruit = req.session.data['permission-to-recruit']
+
+  if (permissionToRecruit === 'Allow') {
+    res.redirect('permission-new')
+  }
+  else {
+    res.redirect('permission-confirm')
   }
 })
 
@@ -281,7 +300,7 @@ router.post('/recruitment/permission-to-recruit', function (req, res) {
 
 /*
 ============================================================================
-Permission new
+Permission new - individula page option
 ============================================================================
 */
 router.post('/recruitment/permission-new', function (req, res) {
@@ -289,6 +308,7 @@ router.post('/recruitment/permission-new', function (req, res) {
   let permissionNew = req.session.data['permission-new']
 
 })
+
 
 
 module.exports = router
