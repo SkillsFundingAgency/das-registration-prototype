@@ -5,84 +5,163 @@
 {% endblock %}
 
 {% block content %}
-            
-	
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl" id="vacancy-header">
-            Test apprenticeship
-            <span class="govuk-caption-xl">BEENIE LIMITED</span>
-        </h1>
+
+<style>
+.button-secondary {
+    background-color: #BFC1C3;
+    box-shadow: none;
+    color: #0B0C0C !important;
+    display: inline-block;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+.preview-empty {
+    border-left: 5px solid #2e358b;
+    min-height: 80px;
+    padding-left: 15px;
+}
+</style>
+                        
+
+<div class="govuk-grid-row" id="title">
+    <div class="govuk-grid-column-two-thirds">
+        <div class=" govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-6" id="Title">
+                
+                Test apprenticeship
+                <span class="govuk-caption-xl">BENTLEY &amp; BENTLEY LIMITED</span>
+            </h2>
+            <a class="govuk-body govuk-link" data-automation="link-employer-name" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/title/?wizard=False">Change<span class="govuk-visually-hidden">employer-name</span></a>
+        </div>
     </div>
 </div>
-
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="shortDescription">
     <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-s govuk-!-margin-top-0">Brief overview</h3>
-        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-0" id="ShortDescription">
+                
+                Brief overview
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-ShortDescription" data-valmsg-for="ShortDescription" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-overview" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/description/?wizard=False">Add<span class="govuk-visually-hidden">brief overview</span></a>
+        </div>
     </div>
     <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s govuk-!-margin-top-0">Closing date</h3>
-        <p class="govuk-body" id="vacancy-closing-date">12 Aug 2020</p>
+        <div class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-0" id="ClosingDate">
+                
+                Closing date
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-ClosingDate" data-valmsg-for="ClosingDate" data-valmsg-replace="true"></span>
+            <p class="govuk-body">30 Aug 2020</p>
+            <a class="govuk-body govuk-link" data-automation="link-closing-date" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/dates/?wizard=False">Change<span class="govuk-visually-hidden">closing date</span></a>
+        </div>
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="apprenticeshipSummary">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-l">Apprenticeship summary</h2>
+        <h2 class="govuk-heading-l govuk-!-margin-top-7">Apprenticeship summary</h2>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <ul class="govuk-list">
-            <li>
-                <h3 class="govuk-heading-s">Annual wage</h3>
-                <p class="govuk-body">£9,464 to £18,137.60</p>
-                <p class="govuk-body"></p>
+            <li class="">
+                <h3 class="govuk-heading-s govuk-!-margin-top-4" id="YearlyWage">
+                    
+                    Annual wage
+                </h3>
+                <span class="govuk-error-message field-validation-valid" id="error-message-HasWage" data-valmsg-for="HasWage" data-valmsg-replace="true"></span>
+                <span class="govuk-error-message field-validation-valid" id="error-message-WageText" data-valmsg-for="WageText" data-valmsg-replace="true"></span>
+                <p class="govuk-body">£8,632</p>
+                <span class="govuk-error-message field-validation-valid" id="error-message-WageInfo" data-valmsg-for="WageInfo" data-valmsg-replace="true"></span>
+                
+                <a class="govuk-body govuk-link" data-automation="link-salary" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/wage/?wizard=False">Change<span class="govuk-visually-hidden">yearly wage</span></a>
             </li>
-            <li>
-                <h3 class="govuk-heading-s">Working week</h3>
-                <p class="govuk-body">Monday to Friday 9am to 5pm</p>
+            <li class="">
+                <h3 class="govuk-heading-s govuk-!-margin-top-4" id="WorkingWeek">
+                    
+                    Working week
+                </h3>
+                <span class="govuk-error-message field-validation-valid" id="error-message-WorkingWeekDescription" data-valmsg-for="WorkingWeekDescription" data-valmsg-replace="true"></span>
+                <p class="govuk-body">rfrestrgf</p>
+                <span class="govuk-error-message field-validation-valid" id="error-message-HoursPerWeek" data-valmsg-for="HoursPerWeek" data-valmsg-replace="true"></span>
                 <p class="govuk-body">Total hours per week: 40</p>
+            
+                <a class="govuk-body govuk-link" data-automation="link-working-week" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/duration/?wizard=False">Change<span class="govuk-visually-hidden">working week</span></a>
             </li>
-            <li>
-                <h3 class="govuk-heading-s">Expected apprenticeship duration</h3>
-                <p class="govuk-body">2 years</p>
+            <li class="">
+                <h3 class="govuk-heading-s govuk-!-margin-top-4" id="ExpectedDuration">
+                    
+                    Expected duration
+                </h3>
+                <span class="govuk-error-message field-validation-valid" id="error-message-ExpectedDuration" data-valmsg-for="ExpectedDuration" data-valmsg-replace="true"></span>
+                <p class="govuk-body">12 months</p>
+                <a class="govuk-body govuk-link" data-automation="link-duration" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/duration/?wizard=False">Change<span class="govuk-visually-hidden">expected duration</span></a>
+
             </li>
-            <li>
-                <h3 class="govuk-heading-s">Possible start date</h3>
-                <p class="govuk-body">20 Aug 2020</p>
+            <li class="">
+                <h3 class="govuk-heading-s govuk-!-margin-top-4" id="PossibleStartDate">
+                    
+                    Possible start date
+                </h3>
+                <span class="govuk-error-message field-validation-valid" id="error-message-PossibleStartDate" data-valmsg-for="PossibleStartDate" data-valmsg-replace="true"></span>
+                <p class="govuk-body">13 Sep 2020</p>
+                <a class="govuk-body govuk-link" data-automation="link-start-date" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/dates/?wizard=False">Change<span class="govuk-visually-hidden">possible start date</span></a>
             </li>
-            <li>
-                <h3 class="govuk-heading-s">Apprenticeship level</h3>
+            <li class="">
+                <h3 class="govuk-heading-s govuk-!-margin-top-4" id="TrainingLevel">
+                    
+                    Apprenticeship level
+                </h3>
+                <span class="govuk-error-message field-validation-valid" id="error-message-HasProgramme" data-valmsg-for="HasProgramme" data-valmsg-replace="true"></span>
+                <span class="govuk-error-message field-validation-valid" id="error-message-TrainingLevel" data-valmsg-for="TrainingLevel" data-valmsg-replace="true"></span>
                 <p class="govuk-body">
-                    Intermediate Level Apprenticeship<br>
+                    Intermediate <br>
                     Level 2 (GCSE)
-                </p>
-            </li>
-            <li>
-                <h3 class="govuk-heading-s">Reference number</h3>
-                <p class="govuk-body">VAC1000014106</p>
-            </li>
-            <li>
-                <h3 class="govuk-heading-s">Positions</h3>
-                <p class="govuk-body">5 positions available</p>
-            </li>
+            </p>
+            <a class="govuk-body govuk-link" data-automation="link-apprenticeship-level" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/training/?wizard=False">Change<span class="govuk-visually-hidden">apprenticeship level</span></a>
+        </li>
+        
+        <li class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="NumberOfPositions">
+                
+                Positions
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-NumberOfPositions" data-valmsg-for="NumberOfPositions" data-valmsg-replace="true"></span>
+            <p class="govuk-body">5 positions available</p>
+            <a class="govuk-body govuk-link" data-automation="link-positions" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/number-of-positions/?wizard=False">Change<span class="govuk-visually-hidden">positions</span></a>
+        </li>
         </ul>
     </div>
     <div class="govuk-grid-column-two-thirds vacancy-descriptions" id="vacancyDescription">
-        <h3 class="govuk-heading-s">What will the apprentice be doing?</h3>
-        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
-        <h3 class="govuk-heading-s">What training will the apprentice take and what qualification will the apprentice get at the end?</h3>
-        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
-        <h3 class="govuk-heading-s">What is the expected career progression after this apprenticeship?</h3>
-        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s">Description of the apprenticeship</h3>
+            <p class="govuk-body">What will the apprentice be doing?</p>
+            
+            <span class="govuk-error-message field-validation-valid" id="error-message-VacancyDescription" data-valmsg-for="VacancyDescription" data-valmsg-replace="true"></span>
+            
+            <p class="govuk-body">What training will the apprentice take and what qualification will the apprentice get at the end?</p>
+            
+            <span class="govuk-error-message field-validation-valid" id="error-message-TrainingDescription" data-valmsg-for="TrainingDescription" data-valmsg-replace="true"></span>
+            
+            <p class="govuk-body">What is the expected career progression after this apprenticeship?</p>
+            
+            <span class="govuk-error-message field-validation-valid" id="error-message-OutcomeDescription" data-valmsg-for="OutcomeDescription" data-valmsg-replace="true"></span>
+            
+
+            <a class="button-secondary" data-automation="link-vacancy-description" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/vacancy-description/">Add<span class="govuk-visually-hidden">full vacancy description</span></a>
+        </div>
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="reqAndProspects">
     <div class="govuk-grid-column-full">
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
 </div>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-l">Requirements and prospects</h2>
@@ -90,21 +169,42 @@
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">Desired skills and personal qualities</h3>
-        <p class="govuk-body">Communication skills, IT skills, Attention to detail</p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="Skills">
+                
+                Desired skills and personal qualities
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-Skills" data-valmsg-for="Skills" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-skills" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/skills/">Add<span class="govuk-visually-hidden">desired skills and personal qualities</span></a>
+        </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">Things to consider</h3>
-        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="ThingsToConsider">
+                
+                Things to consider (optional)
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-ThingsToConsider" data-valmsg-for="ThingsToConsider" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-things-to-consider" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/considerations/">Add<span class="govuk-visually-hidden">things to consider</span></a>
+        </div>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h3 class="govuk-heading-s">Qualifications</h3>
-        <p class="govuk-body">GCSE or equivalent Test (Grade 6) essential</p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="Qualifications">
+                
+                Qualifications
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-Qualifications" data-valmsg-for="Qualifications" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-qualifications" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/qualifications/">Add<span class="govuk-visually-hidden">qualifications</span></a>
+        </div>
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="aboutEmployer">
     <div class="govuk-grid-column-full">
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
@@ -116,42 +216,85 @@
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-s">Description</h3>
-        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
-        <h3 class="govuk-heading-s">Employer</h3>
-        <p class="govuk-body">BEENIE LIMITED</p>
-        
-        <h3 class="govuk-heading-s">Website</h3>
-        <div>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="EmployerDescription">
+                
+                Description
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerDescription" data-valmsg-for="EmployerDescription" data-valmsg-replace="true"></span>
             
-            <p class="govuk-body">
-                www.test.com
-            </p>
+            <a class="button-secondary" data-automation="link-description" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/about-employer/">Add<span class="govuk-visually-hidden">employer description</span></a>
+        </div>
+        <div class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="EmployerName">
+                
+                Employer
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerName" data-valmsg-for="EmployerName" data-valmsg-replace="true"></span>
+            <p class="govuk-body">BENTLEY &amp; BENTLEY LIMITED</p>
+            <a class="govuk-body govuk-link" data-automation="link-employer" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/employer/?wizard=False">Change<span class="govuk-visually-hidden">employer</span></a>
+        </div>
+        <div class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="DisabilityConfident">
+                
+                Disability Confident (optional)
+            </h3>
+            
+            
+            
+            
+
+            <p class="govuk-hint">This advert is not Disability Confident<br>This will not appear on the advert when it goes live</p>
+            <a class="govuk-body govuk-link" data-automation="link-standard" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/dates/?wizard=False">Change<span class="govuk-visually-hidden">disability confident</span></a>
+        </div>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="EmployerWebsiteUrl">
+                
+                Website (optional)
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerWebsiteUrl" data-valmsg-for="EmployerWebsiteUrl" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-website" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/about-employer/">Add<span class="govuk-visually-hidden">website</span></a>
         </div>
     </div>
     <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Contact</h3>
-        <p class="govuk-body"></p>
-        <p class="govuk-body"></p>
-        <p class="govuk-body"></p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="EmployerContact">
+                
+                Contact details (optional)
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerContactName" data-valmsg-for="EmployerContactName" data-valmsg-replace="true"></span>
+            
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerContactEmail" data-valmsg-for="EmployerContactEmail" data-valmsg-replace="true"></span>
+            
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerContactTelephone" data-valmsg-for="EmployerContactTelephone" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-employer-contact-details" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/employer-contact-details/">Add<span class="govuk-visually-hidden">contact details</span></a>
+        </div>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <h3 class="govuk-heading-s">Location</h3>
-        <ul class="govuk-list">
-                <li>2 Carr Head</li>
-                <li>New Barn Lane</li>
-                <li>Rawtenstall</li>
-                <li>Lancashire</li>
-                <li>BB4 7AQ</li>
-        </ul>
+        <div class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="EmployerAddress">
+                
+                Location
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-EmployerAddressElements" data-valmsg-for="EmployerAddressElements" data-valmsg-replace="true"></span>
+            <ul class="govuk-list">
+                    <li>Millennium Road Airedale Business Centre Keighley Road</li>
+                    <li>Skipton</li>
+                    <li>North Yorkshire</li>
+                    <li>BD23 2UB</li>
+            </ul>
+            <a class="govuk-body govuk-link" data-automation="link-location" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/location/?wizard=False">Change<span class="govuk-visually-hidden">location</span></a>
+        </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <img id="static-map" src="https://maps.googleapis.com/maps/api/staticmap?markers=53.6869,-2.2832&amp;size=465x256&amp;zoom=12&amp;client=gme-skillsfundingagency&amp;signature=ezC5DqTqGqt0u6GBGzhOKq5z-B8=">
+        <img id="static-map" src="https://maps.googleapis.com/maps/api/staticmap?markers=53.9932826594674,-2.05649541180706&amp;size=465x256&amp;zoom=12&amp;client=gme-skillsfundingagency&amp;signature=rci2aquEThpAnfsgH_rNQUgoPV0=" alt="Location map">
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="trainingProvider">
     <div class="govuk-grid-column-full">
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
@@ -163,34 +306,51 @@
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-s">
-            Training provider
-        </h3>
-        <p class="govuk-body">THERMAL INSULATION CONTRACTORS ASSOCIATION</p>
+        <div class="preview-empty">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="Provider">
+                
+                Training provider
+            </h3>
+            <span class="govuk-error-message field-validation-valid" id="error-message-ProviderName" data-valmsg-for="ProviderName" data-valmsg-replace="true"></span>
+            
+            <a class="button-secondary" data-automation="link-training-provider" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/select-training-provider/?wizard=False">Add<span class="govuk-visually-hidden">training provider</span></a>
+        </div>
     </div>
     <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-s">Apprenticeship Standard</h3>
-        <p class="govuk-body">Non-destructive testing (NDT) operator</p>
+        <div class="">
+            <h3 class="govuk-heading-s govuk-!-margin-top-4" id="Training">
+                
+                Apprenticeship Standard
+            </h3>
+            <p class="govuk-body">
+                Mineral and Construction Product Sampling and Testing Operations<br>
+                Level 2 (GCSE)
+            </p>
+            <a class="govuk-body govuk-link" data-automation="link-standard" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/training/?wizard=False">Change<span class="govuk-visually-hidden">apprenticeship training</span></a>
+        </div>
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row" id="applicationProcess">
     <div class="govuk-grid-column-full">
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
 </div>
-<div id="offline-vacancy">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-            <h2 class="govuk-heading-l">Application process</h2>
-            
-            <div>
-                <p class="govuk-body">Candidates will apply through the <a href="https://www.gov.uk/apply-apprenticeship" class="govuk-body govuk-link" rel="noopener" target="_blank">Find an apprenticeship service</a></p>
-            </div>
-            
-            
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Application process</h2>
+        
+        <div class="preview-empty">
+            <h2 id="ApplicationMethod" class="govuk-heading-s govuk-!-margin-top-4">How will the candidates apply for this apprenticeship?</h2>
+            <span class="govuk-error-message field-validation-valid" id="error-message-ApplicationMethod" data-valmsg-for="ApplicationMethod" data-valmsg-replace="true"></span>
+            <a class="button-secondary" data-automation="link-application-method" href="/accounts/JKKBY6/vacancies/215cbe7f-06c8-4138-a417-e5dbb20a3af7/application-process/">Add<span class="govuk-visually-hidden">application method</span></a>
         </div>
+        
+        
     </div>
 </div>
+
+
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
