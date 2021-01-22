@@ -1,0 +1,47 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+            
+	
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">		  
+
+
+	<h1 class="govuk-heading-xl">Are you sure you want to approve advert Test apprenticeship?</h1>
+	
+	<p class="govuk-hint">Once you have been approved it will be submitted to ESFA</p>
+
+		<form>
+			
+			<div class="govuk-form-group">
+				<div class="govuk-radios govuk-radios--inlin">
+				
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="contact-details-status" name="contact-details-status" type="radio" value="true">
+						<label class="govuk-label govuk-radios__label" for="contact-details-status">Yes</label>
+					</div>
+					
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="contact-details-status-2" name="contact-details-status" type="radio" value="false">
+						<label class="govuk-label govuk-radios__label" for="contact-details-status-2">No</label>
+					</div>
+				
+				</div>
+			</div>
+			
+			<div class="govuk-form-group">
+				<a type="submit" class="govuk-button" href="success.html">Save and continue</a>
+			</div>
+			
+		</form>
+
+
+	</div>
+</div>
+
+
+{% endblock %}
