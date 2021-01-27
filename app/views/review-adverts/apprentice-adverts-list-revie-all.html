@@ -24,11 +24,11 @@
                 <label class="govuk-label" for="Filter">Filter adverts by</label>
                 <select class="govuk-select" data-val="true" data-val-required="The Filter field is required." id="Filter" name="Filter">
                     <optgroup label="Status">
-                        <option value="All">all adverts</option>
+                        <option value="All" selected="selected">all adverts</option>
                         <option value="Live">live adverts</option>
                         <option value="Referred">rejected adverts</option>
                         <option value="Referred">adverts pending review</option>
-                        <option value="Submitted" selected="selected">adverts awaiting your review</option>
+                        <option value="Submitted">ready for review</option>
                         <option value="Draft">draft adverts</option>
                         <option value="Closed">closed adverts</option>
                     </optgroup>
@@ -120,9 +120,9 @@
                             
                             <td class="govuk-table__cell dashboard-applications" data-label="Applications">-</td>
                             <td class="govuk-table__cell dashboard-closingdate" data-label="Closing date"><span>12 Aug 2020</span></td>
-                            <td class="govuk-table__cell dashboard-status" data-label="Status"><span class="govuk-tag govuk-tag--blue">View advert</span></td>
+                            <td class="govuk-table__cell dashboard-status" data-label="Status"><span class="govuk-tag govuk-tag--blue">Ready for review</span></td>
                             <td class="govuk-table__cell dashboard-action" data-label="Action">
-                                <a class="govuk-link" href="advert-edit">Approve or Reject</a>
+                                <a class="govuk-link" href="advert-edit">Review</a>
                                 
                             </td>
                         </tr>
@@ -142,7 +142,7 @@
                             <td class="govuk-table__cell dashboard-closingdate" data-label="Closing date"><span>12 Aug 2020</span></td>
                             <td class="govuk-table__cell dashboard-status" data-label="Status"><span class="govuk-tag govuk-tag--grey">Draft</span></td>
                             <td class="govuk-table__cell dashboard-action" data-label="Action">
-                                <a class="govuk-link" href="#">Manage</a>
+                                <a class="govuk-link" href="#">Edit and submit</a>
                                 
                             </td>
                         </tr>
@@ -182,7 +182,7 @@
                             <td class="govuk-table__cell dashboard-closingdate" data-label="Closing date"><span>12 Aug 2020</span></td>
                             <td class="govuk-table__cell dashboard-status" data-label="Status"><span class="govuk-tag govuk-tag--pink">Rejected</span></td>
                             <td class="govuk-table__cell dashboard-action" data-label="Action">
-                                <a class="govuk-link" href="#">Manage</a>
+                                <a class="govuk-link" href="#">Edit and resubmit</a>
                                 
                             </td>
                         </tr>
