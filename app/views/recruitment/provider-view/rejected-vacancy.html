@@ -4,7 +4,22 @@
   Your providers
 {% endblock %}
 
+<style>
+.button-secondary {
+    background-color: #BFC1C3;
+    box-shadow: none;
+    color: #0B0C0C !important;
+    display: inline-block;
+    padding: 7px 15px;
+    text-decoration: none;
+}
 
+.preview-empty {
+    border-left: 5px solid #2e358b;
+    min-height: 80px;
+    padding-left: 15px;
+}
+</style>
 
 {% block content %}
 
@@ -23,7 +38,7 @@
     <p class="govuk-body">This is how the vacancy will appear to candidates on <a href="https://www.gov.uk/apply-apprenticeship" rel="noopener" target="_blank">Find an apprenticeship</a></p>
 
     {{ govukErrorSummary({
-      titleText: "Changes needed",
+      titleText: "Advert rejected",
       errorList: [
         {
           html: "<p>
@@ -316,7 +331,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form method="post">
-      <input type="submit" class="govuk-button" data-module="govuk-button" value="Submit vacancy">
+      <input type="submit" class="govuk-button" data-module="govuk-button" value="Resubmit vacancy">
       <br>
       <a href="../dashboard" class="govuk-body das-button--link">Return to dashboard</a>
     </form>
