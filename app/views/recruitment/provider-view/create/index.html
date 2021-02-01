@@ -1,0 +1,50 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Your providers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../recruitment"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which of your employers do you want to create a vacancy for?</h1>
+	
+	<form action="choose-title" method="post">
+	<div class="govuk-form-group">
+	    <h2 class="govuk-heading-s">Select employer</h2>
+	    <fieldset class="govuk-fieldset">
+	        <span class="govuk-error-message field-validation-valid" id="error-message-SelectedEmployerId" data-valmsg-for="SelectedEmployerId" data-valmsg-replace="true"></span>
+	        <div class="govuk-radios">
+	                <div class="govuk-radios__item">
+	                    <input type="radio" value="7G9B9R" class="govuk-radios__input" id="emp-7G9B9R" name="SelectedEmployerId">
+	                    <label for="emp-7G9B9R" class="govuk-label govuk-radios__label">BUTCHER &amp; BAKER LIMITED</label>
+	                </div>
+	                <div class="govuk-radios__item">
+	                    <input type="radio" value="BB8W4N" class="govuk-radios__input" id="emp-BB8W4N" name="SelectedEmployerId">
+	                    <label for="emp-BB8W4N" class="govuk-label govuk-radios__label">Coventry City Council</label>
+	                </div>
+	                <div class="govuk-radios__item">
+	                    <input type="radio" value="PNXN9B" class="govuk-radios__input" id="emp-PNXN9B" name="SelectedEmployerId">
+	                    <label for="emp-PNXN9B" class="govuk-label govuk-radios__label">COVENTRY ACCOUNTANTS LTD</label>
+	                </div>
+	        </div>
+	    </fieldset>
+	</div>
+	
+	<button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+	<br>
+	<a class="govuk-link das-button-link" href="">Cancel</a>
+	
+	</form>
+    </div>
+</div>
+
+{% endblock %}

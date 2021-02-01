@@ -1,0 +1,258 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+
+<style>
+.button-secondary {
+    background-color: #BFC1C3;
+    box-shadow: none;
+    color: #0B0C0C !important;
+    display: inline-block;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+.preview-empty {
+    border-left: 5px solid #2e358b;
+    min-height: 80px;
+    padding-left: 15px;
+}
+</style>
+
+
+
+<div class="govuk-inset-text">
+  This vacancy has been sent to BENTLEY & BENTLEY LIMITED for review. <br>You can not edit this until this employer has rejected the vacancy.
+</div>
+
+<br><br>
+                        
+
+<div class="govuk-grid-row" id="title" >
+    <div class="govuk-grid-column-two-thirds">
+        <div class=" govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-6" id="Title">
+                Test apprenticeship
+                <span class="govuk-caption-xl">BENTLEY &amp; BENTLEY LIMITED</span>
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-s govuk-!-margin-top-0">Brief overview</h3>
+        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s govuk-!-margin-top-0">Closing date</h3>
+        <p class="govuk-body" id="vacancy-closing-date">12 Aug 2020</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Apprenticeship summary</h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <ul class="govuk-list">
+            <li>
+                <h3 class="govuk-heading-s">Annual wage</h3>
+                <p class="govuk-body">£9,464 to £18,137.60</p>
+                <p class="govuk-body"></p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Working week</h3>
+                <p class="govuk-body">Monday to Friday 9am to 5pm</p>
+                <p class="govuk-body">Total hours per week: 40</p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Expected apprenticeship duration</h3>
+                <p class="govuk-body">2 years</p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Possible start date</h3>
+                <p class="govuk-body">20 Aug 2020</p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Apprenticeship level</h3>
+                <p class="govuk-body">
+                    Intermediate Level Apprenticeship<br>
+                    Level 2 (GCSE)
+                </p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Reference number</h3>
+                <p class="govuk-body">VAC1000014106</p>
+            </li>
+            <li>
+                <h3 class="govuk-heading-s">Positions</h3>
+                <p class="govuk-body">5 positions available</p>
+            </li>
+        </ul>
+    </div>
+    <div class="govuk-grid-column-two-thirds vacancy-descriptions" id="vacancyDescription">
+        <h3 class="govuk-heading-s">What will the apprentice be doing?</h3>
+        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
+        <h3 class="govuk-heading-s">What training will the apprentice take and what qualification will the apprentice get at the end?</h3>
+        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
+        <h3 class="govuk-heading-s">What is the expected career progression after this apprenticeship?</h3>
+        <div class="govuk-body"><p>Describe what an average day or week will be like and what tasks they could be doing.&nbsp;</p></div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Requirements and prospects</h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">Desired skills and personal qualities</h3>
+        <p class="govuk-body">Communication skills, IT skills, Attention to detail</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">Things to consider</h3>
+        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-s">Qualifications</h3>
+        <p class="govuk-body">GCSE or equivalent Test (Grade 6) essential</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">About the employer</h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-s">Description</h3>
+        <p class="govuk-body">Describe what an average day or week will be like and what tasks they could be doing.</p>
+        <h3 class="govuk-heading-s">Employer</h3>
+        <p class="govuk-body">BEENIE LIMITED</p>
+        
+        <h3 class="govuk-heading-s">Website</h3>
+        <div>
+            
+            <p class="govuk-body">
+                www.test.com
+            </p>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Contact</h3>
+        <p class="govuk-body"></p>
+        <p class="govuk-body"></p>
+        <p class="govuk-body"></p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s">Location</h3>
+        <ul class="govuk-list">
+                <li>2 Carr Head</li>
+                <li>New Barn Lane</li>
+                <li>Rawtenstall</li>
+                <li>Lancashire</li>
+                <li>BB4 7AQ</li>
+        </ul>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <img id="static-map" src="https://maps.googleapis.com/maps/api/staticmap?markers=53.6869,-2.2832&amp;size=465x256&amp;zoom=12&amp;client=gme-skillsfundingagency&amp;signature=ezC5DqTqGqt0u6GBGzhOKq5z-B8=">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Training</h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-s">
+            Training provider
+        </h3>
+        <p class="govuk-body">THERMAL INSULATION CONTRACTORS ASSOCIATION</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">Apprenticeship Standard</h3>
+        <p class="govuk-body">Non-destructive testing (NDT) operator</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+</div>
+<div id="offline-vacancy">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l">Application process</h2>
+            
+            <div>
+                <p class="govuk-body">Candidates will apply through the <a href="https://www.gov.uk/apply-apprenticeship" class="govuk-body govuk-link" rel="noopener" target="_blank">Find an apprenticeship service</a></p>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">        
+        
+         <div class="govuk-body">
+            <form class="form-inline" action="confirmation-approve" method="post">
+                <input type="submit" value="Approve job advert" class="govuk-button" data-automation="submit-button">
+                 <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="reject-journey/confirmation-reject">Reject job advert</a>
+                 <!-- red colour btn below, test with UR -->
+                 <!-- <a class="govuk-button govuk-button--warning" data-module="govuk-button" href="reject-journey/confirmation-reject">Reject job advert</a> -->
+        </div>
+        
+       
+		
+		<div class="govuk-body">
+            <a class="govuk-link" href="apprentice-adverts-list-review" data-automation="dashboard-link">Save and return to ‘Your adverts’</a>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+       
+    </div>
+</div>
+
+
+{% endblock %}
