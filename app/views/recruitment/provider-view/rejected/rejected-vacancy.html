@@ -36,21 +36,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <p class="govuk-body">This is how the vacancy will appear to candidates on <a href="https://www.gov.uk/apply-apprenticeship" rel="noopener" target="_blank">Find an apprenticeship</a></p>
-
-    {{ govukErrorSummary({
-      titleText: "Advert rejected",
-      errorList: [
-        {
-          html: "<p>
-                  This vacancy has been reviewed by "+data ['employer-name']+" and they have the following comments:
-                </p>
-                <p>
-                  "+data ['employer-comments']+"
-                </p>"
-        }
-      ]
-    }) }}
-
   </div>
 </div>
 
@@ -59,7 +44,7 @@
 
     <h2 id="Title" class="govuk-heading-xl govuk-!-margin-bottom-6">
       Software Support and Development Apprentice
-      <span class="govuk-caption-l">ABC opticians</span>
+      <span class="govuk-caption-l">BENTLEY & BENTLEY LIMITED</span>
     </h2>
     <a href="#" class="govuk-link das-edit-link">Change</a>
 
@@ -331,9 +316,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form method="post">
-      <input type="submit" class="govuk-button" data-module="govuk-button" value="Resubmit vacancy">
+      <input type="submit" class="govuk-button" data-module="govuk-button" value="Resubmit vacancy to employer">
       <br>
-      <a href="../dashboard" class="govuk-body das-button--link">Return to dashboard</a>
+      <a href="index" class="govuk-body das-button--link">Return to dashboard</a>
     </form>
   </div>
 </div>
