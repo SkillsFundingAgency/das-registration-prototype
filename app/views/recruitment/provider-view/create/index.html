@@ -9,11 +9,14 @@
 
 {% block content %}
 
-	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which of your employers do you want to create a vacancy for?</h1>
+
+<div class="govuk-grid-row ">
+    <div class="govuk-grid-column-two-thirds">
+
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which employer do you want to create a vacancy for?</h1>
 	
 	<form action="choose-title" method="post">
 	<div class="govuk-form-group">
-	    <h2 class="govuk-heading-s">Select employer</h2>
 	    <fieldset class="govuk-fieldset">
 	        <span class="govuk-error-message field-validation-valid" id="error-message-SelectedEmployerId" data-valmsg-for="SelectedEmployerId" data-valmsg-replace="true"></span>
 	        <div class="govuk-radios">
@@ -29,14 +32,35 @@
 	    </fieldset>
 	</div>
 	
+	<details class="govuk-details" data-module="govuk-details">
+	  <summary class="govuk-details__summary">
+	    <span class="govuk-details__summary-text">
+	      My employer is not listed
+	    </span>
+	  </summary>
+	  <div class="govuk-details__text">
+	    Your employer is not listed because you do not have the permission to create a vacancy for them. You’ll need to contact them to set this permission.
+	  </div>
+	</details>
+	
 	<button class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
+        Save and continue
+  </button>
+  
 	<br>
+	
 	<a class="govuk-link das-button-link" href="">Cancel</a>
 	
 	</form>
     </div>
+</div>
+
+
+
+
+
+
+</div>
 </div>
 
 {% endblock %}
