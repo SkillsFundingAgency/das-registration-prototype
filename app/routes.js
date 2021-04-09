@@ -268,7 +268,7 @@ router.post('/recruitment/permission-consolidated-confirm-V1', function (req, re
      if(req.session.data['confirm-permissions-change'] == 'Yes'){
           res.redirect('providers-changed')
 	} else {
-          res.redirect('permission-consolidated-radios')
+          res.redirect('providers')
 	}
 
 })

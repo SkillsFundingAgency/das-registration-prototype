@@ -178,3 +178,13 @@ $govuk-assets-path: '/govuk/assets/';
           }
      }
 }
+
+.error-panel {
+     padding: 1.5em;
+     background: govuk-colour("light-grey");
+     margin: 1em 0;
+     .govuk-warning-text {
+          margin: 0;
+          padding: 0;
+     }
+}
