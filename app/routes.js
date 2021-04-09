@@ -249,15 +249,32 @@ Permissions consolidated - option for UR
 */
 router.post('/recruitment/permission-consolidated-radios', function (req, res) {
 
-  let permissionToRecruit = req.session.data['permission-to-recruit']
-  
-  let permissionToAdd = req.session.data['permission-to-add']
+     let permissionToRecruit = req.session.data['permission-to-recruit']
+     let permissionToAdd = req.session.data['permission-to-add']
 
-	res.redirect('providers-changed')
+     if(req.session.data['do-you-give-permission-to-recruit'] == 'Allow'){
+		res.redirect('permission-consolidated-confirm-V2')
+	} else if (req.session.data['do-you-give-permission-to-recruit'] == 'Allow, but I want to review job adverts before they’re advertised') {
+          res.redirect('permission-consolidated-confirm-V2')
+     } else {
+		res.redirect('permission-consolidated-confirm-V1')
+	}
 })
 
+router.post('/recruitment/permission-consolidated-confirm-V1', function (req, res) {
 
+     let confirmChangesToPermission = req.session.data['confirm-permissions-change']
+
+     if(req.session.data['confirm-permissions-change'] == 'Yes'){
+          res.redirect('providers-changed')
+	} else {
+          res.redirect('permission-consolidated-radios')
+	}
+
+})
+
+router.post('/recruitment/permission-consolidated-confirm-V2', function (req, res) {
+     res.redirect('providers-changed')
+})
 
 module.exports = router
-
-

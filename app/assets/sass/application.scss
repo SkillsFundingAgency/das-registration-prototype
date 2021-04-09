@@ -22,3 +22,159 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/_modifiers";
 @import "components/_provider";
 @import "components/_ma-menu";
+
+.govuk-hint {
+     p {
+          color: $govuk-secondary-text-colour;
+     }
+}
+
+.table-designs {
+     .govuk-tabs__panel {
+          padding-left: 0;
+          padding-right: 0;
+          border: none;
+     }
+}
+
+.visually-hidden {
+     display: none;
+}
+
+#table-design-V2 {
+     thead {
+          tr {
+               th {
+                    background-color: govuk-colour("blue");
+                    color: white;
+                    padding: 10px;
+                    border-bottom: none;
+                    &:first-of-type {
+                         border-radius: 10px 0 0 0;
+                    }
+                    &:last-of-type {
+                         border-radius: 0 10px 0 0;
+                    }
+               }
+          }
+     }
+     tbody {
+          tr {
+               th, td {
+                    padding: 10px;
+                    border-bottom: none;
+               }
+               &:nth-of-type(even) {
+                    th, td {
+                         background: govuk-colour("light-grey");
+                    }
+               }
+          }
+     }
+}
+
+.icon {
+     display: inline-block;
+     text-indent: -1000em;
+     width: 1.25em;
+     height: 1.25em;
+     &.yes {
+          background: url("../images/tick-green.svg") no-repeat 50% 50%;
+          background-size: contain;
+     }
+     &.no {
+          background: url("../images/cross-red.svg") no-repeat 50% 50%;
+          background-size: 1em;
+     }
+}
+
+#table-design-V3 {
+     thead {
+          tr {
+               th {
+                    border-bottom: 5px solid $govuk-border-colour;
+                    // background-color: govuk-colour("blue");
+                    // color: white;
+                    // padding: 10px;
+                    // border-bottom: none;
+                    // &:first-of-type {
+                    //      border-radius: 10px 0 0 0;
+                    // }
+                    // &:last-of-type {
+                    //      border-radius: 0 10px 0 0;
+                    // }
+               }
+          }
+     }
+     tbody {
+          tr {
+               &.first-of-type {
+                    border-top: 5px solid govuk-colour("light-grey");
+               }
+               th, td {
+                    // padding: 10px;
+                    border-bottom: none;
+               }
+               // &:nth-of-type(even) {
+               //      th, td {
+               //           background: govuk-colour("light-grey");
+               //      }
+               // }
+          }
+     }
+}
+#table-design-V4 {
+     thead {
+          tr {
+               th {
+                    border-bottom: 5px solid $govuk-border-colour;
+                    // background-color: govuk-colour("blue");
+                    // color: white;
+                    // padding: 10px;
+                    // border-bottom: none;
+                    // &:first-of-type {
+                    //      border-radius: 10px 0 0 0;
+                    // }
+                    // &:last-of-type {
+                    //      border-radius: 0 10px 0 0;
+                    // }
+               }
+          }
+     }
+     tbody {
+          tr {
+               &.first-of-type {
+                    border-top: 5px solid govuk-colour("light-grey");
+               }
+               th, td {
+                    // padding: 10px;
+                    border-bottom: none;
+                    &:last-of-type {
+                         &.yes-cell, &.no-cell {
+                              border-right: none;
+                         }
+                    }
+                    &.yes-cell, &.no-cell {
+                         text-align: center;
+                         border-left: 4px solid white;
+                         border-right: 4px solid white;
+                         border-bottom: 4px solid white;
+                         padding-left: 0;
+                         padding-right: 0;
+                    }
+                    &.yes-cell {
+                         background: rgba(0,112,60, 0.1);
+                    }
+                    &.no-cell {
+                         background: rgba(212,53,28, 0.1);
+                    }
+
+               }
+               // &:nth-of-type(even) {
+               //      th, td {
+               //           background: govuk-colour("light-grey");
+               //      }
+               // }
+          }
+     }
+}
