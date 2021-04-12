@@ -180,6 +180,54 @@ $govuk-assets-path: '/govuk/assets/';
      }
 }
 
+#table-design-V5 {
+     thead {
+          tr {
+               th {
+                    background-color: govuk-colour("blue");
+                    color: white;
+                    padding: 10px;
+                    border-bottom: none;
+                    &:first-of-type {
+                         border-radius: 10px 0 0 0;
+                    }
+                    &:last-of-type {
+                         border-radius: 0 10px 0 0;
+                    }
+               }
+          }
+     }
+     tbody {
+          tr {
+               th, td {
+                    padding: 10px;
+                    border-bottom: none;
+               }
+               &:nth-of-type(even) {
+                    th, td {
+                         background: govuk-colour("light-grey");
+                    }
+               }
+          }
+     }
+}
+
+.icon {
+     display: inline-block;
+     text-indent: -1000em;
+     width: 1.25em;
+     height: 1.25em;
+     &.yes {
+          background: url("../images/tick-green.svg") no-repeat 50% 50%;
+          background-size: contain;
+     }
+     &.no {
+          background: url("../images/cross-red.svg") no-repeat 50% 50%;
+          background-size: 1em;
+     }
+}
+
+
 .error-panel {
      padding: 1.5em;
      background: govuk-colour("light-grey");
