@@ -10,40 +10,33 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">		  
 
+	    <form action="/review-adverts/success" method="post" class="form">
 
 	<h1 class="govuk-heading-xl">Are you sure you want to approve this job advert?</h1>
 	
-	<p class="govuk-hint">We'll do a final review and then post it on ‘Find an apprenticeship’.</p>
+	<p class="govuk-hint">We'll do a final review and then post it on ‘Find an apprenticeship’.	</p>
+			
+			<div class="govuk-form-group">
+				<div class="govuk-radios">
+				
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="approve-advert-yes" name="approve-advert" type="radio" value="true">
+						<label class="govuk-label govuk-radios__label" for="approve-advert-yes">Yes</label>
+					</div>
+					
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="approve-advert-no" name="approve-advert" type="radio" value="false">
+						<label class="govuk-label govuk-radios__label" for="approve-advert-no">No</label>
+					</div>
+				
+				</div>
+			</div>
+			
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+			
+		</form>
 
-	<form method="post" action="/review-adverts/success" class="">
 
-		{% from "govuk/components/radios/macro.njk" import govukRadios %}
-							{{ govukRadios({
-							  idPrefix: "approveadvert",
-							  name: "approveadvert",
-							  fieldset: {
-								legend: {
-								  text: "",
-								  isPageHeading: true,
-								  classes: "govuk-fieldset__legend--m"
-								}
-							  },
-							  items: [
-								{
-								  value: "Yes",
-								  text: "Yes"
-								},
-								{
-								  value: "No",
-								  text: "No"
-								}
-							  ]
-							}) }}
-							{% from "govuk/components/button/macro.njk" import govukButton %}
-							{{ govukButton({
-								 text: "Continue"
-							}) }}
-     </form>
 	</div>
 </div>
 

@@ -281,19 +281,35 @@ router.post('/recruitment/permission-consolidated-confirm-V2', function (req, re
 EMPLOYER ACCOUNT - APPROVE ADVERT
 ============================================================================
 */
-// Re-direct from multiple  radios showing version options
 router.post('/review-adverts/success', function (req, res) {
-  let approveadvert = req.session.data['approveadvert']
-  console.log(req.session.data['approveadvert'])
-  //Option 1
+
+  let approveadvert = req.session.data['approve-advert']
+
   if (approveadvert === 'true') {
-      res.redirect('/review-adverts/success')
+    res.redirect('/review-adverts/success')
   }
-  //Option 2
   else if (approveadvert === 'false') {
-      res.redirect('/review-adverts/advert-edit')
+    res.redirect('/review-adverts/advert-edit')
   }
-  //end
 })
+
+/*
+============================================================================
+EMPLOYER ACCOUNT - REJECT ADVERT
+============================================================================
+*/
+
+router.post('/review-adverts/reject-journey/success', function (req, res) {
+
+  let rejectadvert = req.session.data['reject-advert']
+
+  if (rejectadvert === 'true') {
+    res.redirect('/review-adverts/reject-journey/success')
+  }
+  else if (rejectadvert === 'false') {
+    res.redirect('/review-adverts/advert-edit')
+  }
+})
+
 
 module.exports = router
