@@ -295,28 +295,6 @@ router.post('/review-adverts/success', function (req, res) {
   }
   //end
 })
-/*
-
-/*
-============================================================================
-EMPLOYER ACCOUNT - REJECT ADVERT
-============================================================================
-*/
-router.post('/review-adverts/reject-journey/confirmation-reject', function (req, res) {
-  let reject-advert = req.session.data['reject-advert']
-  console.log(req.session.data['reject-advert'])
-  //Option 1
-  if (reject-advert === 'Yes') {
-      res.redirect('/review-adverts/reject-journey/success')
-  }
-  //Option 2
-  else if (reject-advert === 'No') {
-      res.redirect('/review-adverts/advert-edit')
-  }
-  //end
-})
-
-
 
 
 module.exports = router
