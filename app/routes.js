@@ -23,8 +23,6 @@ router.get(/\/([0-9]+)-([0-9]+)/, (req, res, next) => {
     let urlString = req.originalUrl
     res.redirect(oldUrl + urlString)(req, res, next);
 })
-
-
 /*
 ============================================================================
 Versions
@@ -276,5 +274,49 @@ router.post('/recruitment/permission-consolidated-confirm-V1', function (req, re
 router.post('/recruitment/permission-consolidated-confirm-V2', function (req, res) {
      res.redirect('providers-changed')
 })
+
+
+/*
+============================================================================
+EMPLOYER ACCOUNT - APPROVE ADVERT
+============================================================================
+*/
+// Re-direct from multiple  radios showing version options
+router.post('/review-adverts/success', function (req, res) {
+  let approveadvert = req.session.data['approveadvert']
+  console.log(req.session.data['approveadvert'])
+  //Option 1
+  if (approveadvert === 'Yes') {
+      res.redirect('/review-adverts/success')
+  }
+  //Option 2
+  else if (approveadvert === 'No') {
+      res.redirect('/review-adverts/advert-edit')
+  }
+  //end
+})
+/*
+
+/*
+============================================================================
+EMPLOYER ACCOUNT - REJECT ADVERT
+============================================================================
+*/
+router.post('/review-adverts/reject-journey/confirmation-reject', function (req, res) {
+  let reject-advert = req.session.data['reject-advert']
+  console.log(req.session.data['reject-advert'])
+  //Option 1
+  if (reject-advert === 'Yes') {
+      res.redirect('/review-adverts/reject-journey/success')
+  }
+  //Option 2
+  else if (reject-advert === 'No') {
+      res.redirect('/review-adverts/advert-edit')
+  }
+  //end
+})
+
+
+
 
 module.exports = router
