@@ -286,15 +286,14 @@ router.post('/review-adverts/success', function (req, res) {
   let approveadvert = req.session.data['approveadvert']
   console.log(req.session.data['approveadvert'])
   //Option 1
-  if (approveadvert === 'Yes') {
+  if (approveadvert === 'true') {
       res.redirect('/review-adverts/success')
   }
   //Option 2
-  else if (approveadvert === 'No') {
+  else if (approveadvert === 'false') {
       res.redirect('/review-adverts/advert-edit')
   }
   //end
 })
-
 
 module.exports = router
