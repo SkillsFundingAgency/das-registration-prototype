@@ -311,5 +311,24 @@ router.post('/review-adverts/reject-journey/success', function (req, res) {
   }
 })
 
+/*
+============================================================================
+TRAINING PROVIDER - EMPLOYER ORGANISATION
+============================================================================
+*/
+
+router.post('/recruitment/provider-view/create', function (req, res) {
+
+  let employerid = req.session.data['SelectedEmployerId']
+
+  if (employerid === 'VB8W4N') {
+    res.redirect('/recruitment/provider-view/create/organisation')
+  }
+  else {
+    res.redirect('/recruitment/provider-view/create/choose-title')
+  }
+})
+
+
 
 module.exports = router

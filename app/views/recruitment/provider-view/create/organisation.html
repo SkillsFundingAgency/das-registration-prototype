@@ -9,13 +9,15 @@
 
 {% block content %}
 
+<a href="/recruitment/provider-view/create" class="govuk-back-link">Back</a>
+
 
 <div class="govuk-grid-row ">
     <div class="govuk-grid-column-two-thirds">
 
 	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Which organisation is this vacancy for?</h1>
-
-	<p class="govuk-body">Select an organisation</p>
+	
+	<div id="contact-hint" class="govuk-hint">Select an organisation</div>
 	
 	<form action="choose-title" method="post">
 	<div class="govuk-form-group">
@@ -24,11 +26,11 @@
 	        <div class="govuk-radios">
 	                <div class="govuk-radios__item">
 	                    <input type="radio" value="7G9B9R" class="govuk-radios__input" id="emp-7G9B9R" name="SelectedEmployerId">
-	                    <label for="emp-7G9B9R" class="govuk-label govuk-radios__label">BENTLEY & BENTLEY LIMITED</label>
+	                    <label for="emp-7G9B9R" class="govuk-label govuk-radios__label">ESFA LTD</label>
 	                </div>
 	                <div class="govuk-radios__item">
 	                    <input type="radio" value="BB8W4N" class="govuk-radios__input" id="emp-BB8W4N" name="SelectedEmployerId">
-	                    <label for="emp-BB8W4N" class="govuk-label govuk-radios__label">Coventry City Council</label>
+	                    <label for="emp-BB8W4N" class="govuk-label govuk-radios__label">TESCO PLC</label>
 	                </div>
 	        </div>
 	    </fieldset>
@@ -51,7 +53,7 @@
   
 	<br>
 	
-	<a class="govuk-link das-button-link" href="">Cancel</a>
+	<a class="govuk-link das-button-link" href="/recruitment/provider-view">Cancel</a>
 	
 	</form>
     </div>
