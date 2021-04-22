@@ -253,7 +253,7 @@ router.post('/recruitment/permission-consolidated-radios', function (req, res) {
      if(req.session.data['do-you-give-permission-to-recruit'] == 'Allow'){
 		res.redirect('permission-consolidated-confirm-V2')
 	} else if (req.session.data['do-you-give-permission-to-recruit'] == 'Allow, but I want to review job adverts before they’re advertised') {
-          res.redirect('permission-consolidated-confirm-V2')
+          res.redirect('permission-consolidated-confirm-V3')
      } else {
 		res.redirect('permission-consolidated-confirm-V1')
 	}
