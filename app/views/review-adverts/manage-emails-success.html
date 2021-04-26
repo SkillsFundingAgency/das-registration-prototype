@@ -1,0 +1,36 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+               <h1 class="govuk-panel__title">You’ve successfully saved your email preferences</h1>
+          </div>
+
+          <p class="govuk-body">We'll email <strong>levyfinance@test.com</strong> about any adverts you submit. You'll get emails when:</p>
+
+          {% if data['emails-when'] %}
+          <ul class="govuk-list govuk-list--bullet">
+               {% for answer in data['emails-when'] -%}
+               <li>{{ answer }}</li>
+               {% endfor %}
+          </ul>
+          {% endif %}
+
+          <form class="" action="apprentice-adverts" method="post">
+               <button class="govuk-button" data-module="govuk-button">Return to dashboard</button>
+          </form>
+
+
+     </div>
+  </div>
+
+
+{% endblock %}

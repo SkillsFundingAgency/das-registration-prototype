@@ -1,0 +1,46 @@
+.flexbox-version {
+     .das-card--row {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          margin-bottom: 1em;
+          .das-card {
+               display: inline-block;
+               flex: 0 26.9%;
+               // flex-wrap: wrap;
+               margin: 0 3% 1.5em 0;
+               padding: 20px 20px 20px 20px;
+               // width: 30%;
+               text-decoration: none;
+               border: solid 1px #bfc1c3;
+               background-color: #f8f8f8;
+               border: solid 1px #E4E6E7;
+               &.active-card {
+                    background-color: white;
+               }
+               h3 {
+                    color: $govuk-link-colour;
+                    strong {
+                         text-decoration: underline;
+                    }
+                    span {
+                         text-decoration: none;
+                         color: black;
+                    }
+               }
+               p {
+                    margin: 0;
+               }
+               a {
+                    margin: 1em 0 0 0;
+                    display: inline-block;
+                    &.govuk-link {
+                         margin: 0 0 0 0;
+                    }
+               }
+               &:nth-of-type(3), &:nth-of-type(6) {
+                    margin-right: 0;
+               }
+          }
+     }
+}

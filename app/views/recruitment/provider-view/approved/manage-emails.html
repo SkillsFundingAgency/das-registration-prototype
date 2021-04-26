@@ -1,0 +1,120 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+{% block content %}
+
+<!-- TITLE - START -->
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Manage your recruitment emails</h1>
+     </div>
+</div>
+<!-- TITLE - END -->
+
+<!-- FORM - START -->
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+
+          <form class="" action="manage-emails-success" method="post">
+
+               {% set newHtml %}
+                    {{ govukRadios({
+                         idPrefix: "provider-emails-frequency",
+                         name: "provider-emails-frequency",
+                         fieldset: {
+                              legend: {
+                                   text: "How often do you want to be sent new application emails?",
+                                   isPageHeading: false,
+                                   classes: "govuk-fieldset__legend--s"
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Immediately",
+                                   text: "Immediately",
+                                   checked: "checked"
+                              },
+                              {
+                                   value: "Daily",
+                                   text: "Daily"
+                              },
+                              {
+                                   value: "Weekly",
+                                   text: "Weekly"
+                              }
+                         ]
+                    }) }}
+               {% endset -%}
+
+               {{ govukCheckboxes({
+                    idPrefix: "provider-emails-when",
+                    name: "provider-emails-when",
+                    fieldset: {
+                         legend: {
+                              text: "When do you want to be sent recruitment emails?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--m"
+                         }
+                    },
+                    hint: {
+                         text: "Choose when you’d like emails"
+                    },
+                    items: [
+                         {
+                              value: "vacancies are rejected after review",
+                              text: "Vacancies are rejected after review",
+                              checked: "checked"
+                         },
+                         {
+                              value: "an employer rejects their advert",
+                              text: "An employer rejects their advert"
+                         },
+                         {
+                              value: "there are new applications",
+                              text: "There are new applications",
+                              checked: "checked",
+                              conditional: {
+                                   html: newHtml
+                              }
+                         }
+                    ]
+               }) }}
+
+               {{ govukRadios({
+                    idPrefix: "provider-emails-which",
+                    name: "provider-emails-which",
+                    fieldset: {
+                         legend: {
+                              text: "What emails would you like to receive?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--m"
+                         }
+                    },
+                    items: [
+                         {
+                              value: "only emails about vacancies you have submitted",
+                              text: "Only emails about vacancies you have submitted",
+                              checked: "checked"
+                         },
+                         {
+                              value: "emails about all vacancies for your organisation",
+                              text: "Emails about all vacancies for your organisation"
+                         }
+                    ]
+               }) }}
+
+               <p><a href="#" class="govuk-link govuk-link--no-visited-state">Unsubscribe from all recruitment emails</a></p>
+
+               <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+               <p><a href="#" class="govuk-link govuk-link--no-visited-state">Return to dashboard</a></p>
+
+          </form>
+
+     </div>
+</div>
+<!-- FORM - END -->
+{% endblock %}

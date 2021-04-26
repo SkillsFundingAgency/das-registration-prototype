@@ -1,0 +1,122 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+{% block content %}
+
+<!-- TITLE - START -->
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-one-half">
+          <h1 class="govuk-heading-l">Manage your emails</h1>
+     </div>
+</div>
+<!-- TITLE - END -->
+
+<!-- FORM - START -->
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+
+          <form class="" action="manage-emails-success" method="post">
+
+               {% set newHtml %}
+                    {{ govukRadios({
+                         idPrefix: "emails-frequency",
+                         name: "emails-frequency",
+                         fieldset: {
+                              legend: {
+                                   text: "How often do you want to receive emails about new applications?",
+                                   isPageHeading: false,
+                                   classes: "govuk-fieldset__legend--s"
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Immediately",
+                                   text: "Immediately"
+                              },
+                              {
+                                   value: "Daily",
+                                   text: "Daily",
+                                   checked: "checked"
+                              },
+                              {
+                                   value: "Weekly",
+                                   text: "Weekly"
+                              }
+                         ]
+                    }) }}
+               {% endset -%}
+
+               {{ govukCheckboxes({
+                    idPrefix: "emails-when",
+                    name: "emails-when",
+                    fieldset: {
+                         legend: {
+                              text: "When do you want to receive emails about your adverts and applications?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--m"
+                         }
+                    },
+                    hint: {
+                         text: "Select all that apply."
+                    },
+                    items: [
+                         {
+                              value: "when an advert is rejected after review",
+                              text: "When an advert is rejected after review",
+                              checked: "checked"
+                         },
+                         {
+                              value: "when a provider submits an advert for them to review",
+                              text: "When a provider submits an advert for them to review"
+                         },
+                         {
+                              value: "when you have new applications",
+                              text: "When you have new applications",
+                              checked: "checked",
+                              conditional: {
+                                   html: newHtml
+                              }
+                         }
+
+                    ]
+               }) }}
+
+               {{ govukRadios({
+                    idPrefix: "emails-which",
+                    name: "emails-which",
+                    fieldset: {
+                         legend: {
+                              text: "Which adverts do you want to receive emails about?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--m"
+                         }
+                    },
+                    items: [
+                         {
+                              value: "Only the adverts you submitted",
+                              text: "Only the adverts you submitted",
+                              checked: "checked"
+                         },
+                         {
+                              value: "All apprenticeship adverts for your organisation",
+                              text: "All apprenticeship adverts for your organisation"
+                         }
+                    ]
+               }) }}
+
+               <p><a href="#" class="govuk-link govuk-link--no-visited-state">Unsubscribe from all emails about adverts and applications</a></p>
+
+               <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+               <p><a href="#" class="govuk-link govuk-link--no-visited-state">Return to dashboard</a></p>
+
+          </form>
+
+     </div>
+</div>
+<!-- FORM - END -->
+
+{% endblock %}
