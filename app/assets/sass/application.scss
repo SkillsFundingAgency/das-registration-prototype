@@ -242,3 +242,11 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-secondary-button {
      margin-left: 1em;
 }
+
+hr {
+     &.seperator {
+          border: none;
+          border-bottom: 5px dashed $govuk-border-colour;
+          margin: 1em 0 2em 0;
+     }
+}
