@@ -1,0 +1,171 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-xl">Your apprenticeship adverts</h1>
+    </div>
+    <div class="govuk-grid-column-one-half" style="text-align: right;">
+        <a class="govuk-button float-right clear govuk-!-margin-top-2 govuk-!-margin-bottom-4" href="/accounts/JKKBY6/create-options/" data-automation="create-vacancy">Create an advert</a>
+    </div>
+</div>
+    
+    
+<div class="govuk-grid-row">
+    <form method="get" autocomplete="off" action="/accounts/JKKBY6/vacancies/">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="form-group search-field">
+                        <div class="search-input-with-button">
+                            <label class="govuk-label" for="search">
+                                Search by advert title or reference number
+                            </label>
+                            <input id="search-input" name="searchTerm" class="govuk-input search-input ui-autocomplete-input" maxlength="200" autocomplete="off">
+                        </div>
+                        <div class="search-submit" style="height: 40px;">
+                            <!-- hide button for no js version -->
+                            <button type="submit" id="search-submit-button" style="height: 40px;">Search</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- CARD ROW - ONE - START -->
+<div class="govuk-grid-row flexbox-version">
+    <div class="govuk-grid-column-full">
+
+         <!-- <h1 class="govuk-heading-m">Your active actions</h1> -->
+         <div class="das-card--row">
+
+              <!-- CARD ONE - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">8</span>
+                        <a href="#" class="govuk-link">Draft adverts</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Adverts that you need to complete and send for review.</p>
+              </div>
+              <!-- CARD ONE - END -->
+
+              <!-- CARD TWO - START -->
+              <div class="das-card das-card--inactive">
+                <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">0</span>
+                        <span>Review adverts</span>
+                    </h3>
+                   <p class="govuk-body das-card--description" class="govuk-link">If you want to review adverts before they are published you need to<a href="/accounts/JKKBY6/notifications-manage/" class="govuk-link">change your permissions</a>.</p>
+              </div>
+              <!-- CARD TWO - END -->
+
+              <!-- CARD THREE - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">1</span>
+                        <a href="#" class="govuk-link">Pending review</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Adverts that you've sent for review.</p>
+              </div>
+              <!-- CARD THREE - END -->
+
+              <!-- CARD FOUR - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">0</span>
+                        <a href="#" class="govuk-link">Rejected adverts</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Adverts that you need to edit and resubmit.</p>
+              </div>
+              <!-- CARD FOUR - END -->
+
+              <!-- CARD FIVE - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">0</span>
+                        <a href="#" class="govuk-link">Live adverts</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Your adverts on the Find an apprenticeship service.</p>
+              </div>
+              <!-- CARD FIVE - END -->
+
+              <!-- CARD SIX - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">0</span>
+                        <a href="#" class="govuk-link">New applications</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Applications from Find an apprenticeship service.</p>
+              </div>
+              <!-- CARD SIX - END -->
+
+              <!-- CARD SEVEN - START -->
+              <div class="das-card active-card">
+                   <h3 class="govuk-heading-s das-card--heading">
+                        <span class="das-card--stat">0</span>
+                        <a href="#" class="govuk-link">Closed adverts</a>
+                   </h3>
+                   <p class="govuk-body das-card--description">Adverts that have passed the closing date. You can clone these adverts to republish them.</p>
+              </div>
+              <!-- CARD SEVEN - END -->
+
+         </div>
+    </div>
+</div>
+
+    
+    <!-- <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+	            (If permissions 'not set')
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span> 
+	                <span>[Awaiting your review] </span>
+                </h3>
+                <p class="govuk-body das-card--description">You can give <a href="#">training providers permissions</a> that will allow them to...</p>
+            </div>
+        </div>
+    </div> -->   
+    
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a class="govuk-link govuk-!-font-size-24 govuk-!-font-weight-bold govuk-link--no-visited-state" name="button" href="apprentice-adverts-list-revie-all">
+            View all your adverts (10)
+        </a>
+    </div>
+
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-grid-column-full govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+            <a class="govuk-link govuk-link--no-visited-state" href="/accounts/JKKBY6/notifications-manage/">Set up permissions</a>
+        </h3>
+        
+        <p class="govuk-body">Give training providers permission to add apprentice records, recruit apprentices and create job adverts on your behalf.</p>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+
+            <a class="govuk-link govuk-link--no-visited-state" href="/accounts/JKKBY6/notifications-manage/">Manage your emails</a>
+        </h3>
+        <p class="govuk-body">Set up and manage the emails you receive about your adverts and applications.</p>
+    </div>
+    
+    
+</div>
+
+{% endblock %}
