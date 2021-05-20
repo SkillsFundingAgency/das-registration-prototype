@@ -1,0 +1,209 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+     Permission new
+{% endblock %}
+
+{% block content %}
+
+<style>
+	.govuk-back-link {display: none;}
+</style>
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+
+                    <h1 class="govuk-heading-xl">
+                         EAS user permissions table
+                    </h1>
+
+          </div>
+
+                    <table class="govuk-table" id="table-design-V5">
+                         <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                   <th scope="col" class="govuk-table__header app-custom-class"></th>
+                                   <th scope="col" class="govuk-table__header app-custom-class">User can</th>
+                                   <th scope="col" class="govuk-table__header app-custom-class">Owner</th>
+                                   <th scope="col" class="govuk-table__header app-custom-class">Transactor</th>
+                                   <th scope="col" class="govuk-table__header app-custom-class">Viewer</th>
+                              </tr>
+                         </thead>
+                         <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Create Account</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes"></span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes"></span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Change Account Name</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Change Password</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Change your email address</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Change email notifications</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Add/Remove PAYE</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Add/Remove Organisation</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Invite/Edit/Remove Users</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Sign Agreement</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Download Agreement</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">View Agreement</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">View Transactions</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Send/Approve/Decline Connections</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">Manage your apprentices</th>
+                                   <td class="govuk-table__cell">Download Transactions</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">A&P</th>
+                                   <td class="govuk-table__cell">Add/Edit/Remove/Approve Apprentices</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">A&P</th>
+                                   <td class="govuk-table__cell">Manage Apprentices</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">A&P</th>
+                                   <td class="govuk-table__cell">Set Payment Priority</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">A&P</th>
+                                   <td class="govuk-table__cell">Provider Permissions</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">A&P</th>
+                                   <td class="govuk-table__cell">Send/Approve/Decline Transfer Requests</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">WIN</th>
+                                   <td class="govuk-table__cell">View funding projections</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">WIN</th>
+                                   <td class="govuk-table__cell">Download projection</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">WIN</th>
+                                   <td class="govuk-table__cell">Estimate funding</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">RAA</th>
+                                   <td class="govuk-table__cell">Create a vacancy</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header">T&D</th>
+                                   <td class="govuk-table__cell">Public Sector reporting</td>
+                                   <td class="govuk-table__cell"><span class="icon yes">Y</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                                   <td class="govuk-table__cell"><span class="icon no">N</span></td>
+                              </tr>
+                         </tbody>
+                    </table>
+               </div>
+          </div>
+
+     </div>
+</div>
+
+{% endblock %}
