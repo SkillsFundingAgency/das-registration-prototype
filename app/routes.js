@@ -275,6 +275,20 @@ router.post('/recruitment/permission-consolidated-confirm-V2', function (req, re
      res.redirect('providers-changed')
 })
 
+/*
+============================================================================
+EMPLOYER ACCOUNT - SUBMIT/REJECT ADVERT
+============================================================================
+*/
+
+router.post('/review-adverts/advert-edit-v2', (req, res) => {
+	if(req.session.data['advert-option'] == 'submit-advert'){
+		res.redirect('confirmation-approve-v2')
+	} else {
+		res.redirect('reject-journey/confirmation-reject')
+	}
+})
+
 
 /*
 ============================================================================
@@ -292,6 +306,20 @@ router.post('/review-adverts/success', function (req, res) {
     res.redirect('/review-adverts/advert-edit')
   }
 })
+
+/*
+============================================================================
+EMPLOYER ACCOUNT - APPROVE ADVERT V2
+============================================================================
+*/
+router.post('/review-adverts/confirmation-approve-v2', (req, res) => {
+	if(req.session.data['approve-advert-v2'] == 'true'){
+		res.redirect('success-v2')
+	} else {
+		res.redirect('advert-edit-v2')
+	}
+})
+
 
 /*
 ============================================================================
@@ -328,6 +356,8 @@ router.post('/recruitment/provider-view/create', function (req, res) {
     res.redirect('/recruitment/provider-view/create/choose-title')
   }
 })
+
+
 
 
 
