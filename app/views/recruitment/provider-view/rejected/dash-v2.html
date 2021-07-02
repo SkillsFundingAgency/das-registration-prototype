@@ -1,0 +1,228 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+.warning-summary {
+    border: 5px solid #f47738;
+}
+
+.info-summary, 
+.warning-summary, 
+.highlight-summary {
+    margin-bottom: 30px;
+    padding: 20px 15px 15px;
+}
+	
+</style>
+
+<!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="warning-summary">
+            <p class="govuk-body">
+                <span class="govuk-!-font-weight-bold">
+                    DELE  LTD and ESFA  LTD
+                </span>
+                <span>
+                    have switched off your permission to create and manage vacancies on their behalf.
+                    Any vacancies created for these employers have been transferred to them.
+                </span>
+            </p>
+            
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                    <input name="ReturnUrl" value="/10005310" type="hidden">
+                    <input name="AlertType" value="TransferredVacanciesEmployerRevokedPermission" type="hidden">
+                    <button type="submit" class="button-fake-link govuk-link govuk-link--no-visited-state">Dismiss this notification</button>
+                </p>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-xl">Recruitment</h1>
+    </div>
+    <div class="govuk-grid-column-one-half" style="text-align: right;">
+        <a class="govuk-button float-right clear govuk-!-margin-top-2 govuk-!-margin-bottom-4" href="provider-view/create/">Create vacancy</a>
+    </div>
+</div>
+    
+    
+<div class="govuk-grid-row">
+    <form method="get" autocomplete="off" action="/accounts/JKKBY6/vacancies/">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="form-group search-field">
+                        <div class="search-input-with-button">
+                            <label class="govuk-label" for="search">
+                                Search vacancies
+                            </label>
+                            <input id="search-input" name="searchTerm" class="govuk-input search-input ui-autocomplete-input" maxlength="200" autocomplete="off">
+                        </div>
+                        <div class="search-submit" style="height: 40px;">
+                            <!-- hide button for no js version -->
+                            <button type="submit" id="search-submit-button" style="height: 40px;">Search</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="govuk-grid-row das-card--row">
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card ">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">8</span>
+                    <a class="govuk-link" href="#">
+                        Draft vacancies
+                    </a>
+                    
+                </h3>
+                <p class="govuk-body das-card--description">Vacancies that need completing and sending for review.</p>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span> 
+                    Pending employer review  
+                </h3>
+                <p class="govuk-body das-card--description">Vacancies that have been sent to the employer for review.</p>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card ">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">2</span>
+                    <a class="govuk-link" href="apprentice-adverts-list-sent">
+                        Pending ESFA review
+                    </a>
+                    
+                </h3>
+                <p class="govuk-body das-card--description">Vacancies that have been sent to ESFA for final review.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+<div class="govuk-grid-row das-card--row">
+	
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">2</span>
+                    <a class="govuk-link" href="apprentice-adverts-list-rejected-v2">Rejected vacancies</a>
+                </h3>
+                <p class="govuk-body das-card--description">Rejected vacancies will need to be edited and resubmitted.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span>
+                    <span>Live vacancies</span>
+                </h3>
+                <span class="govuk-body das-card--description">Vacancies on Find an apprenticeship service.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span>
+                    <span>New applications</span>
+                </h3>
+                <span class="govuk-body das-card--description">Applications from Find an apprenticeship service</span><br><a href="#">View all applications</a>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="govuk-grid-row">	    
+    <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span>
+                    <span>Closed vacancies</span>
+                </h3>
+                <span class="govuk-body das-card--description">Vacancies that have passed the closing date. You can clone these vacancies to republish them.</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="govuk-grid-column-one-third">
+        <div class="das-card das-card--inactive">
+            <div class="das-card--content">
+	            (If permissions 'not set')
+                <h3 class="govuk-heading-s das-card--heading">
+                    <span class="das-card--stat">0</span> 
+	                <span>[Awaiting your review] </span>
+                </h3>
+                <p class="govuk-body das-card--description">You can give <a href="#">training providers permissions</a> that will allow them to...</p>
+            </div>
+        </div>
+    </div> -->   
+    
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a class="govuk-link govuk-!-font-size-24 govuk-!-font-weight-bold govuk-link--no-visited-state" name="button" href="apprentice-adverts-list-revie-all">
+            View all your adverts (10)
+        </a>
+    </div>
+
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-grid-column-full govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+            <a class="govuk-link govuk-link--no-visited-state" href="/accounts/JKKBY6/notifications-manage/">Reports</a>
+        </h3>
+        
+        <p class="govuk-body">Create a report about applicants or vacancies</p>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-s">
+
+            <a class="govuk-link govuk-link--no-visited-state" href="/accounts/JKKBY6/notifications-manage/">Manage your emails</a>
+        </h3>
+        <p class="govuk-body">Set up and manage the emails you receive about your adverts and applications.</p>
+    </div>
+    
+    
+</div>
+
+{% endblock %}
