@@ -1,0 +1,38 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+            
+	
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	    
+      <div class="govuk-panel govuk-panel--confirmation">
+		  <h1 class="govuk-panel__title">
+		    You’ve rejected this job advert
+		  </h1>
+		  <div class="govuk-panel__body">
+		    Advert reference number<br><strong>VAC1000014106</strong>
+		  </div>
+		</div>
+
+    <h2 class="govuk-heading-m">Rejection reason</h2>
+
+      <p class="govuk-body">[Text from Employer goes here]</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">This job advert has gone back to [training provider name]. You may want to tell them why you’ve rejected it.</p>
+      
+      <p class="govuk-body">
+        Go to <a href="apprentice-adverts" class="govuk-link">your apprenticeship adverts</a>
+      </p>
+      
+    </div>
+  </div>
+
+
+{% endblock %}
