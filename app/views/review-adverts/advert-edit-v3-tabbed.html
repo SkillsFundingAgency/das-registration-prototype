@@ -24,87 +24,6 @@
 </style>
                         
 
-<!--audit trail starts-->
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <ul class="govuk-list">
-        <li>
-          <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
-           <p> 
-              <strong class="govuk-tag govuk-tag--green govuk-!-margin-right-3">
-              Advert created by provider
-              </strong>
-            <span class="govuk-!-font-weight-bold">TODAY - 10:15am</span>
-          </p>
-        </div>
-      </li>
-        <li>
-          <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
-          <p> <strong class="govuk-tag govuk-tag--purple govuk-!-margin-right-3">
-            Amended by employer
-          </strong>
-          <span class="govuk-!-font-weight-bold">TODAY - 12:19pm</span></p>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Fields amended by employer
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Working week</li>
-                <li>The training you will be getting</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </li>
-      <li>
-        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
-        <p> <strong class="govuk-tag govuk-tag--orange govuk-!-margin-right-3">
-         Amended by provider
-        </strong>
-        <span class="govuk-!-font-weight-bold">TODAY - 15:23pm</span></p>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Fields amended by provider
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Expected duration</li>
-             
-            </ul>
-          </div>
-        </details>
-      </div>
-    </li>
-      <li>
-        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
-        <p> <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-3">
-         Rejected by ESFA
-        </strong>
-        <span class="govuk-!-font-weight-bold">TODAY - 15:23pm</span></p>
-        
-      </div>
-    </li>
-    <li>
-        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
-        <p> <strong class="govuk-tag govuk-tag--orange govuk-!-margin-right-3">
-         Reviewed by Provider
-        </strong>
-        <span class="govuk-!-font-weight-bold">TODAY - 15:23pm</span></p>
-        
-      </div>
-    </li>
-    </ul>
-  </div>
-  </div>
-  
-  <!--audit trail ends-->
-
-
 <div class="govuk-grid-row" id="title">
     <div class="govuk-grid-column-two-thirds">
         <div class=" govuk-!-margin-bottom-6">
@@ -119,6 +38,26 @@
     </div>
 </div>
 
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#past-day">
+          Advert detail
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          change log
+        </a>
+      </li>
+     
+    </ul>
+    <div class="govuk-tabs__panel" id="past-day">
+      <!-- main content here-->
+        
 <div class="govuk-grid-row" id="shortDescription">
     <div class="govuk-grid-column-two-thirds">
         <div class="preview-empty">
@@ -174,16 +113,21 @@
             
                 <a class="govuk-body govuk-link" data-automation="link-working-week" href="#">Change<span class="govuk-visually-hidden">working week</span></a>
             </li>
+           
             <li class="">
+                <div class="govuk-inset-text">
                 <h3 class="govuk-heading-s govuk-!-margin-top-4" id="ExpectedDuration">
                     
                     Expected duration
-                </h3>
+                </h3> <strong class="govuk-tag govuk-tag--orange govuk-!-margin-right-3">
+                    amended by provider
+                   </strong>
                 <span class="govuk-error-message field-validation-valid" id="error-message-ExpectedDuration" data-valmsg-for="ExpectedDuration" data-valmsg-replace="true"></span>
                 <p class="govuk-body">12 months</p>
                 <a class="govuk-body govuk-link" data-automation="link-duration" href="#">Change<span class="govuk-visually-hidden">expected duration</span></a>
-
+                </div>
             </li>
+        
             <li class="">
                 <h3 class="govuk-heading-s govuk-!-margin-top-4" id="PossibleStartDate">
                     
@@ -431,13 +375,112 @@
 </div>
 
 
+<!--main content ends here-->
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+      
 
 
+       <!--audit trail starts-->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <ul class="govuk-list">
+        <li>
+          <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
+           <p> 
+              <strong class="govuk-tag govuk-tag--green govuk-!-margin-right-3">
+              Advert created by provider
+              </strong>
+            <span class="govuk-!-font-weight-bold">TODAY - 10:15am</span>
+          </p>
+        </div>
+      </li>
+        <li>
+          <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
+          <p> <strong class="govuk-tag govuk-tag--purple govuk-!-margin-right-3">
+            Amended by employer
+          </strong>
+          <span class="govuk-!-font-weight-bold">TODAY - 12:19pm</span></p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Fields amended by employer
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Working week</li>
+                <li>The training you will be getting</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </li>
+      <li>
+        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
+        <p> <strong class="govuk-tag govuk-tag--orange govuk-!-margin-right-3">
+         amended by provider
+        </strong>
+        <span class="govuk-!-font-weight-bold">TODAY - 15:23pm</span></p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Fields amended by provider
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Expected duration</li>
+             
+            </ul>
+          </div>
+        </details>
+      </div>
+    </li>
+      <li>
+        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
+        <p> <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-3">
+         Rejected by ESFA
+        </strong>
+        <span class="govuk-!-font-weight-bold">TODAY - 15:23pm</span></p>
+        
+      </div>
+    </li>
+    <li>
+        <div class="govuk-audit-container govuk-!-padding-top-4 govuk-!-padding-bottom-1 govuk-!-padding-left-3 govuk-!-padding-right-3">
+        <p> <strong class="govuk-tag govuk-tag--orange govuk-!-margin-right-3">
+         Reviewed by provider
+        </strong>
+        <span class="govuk-!-font-weight-bold">TODAY - 17:23pm</span></p>
+        
+      </div>
+    </li>
+    </ul>
+  </div>
+  </div>
+  
+  <!--audit trail ends-->
+  
     </div>
-</div>
+   
+ 
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">        
