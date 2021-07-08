@@ -358,6 +358,46 @@ router.post('/recruitment/provider-view/create', function (req, res) {
 })
 
 
+/*
+============================================================================
+EMPLOYER - TP PERMISSIONS
+============================================================================
+*/
+
+/*
+============================================================================
+How the routes are broken down
+1. Line 382 - Router.post highlights the location and name of the branch we want the prototype to use. In this case, our rule is found on the route of /298/employer/ and is called permissions
+
+2. Line 384 - we set the variable that we need the rule to listen to and work with. In this case, 'recapprentices' is the variable used in the rule and 'do-you-give-permission-to-recruit' is the name of the component we need it to listen to 
+
+3. Line 386 - we start our logic - If 'our variable' = 'allow' then do this (redirect to confirm-v2)
+
+4. Line 391 - else if uses the same variable but if a different value is selected then go to the v1 url
+
+5. Line 396 if neither rule above applies then go to v3
+============================================================================
+*/
+
+router.post(`/298/employer/permissions`, function (req, res)
+  
+  const recapprentices = req.session.data['do-you-give-permission-to-recruit'];
+
+  if (
+      recapprentices === 'Allow'
+     ) {
+      res.redirect(`/298/employer/permission-consolidated-confirm-v2`);
+  }
+    else if (
+              recapprentices === 'Allow, but I want to review job adverts before they’re advertised'
+     ) {
+      res.redirect(`/298/employer/permission-consolidated-confirm-v1`);
+  }
+ else res.redirect(`/298/employer/permission-consolidated-confirm-v3`);
+});
+
+
+
 
 
 
