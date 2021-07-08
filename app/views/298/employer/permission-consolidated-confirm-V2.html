@@ -1,0 +1,44 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+     Permission new
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+          <form method="post">
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                         <h1 class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                              Confirm permissions for BARKING AND DAGENHAM COLLEGE?
+                         </h1>
+
+                         <p>These permissions are on behalf of BARKING AND DAGENHAM COLLEGE</p>
+
+                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                              <div class="govuk-summary-list__row">
+                                   <dt class="govuk-summary-list__key">Add apprentice records</dt>
+                                   <dd class="govuk-summary-list__value">{{ data['do-you-give-permission-to-add'] }}</dd>
+                                   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="javascript:history.back()">Change<span class="govuk-visually-hidden"> permission</span></a></dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                   <dt class="govuk-summary-list__key">Recruit apprentices</dt>
+                                   <dd class="govuk-summary-list__value">{{ data['do-you-give-permission-to-recruit'] }}</dd>
+                                   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="javascript:history.back()">Change<span class="govuk-visually-hidden"> permission</span></a></dd>
+                              </div>
+                         </dl>
+
+                    </fieldset>
+               </div>
+
+               <button class="govuk-button" data-module="govuk-button">Confirm</button>
+
+          </form>
+     </div>
+</div>
+
+{% endblock %}

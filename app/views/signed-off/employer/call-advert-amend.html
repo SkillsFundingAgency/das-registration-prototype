@@ -1,0 +1,53 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+            
+	
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">		  
+
+	    <form action="#" method="post" class="form">
+
+	<h1 class="govuk-heading-xl">What do you want to call this advert?</h1>
+	
+	<p class="govuk-body">To make sure your advert appears in the search results, use a title that relates to the apprenticeship training.</p>
+			
+	
+			
+	
+
+	  
+
+
+	  <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="70">
+		<div class="govuk-form-group">
+		 
+		  <div id="with-hint-hint" class="govuk-hint">
+			You must include the word 'apprentice' or apprenticeship'.
+		  </div>
+		  <input class="govuk-input govuk-js-character-count" id="advert-name" name="advert-name" rows="5" aria-describedby="advert-name-info advert-name-hint"></input>
+		</div>
+	  
+		<div id="advert-name-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+		  You can enter up to 70 characters
+		</div>
+	  
+	  </div>
+
+
+
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+			
+		</form>
+
+
+	</div>
+</div>
+
+
+{% endblock %}

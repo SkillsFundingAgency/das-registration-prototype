@@ -1,0 +1,71 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+     Permission new
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+          <form method="post">
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                         <h1 class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                              Confirm permissions for BARKING AND DAGENHAM COLLEGE?
+                         </h1>
+
+                         <div class="error-panel">
+                              <div class="govuk-warning-text">
+                                   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                   <strong class="govuk-warning-text__text">
+                                        <span class="govuk-warning-text__assistive">Warning</span>
+                                        All adverts will be transferred from BARKING AND DAGENHAM COLLEGE after you turn off their permissions.<br><br>
+                                        Adverts pending review will be sent back to draft. Any live adverts will be closed. You will be able to clone closed adverts if you want to republish them.
+                                   </strong>
+                              </div>
+                         </div>
+                         <!-- <div class="govuk-hint govuk-!-margin-bottom-3">
+                              <p>If you need to discuss this further, you can contact our helpdesk on 08000 150 600.</p>
+                         </div> -->
+
+                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                              <div class="govuk-summary-list__row">
+                                   <dt class="govuk-summary-list__key">Add apprentice records</dt>
+                                   <dd class="govuk-summary-list__value">{{ data['do-you-give-permission-to-add'] }}</dd>
+                                   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="javascript:history.back()">Change<span class="govuk-visually-hidden"> permission</span></a></dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                   <dt class="govuk-summary-list__key">Recruit apprentices</dt>
+                                   <dd class="govuk-summary-list__value">{{ data['do-you-give-permission-to-recruit'] }}</dd>
+                                   <dd class="govuk-summary-list__actions"><a class="govuk-link" href="javascript:history.back()">Change<span class="govuk-visually-hidden"> permission</span></a></dd>
+                              </div>
+                         </dl>
+
+                         <div class="govuk-radios">
+                              <h2 class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                   Are you sure you want to change the permissions for BARKING AND DAGENHAM COLLEGE?
+                              </h2>
+
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="confirm-permissions-change" id="confirm-permissions-change-yes" value="Yes" class="govuk-radios__input" {{ checked("confirm-permissions-change", "Yes") }}>
+                                   <label for="confirm-permissions-change-yes" class="govuk-label govuk-radios__label">Yes</label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="confirm-permissions-change" id="confirm-permissions-change-no" value="No" class="govuk-radios__input" {{ checked("confirm-permissions-change", "No") }}>
+                                   <label for="confirm-permissions-change-no" class="govuk-label govuk-radios__label">No</label>
+                              </div>
+                         </div>
+
+                    </fieldset>
+               </div>
+
+               <button class="govuk-button" data-module="govuk-button">Confirm</button>
+
+          </form>
+     </div>
+</div>
+
+{% endblock %}
