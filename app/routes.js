@@ -368,20 +368,18 @@ EMPLOYER - TP PERMISSIONS
 /*
 ============================================================================
 How the routes are broken down
-1. Line 382 - Router.post highlights the location and name of the branch we want the prototype to use. In this case, our rule is found on the route of /298/employer/ and is called permissions
+1. Line 383 - Router.post highlights the location and name of the branch we want the prototype to use. In this case, our rule is found on the route of /298/employer/ and is called permissions
 
-2. Line 384 - we set the variable that we need the rule to listen to and work with. In this case, 'recapprentices' is the variable used in the rule and 'do-you-give-permission-to-recruit' is the name of the component we need it to listen to 
+2. Line 385 - we set the variable that we need the rule to listen to and work with. In this case, 'recapprentices' is the variable used in the rule and 'do-you-give-permission-to-recruit' is the name of the component we need it to listen to 
+***NOTE*** While the variable used in the JS below can be anything, the on page 'name ('do-you-give-permission-to-recruit') must be unique and doesn't need to be on the same page as the JS rule
 
-3. Line 386 - we start our logic - If 'our variable' = 'allow' then do this (redirect to confirm-v2)
+3. Line 387 - we start our logic - If 'our variable' = 'allow' then do this (redirect to confirm-v2)
 
-4. Line 391 - else if uses the same variable but if a different value is selected then go to the v1 url
+4. Line 392 - else if uses the same variable but if a different value is selected then go to the v1 url
 
-5. Line 396 if neither rule above applies then go to v3
+5. Line 397 if neither rule above applies then go to v3
 ============================================================================
 */
-
-
-
 router.post(`/298/employer/permissions`, function (req, res) {
   
 let recapprentices = req.session.data['do-you-give-permission-to-recruit'];
