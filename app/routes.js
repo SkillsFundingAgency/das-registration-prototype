@@ -377,7 +377,10 @@ How the routes are broken down
 
 4. Line 392 - else if uses the same variable but if a different value is selected then go to the v1 url
 
-5. Line 397 if neither rule above applies then go to v3
+5. Line 397 if neither of the rules above apply then go to v3
+
+for the code on this page view -> /298/employer/permission-consolidated-radios
+To run the page on your browser go to -> http://localhost:3000/298/employer/permission-consolidated-radios
 ============================================================================
 */
 router.post(`/298/employer/permissions`, function (req, res) {
