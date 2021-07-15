@@ -1,0 +1,55 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Success
+{% endblock %}
+
+{% block content %}
+
+<style>
+	.govuk-back-link {
+		display: none;
+	}
+</style>
+
+<div class="govuk-width-container">
+     <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-panel govuk-panel--confirmation">
+                         <h1 class="govuk-panel__title">Vacancy submitted to ESFA</h1>
+                         <div class="govuk-panel__body">
+                              Your reference number<br><strong>VAC1000014106</strong>
+                         </div>
+                    </div>
+
+                    <h2 class="govuk-heading-m">What happens next</h2>
+
+                    <p class="govuk-body">
+                         We'll check the vacancy and let you know by email, within one working day, if you need to make and edits.
+                    </p>
+
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="#" data-automation="dashboard-link">Manage the frequency of your recruitment emails</a>
+                    </p>
+
+
+                    <p class="govuk-body">
+                         When the vacancy is approved, it will appear on Find an apprenticeship.
+                    </p>
+
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="#" data-automation="dashboard-link">Return to recruitment</a>
+                    </p>
+
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="#" data-automation="dashboard-link">Create another vacancy</a>
+                    </p>
+
+               </div>
+          </div>
+     </main>
+</div>
+
+
+{% endblock %}

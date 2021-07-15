@@ -1,0 +1,57 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Success
+{% endblock %}
+
+{% block content %}
+
+<style>
+	.govuk-back-link {
+		display: none;
+	}
+</style>
+
+<div class="govuk-width-container">
+     <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-panel govuk-panel--confirmation">
+                         <h1 class="govuk-panel__title">Vacancy submitted to employer</h1>
+                         <div class="govuk-panel__body">
+                              Your reference number<br><strong>VAC1000014106</strong>
+                         </div>
+                    </div>
+
+                    <h2 class="govuk-heading-m">What happens next</h2>
+
+                    <p class="govuk-body">
+                         [Name of employer] needs to approve the vacancy.
+                    </p>
+                    <p class="govuk-body">
+                         If they approve the vacancy, the ESFA will do a final review and then post it on 'Find an apprenticeship'.
+                    </p>
+
+                    <p class="govuk-body">
+                         If the vacancy is rejected by either the ESFA or [name of employer] and you need to make edits, they will tell you in the rejected vacancies of your Recruitment dashboard.
+                    </p>
+
+                   
+
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="manage-emails" data-automation="dashboard-link">Manage the frequency of your recruitment emails</a>
+                    </p>
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="dashboard" data-automation="dashboard-link">Return to recruitment</a>
+                    </p>
+                    <p class="govuk-body">
+                         <a class="govuk-link" href="new-advert" data-automation="dashboard-link">Create another vacancy</a>
+                    </p>
+
+               </div>
+          </div>
+     </main>
+</div>
+
+
+{% endblock %}
