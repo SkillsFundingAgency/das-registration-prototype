@@ -1,0 +1,36 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Manage advert
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+               <h1 class="govuk-panel__title">You’ve successfully saved your recruitment email preferences</h1>
+          </div>
+
+          <p class="govuk-body">We'll send emails to <strong>DASContributor@mailinator.com</strong>:</p>
+
+          {% if data['provider-emails-when'] %}
+          <ul class="govuk-list govuk-list--bullet">
+               {% for answer in data['provider-emails-when'] -%}
+               <li>{{ answer }}</li>
+               {% endfor %}
+          </ul>
+          {% endif %}
+
+          <form class="" action="main-dashboard" method="post">
+               <button class="govuk-button" data-module="govuk-button">Return to dashboard</button>
+          </form>
+
+
+     </div>
+  </div>
+
+
+{% endblock %}
