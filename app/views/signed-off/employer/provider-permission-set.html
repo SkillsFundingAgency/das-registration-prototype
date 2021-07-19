@@ -1,0 +1,86 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Permission new
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+          <form action="#" method="post">
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                              <h1 class="govuk-heading-l">Set permissions for BARKING AND DAGENHAM COLLEGE</h1>
+                         </legend>
+
+                         <p class="govuk-!-margin-bottom-3">These permissions are on behalf of BENTLEY & BENTLEY LIMITED.</p>
+                    </fieldset>
+               </div>
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">Add apprentice records</h2>
+                         </legend>
+
+                         <div class="govuk-hint govuk-!-margin-bottom-3">
+                              This allows your training provider to add apprentice records. If you do not pay the levy, this permission also allows your training provider to reserve funding.
+                         </div>
+
+                         <div class="govuk-radios">
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="do-you-give-permission-to-add" id="do-you-give-permission-to-add-allow" value="Allow" class="govuk-radios__input" {{ checked("do-you-give-permission-to-add", "Add apprentice records") }}>
+                                   <label for="do-you-give-permission-to-add-allow" class="govuk-label govuk-radios__label">Allow</label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="do-you-give-permission-to-add" id="do-you-give-permission-to-add-do-not-allow" value="Do not allow" class="govuk-radios__input" {{ checked("do-you-give-permission-to-add", "Cannot add apprentice records") }}>
+                                   <label for="do-you-give-permission-to-add-do-not-allow" class="govuk-label govuk-radios__label">Do not allow</label>
+                              </div>
+                         </div>
+
+                    </fieldset>
+               </div>
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">Recruit apprentices</h2>
+                         </legend>
+
+                         <div class="govuk-hint govuk-!-margin-bottom-3">
+                              This allows your training provider to create and manage job adverts. It also allows them to receive and manage applications.
+                         </div>
+
+                         <div class="govuk-radios">
+
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="do-you-give-permission-to-recruit" id="do-you-give-permission-to-recruit-allow" value="Allow" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Create and publish job adverts") }}>
+                                   <label for="do-you-give-permission-to-recruit-allow" class="govuk-label govuk-radios__label">Allow</label>
+                              </div>
+
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="do-you-give-permission-to-recruit" id="do-you-give-permission-to-recruit-allow-but" value="Allow, but I want to review job adverts before they’re advertised" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Create job adverts") }} >
+                                   <label for="do-you-give-permission-to-recruit-allow-but" class="govuk-label govuk-radios__label">Allow, but I want to review job adverts before they’re advertised</label>
+                              </div>
+
+                              <div class="govuk-radios__item">
+                                   <input type="radio" name="do-you-give-permission-to-recruit" id="do-you-give-permission-to-recruit-do-not-allow" value="Do not allow" class="govuk-radios__input" {{ checked("do-you-give-permission-to-recruit", "Cannot create job adverts") }} >
+                                   <label for="do-you-give-permission-to-recruit-do-not-allow" class="govuk-label govuk-radios__label">Do not allow</label>
+                              </div>
+                         </div>
+
+                    </fieldset>
+               </div>
+
+               <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+     </div>
+</div>
+
+{% endblock %}
