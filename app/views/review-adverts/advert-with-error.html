@@ -29,6 +29,22 @@
 
 <div class="govuk-grid-row" id="title">
     <div class="govuk-grid-column-two-thirds">
+
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "Select if you submit or reject this advert",
+                href: "#submit-advert"
+              },
+              {
+                text: "Enter more detail why you are rejecting this advert",
+                href: "#advert-option-reject"
+              }
+            ]
+          }) }}
+
+
         <div class=" govuk-!-margin-bottom-6">
             
             <h2 class="govuk-heading-xl govuk-!-margin-bottom-6" id="Title">
@@ -381,7 +397,7 @@
             <!-- RADIO BUTTIONS -->
 		
 
-
+            <div class="govuk-form-group govuk-form-group--error">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -389,7 +405,9 @@
                     Choose an option
                 </h1>
               </legend>
-             
+              <span id="where-do-you-live-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select if you submit or reject this advert
+              </span>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="submit-advert" name="advert-option" type="radio" value="send-to-esfa" data-aria-controls="conditional-contact">
@@ -399,31 +417,39 @@
                 </div>
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="submit-advert-2" name="advert-option" type="radio" value="reject-advert" data-aria-controls="reject-advert-reason">
+                  <input class="govuk-radios__input" id="submit-advert-2" name="advert-option" type="radio" value="reject-advert" data-aria-controls="reject-advert-reason" checked>
                   <label class="govuk-label govuk-radios__label" for="contact-2">
                     Reject advert and return to training provider
                   </label>
                 </div>
+                <div class="govuk-form-group govuk-form-group--error">
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="reject-advert-reason">
+                    
                     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
                   <div class="govuk-form-group">
+                     
                     <label class="govuk-label" for="contact-by-phone">
                         Let [training provider] know why you're rejecting it. Tell them which fields need changing for example; weekly wage, hours or expected duration.
                     </label>
-                    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+                    <span id="more-detail-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Enter more detail why you are rejecting this advert
+                      </span>
+                    <textarea class="govuk-textarea govuk-js-character-count" id="advert-option-reject" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
 
                     <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="contact-by-phone">
                         You can enter up to 200 characters
                       </div>
+                      </div>
+                </div>
                 </div>
                 </div>
               </div>
           
             </fieldset>
           </div>
+          </div>
 
-
-
+          
 
 
 
