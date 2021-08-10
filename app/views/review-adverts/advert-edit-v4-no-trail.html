@@ -24,18 +24,18 @@
 </style>
                         
 
-
+<form action="/review-adverts/reject-journey/confirmation-reject-v2" method="post" class="form" novalidate data-validate='test-validation'>
 
 
 <div class="govuk-grid-row" id="title">
     <div class="govuk-grid-column-two-thirds">
         <div class=" govuk-!-margin-bottom-6">
             
-            <h2 class="govuk-heading-xl govuk-!-margin-bottom-6" id="Title">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6" id="Title">
                 
                 First apprenticeship
                 <span class="govuk-caption-xl">BENTLEY &amp; BENTLEY LIMITED</span>
-            </h2>
+            </h1>
             <a class="govuk-body govuk-link" data-automation="link-employer-name" href="#">Change<span class="govuk-visually-hidden">employer-name</span></a>
         </div>
     </div>
@@ -365,34 +365,31 @@
     </div>
 </div>
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">        
+    
         
-         <!-- <div class="govuk-body">
-            <form class="form-inline" action="confirmation-approve" method="post">
-                <input type="submit" value="Approve job advert" class="govuk-button" data-automation="submit-button">
-                 <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="reject-journey/confirmation-reject">Reject job advert</a>
-                 red colour btn below, test with UR
-                 <a class="govuk-button govuk-button--warning" data-module="govuk-button" href="reject-journey/confirmation-reject">Reject job advert</a>
-        </div> -->
+       
         
-        <form action="/review-adverts/reject-journey/confirmation-reject-v2" method="post" class="form">
+       
 
             <!-- RADIO BUTTIONS -->
 		
 
 
+
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-heading-l">
+                    Choose an option
+                </h2>
+              </legend>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                    Choose an option
-                </h1>
-              </legend>
+                
              
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="submit-advert" name="advert-option" type="radio" value="send-to-esfa" data-aria-controls="conditional-contact">
+                  <input class="govuk-radios__input" id="advert-option" name="advert-option" type="radio" value="send-to-esfa" data-aria-controls="conditional-contact">
                   <label class="govuk-label govuk-radios__label" for="contact">
                     Submit advert to ESFA for checking and publication
                   </label>
@@ -418,7 +415,7 @@
                 </div>
                 </div>
               </div>
-          
+              </div>
             </fieldset>
           </div>
 
@@ -439,8 +436,7 @@
         </div>
         <!-- END CTA -->
 </form>
-    </div>
-</div>
+   
 
 
 <div class="govuk-grid-row">
@@ -448,6 +444,19 @@
        
     </div>
 </div>
+<!--<script type="application/json" id="test-validation">
+    { 		  	
+       
+      "advert-option": {
+        "presence": {
+          "message": "^you must say if you are submitting or rejecting the advert"
+        }
+      
+      }
+      
+      
+    }
+  </script>-->
 
 
 {% endblock %}
