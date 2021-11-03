@@ -1,0 +1,48 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "training date check complete"
+      }) }}
+      <h2 class="govuk-heading-m">You have confirmed that the following ULN's have the correct training dates</h2>
+     
+         <ul class="govuk-list govuk-list--bullet">
+             <li>
+                John Smith
+             </li>
+             <li>
+                 Brendan Heaney
+             </li>
+             
+         </ul>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        content here to confirm to the user that the following actions have been taken:
+      </p>
+     <ul class="govuk-list govuk-list--bullet">
+         <li>
+             The old employer(s) have been emailed to ensure they amend their records
+         </li>
+         <li>
+             Support team has been informed that this has been requested
+         </li>
+     </ul>
+     <p class="govuk-body">
+         Can we advise anything else at this stage to reassure the current TP?
+     <p>
+    </div>
+  </div>
+{% endblock %}
+
+
