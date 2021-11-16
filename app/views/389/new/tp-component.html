@@ -1,0 +1,142 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+     
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">test component</h1>
+                  
+              </div>
+          </div>
+    
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                This component would sit on the 'Edit apprentice details' page. See lucid board for reference.
+            <p>
+        </div>
+     </div>
+         
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                    
+                    {{ govukDateInput({
+                        id: "date-start",
+                        name: "date-start",
+                        fieldset: {
+                            legend: {
+                                text: "Planned training start date",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--m"
+                            }
+                        },
+                        hint: {
+                            text: "For example, 31 3 2017"
+                        },
+                        errorMessage: {
+                            text: "The date overlaps with existing dates for thesame apprentice. Please check the date - contact employer for help"
+                          },
+                        items: [
+                            
+                            {
+                                classes: "govuk-input--width-2 govuk-input--error",
+                                name: "month",
+                                value: "2"
+                            },
+                            {
+                                classes: "govuk-input--width-4 govuk-input--error",
+                                name: "year",
+                                value: "2021"
+                            }
+                        ]
+                    }) }}
+
+                    {{ govukInsetText({
+                        html: 
+                        "
+                            <h3 class='govuk-heading-s'>
+                                If these dates are correct you confirm below and we will inform the old employer on your behalf:
+                            </h3>
+                            <button class='govuk-button' data-module='govuk-button'>
+                                The planned start date is correct
+                              </button>
+                        "
+                    }) }}
+
+
+                    {{ govukDateInput({
+                        id: "date-end",
+                        name: "date-end",
+                        fieldset: {
+                            legend: {
+                                text: "Projected finish date",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--m"
+                            }
+                        },
+                        hint: {
+                            text: "For example, 31 3 2017"
+                        },
+                        errorMessage: {
+                            text: "The date overlaps with existing dates for thesame apprentice. Please check the date - contact employer for help"
+                          },
+                        items: [
+                            
+                            {
+                                classes: "govuk-input--width-2 govuk-input--error",
+                                name: "month",
+                                value: "2"
+                            },
+                            {
+                                classes: "govuk-input--width-4 govuk-input--error",
+                                name: "year",
+                                value: "2021"
+                            }
+                        ]
+                    }) }}
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+
+{% endblock %}

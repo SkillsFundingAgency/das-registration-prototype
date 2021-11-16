@@ -1,0 +1,151 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form  method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Overlapping training dates</h1>
+                  
+              </div>
+          </div>
+    
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+           {{ govukInsetText({
+               html: 
+               "
+                 <p class='govuk-body'>
+                    The following ULN has an overlapping training date issue with a previous employer. Please check:
+                 <p> 
+                     <ul class='govuk-list govuk-list--bullet'>
+                         <li>
+                             the correct ULN record is being updated
+                         </li>
+                         <li>
+                            the dates entered for this ULN below are correct
+                        </li>
+                     </ul>
+               "
+           }) }}
+        </div>
+     </div>
+
+
+     {{ govukTable({
+         caption: "Proposed training dates",
+         firstCellIsHeader: false,
+         head: [
+             {
+                 text: "ULN"
+             },
+             {
+                 text: "Apprentice Name"
+             },
+             {
+                 text: "Planned training start date"
+             },
+             {
+                 text: "Projected finish date"
+             }
+         ],
+         rows: [
+             [
+                 {
+                     text: "1231234"
+                 },
+                 {
+                     text: "Fred Jones"
+                 },
+                 {
+                     text: "02 2022"
+                 },
+                 {
+                     text: "10 2023"
+                 }
+             ]
+
+         ]
+     }) }}
+     <div class="govuk-grid-row">
+         
+     
+         <div class="govuk-grid-column-two-thirds">
+             
+        
+             {{ govukCheckboxes({
+                 idPrefix: "confirm-dates",
+                 name: "confirm-dates",
+                 fieldset: {
+                     legend: {
+                         text: "Content here to ensure the user checks and confirms the dates above",
+                         isPageHeading: false,
+                         classes: "govuk-fieldset__legend--m"
+                     }
+                 },
+                 hint: {
+                     text: "If these dates are not correct you can amend on the previous screen"
+                 },
+                 items: [
+                     {
+                         value: "Value",
+                         text: "The dates above are correct" 
+                     }
+                 ]
+             }) }}
+                    
+
+                     {{ govukButton({
+                         text: "Continue",
+                         href: "email-confirmation"
+                     }) }}
+                     {{ govukButton({
+                        text: "Change dates",
+                        classes: "govuk-button--secondary",
+                        href: "tp-edit-apprentice"
+                      }) }}
+                     
+                      
+                    </div>
+     
+                </div>
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
