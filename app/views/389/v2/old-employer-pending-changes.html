@@ -1,0 +1,89 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		  <h1 class="govuk-heading-xl">Manage your apprentices</h1>		
+		 {{ govukInput({
+             id: "search",
+             name: "search",
+             label: {
+                 text: "Search by apprentice name"
+             }
+            
+         }) }}
+         
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full">
+        
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header">Apprentice name</th>
+                <th class="govuk-table__header">Apprentice training course</th>
+                <th class="govuk-table__header">Planned start date</th>
+                <th class="govuk-table__header">planned end date</th>
+                <th class="govuk-table__header">Training provider</th>
+                <th class="govuk-table__header">Apprentice confirmation</th>
+                <th class="govuk-table__header">Status</th>
+                <th class="govuk-table__header">Alerts</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">	
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell "> <a href="pending-change" class="govuk-link">Fred Jones</a> </td>
+                    <td class="govuk-table__cell ">Academic professional Level 7</td>
+                    <td class="govuk-table__cell ">Feb 2022</td>
+                    <td class="govuk-table__cell ">Oct 2023</td>
+                    <td class="govuk-table__cell ">Coventry college</td>
+                    <td class="govuk-table__cell ">N/A</td>
+                    <td class="govuk-table__cell ">
+                        <strong class="govuk-tag govuk-tag--red">
+                        Overlap
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell "><a href="pending-change" class="govuk-link">Confirm correct dates</a></td>
+                    
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell "> <a href="#" class="govuk-link">James Smith</a> </td>
+                    <td class="govuk-table__cell ">Accounting. Level 2</td>
+                    <td class="govuk-table__cell ">Jan 2022</td>
+                    <td class="govuk-table__cell ">Jul 2023</td>
+                    <td class="govuk-table__cell ">BMH Training</td>
+                    <td class="govuk-table__cell ">N/A</td>
+                    <td class="govuk-table__cell ">
+                        <strong class="govuk-tag govuk-tag--red">
+                        Stopped
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell "><a href="# class="govuk-link">Confirm correct dates</a></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+    
+
+{% endblock %}
