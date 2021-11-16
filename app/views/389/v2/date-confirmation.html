@@ -68,6 +68,7 @@
 
      {{ govukTable({
          caption: "Proposed training dates",
+         classes: "govuk-!-margin-bottom-6 govuk-!-margin-top-6",
          firstCellIsHeader: false,
          head: [
              {
@@ -110,11 +111,12 @@
              {{ govukCheckboxes({
                  idPrefix: "confirm-dates",
                  name: "confirm-dates",
+                 classes: "govuk-!-margin-bottom-6",
                  fieldset: {
                      legend: {
                          text: "Content here to ensure the user checks and confirms the dates above",
                          isPageHeading: false,
-                         classes: "govuk-fieldset__legend--m"
+                         classes: "govuk-fieldset__legend--s"
                      }
                  },
                  hint: {
