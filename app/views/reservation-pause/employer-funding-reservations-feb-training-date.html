@@ -1,0 +1,45 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Reserve funding
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">When will the apprentice start their apprenticeship training?</h1>
+
+     <form action="#" method="post">
+
+     <div class="govuk-form-group ">
+      <fieldset class="govuk-fieldset">
+              <span id="choose-start-date-hint" class="govuk-hint">
+                You can reserve funding for apprenticeship with a planned start date of April 2022.
+              </span>
+
+
+          <div class="govuk-radios" data-validation-message="You must select a start date" data-validation-summary-message="Select a start date">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="StartDate-2021-11" name="StartDate" type="radio" value="{&quot;StartDate&quot;:&quot;2021-11-01T00:00:00&quot;,&quot;EndDate&quot;:&quot;2022-01-31T00:00:00&quot;}" required="">
+                      <label class="govuk-label govuk-radios__label" for="StartDate-2021-11">
+                          April 2022
+                      </label>
+                  </div>
+          </div>
+      </fieldset>
+  </div>
+        
+        
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

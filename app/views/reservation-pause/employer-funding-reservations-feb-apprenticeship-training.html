@@ -1,0 +1,70 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Reserve funding
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you know which apprenticeship training your apprentice will take?</h1>
+
+     <form action="employer-funding-reservations-feb-training-date" method="post">
+
+<!-- start radio -->
+     <div class="govuk-form-group">
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                Search for a course
+              </label>
+              <input class="govuk-input govuk-!-width-two-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email"></div>
+    
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+            <label class="govuk-label govuk-radios__label" for="contact-3">
+              No
+            </label>
+          </div>
+
+        </div>
+      </div>
+        </div>
+    
+      </fieldset>
+    </div>
+    <!-- end radios -->
+     
+        
+     <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+         Can I change the course?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        You can change the apprenticeship training course when you add an apprentice's details.
+      </div>
+    </details>
+        
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

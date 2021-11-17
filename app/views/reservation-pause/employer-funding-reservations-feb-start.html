@@ -1,0 +1,40 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Reserve funding
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Reserve funding to train and assess an apprentice</h1>
+
+     <form action="employer-funding-reservations-feb-apprenticeship-training" method="post">
+
+      <p class="govuk-body">To reserve funding, you will need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the month you expect the apprenticeship training to start</li>
+          <li>the apprenticeship training course the apprentice will take, which can be changed later</li>
+        </ul>
+
+        
+        {{ govukWarningText({
+          text: "There is currently a pause in reserving government funding.
+          Any funding you've already secured is unaffected by this change.
+          You will be able to reserve funding in February 2022 for apprenticeship starts in April 2022.",
+          iconFallbackText: "Important"
+        }) }}
+        
+
+        {{ govukButton({
+          text: "Reserve funding"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
