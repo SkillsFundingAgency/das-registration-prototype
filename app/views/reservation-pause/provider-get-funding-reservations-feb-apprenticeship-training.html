@@ -1,0 +1,77 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+Reserve fundings
+{% endblock %}
+
+
+{% block main %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+	
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+					    
+		    <h1 class="govuk-heading-l  govuk-!-margin-top-4">Apprenticeship training</h1>		
+			
+			<h2 class="govuk-heading-m">Which apprenticeship training will the apprentice take?</h2>
+
+
+				<label class="govuk-label" for="two-thirds">
+					Search for a course
+				</label>
+				<input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+
+			<span id="choose-apprenticeship-hint" class="govuk-hint govuk-!-margin-top-4">
+				This information can be changed later.
+			</span>
+			  
+			<div class="govuk-form-group ">
+				<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h2 class="govuk-fieldset__heading govuk-!-margin-top-6">
+								When will the apprenticeship training start?
+							</h2>
+						</legend>
+						<span id="choose-start-date-hint" class="govuk-hint">
+							There is currently a pause in reserving governemnt funding. You can reserve funding for apprenticeship starts in April 2022.
+						</span>
+
+
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="StartDate-2021-11" name="StartDate" type="radio">
+								<label class="govuk-label govuk-radios__label" for="StartDate-2021-11">
+									April 2022
+								</label>
+							</div>
+					</div>
+				</fieldset>
+			
+
+				{{ govukButton({
+					text: "Save and continue"
+				}) }}
+
+
+		  </div>
+	  </div>
+  
+		    
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% endblock %}
