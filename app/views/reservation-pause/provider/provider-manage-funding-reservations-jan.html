@@ -1,0 +1,151 @@
+{% extends "tp-layout.html" %}
+
+{% block pageTitle %}
+  Reserve fundings
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Funding for non-levy employers</h1>
+
+
+
+{{ govukInsetText({
+  html: "There is currently a pause in reserving government funding.
+  Any funding you've already secured is unaffected by this change.<br><br>
+  You will be able to reserve funding in February 2022 for apprenticeship starts in April 2022."
+}) }}
+
+
+    </div>
+  </div>
+
+<!-- SEARCH - START -->
+<div class="govuk-grid-row">
+  <form method="get" autocomplete="off">
+       <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                 <fieldset class="govuk-fieldset">
+                      <div class="form-group search-field">
+                           <div class="search-input-with-button">
+                                <label class="govuk-label" for="search">Search employer name or course</label>
+                                <input id="search-input" name="searchTerm" class="govuk-input search-input ui-autocomplete-input" maxlength="200" autocomplete="off">
+                           </div>
+                           <div class="search-submit" style="height: 40px;">
+                                <!-- hide button for no js version -->
+                                <button type="submit" id="search-submit-button" style="height: 40px;">Search</button>
+                           </div>
+                      </div>
+                 </fieldset>
+            </div>
+       </div>
+  </form>
+</div>
+<!-- SEARCH - END -->
+
+
+  <!-- filter start -->
+
+<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4" style="background-color:#f3f2f1;">
+  <div style="background-color:#f3f2f1; padding:10px; height:25px;">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="selectedEmployer">Employer</label>
+          <select class="govuk-select govuk-!-width-full" id="selectedEmployer" name="selectedEmployer">
+              <option label="All" aria-label="All employers"></option>
+                      <option label="BARBERRY COVENTRY LIMITED">BARBERRY COVENTRY LIMITED</option>
+          </select>
+      </div>
+
+  <p>
+    {{ govukButton ({
+      text: "Apply filters"
+    })}}
+  </p>
+</div>
+  <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="selectedCourse">Apprenticeship training course</label>
+          <select class="govuk-select govuk-!-width-full" id="selectedCourse" name="selectedCourse">
+              <option label="All" aria-label="All courses"></option>
+                      <option label=" - Level "> - Level </option>
+                      <option label="Abattoir worker - Level 2">Abattoir worker - Level 2</option>
+          </select>
+      </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="selectedStartDate">Start date</label>
+          <select class="govuk-select govuk-!-width-full" id="selectedStartDate" name="selectedStartDate">
+              <option label="All" aria-label="All start dates"></option>
+                      <option label="Jan 2020 to Mar 2020">Jan 2020 to Mar 2020</option>
+          </select>
+      </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- filter end -->
+
+
+<div class="govuk-grid-column-full">
+  <p class="govuk-body">3 reservations</p>
+</div>
+
+
+
+
+<table class="govuk-table das-table--responsive">           
+  <thead class="govuk-table__head">
+      <tr>
+          <th scope="col" class="govuk-table__header"><span class="no-wrap">Employer</span></th>
+          <th scope="col" class="govuk-table__header">Apprenticeship training</th>
+          <th scope="col" class="govuk-table__header">Apprenticeship start date</th>
+          <th scope="col" class="govuk-table__header"></th>
+      </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-label="Organisation">BARBERRY COVENTRY LIMITED<br><strong class="govuk-tag govuk-tag--inactive">used</strong></td>
+              <td class="govuk-table__cell" data-label="Apprenticeship training">Chef de partie - Level 3</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship start date"> May 2020 to Jul 2020</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                          
+
+              </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-label="Organisation">BARBERRY COVENTRY LIMITED<br><strong class="govuk-tag govuk-tag--inactive">used</strong></td>
+              <td class="govuk-table__cell" data-label="Apprenticeship training">Abattoir worker - Level 2</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship start date"> Oct 2021 to Dec 2021</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+              </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-label="Organisation">BARBERRY COVENTRY LIMITED</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship training">Fundraiser - Level 3</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship start date"> Dec 2021 to Feb 2022</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                          <a href="#" class="govuk-link">Add apprentice</a>
+
+              </td>
+          </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+
+
+{% endblock %}
+
