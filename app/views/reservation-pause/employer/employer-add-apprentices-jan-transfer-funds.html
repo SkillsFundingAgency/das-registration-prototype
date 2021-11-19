@@ -1,0 +1,53 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Reserve funding
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you want to use transfer funds to pay for this training?</h1>
+
+     <form action="#" method="post">
+
+     <div class="govuk-form-group ">
+      <fieldset class="govuk-fieldset">
+              
+          <div class="govuk-radios" data-validation-message="You must select a start date" data-validation-summary-message="Select a start date">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="StartDate-2021-11" name="StartDate" type="radio" value="{&quot;StartDate&quot;:&quot;2021-11-01T00:00:00&quot;,&quot;EndDate&quot;:&quot;2022-01-31T00:00:00&quot;}" required="">
+                      <label class="govuk-label govuk-radios__label" for="StartDate-2021-11">
+                        Yes, I will use transfer funds from ONA CONSULTING LTD
+                      </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="StartDate-2021-11" name="StartDate" type="radio" value="{&quot;StartDate&quot;:&quot;2021-11-01T00:00:00&quot;,&quot;EndDate&quot;:&quot;2022-01-31T00:00:00&quot;}" required="">
+                    <label class="govuk-label govuk-radios__label" for="StartDate-2021-11">
+                      Yes, I will use transfer funds from DEPARTMENT OF EDUCATION_Levy Payer
+                    </label>
+                </div>
+          </div>
+      </fieldset>
+  </div>
+        
+  {{ govukWarningText({
+    html: "There is currently a pause in reserving government funding.
+Any funding you've already secured is unaffected by this change.
+You will be able to reserve funding in February 2022 for apprenticeship starts in April 2022.",
+    iconFallbackText: "Important"
+  }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
