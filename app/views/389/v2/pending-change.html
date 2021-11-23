@@ -53,15 +53,61 @@
 {{ govukInsetText({
     text: "A new training provider has suggested that this learner is now on an apprenticeship with a new employer (content tbc)"
 }) }}
+
+
+
+
+{{ govukTable({
+    
+    firstCellIsHeader: true,
+    
+    rows: [
+        [
+            {
+                text: "Suggested stop date"
+            },
+            {
+                text: "Jan 2022"
+            }
+        ]
+    ]
+}) }}
+
+{{ govukRadios({
+    idPrefix: "confirm-stop-date",
+    name: "confirm-stop-date",
+    fieldset: {
+        legend: {
+            text: "Are you happy to approve these changes?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+        }
+    },
+    hint: {
+        text: "You can select an alternative stop date if required"
+    },
+    items: [
+        {
+            value: "Yes, I agree with the suggested stop date",
+            text: "Yes, I agree with the suggested stop date"
+        },
+        {
+            value: "No, this is not the correct stop date",
+            text: "No, this is not the correct stop date"
+        },
+        {
+            value: "No, reject these changes",
+            text: "No, reject these changes"
+        }
+    ]
+}) }}
+
+{{ govukButton({
+    text: "Continue",
+    href: "change-confirmed-stopped"
+}) }}
+
 </div>
-
-
-
-
-
-
-
-
 </div>
     
 

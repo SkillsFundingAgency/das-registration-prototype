@@ -50,14 +50,14 @@
                html: 
                "
                  <p class='govuk-body'>
-                    The following ULN has an overlapping training date issue with a previous employer. Please check:
+                    There are overlapping training dates for this ULN with another employer. You need to check:
                  <p> 
                      <ul class='govuk-list govuk-list--bullet'>
                          <li>
-                             the correct ULN record is being updated
+                            the correct ULN is being updated
                          </li>
                          <li>
-                            the dates entered for this ULN below are correct
+                            the dates entered are correct
                         </li>
                      </ul>
                "
@@ -114,13 +114,18 @@
                  classes: "govuk-!-margin-bottom-6",
                  fieldset: {
                      legend: {
-                         text: "Content here to ensure the user checks and confirms the dates above",
+                         text: "Is this information correct?",
                          isPageHeading: false,
                          classes: "govuk-fieldset__legend--s"
                      }
                  },
                  hint: {
-                     text: "If these dates are not correct you can amend on the previous screen"
+                     html: " <p class='govuk-body'>
+                                If the information is correct an email will be sent to the previous employer to request they stop this learning.
+                            <p> 
+                             <p class='govuk-body'>
+                                If the infomation is incorrect you need to go back and amend the details
+                             <p>   "
                  },
                  items: [
                      {
@@ -136,7 +141,7 @@
                          href: "email-confirmation"
                      }) }}
                      {{ govukButton({
-                        text: "Change dates",
+                        text: "Amend dates",
                         classes: "govuk-button--secondary",
                         href: "tp-edit-apprentice"
                       }) }}
