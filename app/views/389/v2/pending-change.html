@@ -6,6 +6,7 @@
 
 {% block content %}
 
+<form action="review-changes"  method="post">
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		  <h1 class="govuk-heading-xl">Review change</h1>		
@@ -55,6 +56,10 @@
 }) }}
 
 
+<div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+<div class="govuk-grid-column-full">
+    
+
 
 
 {{ govukTable({
@@ -72,6 +77,59 @@
         ]
     ]
 }) }}
+</div>
+</div>
+{% set stopDateHtml %}
+{{ govukDateInput({
+    id: "correct-stop-date",
+    name: "correct-stop-date",
+    fieldset: {
+        legend: {
+            text: "What is the correct stop date",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+        }
+    },
+    hint: {
+        html: "For example, 31 3 2021<br>Remember that pay may be affected by incorrect stop dates."
+    },
+    items: [
+        
+        {
+            name: "month",
+            
+            classes: "govuk-input--width-2"
+        },
+        {
+            name: "year",
+            classes: "govuk-input--width-4"
+        }
+    ]
+}) }}
+{% endset -%}
+
+
+{% set rejectChangesHtml %}
+
+
+
+
+{{ govukCharacterCount({
+    name: "reject-changes",
+    id: "reject-changes",
+    maxlength: 200,
+    label: {
+      text: "Rejection reason",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+      text: "This will be presented back to the training provider."
+    }
+  }) }}
+{% endset -%}
+
+
 
 {{ govukRadios({
     idPrefix: "confirm-stop-date",
@@ -93,22 +151,27 @@
         },
         {
             value: "No, this is not the correct stop date",
-            text: "No, this is not the correct stop date"
+            text: "No, this is not the correct stop date",
+            conditional: {
+              html: stopDateHtml
+            }
         },
         {
-            value: "No, reject these changes",
-            text: "No, reject these changes"
+            value: "No, I reject these changes",
+            text: "No, I reject these changes",
+            conditional: {
+              html: rejectChangesHtml
+            }
         }
     ]
 }) }}
 
 {{ govukButton({
-    text: "Continue",
-    href: "change-confirmed-stopped"
+    text: "Continue"
 }) }}
 
 </div>
 </div>
-    
+   </form> 
 
 {% endblock %}

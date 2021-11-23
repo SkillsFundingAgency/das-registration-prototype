@@ -402,4 +402,27 @@ let recapprentices = req.session.data['do-you-give-permission-to-recruit'];
 
 
 
+
+/* 389 starts */
+router.post(`/389/v2/review-changes`, function (req, res) {
+  
+  let reviewChanges = req.session.data['confirm-stop-date'];
+  
+    if (
+      reviewChanges === 'Yes, I agree with the suggested stop date'
+       ) {
+        res.redirect(`/389/v2/change-confirmed-stopped`);
+    }
+      else if (
+        reviewChanges === 'No, this is not the correct stop date'
+       ) {
+        res.redirect(`/389/v2/change-confirmed-stopped-amended`);
+    }
+   else res.redirect(`/389/v2/change-confirmed-rejected`);
+  });
+
+
+/* 389 ends */
+
+
 module.exports = router
