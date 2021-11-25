@@ -1,0 +1,117 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <div class="govuk-width-container">
+    
+      
+        <main class="govuk-main-wrapper">
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds"></div>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+          Apprentice requests
+        </h1>
+        <!-- <form method="post">      
+          {{ govukButton({
+            text: "Add new apprentice",
+            href: "#"
+          }) }}
+        </form> -->
+    
+        <a  href="#">
+          <div class="govuk-grid-column-one-quarter" style="background-color: #1d70b8; margin:0 20px 20px 0; width:22%; border:#1d70b8 solid 1px;">
+            <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">3</div>
+            <p class="govuk-body" style="color:white; text-decoration:underline;">Ready for review</p><br>
+          </div>
+          </a>
+        
+          <a href="#">
+          <div class="govuk-grid-column-one-quarter" style="background-color: #1d70b8; margin:0 20px 20px 0; width:22%; border:#1d70b8 solid 1px;">
+            <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">4</div>
+            <p class="govuk-body" style="color:white; text-decoration:underline;">With employers</p><br>
+          </div>
+          </a>
+      
+          <a>
+          <div class="govuk-grid-column-one-quarter" style="background-color: white; margin: 0 20px 20px 0; width:22%; border:#1d70b8 solid 1px;">
+            <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#1d70b8; font-weight:700;">2</div>
+            <p class="govuk-body" style="color:#1d70b8;">Drafts</p><br>
+          </div>
+          </a>
+      
+          <a href="#">
+          <div class="govuk-grid-column-one-quarter" style="background-color: #1d70b8; margin-bottom:20px; width:22%; border:#1d70b8 solid 1px;">
+            <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">2</div>
+            <p class="govuk-body" style="color:white; text-decoration:underline;">With transfer sending employers</p>
+          </div>
+          </a>
+    
+        <!-- table start -->
+          <table class="govuk-table  govuk-!-margin-bottom-8" id="manage-apprenticeships-table" style="font-size: 19px;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-width-one-third" onclick="sortApprenticeships(0)"><div class="sort">Employer</th>
+            <th scope="col" class="govuk-table__header" onclick="sortApprenticeships(1)"><div class="sort">Cohort reference</th>
+              <th scope="col" class="govuk-table__header" onclick="sortApprenticeships(2)"><div class="sort">Date created</th>
+            <th scope="col" class="govuk-table__header" style="text-align: right">Number of apprentices</th>
+            <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SOMEONE ELSE LTD</td>
+            <td class="govuk-table__cell">VRY89L</td>
+            <td class="govuk-table__cell">20 Nov 2021</td>
+            <td class="govuk-table__cell" style="text-align: right">1</td>
+            <td class="govuk-table__cell"><a href="tp-final-apprentice">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">SOMEONE ELSE LTD</td>
+              <td class="govuk-table__cell">LPG302</td>
+              <td class="govuk-table__cell">20 Nov 2021</td>
+              <td class="govuk-table__cell" style="text-align: right">1</td>
+              <td class="govuk-table__cell"><a href="tp-review-detail">Details</a></td>
+              </tr>
+            
+            </tr>
+          </tbody>
+          </table>		
+          <!-- table end -->  
+    
+        </div>
+      </main>
+    
+      </div>
+    </div> 
+{% endblock %}

@@ -38,19 +38,7 @@
      
           <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
-                             {{ govukErrorSummary({
-                                 titleText: "There is a problem",
-                                 errorList: [
-                                     {
-                                         text: "The start date overlaps with existing training for the same apprentice. You need to check the date with the employer.",
-                                         href: "#date-start"
-                                     },
-                                     {
-                                        text: "The end date overlaps with existing training for the same apprentice. You need to check the date with the employer.",
-                                        href: "#date-end"
-                                    }
-                                 ]
-                             }) }}
+                            
                   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Add apprentice details</h1>
                   
               </div>
@@ -172,33 +160,23 @@
                             The standard version will be based on the planned training start date provided
                             "
                         },
-                        errorMessage: {
-                            text: "The date overlaps with existing training for the same apprentice. You need to check the date with the employer"
-                          },
+                        
                         items: [
                             
                             {
-                                classes: "govuk-input--width-2 govuk-input--error",
+                                classes: "govuk-input--width-2 ",
                                 name: "month",
                                 value: "2"
                             },
                             {
-                                classes: "govuk-input--width-4 govuk-input--error",
+                                classes: "govuk-input--width-4 ",
                                 name: "year",
                                 value: "2022"
                             }
                         ]
                     }) }}
 
-                    {{ govukInsetText({
-                        html: 
-                        "
-                            If these dates are correct you can confirm below and we will inform the employer on your behalf:
-                            <br><br><button class='govuk-button' data-module='govuk-button' >
-                                Continue
-                            </button>
-                        "
-                    }) }}
+                    
 
 
 
@@ -215,18 +193,16 @@
                         hint: {
                             text: "For example, 31 3 2017"
                         },
-                        errorMessage: {
-                            text: "The date overlaps with existing training for the same apprentice. You need to check the date with the employer"
-                          },
+                       
                         items: [
                             
                             {
-                                classes: "govuk-input--width-2 govuk-input--error",
+                                classes: "govuk-input--width-2 ",
                                 name: "month",
                                 value: "10"
                             },
                             {
-                                classes: "govuk-input--width-4 govuk-input--error",
+                                classes: "govuk-input--width-4 ",
                                 name: "year",
                                 value: "2023"
                             }
@@ -269,28 +245,22 @@
                       {{ govukInsetText({
                           html: "  <h3 class='govuk-heading-s'>
                               End-point assessments
-                          </h3>  <br>We'll ask the employer to confirm the apprentice assessment organisation for this apprentice. We'll do this before the end of the apprenticeship"
+                          </h3>  <br>We'll as the employer to confirm the apprentice assessment organisation for this apprentice. We'll do this before the end of the apprenticeship"
                       }) }}
 
                   </div>
                  <div class="govuk-grid-column-two-thirds">
-
-
-                    {{ govukInsetText({
-                        html: 
-                        "
-                            If these dates are correct you can confirm below and we will inform the employer on your behalf:
-                            <br><br><button class='govuk-button' data-module='govuk-button' >
-                                Continue
-                            </button>
-                            <button class='govuk-button govuk-button--warning'  data-module='govuk-button' >
-                                Delete
-                            </button>
-                        "
-                    }) }}
                     
 
-                    <a href="#" class="govuk-link">Cancel</a>
+                     {{ govukButton({
+                         text: "Continue",
+                         href: "date-confirmation"
+                     }) }}
+                     {{ govukButton({
+                        text: "Delete",
+                        classes: "govuk-button--warning"
+                      }) }}
+                      <br><a href="#" class="govuk-link">Cancel</a>
                       
                  </div>
              
