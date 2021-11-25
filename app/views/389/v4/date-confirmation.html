@@ -1,0 +1,152 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form  method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Overlapping training dates</h1>
+                  
+              </div>
+          </div>
+    
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+           {{ govukInsetText({
+               html: 
+               "
+                 <p class='govuk-body'>
+                    There are overlapping training dates for this ULN with another employer. You need to check:
+                 <p> 
+                     <ul class='govuk-list govuk-list--bullet'>
+                         <li>
+                            the correct ULN is being updated
+                         </li>
+                         <li>
+                            the dates entered are correct
+                        </li>
+                     </ul>
+               "
+           }) }}
+        </div>
+     </div>
+
+
+     {{ govukTable({
+         caption: "Proposed training dates",
+         classes: "govuk-!-margin-bottom-6 govuk-!-margin-top-6",
+         firstCellIsHeader: false,
+         head: [
+             {
+                 text: "ULN"
+             },
+             {
+                 text: "Apprentice Name"
+             },
+             {
+                 text: "Planned training start date"
+             },
+             {
+                 text: "Projected finish date"
+             }
+         ],
+         rows: [
+             [
+                 {
+                     text: "1231234"
+                 },
+                 {
+                     text: "Fred Jones"
+                 },
+                 {
+                     text: "02 2022"
+                 },
+                 {
+                     text: "10 2023"
+                 }
+             ]
+
+         ]
+     }) }}
+     <div class="govuk-grid-row">
+         
+     
+         <div class="govuk-grid-column-two-thirds">
+             
+        
+             {{ govukCheckboxes({
+                 idPrefix: "confirm-dates",
+                 name: "confirm-dates",
+                 classes: "govuk-!-margin-bottom-6",
+                 fieldset: {
+                     legend: {
+                         text: "Is this information correct?",
+                         isPageHeading: false,
+                         classes: "govuk-fieldset__legend--s"
+                     }
+                 },
+                 hint: {
+                     html: " <p class='govuk-body'>
+                                If the information is correct an email will be sent to the previous employer to request they stop this learning.
+                            <p> 
+                             <p class='govuk-body'>
+                                If the infomation is incorrect you need to go back and <a href='tp-edit-apprentice' class='govuk-link'>amend the dates</a>.
+                             <p>   "
+                 },
+                 items: [
+                     {
+                         value: "Value",
+                         text: "The dates above are correct" 
+                     }
+                 ]
+             }) }}
+                    
+
+                     {{ govukButton({
+                         text: "Continue",
+                         href: "email-confirmation"
+                     }) }}
+                    
+                    </div>
+     
+                </div>
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
