@@ -1,0 +1,61 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<form action="made-redundant"  method="post">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		  <h1 class="govuk-heading-xl">When did this apprenticeship training stop?</h1>		
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+      
+        
+<p class="govuk-body">
+    The earliest date you can enter is this apprenticeship's state date of [start date]. Any outstanding payments will be made for training up to this date.ß
+<p>
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+<div class="govuk-grid-column-full">
+    
+
+</div>
+</div>
+
+{{ govukDateInput({
+    id: "date",
+    name: "date",
+    hint: {
+        text: "For example, 31 3 1980"
+    },
+    items: [
+       
+        {
+            name: "month",
+            classes: "govuk-input--width-2"
+        },
+        {
+            name: "year",
+            classes: "govuk-input--width-5"
+        }
+    ]
+}) }}
+
+{{ govukButton({
+    text: "Continue"
+}) }}
+
+</div>
+</div>
+   </form> 
+
+{% endblock %}

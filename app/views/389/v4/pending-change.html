@@ -81,56 +81,7 @@
 </div>
 
 
-
-{% set stopDateHtml %}
-{{ govukDateInput({
-    id: "correct-stop-date",
-    name: "correct-stop-date",
-    fieldset: {
-        legend: {
-            text: "What is the correct stop date",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-        }
-    },
-    hint: {
-        html: "Enter the month and year the apprentice stopped working for you"
-    },
-    items: [
-        
-        {
-            name: "month",
-            
-            classes: "govuk-input--width-2"
-        },
-        {
-            name: "year",
-            classes: "govuk-input--width-4"
-        }
-    ]
-}) }}
-{% endset -%}
-
-
-{% set rejectChangesHtml %}
-
-
-
-
-{{ govukCharacterCount({
-    name: "reject-changes",
-    id: "reject-changes",
-    maxlength: 200,
-    label: {
-      text: "Rejection reason",
-      classes: "govuk-label--m",
-      isPageHeading: false
-    },
-    hint: {
-      text: "This will be presented back to the training provider."
-    }
-  }) }}
-{% endset -%}
+ 
 
 
 
@@ -151,18 +102,12 @@
             text: "Stop this apprenticeship"
         },
         {
-            value: "Reject the suggested stop date, this apprenticeship is still active with us",
-            text: "Reject the suggested stop date, this apprenticeship is still active with us ",
-            conditional: {
-              html: stopDateHtml
-            }
+            value: "Reject the suggested stop date, this apprenticeship has not left our employment",
+            text: "Reject the suggested stop date, this apprenticeship has not left our employment"
         },
         {
             value: "Go back to apprentice details",
-            text: "Go back to apprentice details",
-            conditional: {
-              html: rejectChangesHtml
-            }
+            text: "Go back to apprentice details"
         }
     ]
 }) }}

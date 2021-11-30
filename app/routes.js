@@ -432,12 +432,33 @@ router.post(`/389/v2/review-changes`, function (req, res) {
           res.redirect(`/389/v4/stopped-date`);
       }
         else if (
-          reviewChanges === 'Reject the suggested stop date, this apprenticeship is still active with us'
+          reviewChanges === 'Reject the suggested stop date, this apprenticeship has not left our employment'
          ) {
-          res.redirect(`/389/v2/change-confirmed-rejected`);
+          res.redirect(`/389/v4/rejection-reason`);
       }
-     else res.redirect(`/389/v2/apprentice-details`);
+     else res.redirect(`/389/v4/apprentice-details`);
     });
+
+/* 389 ends */
+
+/* 389 starts */
+router.post(`/389/v3/review-changes`, function (req, res) {
+  
+  let reviewChanges = req.session.data['confirm-stop-date'];
+  
+    if (
+      reviewChanges === 'Stop this apprenticeship'
+       ) {
+        res.redirect(`/389/v3/stop-date-confirmation`);
+    }
+      else if (
+        reviewChanges === 'Reject the suggested stop date, this apprentice has not left our employment'
+       ) {
+        res.redirect(`/389/v3/rejection-reason`);
+    }
+   else res.redirect(`/389/v3/change-confirmed-rejected`);
+  });
+
 
 /* 389 ends */
 
