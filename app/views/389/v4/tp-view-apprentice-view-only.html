@@ -1,0 +1,156 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <div class="govuk-width-container">
+    
+      
+        <main class="govuk-main-wrapper">
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds ">
+        <h1 class="govuk-heading-xl ">
+          View apprentice details
+        </h1>
+       
+
+             
+             
+            
+
+           {{ govukTable({
+             
+             firstCellIsHeader: true,
+            
+             rows: [
+               [
+                 {
+                   text: "First name"
+                 },
+                 {
+                   text: "Fred"
+                 }
+               ],
+               [
+                 {
+                   text: "Last name"
+                 },
+                 {
+                   text: "Jones"
+                 }
+               ],
+               [
+                 {
+                   text: "Email address"
+                 },
+                 {
+                   text: "-"
+                 }
+               ],
+               [
+                 {
+                   text: "Unique learner number"
+                 },
+                 {
+                   text: "1231234"
+                 }
+               ],
+               [
+                 {
+                   text: "Date of birth"
+                 },
+                 {
+                   text: "29 09 2000"
+                 }
+               ],
+               [
+                 {
+                   text: "Apprenticeship training course"
+                 },
+                 {
+                   text: "Academic professional, Level 7"
+                 }
+               ],
+               [
+                 {
+                   text: "Version"
+                 },
+                 {
+                   text: "1.0"
+                 }
+               ],
+               [
+                 {
+                   text: "Planned training start date"
+                 },
+                 {
+                   text: "Feb 2022"
+                 }
+               ],
+               [
+                 {
+                   text: "pleanned training end date"
+                 },
+                 {
+                   text: "October 2023"
+                 }
+               ],
+               [
+                 {
+                   text: "Total agreed apprenticeship price"
+                 },
+                 {
+                   text: "£1230"
+                 }
+               ],
+               [
+                 {
+                   text: "Reference"
+                 },
+                 {
+                   text: "-"
+                 }
+               ]
+             ]
+           }) }}
+           <a href="tp-draft" class="govuk-link">Return to cohort view</a>
+            
+          </div>
+        </div>
+        
+      </div>
+      </main>
+    
+      </div>
+    </div> 
+{% endblock %}
