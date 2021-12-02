@@ -1,0 +1,50 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+       
+      {{ govukRadios({
+          idPrefix: "made-redundant",
+          name: "made-redundant",
+          fieldset: {
+              legend: {
+                  text: "Has this apprentice been made redundant?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+              }
+          },
+        
+          items: [
+              {
+                  value: "Yes",
+                  text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+            }
+          ]
+      }) }}
+
+{{ govukButton({
+    text: "Save and continue",
+    href: "confirm-stop"
+}) }}
+
+
+</div>
+</div>
+    
+
+{% endblock %}

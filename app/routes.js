@@ -460,6 +460,25 @@ router.post(`/389/v3/review-changes`, function (req, res) {
   });
 
 
+  router.post(`/389/v5/stop-request`, function (req, res) {
+  
+    let reviewChanges = req.session.data['confirm-stop-date'];
+    
+      if (
+        reviewChanges === 'Stop this apprenticeship'
+         ) {
+          res.redirect(`/389/v5/stopped-date`);
+      }
+        else if (
+          reviewChanges === 'Reject the suggested stop date, this apprenticeship has not left our employment'
+         ) {
+          res.redirect(`/389/v5/rejection-reason`);
+      }
+     else res.redirect(`/389/v5/apprentice-details`);
+    });
+
+
+
 /* 389 ends */
 
 
