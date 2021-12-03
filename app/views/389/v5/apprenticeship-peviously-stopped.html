@@ -14,6 +14,18 @@
 
 <div class="govuk-grid-column-two-thirds">
 
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+    {% set html %}
+      <p class="govuk-notification-banner__heading">
+        [Training provider name] has requested changes which needs to be reviewed and approved by you. <a href="revised-stopped-date" class="govuk-link">Review changes</a>
+      </p>
+    {% endset %}
+    
+    {{ govukNotificationBanner({
+      html: html
+    }) }}
+
 
       <h1 class="govuk-heading-xl">
           James Smith
