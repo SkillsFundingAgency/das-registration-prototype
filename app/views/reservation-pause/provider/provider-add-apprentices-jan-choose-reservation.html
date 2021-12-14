@@ -23,8 +23,21 @@ Reserve fundings
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Choose a Reservation</h1>
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Choose a reservation</h1>
                </legend>
+               <br>
+
+
+               <h2 class="govuk-heading-m">Reserving government funding for apprenticeship training and assessment is currently paused</h1>
+
+
+                {{ govukInsetText({
+                  html: "You will be able to reserve apprenticeship funding for starts from 1 April 2022.  This funding will be from your new 2022 to 2023 reservation cap.
+                  <br><br>
+                  Any funding you've already secured (transfers or reservations) is unaffected by this change."
+                }) }}
+
+                <br>
 
                <h3 class="govuk-heading-m">Which reservation would you like to use?</h3>
                
@@ -41,11 +54,6 @@ Reserve fundings
         </fieldset>
       </div>
       
-      {{ govukInsetText({
-        html: "There is currently a pause in reserving governement funding. 
-        Any funding you've already secured is unaffected by this change. <br><br>
-        You will be able to reserve funding in February 2022 for apprenticeship starts in April 2022."
-      }) }}
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
