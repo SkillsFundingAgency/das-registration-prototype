@@ -17,9 +17,17 @@
      <div class="govuk-form-group ">
       <fieldset class="govuk-fieldset">
               <span id="choose-start-date-hint" class="govuk-hint">
-                You can reserve funding for apprenticeship with a planned start date of April 2022.
+                Select the month for the planned start date of the apprenticeship.
               </span>
 
+              {{ govukInsetText({
+                html: "Reserving government funding for apprenticeship training and assessment is currently paused.
+                <br><br>
+                You will be able to reserve apprenticeship funding for April 2022 apprenticeship starts from February 2022.
+                <br><br>
+                Any funding you've already secured (transfers or reservations) is unaffected by this change."
+                }) }}
+  
 
           <div class="govuk-radios" data-validation-message="You must select a start date" data-validation-summary-message="Select a start date">
                   <div class="govuk-radios__item">

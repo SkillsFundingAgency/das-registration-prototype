@@ -29,14 +29,15 @@
    </ul>
    
  
-      {{ govukWarningText({
-        html: "There is currently a pause in reserving government funding.
-  Any funding you've already secured is unaffected by this change.
-  You will be able to reserve funding in February 2022 for apprenticeship starts in April 2022.",
-        iconFallbackText: "Important"
-      }) }}
+   {{ govukInsetText({
+    html: "Reserving government funding for apprenticeship training and assessment is currently paused.
+    <br><br>
+    You will be able to reserve apprenticeship funding for April 2022 apprenticeship starts from February 2022.
+    <br><br>
+    Any funding you've already secured (transfers or reservations) is unaffected by this change."
+    }) }}
 
-<a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--start" href="employer-add-apprentices-jan-transfer-funds">
+<a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--start" href="employer-add-apprentices-feb-transfer-funds">
   Start now
 </a>
 

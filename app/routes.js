@@ -482,4 +482,23 @@ router.post(`/389/v3/review-changes`, function (req, res) {
 /* 389 ends */
 
 
+
+
+/* reservation pause - who is adding the apprentices */
+
+router.post('/reservation-pause/employer/adding-apprentices', function (req, res) {
+
+  let addapprentices = req.session.data['add-apprentice']
+
+  if (addapprentices === 'employer') {
+    res.redirect('/reservation-pause/employer/employer-add-apprentices-jan-choose-reservation')
+  }
+  else if (addapprentices === 'provider') {
+    res.redirect('/reservation-pause/employer/employer-add-apprentices-jan-message-provider')
+  }
+})
+
+/* END reservation pause - who is adding the apprentices */
+
+
 module.exports = router

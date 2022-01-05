@@ -1,4 +1,4 @@
-{% extends "tp-layout.html" %}
+{% extends "ma-layout.html" %}
 
 {% block pageTitle %}
 Reserve fundings
@@ -12,13 +12,13 @@ Reserve fundings
 
 
 <div class="govuk-width-container">
-  <a href="choose-employer" class="govuk-back-link">Back</a>
+  <a href="#" class="govuk-back-link">Back</a>
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="provider-get-funding-reservations-feb-apprenticeship-training">
+        <form method="post" action="adding-apprentices">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -26,7 +26,8 @@ Reserve fundings
                     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Choose a reservation</h1>
                </legend>
 
-            
+
+
                <h3 class="govuk-heading-m">Which reservation would you like to use?</h3>
                
           <div class="govuk-radios">
@@ -55,7 +56,6 @@ Reserve fundings
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
-
   </main>
 </div>
 {% endblock %}

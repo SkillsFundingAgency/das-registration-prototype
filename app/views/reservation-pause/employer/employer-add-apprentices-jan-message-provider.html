@@ -1,0 +1,58 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+Reserve fundings
+{% endblock %}
+
+
+{% block main %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="#">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">Message for your training provider</h1>
+               </legend>
+
+               {{ govukInsetText({
+                html: "Reserving government funding for apprenticeship training and assessment is currently paused.
+                <br><br>
+                You will be able to reserve apprenticeship funding for April 2022 apprenticeship starts from February 2022.
+                <br><br>
+                Any funding you've already secured (transfers or reservations) is unaffected by this change."
+              }) }}
+            
+<br>
+<br>
+
+<p class="govuk-body-l">
+  Let <b>EDUC8 TRAINING (ENGLAND) LIMITED</b> know what you'd like them to do next.
+</p>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    <b>Message (optional)</b>
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="10"></textarea>
+</div>
+      <button class="govuk-button" data-module="govuk-button">
+        Send
+      </button>
+
+  </main>
+</div>
+{% endblock %}
+
+{% endblock %}
