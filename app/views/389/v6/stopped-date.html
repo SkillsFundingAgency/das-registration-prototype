@@ -1,0 +1,60 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+<form method="post">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        
+        
+
+		  <h1 class="govuk-heading-xl">When did this apprenticeship training stop?</h1>		
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+       
+        
+
+    <p class="govuk-body">
+        The earliest date you can enter is this apprenticeship's state date of [start date]. Any outstanding payments will be made for training up to this date.
+    <p>
+
+{{ govukDateInput({
+    id: "stop-date",
+    name: "stop-date",
+    
+    hint: {
+        text: "For example, 31 3 2019"
+    },
+    items: [
+    {
+        name: "month",
+        
+        classes: "govuk-input--width-2"
+    },
+    {
+        name: "year",
+        classes: "govuk-input--width-4"
+    }
+    ]
+}) }}
+
+{{ govukButton({
+    text: "Save and continue",
+    href: "made-redundant"
+}) }}
+
+
+</div>
+</div>
+    
+</form>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        
+        
+
+		  <h1 class="govuk-heading-xl">When did this apprenticeship training stop?</h1>		
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+       
+    {{ govukInsetText({
+        text: "[Training provider name] has received notification of a new employer for this ULN. For the training to continue, you need to approve the suggested stop date (This may be the month before they left your employment)."
+    }) }}
+    
+    
+    <div class="govuk-grid-row govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+    <div class="govuk-grid-column-full">
+        
+    
+    
+    
+    {{ govukTable({
+        
+        firstCellIsHeader: true,
+        
+        rows: [
+            [
+                {
+                    text: "Suggested stop date"
+                },
+                {
+                    text: "Jan 2022"
+                }
+            ]
+        ]
+    }) }}
+    </div>
+    </div>
+
+    <p class="govuk-body">
+        The earliest date you can enter is this apprenticeship's state date of [start date]. Any outstanding payments will be made for training up to this date.
+    <p>
+
+{{ govukDateInput({
+    id: "stop-date",
+    name: "stop-date",
+    
+    hint: {
+        text: "For example, 31 3 2019"
+    },
+    items: [
+    {
+        name: "month",
+        
+        classes: "govuk-input--width-2"
+    },
+    {
+        name: "year",
+        classes: "govuk-input--width-4"
+    }
+    ]
+}) }}
+
+{{ govukButton({
+    text: "Save and continue",
+    href: "apprenticeship-stopped-again"
+}) }}
+
+
+</div>
+</div>
+    
+
+{% endblock %}

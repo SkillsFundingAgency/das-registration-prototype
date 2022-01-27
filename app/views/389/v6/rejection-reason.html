@@ -1,0 +1,99 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+        Confirm you are rejecting this change request
+    </h1>
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+           
+           [
+                   {
+                       text: "Name"
+                   },
+                   {
+                       text: "Fred jones"
+                   }
+               ],
+               [
+                    {
+                        text: "Unique learner number"
+                    },
+                    {
+                        text: "1231234"
+                    }
+                ],
+                [
+                    {
+                        text: "Apprenticship training course"
+                    },
+                    {
+                        text: "Academic profesional: level 5"
+                    }
+                ]
+           ]
+       }) }}
+
+       {% set confirmHtml %}
+           {{ govukCharacterCount({
+               name: "reject-reason",
+               id: "reject-reason",
+               maxlength: 200,
+               label: {
+                   text: "Give a reason why you are rejecting this request"
+               }
+           }) }}
+       {% endset -%}
+
+       {{ govukRadios({
+           idPrefix: "reject-confirm",
+           name: "reject-confirm",
+           items: [
+               {
+                   value: "Yes, reject the stop request for this apprenticeship",
+                   text: "Yes, reject the stop request for this apprenticeship",
+                   conditional: {
+                        html: confirmHtml
+                    }
+               },
+               {
+                value: "No, go back to apprentice details",
+                text: "No, go back to apprentice details"
+            }
+           ]
+       }) }}
+        
+
+       {{ govukButton({
+           text: "Save and coninue",
+           href: "change-confirmed-rejected"
+       }) }}
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+{% endblock %}

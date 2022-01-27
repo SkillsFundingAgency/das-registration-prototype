@@ -1,0 +1,102 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+           Confirm apprenticeship stop 
+        </h1>
+        {{ govukWarningText({
+            text: "This apprenticeship record cannot be restarted once stopped.",
+            iconFallbackText: "This apprenticeship record cannot be restarted once stopped."
+        }) }}
+
+        {{ govukTable({
+            firstCellIsHeader: true,
+           
+            rows: [
+                [
+                    {
+                        text: "Name"
+                    },
+                    {
+                        text: "Fred jones"
+                    }
+                ],
+                [
+                    {
+                        text: "Unique learner number"
+                    },
+                    {
+                        text: "1231234"
+                    }
+                ],
+                [
+                    {
+                        text: "Apprenticeship training course"
+                    },
+                    {
+                        text: "Academic professional: level 5"
+                    }
+                ],
+                [
+                    {
+                        text: "Proposed stop date"
+                    },
+                    {
+                        text: "Feb 2021"
+                    }
+                ],
+                [
+                    {
+                        text: "Made redundant"
+                    },
+                    {
+                        text: "No"
+                    }
+                ]
+            ]
+        }) }}
+
+        
+
+
+
+
+       
+      {{ govukRadios({
+          idPrefix: "confirm-stop",
+          name: "confirm-stop",
+          
+          items: [
+          {
+            value: "Yes, stop this apprentice",
+            text: "Yes, stop this apprentice"
+        },
+        {
+          value: "No, go back to apprentice details",
+          text: "No, go back to apprentice details"
+      }
+          ]
+      }) }}
+
+{{ govukButton({
+    text: "Save and continue",
+    href: "apprenticeship-stopped"
+}) }}
+
+
+</div>
+</div>
+    
+
+{% endblock %}

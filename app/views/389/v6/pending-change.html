@@ -1,0 +1,123 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<form action="stop-request"  method="post">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		  <h1 class="govuk-heading-xl">Stop request</h1>		
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+               [
+                   {
+                       text: "Name"
+                   },
+                   {
+                       text: "Fred jones"
+                   }
+               ],
+               [
+                   {
+                       text: "Unique learner number"
+                   },
+                   {
+                       text: "1231234"
+                   }
+               ],
+               [
+                   {
+                       text: "Apprenticeship training course"
+                   },
+                   {
+                       text: "Academic professional level 5"
+                   }
+               ]
+               
+           ]
+       }) }}
+        
+{{ govukInsetText({
+    text: "Coventry College has received notification of a new employer for this ULN. For the training to continue, you need to approve the suggested stop date (This may be the month before they left your employment)."
+}) }}
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+<div class="govuk-grid-column-full">
+    
+
+
+
+{{ govukTable({
+    
+    firstCellIsHeader: true,
+    
+    rows: [
+        [
+            {
+                text: "Suggested stop date"
+            },
+            {
+                text: "Jan 2022"
+            }
+        ]
+    ]
+}) }}
+</div>
+</div>
+
+
+ 
+
+
+
+{{ govukRadios({
+    idPrefix: "confirm-stop-date",
+    name: "confirm-stop-date",
+    fieldset: {
+        legend: {
+            text: "Which status change would you like to make",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+        }
+    },
+   
+    items: [
+        {
+            value: "Stop this apprenticeship",
+            text: "Stop this apprenticeship"
+        },
+        {
+            value: "Reject the suggested stop date, this apprenticeship has not left our employment",
+            text: "Reject the suggested stop date, this apprenticeship has not left our employment"
+        },
+        {
+            value: "Go back to apprentice details",
+            text: "Go back to apprentice details"
+        }
+    ]
+}) }}
+
+{{ govukButton({
+    text: "Save and continue"
+}) }}
+
+</div>
+</div>
+   </form> 
+
+{% endblock %}
