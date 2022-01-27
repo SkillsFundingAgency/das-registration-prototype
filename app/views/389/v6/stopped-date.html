@@ -11,7 +11,7 @@
         
         
 
-		  <h1 class="govuk-heading-xl">When did this apprenticeship training stop?</h1>		
+		  <h1 class="govuk-heading-xl">When did the apprentice leave your employment?</h1>		
 	</div>
 </div>
 
@@ -24,7 +24,7 @@
         
 
     <p class="govuk-body">
-        The earliest date you can enter is this apprenticeship's state date of [start date]. Any outstanding payments will be made for training up to this date.
+        Confirm the date the apprentice left your employment as shown on the P45.
     <p>
 
 {{ govukDateInput({
@@ -35,6 +35,11 @@
         text: "For example, 31 3 2019"
     },
     items: [
+    {
+        name: "day",
+        
+        classes: "govuk-input--width-2"
+    },
     {
         name: "month",
         

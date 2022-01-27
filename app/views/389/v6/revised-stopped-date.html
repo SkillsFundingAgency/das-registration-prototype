@@ -22,37 +22,13 @@
         
        
     {{ govukInsetText({
-        text: "[Training provider name] has received notification of a new employer for this ULN. For the training to continue, you need to approve the suggested stop date (This may be the month before they left your employment)."
+        text: "The date the apprenticeship was stopped appears to be incorrect. You need to confirm the date the apprentice left your employment as shown on the P45."
     }) }}
     
     
-    <div class="govuk-grid-row govuk-!-margin-bottom-3 govuk-!-margin-top-3">
-    <div class="govuk-grid-column-full">
-        
     
-    
-    
-    {{ govukTable({
-        
-        firstCellIsHeader: true,
-        
-        rows: [
-            [
-                {
-                    text: "Suggested stop date"
-                },
-                {
-                    text: "Jan 2022"
-                }
-            ]
-        ]
-    }) }}
-    </div>
-    </div>
 
-    <p class="govuk-body">
-        The earliest date you can enter is this apprenticeship's state date of [start date]. Any outstanding payments will be made for training up to this date.
-    <p>
+    
 
 {{ govukDateInput({
     id: "stop-date",
@@ -62,6 +38,11 @@
         text: "For example, 31 3 2019"
     },
     items: [
+    {
+        name: "day",
+        
+        classes: "govuk-input--width-2"
+    },
     {
         name: "month",
         
