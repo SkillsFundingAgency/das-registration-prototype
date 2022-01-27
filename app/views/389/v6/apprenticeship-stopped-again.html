@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form action="stop-request"  method="post">
+<form method="post">
 
 
 
@@ -22,94 +22,45 @@
           James Smith
       </h1>
         
-       {{ govukTable({
-           
-           firstCellIsHeader: true,
-          
-           rows: [
-               [
-                   {
-                       text: "Status"
-                   },
-                   {
-                       html: 
-                       "
-                       <strong class='govuk-tag govuk-tag--red'>
-                        Stopped
-                      </strong>
-                       "
-                   },
-                   {
-                       text: ""
-                   }
-               ],
-               [
-                   {
-                       text: "Stopped date"
-                   },
-                   {
-                       text: "November 2021"
-                   },
-                   {
-                    html: 
-                    "
-                    <a href='#' class='govuk-link'>Edit</a>
-                    "
-                }
-               ],
-               [
-                   {
-                       text: "Made redundant"
-                   },
-                   {
-                       text: "No"
-                   },
-                   {
-                       text: ""
-                   }
-               ],
-               [
-                   {
-                       text: "Apprentice confirmation"
-                   },
-                   {
-                       text: "Unconfirmed"
-                   },
-                   {
-                       text: ""
-                   }
-               ],
-               [
-                   {
-                       text: "Training provider"
-                   },
-                   {
-                       text: "Boom training"
-                   },
-                   {
-                    html: 
-                    "
-                     
-                    "
-                },
-                {
-                    text: ""
-                }
-               ],
-               [
-                   {
-                       text: "Cohort reference"
-                   },
-                   {
-                       text: "WD6D7G"
-                   },
-                   {
-                       text: ""
-                   }
-               ]
-               
-           ]
-       }) }}
+
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Status</th>
+            <td class="govuk-table__cell"> <strong class='govuk-tag govuk-tag--red'>
+                Stopped
+              </strong>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Stopped date</th>
+            <td class="govuk-table__cell">{{ data['stop-date-revised-day'] }} {{ data['stop-date-revised-month'] }} {{ data['stop-date-revised-year'] }}  </td>
+            <td><a href='#' class='govuk-link'>Edit</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Made redundant</th>
+            <td class="govuk-table__cell">No</td>
+            <td></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Apprentice confirmation</th>
+            <td class="govuk-table__cell">Unconfirmed</td>
+            <td></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Training provider</th>
+            <td class="govuk-table__cell">	Boom training</td>
+            <td></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Cohort reference</th>
+            <td class="govuk-table__cell">WD6D7G</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
 
 
 {{ govukTable({

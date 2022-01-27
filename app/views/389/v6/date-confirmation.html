@@ -76,9 +76,7 @@
             }
         },
         hint: {
-            html: " <p class='govuk-body'>
-               If the information below is correct an email will be sent to the previous employer to request they review and amend the record.
-                   <p> 
+            html: " 
 
                     
 
@@ -93,44 +91,51 @@
             }
         ]
     }) }}
+    {{ govukTable({
+        caption: "Proposed training dates",
+        classes: "govuk-!-margin-bottom-9 govuk-!-margin-top-6",
+        firstCellIsHeader: false,
+        head: [
+            {
+                text: "ULN"
+            },
+            {
+                text: "Apprentice Name"
+            },
+            {
+                text: "Planned training start date"
+            },
+            {
+                text: "Projected finish date"
+            }
+        ],
+        rows: [
+            [
+                {
+                    text: "1231234"
+                },
+                {
+                    text: "Fred Jones"
+                },
+                {
+                    text: "02 2022"
+                },
+                {
+                    text: "10 2023"
+                }
+            ]
 
-     {{ govukTable({
-         caption: "Proposed training dates",
-         classes: "govuk-!-margin-bottom-9 govuk-!-margin-top-6",
-         firstCellIsHeader: false,
-         head: [
-             {
-                 text: "ULN"
-             },
-             {
-                 text: "Apprentice Name"
-             },
-             {
-                 text: "Planned training start date"
-             },
-             {
-                 text: "Projected finish date"
-             }
-         ],
-         rows: [
-             [
-                 {
-                     text: "1231234"
-                 },
-                 {
-                     text: "Fred Jones"
-                 },
-                 {
-                     text: "02 2022"
-                 },
-                 {
-                     text: "10 2023"
-                 }
-             ]
+        ]
+    }) }}
 
-         ]
-     }) }}
+    {{ govukInsetText({
+        text: "
+            If you confirm that the information above is correct an email will be sent to the previous employer to request they review and stop their ULN record.
+                "
+    }) }}
 
+     
+<!--
      {% set yesHtml %}
      {{ govukTextarea({
         name: "more-detail",
@@ -170,16 +175,11 @@
             }
          ]
      }) }}
-     
+     -->
      <div class="govuk-grid-row">
          
      
          <div class="govuk-grid-column-two-thirds">
-             
-        
-             
-                    
-
                      {{ govukButton({
                          text: "Submit request",
                          href: "email-confirmation"

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+<form action="apprenticeship-stopped-again" method="post">
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
         
@@ -30,39 +30,22 @@
 
     
 
-{{ govukDateInput({
-    id: "stop-date",
-    name: "stop-date",
-    
-    hint: {
-        text: "For example, 31 3 2019"
-    },
-    items: [
-    {
-        name: "day",
+    {{ govukDateInput({
+        id: "stop-date-revised",
+        namePrefix: "stop-date-revised",
         
-        classes: "govuk-input--width-2"
-    },
-    {
-        name: "month",
-        
-        classes: "govuk-input--width-2"
-    },
-    {
-        name: "year",
-        classes: "govuk-input--width-4"
-    }
-    ]
-}) }}
+        hint: {
+          text: "For example, 31 3 2019"
+        }
+      }) }}
 
 {{ govukButton({
-    text: "Save and continue",
-    href: "apprenticeship-stopped-again"
+    text: "Save and continue"
 }) }}
 
 
 </div>
 </div>
     
-
+</form>
 {% endblock %}

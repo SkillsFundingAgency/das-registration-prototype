@@ -7,7 +7,7 @@
 {% block content %}
 
 
-
+<form method="post">
 
 <div class="govuk-grid-row">
 
@@ -20,55 +20,33 @@
             iconFallbackText: "This apprenticeship record cannot be restarted once stopped."
         }) }}
 
-        {{ govukTable({
-            firstCellIsHeader: true,
-           
-            rows: [
-                [
-                    {
-                        text: "Name"
-                    },
-                    {
-                        text: "Fred jones"
-                    }
-                ],
-                [
-                    {
-                        text: "Unique learner number"
-                    },
-                    {
-                        text: "1231234"
-                    }
-                ],
-                [
-                    {
-                        text: "Apprenticeship training course"
-                    },
-                    {
-                        text: "Academic professional: level 5"
-                    }
-                ],
-                [
-                    {
-                        text: "Proposed stop date"
-                    },
-                    {
-                        text: "21 02 2021"
-                    }
-                ],
-                [
-                    {
-                        text: "Made redundant"
-                    },
-                    {
-                        text: "No"
-                    }
-                ]
-            ]
-        }) }}
-
         
 
+        
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name</th>
+                <td class="govuk-table__cell">Fred Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Unique learner number</th>
+                <td class="govuk-table__cell">1231234</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                <td class="govuk-table__cell">Academic professional: level 5</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Proposed stop date</th>
+                <td class="govuk-table__cell">{{ data['stop-date-day'] }} {{ data['stop-date-month'] }} {{ data['stop-date-year'] }}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Made redundant</th>
+                <td class="govuk-table__cell">{{ data['made-redundant'] }}</td>
+              </tr>
+            </tbody>
+          </table>
 
 
 
@@ -97,6 +75,7 @@
 
 </div>
 </div>
+</form>
     
 
 {% endblock %}
