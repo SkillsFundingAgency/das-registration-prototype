@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-        Confirm you are rejecting this change request
+        Confirm the apprentice has not left your employment
     </h1>
        {{ govukTable({
            
@@ -49,32 +49,15 @@
            ]
        }) }}
 
-       {% set confirmHtml %}
-           {{ govukCharacterCount({
-               name: "reject-reason",
-               id: "reject-reason",
-               maxlength: 200,
-               label: {
-                   text: "Give a reason why you are rejecting this request"
-               }
-           }) }}
-       {% endset -%}
-
-       {{ govukRadios({
-           idPrefix: "reject-confirm",
-           name: "reject-confirm",
+       {{ govukCheckboxes({
+           idPrefix: "apprentice-still-works-for-me",
+           name: "apprentice-still-works-for-me",
+           
            items: [
                {
-                   value: "Yes, reject the stop request for this apprenticeship",
-                   text: "Yes, reject the stop request for this apprenticeship",
-                   conditional: {
-                        html: confirmHtml
-                    }
-               },
-               {
-                value: "No, go back to apprentice details",
-                text: "No, go back to apprentice details"
-            }
+                   value: "The apprentice still works for me",
+                   text: "The apprentice still works for me"
+               }
            ]
        }) }}
         

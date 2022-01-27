@@ -1,0 +1,62 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<p class="govuk-body govuk-!-font-size-24">
+        <b>Subject:</b> Action required in your apprenticeship service account
+    </p>
+    <p class="govuk-body">
+        Dear XXXX
+    <p>
+        <p class="govuk-body">
+            I would appreciate your prompt action to this request. 
+        </p>
+        <p class="govuk-body">
+           An apprentice that left your organisation is still live in your Apprenticeship Service account.
+        <p>
+
+        <ul class="govuk-list">
+            <li>
+                <b>Apprentice:</b> Fred Jones
+            </li>
+            <li>
+                <b>Unique learner number (ULN):</b> 1231234
+            </li>
+        </ul>
+        <p class="govuk-body">
+            This apprentice has started an apprenticeship with a new organisation. So that learning can continue, you need to stop the previous apprenticeship by following these steps:
+        <p>
+
+            <ul class="govuk-list govuk-list--number">
+                <li>
+                    Sign in to your apprenticeship service account (manage-apprenticeships.service.gov.uk).
+                </li>
+                <li>
+                    Go to ‘manage apprentices’ in the ‘apprentices’ section of your account.
+                </li>
+                <li>
+                    Find the apprentice and select ‘view’.
+                </li>
+                <li>
+                    Edit their status.
+                </li>
+                <li>
+                    ‘Stop’ the apprenticeship and enter the date the apprentice left your organisation.
+                </li>
+            </ul>
+            <p class="govuk-body">
+                If the apprentice is still employed by you, there is an option to tell us in your apprenticeship service account.
+            <p>
+
+                <p class="govuk-body">
+                    Apprenticeship Service Support<br>Technical Support Team
+                <p>
+</div>
+    
+
+{% endblock %}
