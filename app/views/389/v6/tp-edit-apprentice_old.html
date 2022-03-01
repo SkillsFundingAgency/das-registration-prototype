@@ -44,7 +44,11 @@
                                      {
                                          text: "The start date overlaps with existing training for the same apprentice. You need to check the date with the employer.",
                                          href: "#date-start"
-                                     }
+                                     },
+                                     {
+                                        text: "The end date overlaps with existing training for the same apprentice. You need to check the date with the employer.",
+                                        href: "#date-end"
+                                    }
                                  ]
                              }) }}
                   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Add apprentice details</h1>
@@ -185,16 +189,24 @@
                             }
                         ]
                     }) }}
+                    <div class="govuk-grid-row govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+                        <div class="govuk-grid-column-two-thirds">
+                            {{ govukInsetText({
+                                html: 
+                                "
+                                <h2 class='govuk-heading-m'>
+                                    Is the start date correct?
+                                </h2>
+                                If these dates are correct, confirm below. You will be able to send an email  to the previous employer to ask that they end the previous training:
+                                    <br><br><button class='govuk-button' data-module='govuk-button' >
+                                        Confirm and continue
+                                    </button>
+                                "
+                            }) }}
+                        </div>
+                    </div>
 
-                    {{ govukInsetText({
-                        html: 
-                        "
-                            If these dates are correct you can confirm below and we will inform the employer on your behalf:
-                            <br><br><button class='govuk-button' data-module='govuk-button' >
-                                Save and continue
-                            </button>
-                        "
-                    }) }}
+                   <!--
 
 
 
@@ -211,16 +223,16 @@
                         hint: {
                             text: "For example, 31 3 2017"
                         },
-                       
+                        
                         items: [
                             
                             {
-                                classes: "govuk-input--width-2 ",
+                                classes: "govuk-input--width-2",
                                 name: "month",
                                 value: "10"
                             },
                             {
-                                classes: "govuk-input--width-4 ",
+                                classes: "govuk-input--width-4",
                                 name: "year",
                                 value: "2023"
                             }
@@ -270,25 +282,31 @@
                  <div class="govuk-grid-column-two-thirds">
 
 
-                    <button class='govuk-button' data-module='govuk-button' >
-                                Save and continue
+                    {{ govukInsetText({
+                        html: 
+                        "
+                        If these dates are correct, confirm below. You will be able to send an email  to the previous employer to ask that they end the previous training:
+
+                            <br><br><button class='govuk-button' data-module='govuk-button' >
+                                Confirm and continue
                             </button>
                             <button class='govuk-button govuk-button--warning'  data-module='govuk-button' >
                                 Delete
                             </button>
-                      
+                        "
+                    }) }}
                     
 
-                    <a href="#" class="govuk-link">Cancel</a>
+                    
                       
                  </div>
              
           
           </div>
      
-     
+     -->
          
-     
+     <a href="#" class="govuk-link">Cancel</a>
      
      </div>
 </form>
