@@ -15,7 +15,7 @@
 <div class="govuk-grid-column-two-thirds">
 
     {{ govukPanel({
-        titleText: "New stop date confirmed"
+        titleText: "Leave date confirmed"
       }) }}
 
       <h1 class="govuk-heading-xl">
@@ -35,138 +35,17 @@
             <td></td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Stopped date</th>
+            <th scope="row" class="govuk-table__header">Leave date</th>
             <td class="govuk-table__cell">{{ data['stop-date-revised-day'] }} {{ data['stop-date-revised-month'] }} {{ data['stop-date-revised-year'] }}  </td>
             <td><a href='#' class='govuk-link'>Edit</a></td>
           </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Made redundant</th>
-            <td class="govuk-table__cell">No</td>
-            <td></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Apprentice confirmation</th>
-            <td class="govuk-table__cell">Unconfirmed</td>
-            <td></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Training provider</th>
-            <td class="govuk-table__cell">	BMH training</td>
-            <td></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Cohort reference</th>
-            <td class="govuk-table__cell">WD6D7G</td>
-            <td></td>
-          </tr>
+          
         </tbody>
       </table>
 
-
-{{ govukTable({
-    caption: "Apprenticeship details",
-    firstCellIsHeader: true,
-   
-    rows: [
-        [
-            {
-                text: "Name"
-            },
-            {
-                text: "Fred jones"
-            }
-        ],
-        [
-            {
-                text: "Email address"
-            },
-            {
-                text: "-"
-            }
-        ],
-        [
-            {
-                text: "Unique learner number"
-            },
-            {
-                text: "7659823"
-            }
-        ],
-        [
-            {
-                text: "Date of birth"
-            },
-            {
-                text: "29 Sep 2000"
-            }
-        ]
-    ]
-}) }}
-
-
-{{ govukTable({
-    caption: "Apprenticeship details",
-    firstCellIsHeader: true,
-    
-    rows: [
-    [
-    {
-        text: "Apprenticeship training course"
-    },
-    {
-        text: "Academic professional Level 5"
-    }
-],    
-    [
-            {
-                text: "Version"
-            },
-            {
-                text: "1.0"
-            }
-        ],
-        [
-            {
-                text: "Planned training start date"
-            },
-            {
-                text: "Nov 2020"
-            }
-        ],
-        [
-            {
-                text: "Planned training end date"
-            },
-            {
-                text: "Apr 2022"
-            }
-        ],
-        [
-            {
-                text: "Total agreed apprenticeship price"
-            },
-            {
-                text: "£1230"
-            }
-        ],
-        [
-            {
-                text: "Reference"
-            },
-            {
-                text: "-"
-            }
-        ],
-        [
-            {
-                text: "End point assessor"
-            },
-            {
-                text: "The end point assessor has not been declared"
-            }
-        ]
-    ]
-}) }}
+      <a href="#" class="govuk-link">Manage apprentices</a>
+      <br>
+      <a href="#" class="govuk-link">Sign out</a>
 
 </div>
 </div>
