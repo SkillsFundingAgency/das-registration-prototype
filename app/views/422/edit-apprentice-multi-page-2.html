@@ -1,0 +1,201 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Edit apprentice - Dates
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form action="overlapping-training-dates-check-details-and-confirm" method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-l">Add an apprentice</span>          
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Training details</h1>
+                  
+              </div>
+          </div>
+    
+
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+
+                    {{ govukInput({
+                        label: {
+                          text: "Total agreed apprenticeship price (excluding VAT)",
+                          classes: "govuk-label--m",
+                          isPageHeading: false
+                        },
+                        prefix: {
+                            text: "£"
+                          },
+                        hint: {
+                            html: "Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500"
+                        },
+                        classes: "govuk-input--width-5",
+                        id: "event-name",
+                        name: "event-name",
+                        value: "1230"
+                      }) }}
+                    
+                      {{ govukInput({
+                        label: {
+                          text: "Reference (optional)",
+                          classes: "govuk-label--m",
+                          isPageHeading: false
+                        },
+                       
+                        hint: {
+                            html: "Add a reference, such as employee number or location - this won't be seen by the employer"
+                        },
+                        classes: "govuk-input--width-20",
+                        id: "event-name",
+                        name: "event-name"
+                      }) }}
+
+                      
+                    {{ govukSelect({
+                        id: "course",
+                        name: "course",
+                        label: {
+                            text: "Apprenticeship training course",
+                            classes: "govuk-label--m"
+                        },
+                        hint: {
+                            text: "Start typing the name of the course or choose an option from the list"
+                        },
+                        items: [
+                            {
+                                value: "Value",
+                                text: "Academic professional, Level 7"
+                            }
+                        ]
+                    }) }}
+     
+
+                      {{ govukDateInput({
+                        id: "date-start",
+                        name: "date-start",
+                        fieldset: {
+                            legend: {
+                                text: "Planned training start date",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--m"
+                            }
+                        },
+                        hint: {
+                            html: 
+                            "
+                            For example, 31 3 2017<br>
+                            The standard version will be based on the planned training start date provided
+                            "
+                        },
+                        
+                        items: [
+                            
+                            {
+                                classes: "govuk-input--width-2",
+                                name: "month",
+                                value: "2"
+                            },
+                            {
+                                classes: "govuk-input--width-4",
+                                name: "year",
+                                value: "2022"
+                            }
+                        ]
+                    }) }}
+
+                  
+
+
+
+                    {{ govukDateInput({
+                        id: "date-end",
+                        name: "date-end",
+                        fieldset: {
+                            legend: {
+                                text: "Projected finish date",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--m"
+                            }
+                        },
+                        hint: {
+                            text: "For example, 31 3 2017"
+                        },
+                       
+                        items: [
+                            
+                            {
+                                classes: "govuk-input--width-2 ",
+                                name: "month",
+                                value: "10"
+                            },
+                            {
+                                classes: "govuk-input--width-4 ",
+                                name: "year",
+                                value: "2023"
+                            }
+                        ]
+                    }) }}
+
+
+
+                    {{ govukInsetText({
+                        html: "  <h3 class='govuk-heading-s'>
+                            End-point assessments
+                        </h3>  <br>We'll ask the employer to confirm the apprentice assessment organisation for this apprentice. We'll do this before the end of the apprenticeship"
+                    }) }}
+
+                   
+
+                  </div>
+                 <div class="govuk-grid-column-two-thirds">
+
+                  <button class='govuk-button' data-module='govuk-button' >
+                    Save and continue
+                  </button>
+                  
+                  <div style="clear:both"></div>
+                  <a href="#" class="govuk-link">Cancel</a>
+                      
+                 </div>
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+</form>
+{% endblock %}

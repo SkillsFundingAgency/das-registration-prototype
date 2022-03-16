@@ -1,0 +1,173 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+Edit apprentice - Main
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form action="edit-apprentice-multi-page-2" method="post">
+
+
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                  <span class="govuk-caption-l">Add an apprentice</span>         
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Personal details</h1>
+                  
+              </div>
+          </div>
+    
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+           {{ govukInsetText({
+               html: 
+               "
+                 <p class='govuk-body'>
+                    You can only receive payments for this apprentice if:
+                 <p> 
+                     <ul class='govuk-list govuk-list--bullet'>
+                         <li>
+                             all fields have been completed - either by yourself or the employer
+                         </li>
+                         <li>
+                             the data matches the individual learner record (ILR) data you send us
+                         </li>
+                     </ul>
+               "
+           }) }}
+        </div>
+     </div>
+         
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-m">
+                        Employer
+                        <span class="govuk-caption-m">
+                            SOMEONE ELSE LTD
+                        </span>
+                    </h2>
+                
+                    {{ govukInput({
+                        id: "first-name",
+                        name: "first-name",
+                        label: {
+                            text: "First name"
+                        },
+                        value: "Fred"
+                    }) }}
+
+                    {{ govukInput({
+                        id: "last-name",
+                        name: "last-name",
+                        label: {
+                            text: "Last name"
+                        },
+                        value: "Jones"
+                    }) }}
+                    
+                    
+                    {{ govukInput({
+                        id: "email address",
+                        name: "email address",
+                        label: {
+                            text: "Email address"
+                        }
+                    }) }}
+                   
+
+                    {{ govukDetails({
+                        summaryText: "Why do we need an email address?",
+                        html: "
+                        
+                        <p>Your apprentice will receive an email alert inviting them to the My apprenticeship service. On the service, your apprentice will be able to:</p>
+                        <ul class='govuk-list govuk-list--bullet'>
+                            <li>review and confirm their apprenticeship details</li>
+                            <li>understand the roles and responsibilities of an apprentice, an employer and a training provider</li>
+                            <li>find help and support during their apprenticeship</li>
+                        </ul>
+                        
+                        "
+                    }) }}
+
+                    
+                    
+                    
+                    {{ govukDateInput({
+                        id: "dob",
+                        namePrefix: "dob",
+                        fieldset: {
+                          legend: {
+                            text: "Date of birth"
+                          }
+                        },
+                        hint: {
+                          text: "For example, 27 3 1972"
+                        }
+                      }) }}
+
+                      {{ govukInput({
+                          id: "uln",
+                          name: "uln",
+                          label: {
+                              text: "Unique learner number"
+                          },
+                          value: "1231234"
+                      }) }}
+
+                      
+
+
+                    
+
+                  </div>
+                 <div class="govuk-grid-column-two-thirds">
+
+
+                            <button class='govuk-button' data-module='govuk-button' >
+                              Save and continue
+                            </button>
+                          
+                            <div style="clear:both"></div>
+                            <a href="#" class="govuk-link">Cancel</a>
+                      
+                 </div>
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
