@@ -150,10 +150,15 @@
                           },
                           value: "1231234"
                       }) }}
-
+        <div class="govuk-grid-row">
+    
+                <div class="govuk-grid-column-full govuk-!-padding-bottom-9 govuk-!-padding-top-9">
+                    
+                
                       {{ govukDateInput({
                         id: "date-start",
                         name: "date-start",
+                       
                         fieldset: {
                             legend: {
                                 text: "Planned training start date",
@@ -195,8 +200,8 @@
                             </button>
                         "
                     }) }}
-
-
+                </div>
+            </div>
 
                     {{ govukDateInput({
                         id: "date-end",
