@@ -1,0 +1,96 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+Is this apprentice starting a new apprenticeship?
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form action="knockout" method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                             
+                
+
+
+                    {{ govukRadios({
+                      idPrefix: "new-apprentice-check",
+                      name: "new-apprentice-check",
+                      fieldset: {
+                        legend: {
+                          text: "Is this apprentice starting a new apprenticeship?",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--l"
+                        }
+                      },
+                      
+                      items: [
+                        {
+                          value: "yes",
+                          text: "Yes, this apprentice is starting a new apprenticeship"
+                        },
+                        {
+                          value: "no",
+                          text: "No, this apprentice is transferring from another employer"
+                        }
+                      ]
+                    }) }}
+       
+
+                    <button class='govuk-button' data-module='govuk-button' >
+                      Continue
+                  </button>
+
+                  </div>
+                 <div class="govuk-grid-column-two-thirds">
+
+                 <!--<button class='govuk-button' data-module='govuk-button' >
+                    Save and continue
+                  </button>
+                  <button class='govuk-button govuk-button--warning'  data-module='govuk-button' style="float:right" >
+                    Delete
+                  </button>
+                  <div style="clear:both"></div>
+                  <a href="#" class="govuk-link">Cancel</a>
+                      
+                 </div> --> 
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+</form>
+{% endblock %}

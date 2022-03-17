@@ -1,0 +1,195 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Overlapping dates
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form action="date-confirmation" method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This NEW apprentice already has an existing record with another employer</h1>
+                  
+              </div>
+          </div>
+    
+
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+
+                  
+                  
+
+                    <p>You need to check:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>you have entered the correct unique learner number (ULN)</li>
+                      <li>the dates entered are correct</li>
+                    </ul>
+     
+
+                    <h2 class="govuk-heading-m">Proposed training dates</h2>
+
+                    {{ govukSummaryList({
+                      classes: 'govuk-!-margin-bottom-9',
+                      rows: [
+                        {
+                          key: {
+                            text: "Unique Learner Number"
+                          },
+                          value: {
+                            text: "1231234"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "#",
+                                text: "Change",
+                                visuallyHiddenText: "name"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Apprentice name"
+                          },
+                          value: {
+                            text: "Fred Jones"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "#",
+                                text: "Change",
+                                visuallyHiddenText: "date of birth"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Planned start date"
+                          },
+                          value: {
+                            html: "03 2022"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "#",
+                                text: "Change",
+                                visuallyHiddenText: "address"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Projected finish date"
+                          },
+                          value: {
+                            html: '10 2023'
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "#",
+                                text: "Change",
+                                visuallyHiddenText: "contact details"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
+                  
+                    <p></p>
+
+
+                    {{ govukRadios({
+                      idPrefix: "where-do-you-live",
+                      name: "where-do-you-live",
+                      fieldset: {
+                        legend: {
+                          text: "Are these details correct?",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--m"
+                        }
+                      },
+                      hint: {
+                        text: "If these dates are correct we will submit a request to the previous employer on your behalf."
+                      },
+                      items: [
+                        {
+                          value: "england",
+                          text: "Yes, submit a request to the previous employer"
+                        },
+                        {
+                          value: "scotland",
+                          text: "No, I need to change the details"
+                        }
+                      ]
+                    }) }}
+       
+
+                    <button class='govuk-button' data-module='govuk-button' >
+                      Save and continue
+                  </button>
+
+                  </div>
+                 <div class="govuk-grid-column-two-thirds">
+
+                 <!--<button class='govuk-button' data-module='govuk-button' >
+                    Save and continue
+                  </button>
+                  <button class='govuk-button govuk-button--warning'  data-module='govuk-button' style="float:right" >
+                    Delete
+                  </button>
+                  <div style="clear:both"></div>
+                  <a href="#" class="govuk-link">Cancel</a>
+                      
+                 </div> --> 
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+</form>
+{% endblock %}

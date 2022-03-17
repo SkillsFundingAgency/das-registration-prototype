@@ -518,4 +518,19 @@ router.post('/reservation-pause/employer/adding-apprentices', function (req, res
 /* END reservation pause - who is adding the apprentices */
 
 
+/* 422 starts */
+
+router.post('/422/knockout', function (req, res) {
+  const editChoice = req.session.data['new-apprentice-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('check-dates-new-apprentice')
+  } else if (editChoice === 'no') {
+    res.redirect('check-dates-transfer-apprentice')
+  }
+});
+
+/* 422 ends */
+
+
 module.exports = router
