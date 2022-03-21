@@ -32,12 +32,21 @@
      
           
      </style>
-       
+       <form action="overlapping-training-dates-check-details-and-confirm" method="post">
      <div class="govuk-width-container">
           
      
           <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
+                {{ govukErrorSummary({
+                  titleText: "There is a problem",
+                  errorList: [
+                      {
+                          text: "The start date overlaps with existing training for the same apprentice. You need to check the date with the employer.",
+                          href: "#date-start"
+                      }
+                  ]
+              }) }}
                 <span class="govuk-caption-l">Add an apprentice</span>          
                   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Training details</h1>
                   
@@ -62,7 +71,8 @@
                         },
                         classes: "govuk-input--width-5",
                         id: "event-name",
-                        name: "event-name"
+                        name: "event-name",
+                        value: "1230"
                       }) }}
                     
                       {{ govukInput({
@@ -117,16 +127,20 @@
                             The standard version will be based on the planned training start date provided
                             "
                         },
-                        
+                        errorMessage: {
+                          text: "The start date overlaps with existing training for the same apprentice. You need to check the date with the employer."
+                        },
                         items: [
                             
                             {
                                 classes: "govuk-input--width-2",
-                                name: "month"
+                                name: "month",
+                                value: "2"
                             },
                             {
                                 classes: "govuk-input--width-4",
-                                name: "year"
+                                name: "year",
+                                value: "2022"
                             }
                         ]
                     }) }}
@@ -153,11 +167,13 @@
                             
                             {
                                 classes: "govuk-input--width-2 ",
-                                name: "month"
+                                name: "month",
+                                value: "10"
                             },
                             {
                                 classes: "govuk-input--width-4 ",
-                                name: "year"
+                                name: "year",
+                                value: "2023"
                             }
                         ]
                     }) }}
@@ -175,11 +191,9 @@
                   </div>
                  <div class="govuk-grid-column-two-thirds">
 
-               
-                  {{ govukButton({
-                    text: "Save and continue",
-                    href: "knockout"
-                  }) }}
+                  <button class='govuk-button' data-module='govuk-button' >
+                    Save and continue
+                  </button>
                   
                   <div style="clear:both"></div>
                   <a href="#" class="govuk-link">Cancel</a>
@@ -194,5 +208,5 @@
      
      
      </div>
-
+</form>
 {% endblock %}
