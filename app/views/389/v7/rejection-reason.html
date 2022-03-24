@@ -1,0 +1,82 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+        Confirm the apprentice has not left your employment
+    </h1>
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+           
+           [
+                   {
+                       text: "Name"
+                   },
+                   {
+                       text: "Fred jones"
+                   }
+               ],
+               [
+                    {
+                        text: "Unique learner number"
+                    },
+                    {
+                        text: "1231234"
+                    }
+                ],
+                [
+                    {
+                        text: "Apprenticship training course"
+                    },
+                    {
+                        text: "Academic profesional: level 5"
+                    }
+                ]
+           ]
+       }) }}
+
+       {{ govukCheckboxes({
+           idPrefix: "apprentice-still-works-for-me",
+           name: "apprentice-still-works-for-me",
+           
+           items: [
+               {
+                   value: "The apprentice still works for me",
+                   text: "The apprentice still works for me"
+               }
+           ]
+       }) }}
+        
+
+       {{ govukButton({
+           text: "Save and coninue",
+           href: "change-confirmed-rejected"
+       }) }}
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+{% endblock %}

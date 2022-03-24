@@ -496,6 +496,27 @@ router.post(`/389/v3/review-changes`, function (req, res) {
       });
 
 
+      router.post('/389/v7/employment-status-request', function (req, res) {
+        const editChoice = req.session.data['apprentice-left']
+      
+        if (editChoice === 'yes') {
+          res.redirect('leave-date')
+        } else if (editChoice === 'no') {
+          res.redirect('confirm-not-left')
+        }
+      });
+
+
+      router.post('/389/v7/confirm-leave-date', function (req, res) {
+        const editChoice = req.session.data['confirm-leave-date-check']
+      
+        if (editChoice === 'yes') {
+          res.redirect('leave-date-confirmed')
+        } else if (editChoice === 'no') {
+          res.redirect('confirm-not-left')
+        }
+      });
+
 /* 389 ends */
 
 

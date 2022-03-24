@@ -1,0 +1,50 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  When did the apprentice leave your employment?
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "When did the apprentice leave your employment?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      html: "<p>Confirm the date the apprentice left your employment as shown on the P45.</p><p>For example, 27 3 2007</p>"
+    }
+  }) }}
+       
+        
+       
+
+             
+
+            {{ govukButton({
+                text: "Continue",
+                href: "confirm-leave-date"
+            }) }}
+
+         
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}

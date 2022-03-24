@@ -1,0 +1,196 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+       <form  method="post">
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Overlapping training dates</h1>
+                  
+              </div>
+          </div>
+    
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+           {{ govukInsetText({
+               html: 
+               "
+                 <p class='govuk-body'>
+                    This ULN already has an existing record with another employer. You need to check:
+                 <p> 
+                     <ul class='govuk-list govuk-list--bullet'>
+                         <li>
+                            you have entered the correct ULN
+                         </li>
+                         <li>
+                            the dates entered are correct
+                        </li>
+                     </ul>
+               "
+           }) }}
+        </div>
+     </div>
+     {{ govukCheckboxes({
+        idPrefix: "confirm-dates",
+        name: "confirm-dates",
+        classes: "govuk-!-margin-bottom-6",
+        fieldset: {
+            legend: {
+                text: "Is this information correct?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+            }
+        },
+        hint: {
+            html: " 
+
+                    
+
+                    <p class='govuk-body'>
+                       If the infomation is incorrect you need to go back and <a href='tp-edit-apprentice' class='govuk-link'>amend the details</a>.
+                    <p>   "
+        },
+        items: [
+            {
+                value: "Value",
+                text: "The details below are correct" 
+            }
+        ]
+    }) }}
+    {{ govukTable({
+        caption: "Proposed training dates",
+        classes: "govuk-!-margin-bottom-9 govuk-!-margin-top-6",
+        firstCellIsHeader: false,
+        head: [
+            {
+                text: "ULN"
+            },
+            {
+                text: "Apprentice Name"
+            },
+            {
+                text: "Planned training start date"
+            },
+            {
+                text: "Projected finish date"
+            }
+        ],
+        rows: [
+            [
+                {
+                    text: "1231234"
+                },
+                {
+                    text: "Fred Jones"
+                },
+                {
+                    text: "02 2022"
+                },
+                {
+                    text: "10 2023"
+                }
+            ]
+
+        ]
+    }) }}
+
+    {{ govukInsetText({
+        text: "
+            If you confirm that the information above is correct an email will be sent to the previous employer to request they review and stop their ULN record.
+                "
+    }) }}
+
+     
+<!--
+     {% set yesHtml %}
+     {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "provide your preferred contact details",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        }
+      }) }}
+    {% endset -%}
+
+     {{ govukRadios({
+         idPrefix: "contact-details",
+         name: "contact-details",
+         fieldset: {
+             legend: {
+                 text: "Do you want to include your contact details?",
+                 isPageHeading: false,
+                 classes: "govuk-fieldset__legend--s"
+             }
+         },
+         hint: {
+             text: "Send your contact details to the previous employer so they can contact you"
+         },
+         items: [
+             {
+                 value: "Yes",
+                 text: "Yes",
+                 conditional: {
+                   html: yesHtml
+                 }
+             },
+             {
+                value: "No",
+                text: "No"
+            }
+         ]
+     }) }}
+     -->
+     <div class="govuk-grid-row">
+         
+     
+         <div class="govuk-grid-column-two-thirds">
+                     {{ govukButton({
+                         text: "Submit request",
+                         href: "email-confirmation"
+                     }) }}
+                    
+                    </div>
+     
+                </div>
+         
+     
+     
+     </div>
+</form>
+{% endblock %}

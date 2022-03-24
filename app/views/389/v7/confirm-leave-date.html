@@ -1,0 +1,85 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Confirm apprentice leave date
+        </h1>
+       
+        {{ govukWarningText({
+          text: "The apprenticeship record cannot be restarted once stopped",
+          iconFallbackText: "Warning"
+        }) }}
+       
+        
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name</th>
+                <td class="govuk-table__cell">Fred Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Unique learner number</th>
+                <td class="govuk-table__cell">1231234</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                <td class="govuk-table__cell">Academic professional: level 5</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Leave date</th>
+                <td class="govuk-table__cell">21 February 2022</td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+
+          <form action="confirm-leave-date" method="post">
+
+            {{ govukRadios({
+              idPrefix: "confirm-leave-date-check",
+              name: "confirm-leave-date-check",
+              fieldset: {
+                legend: {
+                  text: "Confirm the apprentice left on this date",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes, the apprentice left on this date"
+                },
+                {
+                  value: "no",
+                  text: "No, go back to apprentice details"
+                }
+              ]
+            }) }}   
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+
+          </form>
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}

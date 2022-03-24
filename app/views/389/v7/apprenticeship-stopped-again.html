@@ -1,0 +1,54 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+        titleText: "Leave date confirmed"
+      }) }}
+
+      <h1 class="govuk-heading-xl">
+          James Smith
+      </h1>
+        
+
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Status</th>
+            <td class="govuk-table__cell"> <strong class='govuk-tag govuk-tag--red'>
+                Stopped
+              </strong>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Leave date</th>
+            <td class="govuk-table__cell">{{ data['stop-date-revised-day'] }} {{ data['stop-date-revised-month'] }} {{ data['stop-date-revised-year'] }}  </td>
+            <td><a href='#' class='govuk-link'>Edit</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <a href="#" class="govuk-link">Manage apprentices</a>
+      <br>
+      <a href="#" class="govuk-link">Sign out</a>
+
+</div>
+</div>
+   </form> 
+
+{% endblock %}

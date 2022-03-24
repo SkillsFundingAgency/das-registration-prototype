@@ -1,0 +1,215 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<form action="stop-request"  method="post">
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+
+  
+
+
+      <h1 class="govuk-heading-xl">
+          James Smith
+      </h1>
+        
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+               [
+                   {
+                       text: "Status"
+                   },
+                   {
+                       html: 
+                       "
+                       <strong class='govuk-tag govuk-tag--red'>
+                        Stopped
+                      </strong>
+                       "
+                   },
+                   {
+                       text: ""
+                   }
+               ],
+               [
+                   {
+                       text: "Stopped date"
+                   },
+                   {
+                       text: "March 2022"
+                   },
+                   {
+                    html: 
+                    "
+                    <a href='revised-stopped-date' class='govuk-link'>Edit</a>
+                    "
+                }
+               ],
+               [
+                   {
+                       text: "Made redundant"
+                   },
+                   {
+                       text: "No"
+                   },
+                   {
+                       text: ""
+                   }
+               ],
+               [
+                   {
+                       text: "Apprentice confirmation"
+                   },
+                   {
+                       text: "Unconfirmed"
+                   },
+                   {
+                       text: ""
+                   }
+               ],
+               [
+                   {
+                       text: "Training provider"
+                   },
+                   {
+                       text: "BMH training"
+                   },
+                   {
+                    html: 
+                    "
+                    
+                    "
+                },
+                {
+                    text: ""
+                }
+               ],
+               [
+                   {
+                       text: "Cohort reference"
+                   },
+                   {
+                       text: "WD6D7G"
+                   },
+                   {
+                       text: ""
+                   }
+               ]
+               
+           ]
+       }) }}
+
+
+{{ govukTable({
+    caption: "Apprentice details",
+    firstCellIsHeader: true,
+   
+    rows: [
+        [
+            {
+                text: "Name"
+            },
+            {
+                text: "James Smith"
+            }
+        ],
+        [
+            {
+                text: "Email address"
+            },
+            {
+                text: "-"
+            }
+        ],
+        [
+            {
+                text: "Unique learner number"
+            },
+            {
+                text: "7659823"
+            }
+        ],
+        [
+            {
+                text: "Date of birth"
+            },
+            {
+                text: "29 Sep 2000"
+            }
+        ]
+    ]
+}) }}
+
+
+{{ govukTable({
+    caption: "Apprenticeship details",
+    firstCellIsHeader: true,
+    
+    rows: [
+    [
+    {
+        text: "Apprenticeship training course"
+    },
+    {
+        text: "Accounting level 2"
+    }
+],    
+    [
+            {
+                text: "Version"
+            },
+            {
+                text: "1.0"
+            }
+        ],
+        [
+            {
+                text: "Planned training start date"
+            },
+            {
+                text: "Nov 2020"
+            }
+        ],
+        [
+            {
+                text: "Planned training end date"
+            },
+            {
+                text: "APR 2022"
+            }
+        ],
+        [
+            {
+                text: "Total agreed apprenticeship price"
+            },
+            {
+                text: "£1230"
+            }
+        ],
+        [
+            {
+                text: "Reference"
+            },
+            {
+                text: "-"
+            }
+        ]
+    ]
+}) }}
+
+</div>
+</div>
+   </form> 
+
+{% endblock %}
