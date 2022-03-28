@@ -32,7 +32,7 @@
      
           
      </style>
-       <form action="date-confirmation" method="post">
+      
      <div class="govuk-width-container">
           
      
@@ -104,7 +104,7 @@
                     }) }}
 
                     
-
+                  <form action="check-dates-new-apprentice" method="post">
 
                     {{ govukRadios({
                       idPrefix: "details-correct",
@@ -121,11 +121,11 @@
                       },
                       items: [
                         {
-                          value: "england",
+                          value: "yes",
                           text: "Yes, submit a request to the previous employer"
                         },
                         {
-                          value: "scotland",
+                          value: "no",
                           text: "No, I need to change the details"
                         }
                       ]
@@ -135,6 +135,8 @@
                     <button class='govuk-button' data-module='govuk-button' >
                       Save and continue
                   </button>
+
+                  </form>
 
                   </div>
                  <div class="govuk-grid-column-two-thirds">

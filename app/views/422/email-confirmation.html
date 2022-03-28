@@ -1,0 +1,45 @@
+{% extends "ma-layout-no-back-bttn.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Previous employer notified to confirm changes"
+      }) }}
+
+
+     
+
+    
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>
+            We've sent an email to the previous employer requesting they update their records for this apprentice
+          </li>
+          <li>
+            We've removed this ULN from cohort [cohort numer] and created a draft cohort number xxxxxx. This will allow you to process other apprentices within this cohort.  
+          </li>
+      </ul>
+
+      
+
+     {{ govukInsetText({
+         text: "You will be notified once the previous employer has amended or rejected changes for this ULN"
+     }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Add another apprentices details</a>
+      <p>
+        <p class="govuk-body">
+            <a href="#" class="govuk-link">Back to main dashboard</a>
+          <p>
+    </div>
+  </div>
+{% endblock %}

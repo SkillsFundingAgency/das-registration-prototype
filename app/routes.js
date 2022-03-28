@@ -551,6 +551,19 @@ router.post('/422/knockout', function (req, res) {
   }
 });
 
+
+router.post('/422/check-dates-new-apprentice', function (req, res) {
+  const editChoice = req.session.data['details-correct']
+
+  if (editChoice === 'yes') {
+    res.redirect('email-confirmation')
+  } else if (editChoice === 'no') {
+    res.redirect('edit-apprentice-multi-page-2')
+  }
+});
+
+
+
 /* 422 ends */
 
 
