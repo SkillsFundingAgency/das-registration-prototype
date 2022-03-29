@@ -545,9 +545,9 @@ router.post('/422/knockout', function (req, res) {
   const editChoice = req.session.data['new-apprentice-check']
 
   if (editChoice === 'yes') {
-    res.redirect('check-dates-new-apprentice')
+    res.redirect('transfer')
   } else if (editChoice === 'no') {
-    res.redirect('check-dates-transfer-apprentice')
+    res.redirect('check-dates-new-apprentice')
   }
 });
 

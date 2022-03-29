@@ -75,6 +75,20 @@ Edit apprentice - Main
                             SOMEONE ELSE LTD
                         </span>
                     </h2>
+
+
+                    <h2 class="govuk-heading-m">
+                        Apprentice personal details
+                    </h2>
+                    {{ govukInput({
+                        id: "uln",
+                        name: "uln",
+                        label: {
+                            text: "Unique learner number"
+                        }
+
+                    }) }}
+
                 
                     {{ govukInput({
                         id: "first-name",
@@ -132,15 +146,7 @@ Edit apprentice - Main
                         }
                       }) }}
 
-                      {{ govukInput({
-                          id: "uln",
-                          name: "uln",
-                          label: {
-                              text: "Unique learner number"
-                          }
-
-                      }) }}
-
+                     
                       
 
 

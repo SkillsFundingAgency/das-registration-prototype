@@ -39,7 +39,7 @@
           <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
                              
-                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This NEW apprentice already has an existing record with another employer</h1>
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with another employer</h1>
                   
               </div>
           </div>
@@ -59,82 +59,114 @@
                     </ul>
      
 
-                    
+                    <h2 class="govuk-heading-m">Check the proposed training details</h2>
 
-                    {{ govukTable({
-                      caption: "Proposed training dates",
-                      captionClasses: "govuk-table__caption--m",
-                      firstCellIsHeader: true,
-                     
+                    {{ govukSummaryList({
+                      classes: 'govuk-!-margin-bottom-9',
                       rows: [
-                        [
-                          {
-                            text: "Unique Learner Number",
-                            classes: 'govuk-!-width-one-half'
+                        {
+                          key: {
+                            text: "Unique Learner Number"
                           },
-                          {
+                          value: {
                             text: "1231234"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-1",
+                                text: "Change",
+                                visuallyHiddenText: "unique learner number"
+                              }
+                            ]
                           }
-                        ],
-                        [
-                          {
+                        },
+                        {
+                          key: {
                             text: "Apprentice name"
                           },
-                          {
+                          value: {
                             text: "Fred Jones"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "apprentice name"
+                              }
+                            ]
                           }
-                        ],
-                        [
-                          {
+                        },
+                        {
+                          key: {
                             text: "Planned start date"
                           },
-                          {
-                            text: "March 2022"
+                          value: {
+                            html: "March 2022"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "planned start date"
+                              }
+                            ]
                           }
-                        ],
-                        [
-                          {
+                        },
+                        {
+                          key: {
                             text: "Projected finish date"
                           },
-                          {
-                            text: "October 2023"
+                          value: {
+                            html: 'October 2023'
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "planned finish date"
+                              }
+                            ]
                           }
-                        ]
+                        }
                       ]
                     }) }}
 
-                    
-                  <form action="check-dates-new-apprentice" method="post">
 
-                    {{ govukRadios({
-                      idPrefix: "details-correct",
-                      name: "details-correct",
+                    
+                  
+
+                    {{ govukCheckboxes({
+                      idPrefix: "waste",
+                      name: "waste",
                       fieldset: {
                         legend: {
-                          text: "Are these details correct?",
+                          text: "Confirm the proposed training details are correct",
                           isPageHeading: true,
                           classes: "govuk-fieldset__legend--m"
                         }
                       },
                       hint: {
-                        text: "You will be able to send an email to the previous employer, from within the Service, once you have confirmed the dates are correct."
+                        text: "The service will send an email request to the previous employer, once you have confirmed the details are correct."
                       },
                       items: [
                         {
-                          value: "yes",
-                          text: "Yes, submit a request to the previous employer"
-                        },
-                        {
-                          value: "no",
-                          text: "No, I need to change the details"
+                          value: "carcasses",
+                          text: "Yes, these details are correct"
                         }
                       ]
                     }) }}
+
+                    {{ govukButton({
+                      text: "Send the request to the previous employer",
+                      href: "email-confirmation"
+                    }) }}
        
 
-                    <button class='govuk-button' data-module='govuk-button' >
-                      Save and continue
-                  </button>
+                   
 
                   </form>
 
