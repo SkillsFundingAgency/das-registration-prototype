@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Bulk uploads prototype - Training provider
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header+nav.html" %}
+
+{% block content %}
+
+
+<style>
+    .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+</style>
+
+<div class="govuk-width-container">
+
+	
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+	<!-- ERROR SUMMARY -->
+	<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+		<h2 class="govuk-error-summary__title" id="error-summary-title">
+		  There is a problem
+		</h2>
+		<div class="govuk-error-summary__body">
+		  <ul class="govuk-list govuk-error-summary__list">
+			<li>
+			  <a href="#passport-issued-day">You must choose an option</a>
+			</li>
+		  </ul>
+		</div>
+	  </div> -->
+	  <!-- END ERROR SUMMARY -->
+
+	<!-- HEADER INFO -->
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-full">
+					    
+		    <h1 class="govuk-heading-xl govuk-!-margin-top-8">Approve 3 apprentices' details</h1>		 
+		    
+	    </div>
+	</div>
+			
+	
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-two-thirds">
+		    		   
+			<p class="govuk-body"><strong>Employer:</strong> SAINSBURY'S</p>
+			<p class="govuk-body"><strong>Cohort reference:</strong> VRY89L</p>
+			<p class="govuk-body"><strong>Status:</strong> Ready for review</p>
+			<p class="govuk-body"><strong>Message:</strong>
+			<div class="govuk-inset-text">
+				No message added.
+			  </div>
+			</p>
+
+		</div>
+	</div>
+	<!-- END HEADER INFO -->	
+
+	<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+	<!-- TABLE 1 -->
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-full">
+
+			<div class="group-header">
+				<h3 class="govuk-heading-m group-title govuk-!-margin-bottom-0">2 x Food and Drink: Meat and Poultry Industry Skills, Level: 2</h3>
+				<p>Training code: 203-2-1</p>
+			</div>
+			
+			
+			  <table class="govuk-table">
+			  <thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+				  <th scope="col" class="govuk-table__header">Name</th>
+				  <th scope="col" class="govuk-table__header">Unique learner number</th>
+				  <th scope="col" class="govuk-table__header">Date of birth</th>
+				  <th scope="col" class="govuk-table__header">Training dates</th>
+				  <th scope="col" class="govuk-table__header">Price</th>
+				  <th scope="col" class="govuk-table__header"></th>
+				</tr>
+			  </thead>
+			  <tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+				  <td class="govuk-table__cell">Louise James</td>
+				  <td class="govuk-table__cell">9384922898</td>
+				  <td class="govuk-table__cell">13 Jan 2000</td>
+				  <td class="govuk-table__cell">Jan 2021 to Jul 2022</td>
+				  <td class="govuk-table__cell">£1,250</td>
+				  <td class="govuk-table__cell" style="text-align: right"><a href="apprentice-details-edit">Edit</a><br><br><a href="apprentice-delete">Delete</a></td>
+				</tr>
+				<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">Mark Smith</td>
+					<td class="govuk-table__cell">6493849228</td>
+					<td class="govuk-table__cell">7 Apr 1999</td>
+					<td class="govuk-table__cell">Jan 2021 to Jul 2022</td>
+					<td class="govuk-table__cell">£1,250</td>
+					<td class="govuk-table__cell" style="text-align: right"><a href="apprentice-details-edit">Edit</a><br><br><a href="apprentice-delete">Delete</a></td>
+				</tr>
+			  </tbody>
+			</table>	
+			<!-- END TABLE 1 -->
+
+			<!-- TABLE 2 -->
+			<h3 class="govuk-heading-m group-title govuk-!-margin-bottom-0">1 x Business and Professional Administration, Level: 4</h3>
+			<p>Training code: 783-2-1</p>		
+		
+		  <table class="govuk-table">
+		  <thead class="govuk-table__head">
+			<tr class="govuk-table__row">
+			  <th scope="col" class="govuk-table__header">Name</th>
+			  <th scope="col" class="govuk-table__header">Unique learner number</th>
+			  <th scope="col" class="govuk-table__header">Date of birth</th>
+			  <th scope="col" class="govuk-table__header">Training dates</th>
+			  <th scope="col" class="govuk-table__header">Price</th>
+			  <th scope="col" class="govuk-table__header"></th>
+			</tr>
+		  </thead>
+			<tbody class="govuk-table__body">
+			<tr class="govuk-table__row">
+				<td class="govuk-table__cell">David Clarke</td>
+				<td class="govuk-table__cell">9093849228</td>
+				<td class="govuk-table__cell">7 Apr 1999</td>
+				<td class="govuk-table__cell">Jan 2021 to Jul 2022</td>
+				<td class="govuk-table__cell">£1,525</td>
+				<td class="govuk-table__cell" style="text-align: right"><a href="apprentice-details-edit">Edit</a><br><br><a href="apprentice-delete">Delete</a></td>
+			</tr>
+		  </tbody>
+		</table>	
+		<!-- END TABLE 2 -->
+
+		<!-- TOTAL COST -->
+			<table class="govuk-table">
+				<thead class="govuk-table__head">
+				  <tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header das-table-cell-width-80">Total apprenticeship training price<br> (excluding VAT)</th>
+					<th scope="col" class="govuk-table__header">£2,500</th>
+				  </tr>
+				</thead>
+				</tbody>
+			  </table>	
+  		<!-- END TOTAL COST -->
+			  
+
+
+			</div>
+		</div>
+
+			<!-- ADD ANOTHER APPRENTICE -->
+			<div id="textbox">
+			<a class="govuk-list govuk-link--no-visited-state alignleft" href="#">Add another apprentice</a></p>
+			<a class="govuk-list govuk-link--no-visited-state alignright" href="#">Delete this cohort</a></p>
+			<div style="clear: both;"></div>
+		</div>
+		<!-- <p class="govuk-list govuk-link--no-visited-state"><a href="#">Upload apprentice(s) using a CSV file</a></p> -->
+   			 <!-- END ADD ANOTHER APPRENTICE -->
+
+			<!-- RADIO BUTTONS -->
+				<div class="govuk-form-group">
+
+					<form method="post">
+
+					<fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+					  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading govuk-!-margin-top-6">
+						  Approve these details?
+						</h1>
+					  </legend>
+					  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+						  <input class="govuk-radios__input" id="send-approve" name="send-employer" type="radio" value="send-approve" data-aria-controls="conditional-message">
+						  <label class="govuk-label govuk-radios__label" for="send-approve">
+							Yes, send to employer for approval
+						  </label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-message">
+						  <div class="govuk-form-group">
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="send-approve-message">
+									Leave SAINSBURY'S a message (optional)
+								</label>
+							<textarea class="govuk-textarea govuk-!-width-two-thirds" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+							</div>
+						</div>
+
+						</div>
+						<div class="govuk-radios__item">
+						  <input class="govuk-radios__input" id="send-review" name="send-employer" type="radio" value="send-review" data-aria-controls="conditional-message-2">
+						  <label class="govuk-label govuk-radios__label" for="send-review">
+							No, send to employer to review or add details
+						  </label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-message-2">
+						  <div class="govuk-form-group">
+							<label class="govuk-label" for="contact-send-review">
+							  Leave SAINSBURY'S a message (optional)
+							</label>
+							<textarea class="govuk-textarea govuk-!-width-two-thirds" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+						  </div>
+						</div>
+					  </div>
+				  
+					</fieldset>
+				  </div>
+
+			<!-- END RADIO BUTTONS -->
+
+			<!--  CTA's -->
+			<div class="govuk-form-group">
+
+			<button class="govuk-button" data-module="govuk-button">
+				Save and continue
+			  </button><br>
+
+			</form>
+
+			<!--  END CTA's -->
+</div>
+</div>
+
+
+
+{% endblock %}
+
+{% endblock %}
