@@ -48,6 +48,8 @@
               <div class="govuk-grid-row">
                   <div class="govuk-grid-column-two-thirds">
 
+                    <form action="check-training-details" method="post">
+
                     {{ govukInput({
                         label: {
                           text: "Total agreed apprenticeship price (excluding VAT)",
@@ -100,67 +102,78 @@
                     }) }}
      
 
-                      {{ govukDateInput({
-                        id: "date-start",
-                        name: "date-start",
-                        fieldset: {
-                            legend: {
-                                text: "Planned training start date",
-                                isPageHeading: true,
-                                classes: "govuk-fieldset__legend--m"
-                            }
-                        },
-                        hint: {
-                            html: 
-                            "
+           
+
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="training-start-hint">
+                          
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Planned training start date
+                          </legend>
+                          <div id="training-start-hint" class="govuk-hint">
                             For example, 31 3 2017<br>
                             The standard version will be based on the planned training start date provided
-                            "
-                        },
-                        
-                        items: [
-                            
-                            {
-                                classes: "govuk-input--width-2",
-                                name: "month"
-                            },
-                            {
-                                classes: "govuk-input--width-4",
-                                name: "year"
-                            }
-                        ]
-                    }) }}
+                          </div>
+                          <div class="govuk-date-input" id="date-start">
+                           
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date-start-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-start-month" name="date-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date-start-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-start-year" name="date-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                      
+                        </fieldset>
+                      </div>
+                  
 
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="training-end-hint">
+                          
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Projected finish date
+                          </legend>
+                          <div id="training-end-hint" class="govuk-hint">
+                            For example, 31 3 2017                         
+                          </div>
+                          <div class="govuk-date-input" id="date-end">
+                           
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date-end-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-end-month" name="date-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="date-end-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-end-year" name="date-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                      
+                        </fieldset>
+                      </div>
                   
 
 
 
-                    {{ govukDateInput({
-                        id: "date-end",
-                        name: "date-end",
-                        fieldset: {
-                            legend: {
-                                text: "Projected finish date",
-                                isPageHeading: true,
-                                classes: "govuk-fieldset__legend--m"
-                            }
-                        },
-                        hint: {
-                            text: "For example, 31 3 2017"
-                        },
-                       
-                        items: [
-                            
-                            {
-                                classes: "govuk-input--width-2 ",
-                                name: "month"
-                            },
-                            {
-                                classes: "govuk-input--width-4 ",
-                                name: "year"
-                            }
-                        ]
-                    }) }}
 
 
 
@@ -177,12 +190,13 @@
 
                
                   {{ govukButton({
-                    text: "Save and continue",
-                    href: "check-training-details"
+                    text: "Save and continue"
                   }) }}
                   
                   <div style="clear:both"></div>
                   <a href="#" class="govuk-link">Cancel</a>
+
+                </form>
                       
                  </div>
              

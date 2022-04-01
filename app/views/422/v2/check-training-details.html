@@ -40,7 +40,12 @@
               <div class="govuk-grid-column-two-thirds">
                              
                   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with another employer</h1>
+
+                  <p>This may be because the previous employer has not stopped an existing learning record for this apprentice.</p>
                   
+                  <p>You can request a stop date from the previous employer but you must check the ULN and dates you entered are correct first.</p>
+                  
+                 
               </div>
           </div>
     
@@ -51,25 +56,25 @@
                   
                   
 
-                    <p>You need to check:</p>
+                   <!-- <p>You need to check:</p>
 
                     <ul class="govuk-list govuk-list--bullet">
                       <li>you have entered the correct unique learner number (ULN)</li>
                       <li>the dates entered are correct</li>
-                    </ul>
+                    </ul>-->
      
 
-                    <h2 class="govuk-heading-m">Check the proposed training details</h2>
+                    <h2 class="govuk-heading-m govuk-!-margin-top-6">Check the proposed training details are correct</h2>
 
                     {{ govukSummaryList({
-                      classes: 'govuk-!-margin-bottom-9',
+                      classes: 'govuk-!-margin-bottom-6',
                       rows: [
                         {
                           key: {
                             text: "Unique Learner Number"
                           },
                           value: {
-                            text: "1231234"
+                            html: data['uln']
                           },
                           actions: {
                             items: [
@@ -86,7 +91,7 @@
                             text: "Apprentice name"
                           },
                           value: {
-                            text: "Fred Jones"
+                            html:  data['first-name'] + " " + data['last-name']
                           },
                           actions: {
                             items: [
@@ -103,7 +108,7 @@
                             text: "Planned start date"
                           },
                           value: {
-                            html: "March 2022"
+                            html: data['date-start-month'] | toMonth  + " " + data['date-start-year']
                           },
                           actions: {
                             items: [
@@ -120,7 +125,7 @@
                             text: "Projected finish date"
                           },
                           value: {
-                            html: 'October 2023'
+                            html: data['date-end-month'] | toMonth + " " + data['date-end-year']
                           },
                           actions: {
                             items: [
@@ -143,15 +148,9 @@
                       idPrefix: "training-details-correct",
                       name: "training-details-correct",
                       fieldset: {
-                        legend: {
-                          text: "Confirm the proposed training details are correct",
-                          isPageHeading: true,
-                          classes: "govuk-fieldset__legend--m"
-                        }
+                        
                       },
-                      hint: {
-                        text: "The service will send an email to the previous employer to confirm the date of leaving."
-                      },
+                      
                       items: [
                         {
                           value: "correct",
@@ -161,8 +160,8 @@
                     }) }}
 
                     {{ govukButton({
-                      text: "Send the request to the previous employer",
-                      href: "email-confirmation"
+                      text: "Save and continue",
+                      href: "request-a-stop-date"
                     }) }}
        
 

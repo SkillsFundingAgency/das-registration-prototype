@@ -1,0 +1,82 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Overlapping dates
+{% endblock %}
+
+
+
+{% block content %}
+
+
+      
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Request a stop date from a previous employer</h1>
+
+                  <p>Before you can add this apprentice, we need to confirm the stop date with the previous employer.</p>
+                  
+                  <p>To request a stop date, you can either:</p>
+
+                  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+                    <li>use the service to send an email to the previous employer</li>
+                    <li>contact the previous employer yourself</li>
+                    <li>or add the apprentice later</li>
+                  </ul>
+                    
+  
+                  
+                 
+                  {{ govukRadios({
+                    idPrefix: "where-do-you-live",
+                    name: "where-do-you-live",
+                    fieldset: {
+                      legend: {
+                        text: "How do you want to request a stop date?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--m "
+                      }
+                    },
+                    items: [
+                      {
+                        value: "england",
+                        text: "Send a stop request email from the service"
+                      },
+                      {
+                        value: "scotland",
+                        text: "Contact the employer myself"
+                      },
+                      {
+                        divider: "or"
+                      },
+                      {
+                        value: "abroad",
+                        text: "I'll add the apprentice later"
+                      }
+                    ]
+                  }) }}
+    
+
+
+                    {{ govukButton({
+                      text: "Continue",
+                      href: "request-a-stop-date"
+                    }) }}
+       
+
+                   
+
+          
+          </div>
+     
+      </div>
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
