@@ -1,0 +1,168 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Bulk uploads prototype - Training provider
+{% endblock %}
+
+
+{% block main %}
+
+
+{% block content %}
+
+
+<style>
+    .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+</style>
+
+<div class="govuk-width-container">
+
+	
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+	
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+			<div class="govuk-notification-banner  govuk-!-margin-top-8" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  <p class="govuk-notification-banner__heading">
+				You can't approve this cohort until all fields are complete within the apprentice record</li>
+		  </p>
+		</div>
+	  </div>
+
+	<!-- <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+		<h2 class="govuk-error-summary__title" id="error-summary-title">
+		  There is a problem
+		</h2>
+		<div class="govuk-error-summary__body">
+		  <ul class="govuk-list govuk-error-summary__list">
+			<li>
+			  <a href="#passport-issued-day">You must choose an option</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	   -->
+	</div>
+</div>
+
+
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-full">
+					    
+		    <h1 class="govuk-heading-xl">Approve 0 apprentices' details</h1>		 
+		    
+	    </div>
+	</div>
+			
+	<!-- HEADER INFO -->
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-two-thirds">
+		    		   
+			<p class="govuk-body"><strong>Employer:</strong> SAINSBURY'S</p>
+			<p class="govuk-body"><strong>Cohort reference:</strong> VRY89L</p>
+			<p class="govuk-body"><strong>Status:</strong> Ready for review</p>
+			<p class="govuk-body"><strong>Message:</strong>
+			<div class="govuk-inset-text">
+				No message added.
+			  </div>
+			</p>
+
+		</div>
+	</div>
+	<!-- END HEADER INFO -->
+
+
+	<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+	<div class="govuk-grid-row">
+	    <div class="govuk-grid-column-full">
+
+			<table class="govuk-table">
+				<thead class="govuk-table__head">
+				  <tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header das-table-cell-width-80">Total apprenticeship training price<br> (excluding VAT)</th>
+					<th scope="col" class="govuk-table__header">£0</th>
+				  </tr>
+				</thead>
+				</tbody>
+			  </table>	
+
+			</div>
+		</div>
+
+			<!-- ADD ANOTHER APPRENTICE -->
+			<div id="textbox">
+			<a class="govuk-list govuk-link--no-visited-state alignleft" href="edit-apprentice-multi-page-1">Add another apprentice</a></p>
+			<a class="govuk-list govuk-link--no-visited-state alignright" href="#">Delete this cohort</a></p>
+			<div style="clear: both;"></div>
+		</div>
+		<!-- <p class="govuk-list govuk-link--no-visited-state govuk-!-margin-bottom-8"><a href="#">Upload apprentice(s) using a CSV file</a></p> -->
+   			 <!-- END ADD ANOTHER APPRENTICE -->
+
+			<!-- RADIO BUTTONS	 -->
+				<div class="govuk-form-group">
+
+					<form method="post">
+
+					<fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+					  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading govuk-!-margin-top-6">
+						  Submit to employer?
+						</h1>
+					  </legend>
+					  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+						  <input class="govuk-radios__input" id="send-review" name="send-employer" type="radio" value="yes" data-aria-controls="conditional-contact">
+						  <label class="govuk-label govuk-radios__label" for="send-review">
+							Yes, send to employer to review or add details
+						  </label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+						  <div class="govuk-form-group">
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="contact-by-phone">
+									Leave SAINSBURY'S a message (optional)
+								</label>
+							<textarea class="govuk-textarea govuk-!-width-two-thirds" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+							</div>
+					</div>
+
+						</div>
+						<div class="govuk-radios__item">
+						  <input class="govuk-radios__input" id="send-review-no" name="send-employer" type="radio" value="no" data-aria-controls="conditional-contact-2">
+						  <label class="govuk-label govuk-radios__label" for="send-review-no">
+							No, save and return to apprentice requests
+						  </label>
+						</div>
+					  </div>
+				  
+					</fieldset>
+				  </div>
+			<!-- END RADIO BUTTONS -->
+
+			<!--  CTA's -->
+			<div class="govuk-form-group">
+
+			<button class="govuk-button" data-module="govuk-button">
+				Continue
+			  </button><br>
+			</form>
+			<!--  END CTA's -->
+</div>
+</div>
+
+
+{% endblock %}
+
+{% endblock %}

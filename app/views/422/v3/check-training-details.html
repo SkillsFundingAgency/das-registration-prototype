@@ -1,0 +1,195 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Overlapping dates
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     
+          
+     </style>
+      
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                             
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There is a problem with the proposed training details</h1>
+                  
+                  <!--<p>Check the Unique Learner Number and the dates you entered are correct.</p>-->
+                  
+                 
+              </div>
+          </div>
+    
+
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+
+                  
+                  
+
+                   <!-- <p>You need to check:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>you have entered the correct unique learner number (ULN)</li>
+                      <li>the dates entered are correct</li>
+                    </ul>-->
+     
+
+                    <h2 class="govuk-heading-m govuk-!-margin-top-6">Check the proposed training details are correct</h2>
+
+                    {{ govukSummaryList({
+                      classes: 'govuk-!-margin-bottom-6',
+                      rows: [
+                        {
+                          key: {
+                            text: "Unique Learner Number"
+                          },
+                          value: {
+                            html: data['uln']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-1",
+                                text: "Change",
+                                visuallyHiddenText: "unique learner number"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Apprentice name"
+                          },
+                          value: {
+                            html:  data['first-name'] + " " + data['last-name']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "apprentice name"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Planned start date"
+                          },
+                          value: {
+                            html: data['date-start-month'] | toMonth  + " " + data['date-start-year']
+                            
+                            
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "planned start date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "Projected finish date"
+                          },
+                          value: {
+                            html: data['date-end-month'] | toMonth + " " + data['date-end-year']
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "edit-apprentice-multi-page-2",
+                                text: "Change",
+                                visuallyHiddenText: "planned finish date"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
+
+                    
+                  
+
+                    {{ govukCheckboxes({
+                      idPrefix: "training-details-correct",
+                      name: "training-details-correct",
+                      fieldset: {
+                        
+                      },
+                      
+                      items: [
+                        {
+                          value: "correct",
+                          text: "Yes, these details are correct"
+                        }
+                      ]
+                    }) }}
+
+                    {{ govukButton({
+                      text: "Save and continue",
+                      href: "request-a-stop-date"
+                    }) }}
+       
+
+                   
+
+                  </form>
+
+                  </div>
+                 <div class="govuk-grid-column-two-thirds">
+
+                 <!--<button class='govuk-button' data-module='govuk-button' >
+                    Save and continue
+                  </button>
+                  <button class='govuk-button govuk-button--warning'  data-module='govuk-button' style="float:right" >
+                    Delete
+                  </button>
+                  <div style="clear:both"></div>
+                  <a href="#" class="govuk-link">Cancel</a>
+                      
+                 </div> --> 
+             
+          
+          </div>
+     
+     
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
