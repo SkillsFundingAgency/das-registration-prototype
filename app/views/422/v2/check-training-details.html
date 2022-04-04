@@ -41,7 +41,7 @@
                              
                   <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with another employer</h1>
 
-                  <p>This may be because the previous employer has not stopped an existing learning record for this apprentice.</p>
+                  <p>The planned start date overlaps with existing training for the same apprentice. This may be because the previous employer has not stopped an existing learning record for this apprentice.</p>
                   
                   <p>You can request a stop date from the previous employer but you must check the Unique Learner Number and the dates you entered are correct first.</p>
                   
@@ -109,6 +109,8 @@
                           },
                           value: {
                             html: data['date-start-month'] | toMonth  + " " + data['date-start-year']
+                            
+                            
                           },
                           actions: {
                             items: [
