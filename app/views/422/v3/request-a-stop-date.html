@@ -1,7 +1,7 @@
 {% extends "tp--main-layout.html" %}
 
 {% block pageTitle %}
-  Overlapping dates
+  This apprentice already has an existing record with a previous employer
 {% endblock %}
 
 
@@ -16,19 +16,24 @@
           <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with another employer</h1>
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with a previous employer</h1>
 
-                <p>The planned start date overlaps with existing training for the same apprentice. This may be because the previous employer has not stopped an existing learning record for this apprentice.</p>
+                <p>The planned start date overlaps with existing training for the same apprentice. This may be because the previous employer:</p>
 
-                <p>Before you can add this apprentice, we need to confirm the stop date with the previous employer.</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>has not yet stopped the apprenticeship</li>
+                  <li>has stopped the record with an incorrect date</li>
+                </ul>
 
-                
-                <p>You can request a stop date from the previous employer via the service or contact the previous employer yourself if you have their details.</p>
+                <p>Before you can add this apprentice, you need to confirm the stop date with the previous employer.</p>
+
+                <p>To request that the previous employer updates their records you can:</p>
                              
-                  
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+                  <li>send an email from the service</li>
+                  <li>contact the previous employer direct, if you have their details</li>
+                </ul>
 
-                  
-                  
 
                 <form action="request-a-stop-date" method="post">
                   
@@ -50,7 +55,7 @@
                       },
                       {
                         value: "offline",
-                        text: "Contact the employer myself"
+                        text: "Contact the previous employer myself"
                       }
                     ]
                   }) }}
