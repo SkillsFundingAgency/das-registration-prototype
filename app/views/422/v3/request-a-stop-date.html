@@ -30,12 +30,12 @@
                   
                   
 
-  
+                <form action="request-a-stop-date" method="post">
                   
                  
                   {{ govukRadios({
-                    idPrefix: "where-do-you-live",
-                    name: "where-do-you-live",
+                    idPrefix: "request-a-stop-date-check",
+                    name: "request-a-stop-date-check",
                     fieldset: {
                       legend: {
                         text: "How do you want to request a stop date?",
@@ -45,11 +45,11 @@
                     },
                     items: [
                       {
-                        value: "england",
+                        value: "service",
                         text: "Send a stop request email from the service"
                       },
                       {
-                        value: "scotland",
+                        value: "offline",
                         text: "Contact the employer myself"
                       }
                     ]
@@ -58,13 +58,13 @@
 
 
                     {{ govukButton({
-                      text: "Continue",
-                      href: "request-a-stop-date"
+                      text: "Continue"
                     }) }}
        
+                  </form>
 
                    
-                    <p class="govuk-!-margin-top-6"><a href="#">I'll add the apprentice later</a></p>
+                    <p class="govuk-!-margin-top-6"><a href="review-cohort-0">I'll add the apprentice later</a></p>
           
           </div>
      
