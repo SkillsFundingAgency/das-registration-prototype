@@ -1,0 +1,82 @@
+{% extends "ma-layout-no-back-bttn.html" %}
+
+{% block pageTitle %}
+  Confirm when an apprentice left your employment
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Confirm when an apprentice left your employment
+        </h1>
+       
+       
+        
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name</th>
+                <td class="govuk-table__cell">Fred Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Unique learner number</th>
+                <td class="govuk-table__cell">1231234</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                <td class="govuk-table__cell">Academic professional: level 5</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Leaving date</th>
+                <td class="govuk-table__cell">April 2022</td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+
+          {{ govukInsetText({
+            text: "[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to confirm the date they left your employment."
+          }) }}
+
+
+          <form action="employment-status-request" method="post">
+
+            
+            {{ govukDateInput({
+                id: "stop-date-revised",
+                namePrefix: "stop-date-revised",
+                fieldset: {
+                  legend: {
+                    text: "When did this apprenticeship leave your employment?",
+
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  html: "Tell us the date as shown on the P45 <br>For example, 31 3 2019"
+                }
+              }) }}
+
+              {{ govukButton({
+                  text: "Save and continue",
+                  href: "confirm-leave-date"
+              }) }}
+
+
+          </form>
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}
