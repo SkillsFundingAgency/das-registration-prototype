@@ -513,7 +513,7 @@ router.post(`/389/v3/review-changes`, function (req, res) {
         if (editChoice === 'yes') {
           res.redirect('leave-date-confirmed')
         } else if (editChoice === 'no') {
-          res.redirect('confirm-not-left')
+          res.redirect('leave-date')
         }
       });
 

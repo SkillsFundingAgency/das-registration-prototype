@@ -16,6 +16,7 @@
           Confirm when an apprentice left your employment
         </h1>
        
+        <p>[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to confirm the date they left your employment.</p>
        
         
         <table class="govuk-table">
@@ -32,16 +33,9 @@
                 <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
                 <td class="govuk-table__cell">Academic professional: level 5</td>
               </tr>
+             
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Start date</th>
-                <td class="govuk-table__cell">November 2020</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Planned end date</th>
-                <td class="govuk-table__cell">April 2022</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Stop date</th>
+                <th scope="row" class="govuk-table__header">Current stop date</th>
                 <td class="govuk-table__cell">September 2021</td>
               </tr>
 
@@ -50,9 +44,7 @@
 
 
 
-          {{ govukInsetText({
-            text: "[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to confirm the date they left your employment."
-          }) }}
+         
 
 
           <form action="employment-status-request" method="post">
