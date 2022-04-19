@@ -1,0 +1,71 @@
+{% extends "tp--main-layout-no-back-bttn.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Previous employer notified to confirm changes"
+      }) }}
+
+
+     
+
+    
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>
+            an email has been sent to the previous employer requesting they update their records for this apprentice
+          </li>
+          <li>You will be notified once the previous employer has amended or rejected changes for this ULN</li>
+          <li>
+            the apprentice has been removed from cohort VRY89L and put into a new cohort VRY90L; you will be able to edit this apprentice when the previous employer has updated their records 
+          </li>
+          <li>you can now process cohort VRY89L</li>
+      </ul>
+
+
+      <!--<p>All cohorts can be found in <a href="">apprentice requests</a>.</p>-->
+
+
+      {{ govukRadios({
+        idPrefix: "what-next",
+        name: "what-next",
+        fieldset: {
+          legend: {
+            text: "What do you want to do next?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m "
+          }
+        },
+        items: [
+          {
+            value: "service",
+            text: "View all my cohorts"
+          },
+          {
+            value: "offline",
+            text: "Add another apprentices details"
+          },
+          {
+            value: "add-later",
+            text: "Go back to the main dashboard"
+          }
+        ]
+      }) }}
+     
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+     
+    </div>
+  </div>
+{% endblock %}

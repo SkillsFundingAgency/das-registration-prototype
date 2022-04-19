@@ -573,6 +573,18 @@ router.post('/422/v3/request-a-stop-date', function (req, res) {
   }
 });
 
+router.post('/422/v4/request-a-stop-date', function (req, res) {
+  const editChoice = req.session.data['request-a-stop-date-check']
+
+  if (editChoice === 'service') {
+    res.redirect('email-confirmation')
+  } else if (editChoice === 'offline') {
+    res.redirect('review-cohort-0')
+  } else if (editChoice === 'add-later') {
+    res.redirect('review-cohort-0')
+  }
+});
+
 
 
 /* 422 ends */
