@@ -1,0 +1,45 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+<form action="apprenticeship-stopped-again" method="post">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        
+        
+
+		  <h1 class="govuk-heading-xl">When did this apprenticeship training stop?</h1>		
+
+        
+       
+    {{ govukInsetText({
+        text: "Tell us the date as shown on the P45"
+    }) }}
+    
+    
+    
+
+    
+
+    {{ govukDateInput({
+        id: "stop-date-revised",
+        namePrefix: "stop-date-revised",
+        
+        hint: {
+          text: "For example, 31 3 2019"
+        }
+      }) }}
+
+{{ govukButton({
+    text: "Save and continue"
+}) }}
+
+
+</div>
+</div>
+    
+</form>
+{% endblock %}

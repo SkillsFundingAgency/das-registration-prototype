@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Sign in</h1>
+      <p class="govuk-body">Sign in or <a class="govuk-link govuk-link--no-visited-state" href="create-account">create an account</a> to manage your apprenticeship funds.</p>
+
+
+
+    
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "email-address",
+        name: "email-address"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Password",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        type: "password",
+        id: "password",
+        name: "password"
+      }) }}
+
+      {{ govukButton({
+        text: "Sign in",
+        href: "old-employer-pending-changes"
+      }) }}
+   
+
+<p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Forgotten your password?</a></p>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

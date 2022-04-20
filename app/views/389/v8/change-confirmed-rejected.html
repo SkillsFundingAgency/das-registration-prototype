@@ -1,0 +1,69 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        {{ govukPanel({
+            titleText: "Changes rejected",
+            html: "[training provider name] has been notified you have rejected the changes"
+          }) }}
+        
+
+		 
+
+
+	</div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+           
+           [
+                   {
+                       text: "Name"
+                   },
+                   {
+                       text: "Fred Jones"
+                   }
+               ],
+               [
+           {
+               text: "Rejection reason	"
+           },
+           {
+               text: "The apprentice has not left your employment"
+           }
+       ]
+           ]
+       }) }}
+        
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+{% endblock %}

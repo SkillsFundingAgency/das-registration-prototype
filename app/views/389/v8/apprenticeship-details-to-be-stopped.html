@@ -1,0 +1,219 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<form action="stop-request"  method="post">
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    [Training provider name] has requested changes which need to be reviewed and approved by you. <a href="pending-change" class="govuk-link">Review changes</a>
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+   
+      <h1 class="govuk-heading-xl">
+          Fred Jones
+      </h1>
+
+      <p class="govuk-body">
+          Edit details if there's a change in apprentice or apprenticeship circumstances.
+      <p>
+        
+       {{ govukTable({
+           
+           firstCellIsHeader: true,
+          
+           rows: [
+               [
+                   {
+                       text: "Status",
+                       classes: 'govuk-!-width-one-half'
+                   },
+                   {
+                       html: 
+                       "
+                       <strong class='govuk-tag govuk-tag--blue'>
+                        live
+                      </strong>
+                       "
+                   },
+                   {
+                    html: 
+                    "
+                    <a href='pending-change' class='govuk-link'>Edit status</a>
+                    "
+                   }
+               ],
+               
+               [
+                   {
+                       text: "Apprenticeship confirmation"
+                   },
+                   {
+                       text: "-"
+                   },
+                   {
+                       text: ""
+                   }
+               ],
+               [
+                   {
+                       text: "Training provider"
+                   },
+                   {
+                       html: "
+                       Boom training<br>
+                       
+                       "
+                   },
+                   {
+                    html: 
+                    "
+                    <a href='#' class='govuk-link'>Change</a>
+                    "
+                   }
+               ],
+               
+               [
+                   {
+                       text: "Cohort reference"
+                   },
+                   {
+                       text: "WD6D7G"
+                   },
+                   {
+                       text: ""
+                   }
+               ]
+               
+           ]
+       }) }}
+
+
+{{ govukTable({
+    caption: "Apprentice details",
+    firstCellIsHeader: true,
+   
+    rows: [
+        [
+            {
+                text: "Name",
+                classes: 'govuk-!-width-one-half'
+            },
+            {
+                text: "Fred jones"
+            }
+        ],
+        [
+            {
+                text: "Email address"
+            },
+            {
+                text: "-"
+            }
+        ],
+        [
+            {
+                text: "Unique learner number"
+            },
+            {
+                text: "1231234"
+            }
+        ],
+        [
+            {
+                text: "Date of birth"
+            },
+            {
+                text: "29 September 2000"
+            }
+        ]
+    ]
+}) }}
+
+
+{{ govukTable({
+    caption: "Apprenticeship details",
+    firstCellIsHeader: true,
+    
+    rows: [
+    [
+    {
+        text: "Apprenticeship training course",
+        classes: 'govuk-!-width-one-half'
+    },
+    {
+        text: "Academic professional Level 5"
+    }
+],    
+    [
+            {
+                text: "Version"
+            },
+            {
+                text: "1.0"
+            }
+        ],
+        [
+            {
+                text: "Planned training start date"
+            },
+            {
+                text: "January 2020"
+            }
+        ],
+        [
+            {
+                text: "Planned training end date"
+            },
+            {
+                text: "March 2022"
+            }
+        ],
+        [
+            {
+                text: "Total agreed apprenticeship price"
+            },
+            {
+                text: "£1230"
+            }
+        ],
+        [
+            {
+                text: "Reference"
+            },
+            {
+                text: "-"
+            }
+        ],
+        [
+            {
+                text: "End point assessor"
+            },
+            {
+                text: "The end point assessor has not been declared"
+            }
+        ]
+    ]
+}) }}
+
+</div>
+</div>
+   </form> 
+
+{% endblock %}

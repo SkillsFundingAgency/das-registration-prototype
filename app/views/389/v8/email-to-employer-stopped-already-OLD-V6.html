@@ -1,0 +1,73 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<p class="govuk-body govuk-!-font-size-24">
+        <b>Subject:</b> Action required in your apprenticeship service account
+    </p>
+    <p class="govuk-body">
+        Dear XXXX
+    <p>
+        <p class="govuk-body">
+            I would appreciate your prompt action to this request. 
+        </p>
+        <p class="govuk-body">
+            An apprentice that left your organisation has an incorrect stop date in your Apprenticeship Service account.
+        <p>
+
+        <ul class="govuk-list">
+            <li>
+                <b>Apprentice:</b> James Smith
+            </li>
+            <li>
+                <b>Unique learner number (ULN):</b> 7659823
+            </li>
+            <li>
+                <b>Start date:</b> NOV 2020
+            </li>
+            <li>
+                <b>Planned end date:</b> APR 2022
+            </li>
+            <li>
+                <b>Stop date:</b> SEP 2021
+            </li>
+        </ul>
+        <p class="govuk-body">
+            This apprentice has started an apprenticeship with a new organisation. So that learning can continue, you need to amend the stop date by following the steps below:
+        <p>
+
+            <ul class="govuk-list govuk-list--number">
+                <li>
+                    Sign in to your apprenticeship service account <a href="#" class="govuk-link">manage-apprenticeships.service.gov.uk</a>.
+                </li>
+                <li>
+                    Go to ‘manage apprentices’ in the ‘apprentices’ section of your account.
+                </li>
+                <li>
+                    Find the apprentice and select ‘view’.
+                </li>
+                <li>
+                    Edit their status.
+                </li>
+                <li>
+                    Amend the ‘Stop date’ the for the correct month and year  the apprentice left your organisation.
+                </li>
+            </ul>
+            <p class="govuk-body">
+                If this apprentice has not left your organisation contact your training provider to check they have the correct ULN.
+            <p>
+
+                <p class="govuk-body">
+                    Apprenticeship Service Support<br>Technical Support Team
+                <p>
+
+                    <a href="old-employer-pending-changes" class="govuk-link">next step in journey</a>
+</div>
+    
+
+{% endblock %}

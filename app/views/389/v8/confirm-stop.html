@@ -1,0 +1,81 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+  Employer Homepage
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+           Confirm apprenticeship stop 
+        </h1>
+        {{ govukWarningText({
+            text: "This apprenticeship record cannot be restarted once stopped.",
+            iconFallbackText: "This apprenticeship record cannot be restarted once stopped."
+        }) }}
+
+        
+
+        
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name</th>
+                <td class="govuk-table__cell">Fred Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Unique learner number</th>
+                <td class="govuk-table__cell">1231234</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                <td class="govuk-table__cell">Academic professional: level 5</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Leaving date</th>
+                <td class="govuk-table__cell">{{ data['stop-date-day'] }} {{ data['stop-date-month'] | toMonth }} {{ data['stop-date-year'] }}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Made redundant</th>
+                <td class="govuk-table__cell">{{ data['made-redundant'] }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+       
+       
+      {{ govukRadios({
+          idPrefix: "confirm-stop",
+          name: "confirm-stop",
+          
+          items: [
+          {
+            value: "Yes, stop this apprentice",
+            text: "Yes, stop this apprentice"
+        },
+        {
+          value: "No, go back to apprentice details",
+          text: "No, go back to apprentice details"
+      }
+          ]
+      }) }}
+
+{{ govukButton({
+    text: "Save and continue",
+    href: "apprenticeship-stopped"
+}) }}
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}
