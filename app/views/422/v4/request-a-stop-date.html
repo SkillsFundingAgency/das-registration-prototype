@@ -52,23 +52,32 @@
                     items: [
                       {
                         value: "service",
-                        text: "Send a stop request email from the service"
+                        text: "Send a stop request email from the service",
+                        hint: {
+                          text: "This can take up to 4 weeks for the previous employer to action."
+                        }
                       },
                       {
                         value: "offline",
-                        text: "I'll contact the employer myself"
+                        text: "I'll contact the employer myself",
+                        hint: {
+                          text: "Apprentice details will be saved in the cohort until the previous employer amends the date."
+                        }
                       },
                       {
                         divider: "or"
                       },
                       {
                         value: "add-later",
-                        text: "I'll add the apprentice later"
+                        text: "I'll add the apprentice again later",
+                        hint: {
+                          text: "The details entered for this apprentice will be deleted."
+                        }
                       }
                     ]
                   }) }}
     
-
+                  
 
                     {{ govukButton({
                       text: "Continue"
