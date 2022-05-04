@@ -1,0 +1,53 @@
+{% extends "ma-layout-no-back-bttn.html" %}
+
+{% block pageTitle %}
+  Confirmed, apprentice is still employed by [employer name]
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        
+        
+
+          {{ govukPanel({
+            titleText: "Confirmed",
+            html: "[apprentice name] is still employed by [employer name]"
+          }) }}
+	</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+  <table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Name</th>
+        <td class="govuk-table__cell">Fred Jones</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Unique learner number</th>
+        <td class="govuk-table__cell">1231234</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+        <td class="govuk-table__cell">Academic professional: level 5</td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+
+ 
+
+
+
+</div>
+</div>
+    
+
+{% endblock %}

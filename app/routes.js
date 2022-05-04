@@ -534,6 +534,73 @@ router.post(`/389/v3/review-changes`, function (req, res) {
         }
       });
 
+
+      router.post('/389/v8/employment-status-request', function (req, res) {
+        const editChoice = req.session.data['apprentice-left']
+      
+        if (editChoice === 'yes') {
+          res.redirect('leave-date')
+        } else if (editChoice === 'no') {
+          res.redirect('confirm-not-left')
+        }
+      });
+
+      router.post('/389/v8/employment-status-request-from-dashboard', function (req, res) {
+        const editChoice = req.session.data['apprentice-left']
+      
+        if (editChoice === 'yes') {
+          res.redirect('leave-date')
+        } else if (editChoice === 'no') {
+          res.redirect('confirm-not-left')
+        }
+      });
+
+
+      router.post('/389/v8/record-status-stopped/employment-status-request', function (req, res) {
+        const editChoice = req.session.data['stop-date-check']
+      
+        if (editChoice === 'yes') {
+          res.redirect('current-stop-date-confirmed')
+        } else if (editChoice === 'no') {
+          res.redirect('stop-date')
+        }
+      });
+
+
+      router.post('/389/v8/record-status-stopped/employment-status-request-from-dashboard', function (req, res) {
+        const editChoice = req.session.data['stop-date-check']
+      
+        if (editChoice === 'yes') {
+          res.redirect('current-stop-date-confirmed')
+        } else if (editChoice === 'no') {
+          res.redirect('stop-date')
+        }
+      });
+
+
+      router.post('/389/v8/record-status-completed/employment-status-request', function (req, res) {
+        const editChoice = req.session.data['end-date-check']
+      
+        if (editChoice === 'yes') {
+          res.redirect('current-end-date-confirmed')
+        } else if (editChoice === 'no') {
+          res.redirect('end-date')
+        }
+      });
+
+
+      router.post('/389/v8/record-status-completed/employment-status-request-from-dashboard', function (req, res) {
+        const editChoice = req.session.data['end-date-check']
+      
+        if (editChoice === 'yes') {
+          res.redirect('current-end-date-confirmed')
+        } else if (editChoice === 'no') {
+          res.redirect('end-date')
+        }
+      });
+
+      
+
 /* 389 ends */
 
 

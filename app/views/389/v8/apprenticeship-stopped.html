@@ -1,7 +1,7 @@
 {% extends "ma-layout-no-back-bttn.html" %}
 
 {% block pageTitle %}
-  Employer Homepage
+Apprenticeship stopped
 {% endblock %}
 
 {% block content %}
@@ -19,11 +19,27 @@
         html: "Fred Jones"
       }) }}
 
-      <h1 class="govuk-heading-xl">
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Fred Jones</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Unique learner number</th>
+            <td class="govuk-table__cell">1231234</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+            <td class="govuk-table__cell">Academic professional: level 5</td>
+          </tr>
+         
           
-      </h1>
+        </tbody>
+      </table>
+    
         
-       {{ govukTable({
+     <!--  {{ govukTable({
            
            firstCellIsHeader: true,
           
@@ -220,9 +236,9 @@
         ]
     ]
 }) }}
+-->
+</div>
+</div>
 
-</div>
-</div>
-   </form> 
 
 {% endblock %}

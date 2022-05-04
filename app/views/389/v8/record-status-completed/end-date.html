@@ -1,0 +1,50 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+What is the planned end date for this apprenticeship training stop?
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        
+
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "What is the planned end date for this apprenticeship training stop?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    hint: {
+      html: "For example, 27 3 2007"
+    }
+  }) }}
+       
+        
+       
+
+             
+
+            {{ govukButton({
+                text: "Continue",
+                href: "new-end-date-confirmed"
+            }) }}
+
+         
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "ma-layout-no-back-bttn.html" %}
+
+{% block pageTitle %}
+Confirm when apprenticeship training stopped
+{% endblock %}
+
+{% block content %}
+
+
+<form method="post">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Confirm when apprenticeship training stopped
+        </h1>
+       
+        <p>[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to confirm the date when apprenticeship training stopped.</p>
+       
+        
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name</th>
+                <td class="govuk-table__cell">Fred Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Unique learner number</th>
+                <td class="govuk-table__cell">1231234</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                <td class="govuk-table__cell">Academic professional: level 5</td>
+              </tr>
+             
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Current stop date</th>
+                <td class="govuk-table__cell">September 2021</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+         
+
+
+          <form action="employment-status-request" method="post">
+
+            {{ govukRadios({
+              idPrefix: "stop-date-check",
+              name: "stop-date-check",
+              fieldset: {
+                legend: {
+                  text: "Is this apprenticeship training stop date correct? ",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes, that date is correct"
+                },
+                {
+                  value: "no",
+                  text: "No, that is the wrong date "
+                }
+              ]
+            }) }}   
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+
+
+
+
+          </form>
+
+
+</div>
+</div>
+</form>
+    
+
+{% endblock %}
