@@ -1,7 +1,7 @@
 {% extends "ma-layout.html" %}
 
 {% block pageTitle %}
-  Confirm if an apprentice is still employed by you
+Confirm if an apprenticeship has stopped
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
 
 <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Confirm if an apprentice has left your employment
+          Confirm if an apprenticeship has stopped
         </h1>
        
        
@@ -39,7 +39,7 @@
 
 
           {{ govukInsetText({
-            text: "[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to tell us the date they left your employment."
+            text: "[Training provider name] has received notification of a new employer for this learner. For the training to continue, you need to tell us if the apprenticeship has stopped."
           }) }}
 
 
@@ -50,7 +50,7 @@
               name: "apprentice-left",
               fieldset: {
                 legend: {
-                  text: "Has the apprentice left your employment?",
+                  text: "Has the apprenticeship stopped?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -58,11 +58,11 @@
               items: [
                 {
                   value: "yes",
-                  text: "Yes, this apprentice has left my employment"
+                  text: "Yes, this apprenticeship has stopped"
                 },
                 {
                   value: "no",
-                  text: "No, the apprentice is still employed by me"
+                  text: "No, the apprenticeship has not stopped"
                 }
               ]
             }) }}   
