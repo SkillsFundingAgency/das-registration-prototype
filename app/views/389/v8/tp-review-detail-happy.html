@@ -30,6 +30,14 @@
          border-bottom: 1px solid #bfc1c3;
      }
      
+     
+    .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+
           
      </style>
        <div class="govuk-width-container">
@@ -39,6 +47,26 @@
     
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
+
+
+          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+          {% set html %}
+          <p class="govuk-notification-banner__heading">Overlapping training date resolved</p>
+          <p>The previous employer has updated their details to resolve an overlapping training date error.</p>
+
+          
+
+              
+            
+          {% endset %}
+          
+          {{ govukNotificationBanner({
+            html: html
+          }) }}
+
+
+
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
           Approve apprentice details
         </h1>
@@ -56,7 +84,7 @@
                 <b>Message:</b>
               <p>
               {{ govukInsetText({
-                text: "Approved by the previous employer"
+                text: "No message added"
               }) }}
              
         </div>
@@ -116,12 +144,39 @@
               ]
             }) }}
 
+
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+          
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header das-table-cell-width-80">Total apprenticeship training price<br> (excluding VAT)</th>
+                    <th scope="col" class="govuk-table__header">£0</th>
+                    </tr>
+                  </thead>
+                  </tbody>
+                  </table>	
+          
+                </div>
+              </div>
+          
+                <!-- ADD ANOTHER APPRENTICE -->
+                <div id="textbox" class="govuk-!-margin-bottom-8">
+                <a class="govuk-list govuk-link--no-visited-state alignleft" href="edit-apprentice-multi-page-1">Add another apprentice</a></p>
+                <a class="govuk-list govuk-link--no-visited-state alignright" href="#">Delete this cohort</a></p>
+                <div style="clear: both;"></div>
+              </div>
+              
+   			
+
             {{ govukRadios({
               idPrefix: "approve",
               name: "approve",
               fieldset: {
                 legend: {
-                  text: "Submit to new employer?",
+                  text: "Approve these details?",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -129,12 +184,12 @@
              
               items: [
                 {
-                  value: "Yes, send to employer to review or add details",
-                  text: "Yes, send to employer to review or add details"
+                  value: "Yes, approve and notify employer",
+                  text: "Yes, approve and notify employer"
                 },
                 {
-                  value: "No, save and return to apprentice requests",
-                  text: "No, save and return to apprentice requests"
+                  value: "No, send to employer to review or add details",
+                  text: "No, send to employer to review or add details"
                 }
               ]
             }) }}

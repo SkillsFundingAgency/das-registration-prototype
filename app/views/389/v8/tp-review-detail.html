@@ -30,7 +30,12 @@
          box-sizing: border-box;
          border-bottom: 1px solid #bfc1c3;
      }
-     
+     .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
           
      </style>
        <div class="govuk-width-container">
@@ -40,8 +45,24 @@
     
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
+
+
+          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+          {% set html %}
+          <p class="govuk-notification-banner__heading">Overlapping training date not resolved</p>
+          <p>The previous employer has confirmed that the details on the training record causing an overlapping training date error are correct.</p>
+
+
+          {% endset %}
+          
+          {{ govukNotificationBanner({
+            html: html
+          }) }}
+
+
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
-          Edit or delete apprentice details
+          Approve apprentice details
         </h1>
         <p class="govuk-body">
           <b>Employer:</b> SOMEONE ELSE LTD
@@ -54,10 +75,10 @@
             <p>
 
               <p class="govuk-body">
-                <b>Message from the previous employer:</b>
+                <b>Message:</b>
               <p>
               {{ govukInsetText({
-                text: "Message here from previous employer when they rejected the requested change"
+                text: "No message added"
               }) }}
              
         </div>
@@ -117,21 +138,104 @@
               ]
             }) }}
 
-            <h2 class="govuk-heading-m">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+        
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header das-table-cell-width-80">Total apprenticeship training price<br> (excluding VAT)</th>
+                  <th scope="col" class="govuk-table__header">£0</th>
+                  </tr>
+                </thead>
+                </tbody>
+                </table>	
+        
+              </div>
+            </div>
+        
+              <!-- ADD ANOTHER APPRENTICE -->
+              <div id="textbox" class="govuk-!-margin-bottom-8">
+              <!--<a class="govuk-list govuk-link--no-visited-state alignleft" href="edit-apprentice-multi-page-1">Add another apprentice</a>-->
+              <a class="govuk-list govuk-link--no-visited-state alignright" href="#">Delete this cohort</a></p>
+              <div style="clear: both;"></div>
+            </div>
+
+            
+
+           <h2 class="govuk-heading-m">
               What happens next
             </h2>
 
+            <p>If you believe all these details are correct, you can request a resolution via the Apprenticeship Service helpdesk.</p>
+            <p class="govuk-!-margin-bottom-8">If the details are not correct, you can edit or delete the record.</p>
+                
           
 
-              <ul class="govuk-list govuk-list--number">
-                <li>
-                  If all these details are correct, you can send us an <a href="#" class="govuk-link">email</a> so we can help to resolve this.
-                </li>
-                <li>
-                  If the details are not correct, you can edit or delete the record.
-                </li>
-                
-              </ul>
+
+            {{ govukRadios({
+              idPrefix: "approve",
+              name: "approve",
+              fieldset: {
+                legend: {
+                  text: "What do you want to do next?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+             
+              items: [
+                {
+                  value: "Yes, approve and notify employer",
+                  text: "Request a resolution via Apprenticeship Service helpdesk"
+                },
+                {
+                  value: "No, send to employer to review or add details",
+                  text: "Edit the record"
+                },
+                {
+                  value: "No, send to employer to review or add details",
+                  text: "Delete the record"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+
+
+            <!-- {{ govukRadios({
+              idPrefix: "approve",
+              name: "approve",
+              fieldset: {
+                legend: {
+                  text: "Submit to employer?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+             
+              items: [
+                {
+                  value: "Yes, approve and notify employer",
+                  text: "Yes, send to employer to review or add details"
+                },
+                {
+                  value: "No, send to employer to review or add details",
+                  text: "No, save and return to apprentice requests"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Save and submit"
+            }) }}
+          -->
+
+
           </div>
         </div>
         
