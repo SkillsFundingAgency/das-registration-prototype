@@ -16,7 +16,35 @@
           <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with a previous employer</h1>
+                
+
+                <h1 class="govuk-heading-xl">This apprentice already has an existing apprenticeship record</h1>
+
+                <p>The planned start date overlaps with existing training for the same apprentice.  This may be because:</p>
+
+                <h2 class="govuk-heading-m">An existing apprenticeship completed early</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the employer has not updated the stop date</li>
+                  <li>the employer has entered an incorrect stop date</li>
+                </ul>
+
+                <h2 class="govuk-heading-m">The apprenticeship has ended</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the employer has not entered a stop date </li>
+                  <li>the employer has entered an incorrect stop date</li>
+                </ul>
+
+
+                <p>To request a stop date you can:</p>
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+                  <li>send an email from the service</li>
+                  <li>contact the employer, if you have their details</li>
+                </ul>
+                
+
+
+                <!--
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with a previous employer</h1>
 
                 <p>The planned start date overlaps with existing training for the same apprentice. This may be because the previous employer:</p>
 
@@ -33,7 +61,7 @@
                   <li>send an email from the service</li>
                   <li>contact the previous employer direct, if you have their details</li>
                 </ul>
-
+              -->
 
                 <form action="request-a-stop-date" method="post">
                   
@@ -59,7 +87,7 @@
                       },
                       {
                         value: "offline",
-                        text: "I'll contact the employer myself",
+                        text: "I'll contact the employer",
                         hint: {
                           text: "Apprentice details will be saved in the cohort until the previous employer amends the date."
                         }
