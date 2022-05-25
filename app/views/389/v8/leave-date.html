@@ -7,7 +7,7 @@
 {% block content %}
 
 
-<form method="post">
+<form action="made-redundant"  method="post">
 
 <div class="govuk-grid-row">
 
@@ -25,18 +25,28 @@
       }
     },
     hint: {
-      html: "<p>Confirm the date the apprenticeship stopped as shown on the P45.</p><p>For example, 27 3 2007</p>"
+      html: "<p>Tell us the month and year of the leaving date as shown on the P45.</p><p>For example 03 2022</p>"
+    },
+    items: [
+    {
+        name: "month",
+        
+        classes: "govuk-input--width-2"
+    },
+    {
+        name: "year",
+        classes: "govuk-input--width-4"
     }
+    ]
   }) }}
        
-        
+   
        
 
              
 
             {{ govukButton({
-                text: "Continue",
-                href: "made-redundant"
+                text: "Continue"
             }) }}
 
          
