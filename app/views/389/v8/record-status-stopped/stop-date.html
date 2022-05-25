@@ -7,7 +7,7 @@ When did this apprenticeship training stop?
 {% block content %}
 
 
-<form method="post">
+<form action="new-stop-date-confirmed"  method="post">
 
 <div class="govuk-grid-row">
 
@@ -15,8 +15,8 @@ When did this apprenticeship training stop?
         
 
   {{ govukDateInput({
-    id: "passport-issued",
-    namePrefix: "passport-issued",
+    id: "leaving-date",
+    namePrefix: "leaving-date",
     fieldset: {
       legend: {
         text: "When did this apprenticeship training stop?",
@@ -25,9 +25,19 @@ When did this apprenticeship training stop?
       }
     },
     hint: {
-      html: "<p>Confirm the date the apprenticeship stopped as shown on the P45.</p><p>For example, 27 3 2007</p>"
+      html: "<p>Tell us month and year of the leaving date as shown on the P45. </p><p>For example, 03 2022</p>"
+    },
+    items: [
+    {
+        name: "month",
+        
+        classes: "govuk-input--width-2"
+    },
+    {
+        name: "year",
+        classes: "govuk-input--width-4"
     }
-    
+    ]
   }) }}
        
         
@@ -36,8 +46,7 @@ When did this apprenticeship training stop?
              
 
             {{ govukButton({
-                text: "Continue",
-                href: "new-stop-date-confirmed"
+                text: "Continue"
             }) }}
 
          

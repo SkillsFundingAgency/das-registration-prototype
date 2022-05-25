@@ -7,7 +7,7 @@ What is the correct planned end date for this apprenticeship training?
 {% block content %}
 
 
-<form method="post">
+<form action="new-end-date-confirmed"  method="post">
 
 <div class="govuk-grid-row">
 
@@ -15,8 +15,8 @@ What is the correct planned end date for this apprenticeship training?
         
 
   {{ govukDateInput({
-    id: "passport-issued",
-    namePrefix: "passport-issued",
+    id: "planned-end-date",
+    namePrefix: "planned-end-date",
     fieldset: {
       legend: {
         text: "What is the correct planned end date for this apprenticeship training?",
@@ -25,7 +25,7 @@ What is the correct planned end date for this apprenticeship training?
       }
     },
     hint: {
-      html: "For example, 27 3 2007"
+      html: "For example, 03 2007"
     },
     items: [
     {
@@ -46,8 +46,7 @@ What is the correct planned end date for this apprenticeship training?
              
 
             {{ govukButton({
-                text: "Continue",
-                href: "new-end-date-confirmed"
+                text: "Continue"
             }) }}
 
          

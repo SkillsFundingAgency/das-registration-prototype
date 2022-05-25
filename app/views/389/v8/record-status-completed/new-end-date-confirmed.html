@@ -13,7 +13,7 @@
 
           {{ govukPanel({
             titleText: "New planned end date confirmed",
-            html: "February 2022"
+            html: data['planned-end-date-month'] | toMonth  + " " +  data['planned-end-date-year']
           }) }}
 	</div>
 </div>
@@ -23,7 +23,7 @@
 
 <div class="govuk-grid-column-two-thirds">
         
-  <table class="govuk-table">
+  <!--<table class="govuk-table">
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Name</th>
@@ -40,7 +40,207 @@
      
       
     </tbody>
-  </table>
+  </table>-->
+
+
+  {{ govukTable({
+           
+    firstCellIsHeader: true,
+   
+    rows: [
+        [
+            {
+                text: "Status",
+                classes: 'govuk-!-width-one-half'
+            },
+            {
+                html: 
+                "
+                <strong class='govuk-tag govuk-tag--blue'>
+                 Live
+               </strong>
+                "
+            },
+            {
+                text: ""
+            }
+        ],
+        [
+            {
+                text: "Stopped date"
+            },
+            {
+                html: "September 2021"
+            }, 
+            {
+             html: 
+             "
+             <a href='#' class='govuk-link'>Edit</a>
+             "
+         }
+        ],
+        [
+            {
+                text: "Made redundant"
+            },
+            {
+                text: "No"
+            },
+            {
+                text: ""
+            }
+        ],
+        [
+            {
+                text: "Apprentice confirmation"
+            },
+            {
+                text: "Unconfirmed"
+            },
+            {
+                text: ""
+            }
+        ],
+        [
+            {
+                text: "Training provider"
+            },
+            {
+                text: "Boom training"
+            },
+            {
+             html: 
+             "
+             <a href='#' class='govuk-link'>Change</a>
+             "
+         },
+         {
+             text: ""
+         }
+        ],
+        [
+            {
+                text: "Cohort reference"
+            },
+            {
+                text: "WD6D7G"
+            },
+            {
+                text: ""
+            }
+        ]
+        
+    ]
+}) }}
+
+
+{{ govukTable({
+caption: "Apprenticeship details",
+firstCellIsHeader: true,
+
+rows: [
+ [
+     {
+         text: "Name",
+         classes: 'govuk-!-width-one-half'
+     },
+     {
+         text: "Fred Jones"
+     }
+ ],
+ [
+     {
+         text: "Email address"
+     },
+     {
+         text: "-"
+     }
+ ],
+ [
+     {
+         text: "Unique learner number"
+     },
+     {
+         text: "1231234"
+     }
+ ],
+ [
+     {
+         text: "Date of birth"
+     },
+     {
+         text: "29 September 2000"
+     }
+ ]
+]
+}) }}
+
+
+{{ govukTable({
+caption: "Apprenticeship details",
+firstCellIsHeader: true,
+
+rows: [
+[
+{
+ text: "Apprenticeship training course",
+ classes: 'govuk-!-width-one-half'
+},
+{
+ text: "Academic professional Level 5"
+}
+],    
+[
+     {
+         text: "Version"
+     },
+     {
+         text: "1.0"
+     }
+ ],
+ [
+     {
+         text: "Planned training start date"
+     },
+     {
+         text: "January 2020"
+     }
+ ],
+ [
+     {
+         text: "Planned training end date"
+     },
+     {
+         text: "March 2022"
+     }
+ ],
+ [
+     {
+         text: "Total agreed apprenticeship price"
+     },
+     {
+         text: "£1230"
+     }
+ ],
+ [
+     {
+         text: "Reference"
+     },
+     {
+         text: "-"
+     }
+ ],
+ [
+     {
+         text: "End point assessor"
+     },
+     {
+         text: "The end point assessor has not been declared"
+     }
+ ]
+]
+}) }}
+
 
  
 
