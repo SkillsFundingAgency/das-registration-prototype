@@ -125,7 +125,7 @@
 
 
 {{ govukTable({
-caption: "Apprenticeship details",
+caption: "Apprentice details",
 firstCellIsHeader: true,
 
 rows: [
@@ -167,69 +167,105 @@ rows: [
 
 
 {{ govukTable({
-caption: "Apprenticeship details",
-firstCellIsHeader: true,
-
-rows: [
-[
-{
- text: "Apprenticeship training course",
- classes: 'govuk-!-width-one-half'
-},
-{
- text: "Academic professional Level 5"
-}
-],    
-[
-     {
-         text: "Version"
-     },
-     {
-         text: "1.0"
+    caption: "Apprenticeship details",
+    firstCellIsHeader: true,
+    
+    rows: [
+    [
+    {
+     text: "Apprenticeship training course",
+     classes: 'govuk-!-width-one-half'
+    },
+    {
+     text: "Academic professional Level 5"
+    },
+    {
+        html: 
+        "
+        "
      }
- ],
- [
-     {
-         text: "Planned training start date"
-     },
-     {
-         text: "January 2020"
-     }
- ],
- [
-     {
-         text: "Planned training end date"
-     },
-     {
-         text: "March 2022"
-     }
- ],
- [
-     {
-         text: "Total agreed apprenticeship price"
-     },
-     {
-         text: "£1230"
-     }
- ],
- [
-     {
-         text: "Reference"
-     },
-     {
-         text: "-"
-     }
- ],
- [
-     {
-         text: "End point assessor"
-     },
-     {
-         text: "The end point assessor has not been declared"
-     }
- ]
-]
-}) }}
+    ],    
+    [
+         {
+             text: "Version"
+         },
+         {
+             text: "1.0"
+         },
+         {
+            html: 
+            "
+            "
+         }
+     ],
+     [
+         {
+             text: "Planned training start date"
+         },
+         {
+             text: "January 2020"
+         },
+         {
+            html: 
+            "
+            "
+         }
+     ],
+     [
+         {
+             text: "Planned training end date"
+         },
+         {
+             text: "March 2022"
+         },
+         {
+            html: 
+            "
+            <a href='#' class='govuk-link'>Edit</a>
+            "
+         }
+     ],
+     [
+         {
+             text: "Total agreed apprenticeship price"
+         },
+         {
+             text: "£1230"
+         },
+         {
+            html: 
+            "
+            "
+         }
+     ],
+     [
+         {
+             text: "Reference"
+         },
+         {
+             text: "-"
+         },
+         {
+            html: 
+            "
+            "
+         }
+     ],
+     [
+         {
+             text: "End point assessor"
+         },
+         {
+             text: "The end point assessor has not been declared"
+         },
+         {
+            html: 
+            "
+            "
+         }
+     ]
+    ]
+    }) }}
  
 
 
