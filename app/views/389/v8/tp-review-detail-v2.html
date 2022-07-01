@@ -1,0 +1,243 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  Apprentice adverts
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+	
+     @media (min-width: 641px) {
+     
+          .boxes {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0 -15px;
+          }
+          
+          .box {
+              margin: 0 15px;
+              width: calc(50% - 30px);
+          }
+     
+     }
+     
+     .box {
+       
+         box-sizing: border-box;
+         border-bottom: 1px solid #bfc1c3;
+     }
+     .alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+          
+     </style>
+       <div class="govuk-width-container">
+    
+      
+        <main class="govuk-main-wrapper">
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-9">
+
+
+          {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+          {% set html %}
+          <p class="govuk-notification-banner__heading">Overlapping training date not resolved</p>
+          <p>The previous employer has confirmed that the details on the training record causing an overlapping training date error are correct.</p>
+
+
+          {% endset %}
+          
+          {{ govukNotificationBanner({
+            html: html
+          }) }}
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+          Approve apprentice details
+        </h1>
+        <p class="govuk-body">
+          <b>Employer:</b> SOMEONE ELSE LTD
+        <p>
+          <p class="govuk-body">
+            <b>Cohort reference:</b> VRY89L
+          <p>
+            <p class="govuk-body">
+              <b>Status:</b> Rejected by the previous employer
+            <p>
+
+              <p class="govuk-body">
+                <b>Message:</b>
+              <p>
+              {{ govukInsetText({
+                text: "No message added"
+              }) }}
+             
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <hr>
+
+            {{ govukTable({
+              caption: "1 X Academic professional Level 5	",
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Name"
+                },
+                {
+                  text: "Unique learner number"
+                },
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "Training dates"
+                },
+                {
+                  text: "Price"
+                },
+                {
+                  text: ""
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Fred Jones"
+                  },
+                  {
+                    text: "1231234"
+                  },
+                  {
+                    text: "29 Sep 2000"
+                  },
+                  {
+                    text: "Jan 2020 to Mar 2022"
+                  },
+                  {
+                    text: "£2,000"
+                  },
+                  {
+                    html: 
+                    "
+                    <a href='tp-edit-apprentice' class='govuk-link'>Edit</a>
+                    <br><br>
+                    <a href='#' class='govuk-link'>Delete</a>
+                    "
+                  }
+                ]
+              ]
+            }) }}
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+        
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header das-table-cell-width-80">Total apprenticeship training price<br> (excluding VAT)</th>
+                  <th scope="col" class="govuk-table__header">£0</th>
+                  </tr>
+                </thead>
+                </tbody>
+                </table>	
+        
+              </div>
+            </div>
+        
+              <!-- ADD ANOTHER APPRENTICE -->
+              <div id="textbox" class="govuk-!-margin-bottom-8">
+              <!--<a class="govuk-list govuk-link--no-visited-state alignleft" href="edit-apprentice-multi-page-1">Add another apprentice</a>-->
+              <a class="govuk-list govuk-link--no-visited-state alignright" href="#">Delete this cohort</a></p>
+              <div style="clear: both;"></div>
+            </div>
+
+            
+
+           <h2 class="govuk-heading-m">
+              What happens next
+            </h2>
+
+            <p>If you believe all these details are correct, you can <a href="#">request a resolution from the Apprenticeship Service helpdesk</a>.</p>
+            <p class="govuk-!-margin-bottom-8">If the details are not correct, you can edit or delete the record.</p>
+                
+          
+
+
+            {{ govukRadios({
+              idPrefix: "approve",
+              name: "approve",
+              fieldset: {
+                legend: {
+                  text: "Submit to employer?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+             
+              items: [
+                {
+                  value: "Yes, send to employer to review or add details",
+                  text: "Yes, send to employer to review or add details"
+                },
+                {
+                  value: "No, send to employer to review or add details",
+                  text: "No, save and return to apprentice requests"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Save and submit"
+            }) }}
+
+
+
+            <!-- {{ govukRadios({
+              idPrefix: "approve",
+              name: "approve",
+              fieldset: {
+                legend: {
+                  text: "Submit to employer?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+             
+              items: [
+                {
+                  value: "Yes, approve and notify employer",
+                  text: "Yes, send to employer to review or add details"
+                },
+                {
+                  value: "No, send to employer to review or add details",
+                  text: "No, save and return to apprentice requests"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Save and submit"
+            }) }}
+          -->
+
+
+          </div>
+        </div>
+        
+      </div>
+      </main>
+    
+      </div>
+    </div> 
+{% endblock %}
