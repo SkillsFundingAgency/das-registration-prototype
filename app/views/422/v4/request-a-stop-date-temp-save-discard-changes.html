@@ -1,0 +1,136 @@
+{% extends "tp--main-layout.html" %}
+
+{% block pageTitle %}
+  This apprentice already has an existing record with a previous employer
+{% endblock %}
+
+
+
+{% block content %}
+
+
+      
+     <div class="govuk-width-container">
+          
+     
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+
+                <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                    </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content">
+                    <p class="govuk-notification-banner__heading">
+                      A stop request was made on [date] to resolve an overlapping training date. You can save the changes that you have just made. </li>
+                </p>
+              </div>
+              </div>
+                
+
+                <h1 class="govuk-heading-xl">This apprentice already has an existing apprenticeship record</h1>
+
+                <p>The planned start date overlaps with existing training for the same apprentice.  This may be because:</p>
+
+                <h2 class="govuk-heading-m">An existing apprenticeship ended or completed early</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the employer has not updated the stop date</li>
+                  <li>the employer has entered an incorrect stop date</li>
+                </ul>
+
+
+                
+            <!--    <h2 class="govuk-heading-m">The apprenticeship has ended</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the employer has not entered a stop date </li>
+                  <li>the employer has entered an incorrect stop date</li>
+                </ul>-->
+
+
+               <!-- <p>To request a stop date you can:</p>
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+                  <li>contact the employer; if you know their details</li>
+                  <li><a href="https://help.apprenticeships.education.gov.uk#contact-us" target="_blank">contact the helpdesk</a></li>
+                </ul>-->
+                
+
+
+                <!--
+                  <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This apprentice already has an existing record with a previous employer</h1>
+
+                <p>The planned start date overlaps with existing training for the same apprentice. This may be because the previous employer:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>has not yet stopped the apprenticeship</li>
+                  <li>has stopped the record with an incorrect date</li>
+                </ul>
+
+                <p>Before you can add this apprentice, you need to confirm the stop date with the previous employer.</p>
+
+                <p>To request that the previous employer updates their records you can:</p>
+                             
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+                  <li>send an email from the service</li>
+                  <li>contact the previous employer direct, if you have their details</li>
+                </ul>
+              -->
+
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <form action="request-a-stop-date" method="post">
+                  
+                
+
+                  {{ govukRadios({
+                    idPrefix: "request-a-stop-date-check",
+                    name: "request-a-stop-date-check",
+                    fieldset: {
+                      legend: {
+                        text: "Do you want to save the changes you just made?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--m "
+                      }
+                    },
+                    items: [
+                      {
+                        value: "offline",
+                        text: "I'll contact the employer",
+                        hint: {
+                          text: "Apprentice details will be saved in the cohort until the employer amends the existing record."
+                        }
+                      },
+                      {
+                        divider: "or"
+                      },
+                      {
+                        value: "add-later",
+                        text: "I'll add the apprentice again later",
+                        hint: {
+                          text: "The details entered for this apprentice will be deleted."
+                        }
+                      }
+                    ]
+                  }) }}
+    
+                  
+
+                    {{ govukButton({
+                      text: "Continue"
+                    }) }}
+       
+                  </form>
+
+                   
+
+          
+          </div>
+     
+      </div>
+         
+     
+     
+     </div>
+</form>
+{% endblock %}
